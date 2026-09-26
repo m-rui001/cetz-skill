@@ -1,0 +1,35 @@
+#set page(width: auto, height: auto, margin: 12pt)
+#import "@preview/cetz:0.4.2": canvas, draw
+
+#canvas({
+  import draw: *
+  let th = (thickness: 1.2pt)
+  let td = (dash: "dashed", thickness: 1.1pt)
+  let tp = (dash: "dotted", thickness: 1pt)
+  line((0, 0), (12.6, 0), stroke: th, mark: (end: ">"))
+  line((0, -2.2), (0, 9.6), stroke: th, mark: (end: ">"))
+  content((0.35, 9.1), anchor: "west", [$y$])
+  content((12.35, -.8), anchor: "west", [$x$])
+  line((0.0, 1.94), (0.6, 2.90), (1.2, 3.65), (1.8, 4.24), (2.4, 4.70), (3.0, 5.05),
+       (3.6, 5.33), (4.2, 5.54), (4.8, 5.71), (5.4, 5.84), (6.0, 5.94), (6.6, 6.02),
+       (7.2, 6.09), stroke: th)
+  content((1.55, 1.55), anchor: "west", [$y = f(x)$])
+  circle((4.0, 5.44), radius: 1.05, stroke: th)
+  line((4.55, 6.35), (8.6, 8.75), stroke: td)
+  line((4.55, 4.53), (8.3, 4.35), stroke: td)
+  circle((10.6, 6.4), radius: 3.1, stroke: th)
+  bezier((7.6, 5.6), (13.5, 7.2), (9.8, 6.4), (11.8, 7.0), stroke: th)
+  let p1 = (9.55, 6.32)
+  let p2 = (11.85, 7.05)
+  line(p1, p2, stroke: tp)
+  line(p1, (p2.at(0), p1.at(1)), stroke: th)
+  line((p2.at(0), p1.at(1)), p2, stroke: th, mark: (end: ">"))
+  arc((p1.at(0) + .55, p1.at(1)), radius: .55, start: 0deg, stop: 17.1deg, stroke: th)
+  circle(p1, radius: .1, fill: black, stroke: none)
+  circle(p2, radius: .1, fill: black, stroke: none)
+  content((9.35, 6.95), anchor: "east", [$(x_1, y_1)$])
+  content((11.85, 7.5), [$(x_2, y_2)$])
+  content((10.7, 5.85), [$Delta x = "run"$])
+  content((12.15, 6.55), anchor: "west", [$Delta y = "rise"$])
+  content((10.55, 4.35), [$"Slope" = frac("rise", "run") = frac(Delta y, Delta x)$])
+})

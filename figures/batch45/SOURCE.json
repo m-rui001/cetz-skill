@@ -1,0 +1,63 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "pdf_page": 40,
+  "figure_number": 6,
+  "figures": [
+    {
+      "id": "pdf023-silicon-polarization-tx",
+      "panel": "(1)a",
+      "xref": 1125,
+      "native_px": [
+        399,
+        176
+      ],
+      "status": "abandoned_after_visual_comparison"
+    },
+    {
+      "id": "pdf024-inp-transmitter",
+      "panel": "(3)a",
+      "xref": 1126,
+      "crop_px": [
+        0,
+        0,
+        365,
+        110
+      ],
+      "status": "abandoned_after_visual_comparison"
+    },
+    {
+      "id": "pdf025-triplex-receiver",
+      "panel": "(3)b",
+      "xref": 1126,
+      "crop_px": [
+        180,
+        215,
+        804,
+        360
+      ],
+      "status": "draft_stopped_before_visual_comparison"
+    }
+  ],
+  "remaining_panels": [],
+  "screening_exclusions": [
+    {
+      "xref": 1128,
+      "panel": "(1)b",
+      "reason": "micrograph; photograph detail not suitable for CeTZ replication"
+    },
+    {
+      "panel": "(3)e/g",
+      "reason": "micrographs within composite xref 1126"
+    },
+    {
+      "panel": "(4) aerial map and micrographs",
+      "reason": "photographs; retain schematic portions"
+    },
+    {
+      "panel": "remaining perspective chips and layered sections in (2), (3)c/d/f, (4)b",
+      "reason": "user identified this class of figure as unsuitable for CeTZ; material, perspective and fine waveguide detail are essential to matching the source"
+    }
+  ],
+  "later_completed_schematic_regions": "batch46/pdf026–028"
+}

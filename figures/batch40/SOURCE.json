@@ -1,0 +1,28 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf019-dv-qkd-benches",
+      "figure_number": 4,
+      "panel": "a",
+      "pdf_page": 35,
+      "source_method": "full embedded image xref 954",
+      "native_px": [
+        1379,
+        534
+      ]
+    },
+    {
+      "id": "pdf020-transmitted-lo-cv-qkd",
+      "figure_number": 10,
+      "panel": "a",
+      "pdf_page": 58,
+      "source_method": "full embedded image xref 1601",
+      "native_px": [
+        1808,
+        837
+      ]
+    }
+  ]
+}

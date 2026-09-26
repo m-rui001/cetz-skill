@@ -1,0 +1,40 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "sha1": "4f53c97362c66632bad047e1440e69ed41896204",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\epr\\4f\\4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf004-interferometer",
+      "pdf_page": 12,
+      "figure_number": 1,
+      "clip_pt": [
+        51,
+        275,
+        302,
+        359
+      ]
+    },
+    {
+      "id": "pdf005-ping-pong",
+      "pdf_page": 22,
+      "figure_number": 2,
+      "clip_pt": [
+        60,
+        328,
+        289,
+        431
+      ]
+    },
+    {
+      "id": "pdf006-locc-simulation",
+      "pdf_page": 75,
+      "figure_number": 13,
+      "clip_pt": [
+        110,
+        50,
+        239,
+        154
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf016-satellite-ground-optics",
+      "figure_number": 8,
+      "pdf_page": 42,
+      "source_method": "embedded image xref 1179 cropped to white ground optics panel",
+      "clip_px": [
+        723,
+        385,
+        1600,
+        1066
+      ]
+    },
+    {
+      "id": "pdf017-software-defined-qkd",
+      "figure_number": 10,
+      "panel": "c",
+      "pdf_page": 58,
+      "clip_pt": [
+        137,
+        352,
+        485,
+        427
+      ]
+    },
+    {
+      "id": "pdf018-cow-experiment",
+      "figure_number": 4,
+      "panel": "d",
+      "pdf_page": 35,
+      "source_method": "full embedded image xref 949",
+      "native_px": [
+        1500,
+        464
+      ]
+    }
+  ]
+}

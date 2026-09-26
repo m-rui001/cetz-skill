@@ -1,0 +1,42 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf010-repeater-levels",
+      "figure_number": 17,
+      "pdf_page": 83,
+      "clip_pt": [
+        347.64,
+        52.07,
+        531.47,
+        217.56
+      ]
+    },
+    {
+      "id": "pdf011-probabilistic-repeaters",
+      "figure_number": 18,
+      "pdf_page": 84,
+      "clip_pt": [
+        317.04,
+        52.05,
+        562.06,
+        104.86
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "pdf012-tf-qkd-rates",
+      "figure_number": 3,
+      "pdf_page": 31,
+      "clip_pt": [
+        58,
+        53,
+        304,
+        205
+      ],
+      "status": "excluded by user: data curve plots do not need reproduction"
+    }
+  ]
+}

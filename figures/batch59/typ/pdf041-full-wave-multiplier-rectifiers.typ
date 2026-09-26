@@ -1,0 +1,254 @@
+#set page(width:auto,height:auto,margin:2pt)
+#set text(font:"Times New Roman",size:8pt)
+#set par(leading:2pt)
+#import "@preview/cetz:0.4.2":canvas,draw
+#canvas(length:1pt,{
+  import draw:*
+  let s=.5
+  let P=(x,y)=>(s*(x - 92),s*(1274 - y))
+  let wire=(pts)=>line(..pts.map(p=>P(..p)),stroke:.7pt)
+  let lab=(x,y,c)=>content(P(x,y),align(center,c))
+  let dot=(x,y)=>circle(P(x,y),radius:1.05,fill:black,stroke:none)
+  let battery=(x,y)=>{
+    wire(((x,y - 13),(x,y - 3)));wire(((x,y + 3),(x,y + 13)))
+    wire(((x - 10,y - 3),(x + 10,y - 3)));wire(((x - 5,y + 3),(x + 5,y + 3)))
+  }
+  let cap=(x,y,flat:false)=>{
+    wire(((x,y - 15),(x,y - 3)));wire(((x,y + (if flat {3} else {1.75})),(x,y + 15)))
+    wire(((x - 8,y - 3),(x + 8,y - 3)))
+    if flat {wire(((x - 8,y + 3),(x + 8,y + 3)))} else {
+      bezier(P(x - 8,y + 7),P(x + 8,y + 7),P(x - 7,y),P(x + 7,y),stroke:.7pt)
+    }
+  }
+  let cap-h=(x,y,rev:false)=>{
+    wire(((x - 15,y),(x - 3,y)));wire(((x + 3,y),(x + 15,y)))
+    let d=if rev {-1} else {1}
+    wire(((x + 3*d,y - 8),(x + 3*d,y + 8)))
+    bezier(P(x - 7*d,y - 8),P(x - 7*d,y + 8),P(x,y - 7),P(x,y + 7),stroke:.7pt)
+  }
+  let ind=(x,y,core:false,dots:false)=>{
+    for i in range(4) {bezier(P(x + i*7,y),P(x + (i + 1)*7,y),P(x + i*7,y - 8),P(x + (i + 1)*7,y - 8),stroke:.7pt)}
+    if core {for yy in (y - 10,y - 13) {wire(((x,y + yy - y),(x + 28,yy)))}}
+    if dots {dot(x - 4,y - 5)}
+  }
+  let resistor=(x,y)=>{
+    let pts=((x,y - 12),)
+    for i in range(1,7) {pts.push((x + (if calc.rem(i,2)==1 {4} else {-4}),y - 12 + i*24/7))}
+    pts.push((x,y + 12));wire(pts)
+  }
+  let diode-h=(x,y,left:false)=>{
+    let d=if left {-1} else {1}
+    wire(((x - 16,y),(x + 16,y)))
+    line(P(x + 5*d,y),P(x - 5*d,y - 4),P(x - 5*d,y + 4),close:true,fill:black,stroke:none)
+    wire(((x + 6*d,y - 5),(x + 6*d,y + 5)))
+  }
+  let diode=(x,y)=>{
+    wire(((x,y - 15),(x,y + 15)))
+    line(P(x,y - 5),P(x - 4,y + 5),P(x + 4,y + 5),close:true,fill:black,stroke:none)
+    wire(((x - 5,y - 6),(x + 5,y - 6)))
+  }
+  let sw=(x,y)=>{
+    wire(((x,y - 15),(x,y - 5),(x + 9,y + 8)))
+    wire(((x,y + 11),(x,y + 24)))
+  }
+  let sw-h=(x,y)=>{
+    wire(((x - 15,y),(x - 5,y),(x + 8,y - 9)))
+    wire(((x + 11,y),(x + 24,y)))
+  }
+  let output=(xc,xr,top,bot)=>{
+    let y=(top + bot)/2
+    wire(((xc,top),(xc,y - 15)));cap(xc,y);wire(((xc,y + 15),(xc,bot)))
+    wire(((xr,top),(xr,y - 12)));resistor(xr,y);wire(((xr,y + 12),(xr,bot)))
+    dot(xc,top);dot(xc,bot)
+    lab(xc - 17,y + 2,[$C_o$]);lab(xr - 12,y + 2,[$R_o$]);lab(xr + 21,y + 2,[$V_"out"$])
+  }
+  let input=(x,y,top,bot)=>{
+    battery(x,y);wire(((x,top),(x,y - 13)));wire(((x,y + 13),(x,bot)))
+    lab(x - 22,y,[$V_"in"$])
+  }
+
+  let diode=(x,y,up:true)=>{
+    wire(((x,y - 15),(x,y + 15)))
+    let d=if up {-1} else {1}
+    line(P(x,y + 5*d),P(x - 4,y - 5*d),P(x + 4,y - 5*d),close:true,fill:black,stroke:none)
+    wire(((x - 5,y + 6*d),(x + 5,y + 6*d)))
+  }
+  // Curved lower plate: Bézier midpoint is y+4.75, the precise lead origin.
+  let vc=(x,y,top,bot)=>{
+    wire(((x,top),(x,y)));wire(((x - 8,y),(x + 8,y)))
+    bezier(P(x - 8,y + 10),P(x + 8,y + 10),P(x - 7,y + 3),P(x + 7,y + 3),stroke:.7pt)
+    wire(((x,y + 4.75),(x,bot)))
+  }
+  let hcap=(x,y,left,right)=>{
+    bezier(P(x - 7,y - 8),P(x - 7,y + 8),P(x,y - 7),P(x,y + 7),stroke:.7pt)
+    wire(((x + 3,y - 8),(x + 3,y + 8)))
+    wire(((left,y),(x - 1.75,y)));wire(((x + 3,y),(right,y)))
+  }
+  let sv=(x,y,top,bot)=>{
+    wire(((x,top),(x,y - 7),(x - 10,y + 8)))
+    wire(((x,y + 10),(x,bot)))
+  }
+  let sh=(x,y,left,right,reverse:false)=>{
+    wire(((left,y),(x - 8,y)));wire(((x + 8,y),(right,y)))
+    if reverse {wire(((x + 8,y),(x - 8,y - 11)))} else {wire(((x - 8,y),(x + 8,y + 11)))}
+  }
+  let hump=(x,left,right,y)=>{
+    wire(((left,y),(x - 4,y)))
+    bezier(P(x - 4,y),P(x + 4,y),P(x - 4,y - 7),P(x + 4,y - 7),stroke:.7pt)
+    wire(((x + 4,y),(right,y)))
+  }
+  let ports=(x,top,bot,c,left:true)=>{
+    for y in (top,bot) {circle(P(x,y),radius:1.3,fill:white,stroke:.7pt)}
+    lab(x,top + 11,[$+$]);lab(x,bot - 12,[$-$])
+    lab(x + (if left {-6} else {0}),(top + bot)/2,c)
+  }
+  let shade=(x,y,w,h,c:"#fff2cb")=>rect(P(x,y),P(x + w,y + h),radius:5*s,fill:rgb(c),stroke:none)
+  let faintcoil=(x,y)=>{
+    for i in range(4) {bezier(P(x,y + i*6),P(x,y + (i + 1)*6),P(x - 8,y + i*6),P(x - 8,y + (i + 1)*6),stroke:(paint:gray,thickness:.9pt))}
+  }
+
+
+  let diode=(x,y,up:true)=>{
+    wire(((x,y - 15),(x,y + 15)))
+    let d=if up {-1} else {1}
+    line(P(x,y + 6*d),P(x - 6,y - 6*d),P(x + 6,y - 6*d),close:true,fill:black,stroke:none)
+    wire(((x - 7,y + 7*d),(x + 7,y + 7*d)))
+  }
+  let diode-h=(x,y,left:false)=>{
+    wire(((x - 16,y),(x + 16,y)))
+    let d=if left {-1} else {1}
+    line(P(x + 6*d,y),P(x - 6*d,y - 6),P(x - 6*d,y + 6),close:true,fill:black,stroke:none)
+    wire(((x + 7*d,y - 7),(x + 7*d,y + 7)))
+  }
+  let port=(x,y)=>circle(P(x,y),radius:1.35,fill:white,stroke:.7pt)
+  let ground=(x,y)=>{
+    wire(((x,y),(x,y + 11)))
+    for (w,dy) in ((8,11),(5,15),(2.5,19)) {wire(((x - w,y + dy),(x + w,y + dy)))}
+  }
+  let signal=(x,y)=>{
+    rect(P(x - 14,y - 23),P(x + 14,y + 23),radius:6*.5,fill:rgb("#dfd7e7"),stroke:none)
+    bezier(P(x - 10,y - 10),P(x,y - 10),P(x - 11,y - 20),P(x,y - 20),stroke:.7pt)
+    bezier(P(x,y - 10),P(x + 10,y - 10),P(x,y),P(x + 11,y),stroke:.7pt)
+    wire(((x - 10,y + 15),(x - 10,y + 3),(x,y + 3),(x,y + 17),(x + 10,y + 17),(x + 10,y + 7)))
+  }
+  let ds=(a,b,c)=>{
+    wire((a,b))
+    let dx=b.at(0) - a.at(0);let dy=b.at(1) - a.at(1)
+    let len=calc.sqrt(dx*dx + dy*dy);let ux=dx/len;let uy=dy/len
+    let x=c.at(0);let y=c.at(1)
+    line(P(x + 7*ux,y + 7*uy),P(x - 6*ux - 6*uy,y - 6*uy + 6*ux),P(x - 6*ux + 6*uy,y - 6*uy - 6*ux),close:true,fill:black,stroke:none)
+    wire(((x + 8*ux - 7*uy,y + 8*uy + 7*ux),(x + 8*ux + 7*uy,y + 8*uy - 7*ux)))
+  }
+  let vout=(x,y,n)=>lab(x,y,[$V_"out" = #n V_"in"$])
+
+
+  let vout=(x,y,n)=>content(P(x,y),text(size:7pt,[$V_"out" = #n V_"in"$]))
+  let fc=(x,y,top,bot)=>{
+    wire(((x,top),(x,y - 2.5)));wire(((x,y + 2.5),(x,bot)))
+    for yy in (y - 2.5,y + 2.5) {wire(((x - 10,yy),(x + 10,yy)))}
+  }
+  let hfc=(x,y,left,right)=>{
+    wire(((left,y),(x - 2.5,y)));wire(((x + 2.5,y),(right,y)))
+    for xx in (x - 2.5,x + 2.5) {wire(((xx,y - 9),(xx,y + 9)))}
+  }
+  let ell=(x,y)=>{
+    for dx in (-6,0,6) {circle(P(x + dx,y),radius:.7,fill:black,stroke:none)}
+  }
+  let ellcross=(x,y)=>{
+    for dx in (-12,-6,0,6,12) {circle(P(x + dx,y),radius:.65,fill:black,stroke:none)}
+    for dy in (-12,-6,6,12) {circle(P(x,y + dy),radius:.65,fill:black,stroke:none)}
+  }
+
+  // (a) full-wave voltage doubler.
+  wire(((134,786),(160,786),(160,805),(183,805)))
+  wire(((134,851),(160,851),(160,829)));hump(183,160,247,829)
+  wire(((183,756),(287,756)));wire(((183,886),(287,886)))
+  wire(((183,756),(183,773)));diode(183,788);wire(((183,803),(183,805),(183,838)))
+  diode(183,853);wire(((183,868),(183,886)))
+  vc(247,785,756,829);vc(247,851,829,886);ground(247,886);signal(134,819)
+  for (x,y) in ((183,805),(247,756),(247,829),(247,886)) {dot(x,y)}
+  for (x,y) in ((134,786),(134,851),(287,756),(287,886)) {port(x,y)}
+  lab(109,819,[$V_"in"$]);lab(204,789,[$D_1$]);lab(204,855,[$D_2$]);lab(272,790,[$C_1$]);lab(272,856,[$C_2$]);vout(303,821,[2])
+  lab(213,931,[Voltage Doubler Rectifier]);lab(213,956,[(a)])
+  // (b) quadrupler with crossing on each alternating capacitor return.
+  wire(((386,786),(412,786),(412,806),(435,806)));hump(497,435,562,806)
+  wire(((386,851),(412,851),(412,829)));hump(435,412,497,829)
+  wire(((435,756),(514,756)));diode-h(530,756);wire(((546,756),(601,756)))
+  wire(((435,886),(514,886)));diode-h(530,886,left:true);wire(((546,886),(601,886)))
+  wire(((435,756),(435,773)));diode(435,788);wire(((435,803),(435,806),(435,838)));diode(435,853);wire(((435,868),(435,886)))
+  vc(497,785,756,829);vc(497,851,829,886);vc(562,785,756,806);vc(562,851,806,886)
+  ground(562,886);signal(386,819)
+  for (x,y) in ((435,806),(497,756),(497,829),(497,886),(562,756),(562,806),(562,886)) {dot(x,y)}
+  for (x,y) in ((386,786),(386,851),(601,756),(601,886)) {port(x,y)}
+  lab(361,819,[$V_"in"$]);lab(455,789,[$D_1$]);lab(455,855,[$D_2$]);lab(521,740,[$D_3$]);lab(530,905,[$D_4$])
+  lab(522,789,[$C_1$]);lab(522,856,[$C_2$]);lab(586,789,[$C_3$]);lab(586,856,[$C_4$]);vout(625,821,[4])
+  lab(522,931,[Voltage Quadrupler Rectifier]);lab(522,956,[(b)])
+  // (c) even group with four explicit buses and alternating crossing arcs.
+  shade(825,747,53,151);shade(949,747,53,151)
+  wire(((691,789),(716,789),(716,807),(739,807)));hump(800,739,888,807)
+  wire(((918,807),(932,807)))
+  wire(((691,852),(716,852),(716,831)));hump(739,716,800,831);hump(866,800,888,831);hump(932,918,993,831)
+  wire(((739,758),(819,758)));diode-h(835,758);wire(((851,758),(888,758)))
+  wire(((918,758),(947,758)));diode-h(963,758);wire(((979,758),(1030,758)))
+  wire(((739,887),(819,887)));diode-h(835,887,left:true);wire(((851,887),(888,887)))
+  wire(((918,887),(947,887)));diode-h(963,887,left:true);wire(((979,887),(1030,887)))
+  for y in (758,807,831,887) {ell(903,y)}
+  wire(((739,758),(739,774)));diode(739,789);wire(((739,804),(739,807),(739,839)));diode(739,854);wire(((739,869),(739,887)))
+  vc(800,786,758,831);vc(800,858,831,887)
+  vc(866,786,758,807);vc(866,858,807,887)
+  vc(932,786,758,807);vc(932,858,807,887)
+  vc(993,786,758,831);vc(993,858,831,887)
+  ground(993,887);signal(691,821)
+  for (x,y) in ((739,807),(800,758),(800,831),(800,887),(866,758),(866,807),(866,887),(932,758),(932,807),(932,887),(993,758),(993,831),(993,887)) {dot(x,y)}
+  for (x,y) in ((691,789),(691,852),(1030,758),(1030,887)) {port(x,y)}
+  lab(666,821,[$V_"in"$]);lab(759,790,[$D_1$]);lab(759,856,[$D_2$]);lab(835,741,[$D_3$]);lab(835,908,[$D_4$]);lab(963,741,[$D_(n - 1)$]);lab(963,908,[$D_n$])
+  lab(816,790,[$C_1$]);lab(816,861,[$C_2$]);lab(882,790,[$C_3$]);lab(882,861,[$C_4$]);lab(1014,790,[$C_(n - 1)$]);lab(1014,861,[$C_n$]);vout(1058,824,[$n$])
+  lab(887,931,[Voltage Multiplier Rectifier (Even Group)]);lab(887,956,[(c)])
+  // (d) tripler, flat internal capacitors and curved output capacitor.
+  wire(((196,1054),(252,1054)));diode-h(268,1054);wire(((284,1054),(323,1054)))
+  wire(((149,1189),(323,1189)));fc(196,1074,1054,1089);fc(196,1171,1156,1189)
+  wire(((149,1089),(196,1089),(196,1100)));wire(((196,1145),(196,1156),(240,1156)))
+  wire(((149,1089),(149,1125)));diode(149,1140);wire(((149,1155),(149,1189)))
+  wire(((240,1054),(240,1088)));diode(240,1103);wire(((240,1118),(240,1156)))
+  vc(291,1120,1054,1189);ground(291,1189);signal(196,1123)
+  for (x,y) in ((196,1089),(196,1156),(196,1189),(240,1054),(291,1054),(291,1189)) {dot(x,y)}
+  for (x,y) in ((196,1100),(196,1145),(323,1054),(323,1189)) {port(x,y)}
+  lab(166,1123,[$V_"in"$]);lab(132,1140,[$D_1$]);lab(220,1103,[$D_2$]);lab(268,1039,[$D_3$]);lab(177,1074,[$C_2$]);lab(177,1171,[$C_1$]);lab(270,1128,[$C_3$]);vout(345,1123,[3])
+  lab(241,1234,[Voltage Tripler Rectifier]);lab(241,1260,[(d)])
+  // (e) quintupler, four flat capacitors and a curved output capacitor.
+  wire(((508,1030),(572,1030)));diode-h(588,1030);wire(((604,1030),(645,1030)))
+  wire(((452,1201),(645,1201)));fc(508,1053,1030,1079);fc(508,1175,1151,1201)
+  fc(452,1113,1079,1151);fc(563,1113,1079,1151)
+  wire(((452,1079),(520,1079)));diode-h(536,1079);wire(((552,1079),(563,1079)))
+  wire(((452,1151),(465,1151)));diode-h(481,1151);wire(((497,1151),(563,1151)))
+  wire(((508,1079),(508,1090)));wire(((508,1139),(508,1151)))
+  wire(((452,1151),(452,1159)));diode(452,1174);wire(((452,1189),(452,1201)))
+  wire(((563,1030),(563,1039)));diode(563,1054);wire(((563,1069),(563,1079)))
+  vc(612,1117,1030,1201);ground(612,1201);signal(508,1115)
+  for (x,y) in ((508,1079),(508,1151),(508,1201),(452,1151),(563,1030),(563,1079),(612,1030),(612,1201)) {dot(x,y)}
+  for (x,y) in ((508,1090),(508,1139),(645,1030),(645,1201)) {port(x,y)}
+  lab(483,1115,[$V_"in"$]);lab(491,1053,[$C_2$]);lab(491,1175,[$C_1$]);lab(434,1113,[$C_3$]);lab(546,1113,[$C_4$]);lab(593,1126,[$C_5$])
+  lab(436,1174,[$D_1$]);lab(546,1054,[$D_2$]);lab(481,1137,[$D_3$]);lab(536,1095,[$D_4$]);lab(588,1014,[$D_5$]);vout(673,1123,[5])
+  lab(523,1234,[Voltage Quintupler-Rectifier]);lab(539,1260,[(e)])
+  // (f) generalized odd group. Colored symbols show alternative components.
+  wire(((832,989),(920,989)));diode-h(936,989);wire(((952,989),(997,989)))
+  wire(((758,1202),(997,1202)));fc(832,1018,989,1051);fc(832,1176,1142,1202)
+  wire(((758,1051),(845,1051)));wire(((893,1051),(905,1051)))
+  wire(((758,1051),(758,1073)));wire(((905,1051),(905,1073)))
+  wire(((758,1124),(758,1142),(769,1142)));wire(((821,1142),(905,1142),(905,1124)))
+  wire(((832,1051),(832,1072)));wire(((832,1121),(832,1142)))
+  wire(((758,1142),(758,1159)));diode(758,1174);wire(((758,1189),(758,1202)))
+  wire(((905,989),(905,999)));diode(905,1014);wire(((905,1029),(905,1051)))
+  shade(736,1074,23,45,c:"#f2dbd8");shade(762,1074,13,45,c:"#d9edf2")
+  shade(887,1074,13,45,c:"#d9edf2");shade(904,1074,23,45,c:"#f2dbd8")
+  shade(845,1035,47,14,c:"#f2dbd8");shade(845,1053,47,22,c:"#d9edf2")
+  shade(773,1121,46,23,c:"#d9edf2");shade(773,1146,46,14,c:"#f2dbd8")
+  fc(747,1096,1079,1114);diode(768,1096);diode(893,1096);fc(915,1096,1079,1114)
+  diode-h(868,1042);hfc(868,1061,849,888);hfc(795,1133,777,816);diode-h(795,1152)
+  ellcross(795,1096);ellcross(858,1096)
+  vc(966,1096,989,1202);ground(966,1202);signal(832,1096)
+  for (x,y) in ((832,989),(832,1051),(832,1142),(832,1202),(758,1142),(905,989),(905,1051),(966,989),(966,1202)) {dot(x,y)}
+  for (x,y) in ((832,1072),(832,1121),(997,989),(997,1202)) {port(x,y)}
+  lab(811,1072,[$V_"in"$]);lab(744,1174,[$D_1$]);lab(890,1014,[$D_2$]);lab(936,973,[$D_(n + 1)$]);lab(817,1018,[$C_2$]);lab(817,1176,[$C_1$]);content(P(944,1110),text(size:6.5pt,[$C_(n + 1)$]));content(P(1027,1083),text(size:7pt,[$V_"out" = n + 1 V_"in"$]))
+  lab(881,1236,[Voltage Multiplier Rectifier (Odd Group)]);lab(881,1260,[(f)])
+})

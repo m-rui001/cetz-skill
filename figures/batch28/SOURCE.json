@@ -1,0 +1,40 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "sha1": "4f53c97362c66632bad047e1440e69ed41896204",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\epr\\4f\\4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf001-cv-qkd",
+      "pdf_page": 57,
+      "figure_number": 9,
+      "clip_pt": [
+        190,
+        53,
+        430,
+        101
+      ]
+    },
+    {
+      "id": "pdf002-repeater-chain",
+      "pdf_page": 81,
+      "figure_number": 16,
+      "clip_pt": [
+        51,
+        138,
+        302,
+        173
+      ]
+    },
+    {
+      "id": "pdf003-swap-test",
+      "pdf_page": 96,
+      "figure_number": 19,
+      "clip_pt": [
+        83,
+        195,
+        274,
+        272
+      ]
+    }
+  ]
+}

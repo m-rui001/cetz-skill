@@ -1,0 +1,21 @@
+{
+  "title": "Step-Up DC–DC Converters: A Comprehensive Review of Voltage-Boosting Techniques, Topologies, and Applications",
+  "doi": "10.1109/TPEL.2017.2652318",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\vbn\\8d\\8da22c007ab12414f59b180f0f0e67f0f8f736dc.pdf",
+  "figures": [
+    {
+      "id": "pdf037-switched-capacitor-converters",
+      "figure_number": 10,
+      "pdf_page": 11,
+      "clip_pt": [
+        56,
+        508,
+        550,
+        704
+      ],
+      "status": "pass",
+      "ppi": 300,
+      "visual_retries": 1
+    }
+  ]
+}

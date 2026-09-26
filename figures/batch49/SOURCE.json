@@ -1,0 +1,37 @@
+{
+  "title": "Step-Up DC–DC Converters: A Comprehensive Review of Voltage-Boosting Techniques, Topologies, and Applications",
+  "doi": "10.1109/TPEL.2017.2652318",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\vbn\\8d\\8da22c007ab12414f59b180f0f0e67f0f8f736dc.pdf",
+  "figures": [
+    {
+      "id": "pdf031-directional-converters",
+      "figure_number": 3,
+      "pdf_page": 5,
+      "clip_pt": [
+        40,
+        63,
+        295,
+        613
+      ],
+      "status": "pass",
+      "visual_retries": 3,
+      "ppi": 300,
+      "capacitor_junction_review": "2026-09-26 14:19"
+    },
+    {
+      "id": "pdf032-voltage-current-fed",
+      "figure_number": 4,
+      "pdf_page": 6,
+      "clip_pt": [
+        40,
+        63,
+        295,
+        505
+      ],
+      "status": "pass",
+      "visual_retries": 3,
+      "ppi": 300,
+      "capacitor_junction_review": "2026-09-26 14:19"
+    }
+  ]
+}

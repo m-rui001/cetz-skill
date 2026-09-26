@@ -1,0 +1,21 @@
+{
+  "title": "Step-Up DC–DC Converters: A Comprehensive Review of Voltage-Boosting Techniques, Topologies, and Applications",
+  "doi": "10.1109/TPEL.2017.2652318",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\vbn\\8d\\8da22c007ab12414f59b180f0f0e67f0f8f736dc.pdf",
+  "figures": [
+    {
+      "id": "pdf040-half-wave-multiplier-rectifiers",
+      "figure_number": 13,
+      "pdf_page": 14,
+      "clip_pt": [
+        45,
+        64,
+        549,
+        319
+      ],
+      "status": "pass",
+      "ppi": 300,
+      "visual_retries": 1
+    }
+  ]
+}

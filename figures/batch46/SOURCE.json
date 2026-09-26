@@ -1,0 +1,52 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "pdf_page": 40,
+  "figure_number": 6,
+  "figures": [
+    {
+      "id": "pdf026-bob-polarization-optics",
+      "xref": 1113,
+      "crop_px": [
+        170,
+        0,
+        386,
+        78
+      ],
+      "panel": "(4) Bob flat optical overlay",
+      "status": "pass",
+      "visual_retries": 1
+    },
+    {
+      "id": "pdf027-alice-input-optics",
+      "xref": 1119,
+      "crop_px": [
+        0,
+        26,
+        168,
+        75
+      ],
+      "panel": "(4) Alice flat input chain; excludes PIC",
+      "status": "pass",
+      "visual_retries": 0
+    },
+    {
+      "id": "pdf028-polarization-sphere",
+      "xref": 1127,
+      "crop_px": [
+        464,
+        123,
+        569,
+        215
+      ],
+      "panel": "(2)d conceptual polarization modulation sphere",
+      "status": "pass",
+      "visual_retries": 1
+    }
+  ],
+  "excluded_visual_layers": [
+    "aerial photograph background in xref1113/1119",
+    "perspective PIC adjoining Alice input chain"
+  ],
+  "comparison_scope": "compare optical overlay positions, topology and labels; aerial background excluded"
+}

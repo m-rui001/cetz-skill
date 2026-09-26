@@ -1,0 +1,117 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "pdf": "E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/4f/4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf021-dv-qkd-complete",
+      "figure_number": 4,
+      "pdf_page": 35,
+      "clip_pt": [
+        66,
+        52,
+        549,
+        244
+      ],
+      "source_panels": [
+        {
+          "batch": 40,
+          "id": "pdf019-dv-qkd-benches",
+          "placement_pt": [
+            70.683197,
+            53.951981,
+            292.656189,
+            139.906982
+          ]
+        },
+        {
+          "batch": 37,
+          "id": "pdf013-three-state-bb84",
+          "placement_pt": [
+            292,
+            53,
+            550,
+            141
+          ]
+        },
+        {
+          "batch": 37,
+          "id": "pdf014-dps-system",
+          "placement_pt": [
+            70.683197,
+            139.906967,
+            284.427185,
+            239.266968
+          ]
+        },
+        {
+          "batch": 39,
+          "id": "pdf018-cow-experiment",
+          "placement_pt": [
+            280.180023,
+            152.6492,
+            547.382019,
+            235.333008
+          ]
+        }
+      ],
+      "labels": [
+        "a)",
+        "b)",
+        "c)",
+        "d)"
+      ],
+      "composition": "native CeTZ content scaled to PDF image placements",
+      "pdf_annotation_overlay": true
+    },
+    {
+      "id": "pdf022-cv-qkd-complete",
+      "figure_number": 10,
+      "pdf_page": 58,
+      "clip_pt": [
+        127,
+        65,
+        486,
+        428
+      ],
+      "source_panels": [
+        {
+          "batch": 40,
+          "id": "pdf020-transmitted-lo-cv-qkd",
+          "placement_pt": [
+            150.438004,
+            68.522995,
+            472.807007,
+            188.302002
+          ]
+        },
+        {
+          "batch": 37,
+          "id": "pdf015-local-lo-cv-qkd",
+          "placement_pt": [
+            162,
+            194,
+            459,
+            340
+          ]
+        },
+        {
+          "batch": 39,
+          "id": "pdf017-software-defined-qkd",
+          "placement_pt": [
+            137,
+            352,
+            485,
+            427
+          ]
+        }
+      ],
+      "labels": [
+        "a)",
+        "b)",
+        "c)"
+      ],
+      "composition": "native CeTZ content scaled to PDF image placements",
+      "pdf_annotation_overlay": false
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+#set page(width:auto,height:auto,margin:10pt)
+#import "@preview/cetz:0.4.2":canvas,draw
+#set text(font:"Cambria",size:11pt)
+#let turn-text=rotate
+#canvas(length:1pt,{
+  import draw:*
+  let P=(x,y)=>(.5*x,.5*(300 - y))
+  let wire=(thickness:.85pt)
+  let dashed=(thickness:.85pt,dash:(array:(1.6pt,1.6pt)))
+  let yellow=rgb("#ffc400")
+  let green=rgb("#00aa48")
+  let blue=rgb("#151aff")
+  let label=(x,y,c,size:11pt)=>content(P(x,y),text(size:size,c))
+  let arrow=(a,b,color:black,width:.85pt,head:17)=>{
+    line(P(..a),P(..b),stroke:(paint:color,thickness:width))
+    let dx=b.at(0) - a.at(0)
+    let dy=b.at(1) - a.at(1)
+    let n=calc.sqrt(dx*dx + dy*dy)
+    let ux=dx/n
+    let uy=dy/n
+    let x=b.at(0) - head*ux
+    let y=b.at(1) - head*uy
+    line(P(..b),P(x - head*.3*uy,y + head*.3*ux),P(x + head*.3*uy,y - head*.3*ux),close:true,fill:color,stroke:none)
+  }
+  let axes=(x,y,w:120)=>{
+    arrow((x,y),(x,y - 44))
+    arrow((x,y),(x + w,y))
+  }
+  let pulse=(x,y,c,w:17,h:29)=>rect(P(x,y - h),P(x + w,y),fill:c,stroke:.8pt)
+  let rotate-label=(x,y,c)=>content(P(x,y),turn-text(-90deg,text(size:11.5pt,c)))
+  let control=(x,y)=>{
+    rect(P(x,y),P(x + 35,y + 31),fill:white,stroke:.8pt)
+    for dx in (9,25) {
+      arrow((x + dx - 5,y + 6),(x + dx + 2,y + 13),width:.6pt,head:5)
+      arrow((x + dx + 1,y + 13),(x + dx + 1,y + 23),width:.6pt,head:6)
+      arrow((x + dx - 5,y + 16),(x + dx + 2,y + 23),width:.6pt,head:5)
+    }
+  }
+  rect(P(10,17),P(323,254),stroke:dashed)
+  rect(P(1136,34),P(1372,282),stroke:dashed)
+  label(1270,11,[Software Defined Receiver],size:11.5pt)
+  label(176,277,[Software Defined Transmitter],size:11.5pt)
+  rect(P(27,61),P(62,211),stroke:wire)
+  rect(P(62,61),P(97,121),stroke:wire)
+  rect(P(62,151),P(97,211),stroke:wire)
+  rotate-label(44,136,[DSP])
+  rotate-label(79,91,[DAC])
+  rotate-label(79,181,[DAC])
+  line(P(97,91),P(239,91),P(239,113),stroke:wire)
+  line(P(97,181),P(239,181),P(239,159),stroke:wire)
+  line(P(165,135),P(200,135),stroke:wire)
+  control(131,121)
+  line(P(200,135),P(223,119),P(277,119),P(305,135),P(277,152),P(222,152),close:true,stroke:wire)
+  for y in (120,151) {
+    line(P(220,y),P(230,y - 8),P(267,y - 8),P(277,y),P(267,y + 8),P(230,y + 8),close:true,fill:white,stroke:wire)
+  }
+  line(P(305,135),P(340,135),stroke:wire)
+  rect(P(340,121),P(409,151),fill:white,stroke:wire)
+  label(374,136,[VOA],size:11.5pt)
+  line(P(409,135),P(444,135),stroke:wire)
+  rect(P(444,121),P(496,151),fill:white,stroke:wire)
+  line(P(496,143),P(688,143),stroke:wire)
+  line(P(496,127),P(531,127),P(531,77),P(566,77),stroke:wire)
+  control(566,61)
+  label(566,31,[Power#linebreak()Monitor],size:11.5pt)
+  axes(131,76,w:50)
+  pulse(132,76,green)
+  axes(131,239,w:50)
+  pulse(132,239,green)
+  axes(340,76)
+  pulse(391,76,yellow,w:35)
+  label(408,63,$E_s$)
+
+  // Receiver front end has independent signal and local-oscillator inputs.
+  line(P(715,143),P(780,143),stroke:wire)
+  line(P(815,143),P(884,143),P(884,151),P(905,151),stroke:wire)
+  line(P(750,174),P(884,174),P(884,166),P(905,166),stroke:wire)
+  control(715,158)
+  for (x,y) in ((791,135),(808,135),(799,151)) {circle(P(x,y),radius:3.9,stroke:wire)}
+  label(765,127,$E_s$)
+  label(768,192,$E_L$)
+  rect(P(905,135),P(955,174),fill:white,stroke:wire)
+  line(P(955,151),P(995,151),P(995,143),P(1035,143),stroke:wire)
+  line(P(955,166),P(995,166),P(995,174),P(1035,174),stroke:wire)
+  rect(P(1035,127),P(1070,190),fill:white,stroke:wire)
+  for y in (130,160) {control(1035,y)}
+  line(P(1070,159),P(1086,159),stroke:wire)
+  line(P(1086,143),P(1110,159),P(1086,174),close:true,fill:white,stroke:wire)
+  line(P(1110,159),P(1187,159),stroke:wire)
+  circle(P(1146,159),radius:2.2,fill:black,stroke:none)
+  axes(716,96)
+  pulse(767,96,yellow,w:33)
+  label(783,81,$E_s$)
+  axes(884,96)
+  arrow((901,96),(901,50),color:blue)
+  pulse(935,96,yellow,w:34)
+  axes(1018,96,w:100)
+  pulse(1053,96,green,w:33)
+  axes(767,251)
+  arrow((783,251),(783,205),color:blue)
+  label(804,220,$E_L$)
+
+  rect(P(1147,111),P(1203,205),stroke:wire)
+  circle(P(1203,111),radius:8,fill:white,stroke:wire)
+  circle(P(1203,205),radius:8,fill:white,stroke:wire)
+  for y in (111,205) {
+    line(P(1192,y - 11),P(1214,y + 11),stroke:wire)
+    line(P(1192,y + 11),P(1214,y - 11),stroke:wire)
+  }
+  line(P(1219,111),P(1288,111),stroke:wire)
+  line(P(1219,205),P(1288,205),stroke:wire)
+  rect(P(1187,143),P(1220,174),fill:white,stroke:wire)
+  line(P(1187,174),P(1220,143),stroke:wire)
+  label(1198,151,[0],size:8pt)
+  label(1211,166,[90],size:8pt)
+  line(P(1203,143),P(1203,127),stroke:wire)
+  line(P(1203,174),P(1203,189),stroke:wire)
+  circle(P(1255,159),radius:8,stroke:wire)
+  line(P(1239,159),P(1220,159),stroke:wire)
+  let sine=range(33).map(i=>P(1243 + i*.75,159 - 5*calc.sin(i*360deg/32)))
+  line(..sine,stroke:.7pt)
+  rect(P(1288,82),P(1320,143),stroke:wire)
+  rect(P(1288,174),P(1320,236),stroke:wire)
+  rect(P(1320,82),P(1355,236),stroke:wire)
+  rotate-label(1304,112,[ADC])
+  rotate-label(1304,205,[ADC])
+  rotate-label(1338,159,[DSP])
+  // Small waveforms use separate compact axes to avoid entering the ADC block.
+  arrow((1229,96),(1229,52))
+  arrow((1229,96),(1279,96))
+  pulse(1230,96,green)
+  arrow((1229,266),(1229,222))
+  arrow((1229,266),(1279,266))
+  pulse(1230,266,green)
+})

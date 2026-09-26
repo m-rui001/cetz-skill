@@ -1,0 +1,40 @@
+{
+  "title": "Advances in Quantum Cryptography",
+  "sha1": "4f53c97362c66632bad047e1440e69ed41896204",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\epr\\4f\\4f53c97362c66632bad047e1440e69ed41896204.pdf",
+  "figures": [
+    {
+      "id": "pdf007-adaptive-protocol",
+      "pdf_page": 74,
+      "figure_number": 12,
+      "clip_pt": [
+        58,
+        48,
+        304,
+        109
+      ]
+    },
+    {
+      "id": "pdf008-protocol-stretching",
+      "pdf_page": 77,
+      "figure_number": 14,
+      "clip_pt": [
+        58,
+        46,
+        543,
+        151
+      ]
+    },
+    {
+      "id": "pdf009-coherent-comparison",
+      "pdf_page": 98,
+      "figure_number": 20,
+      "clip_pt": [
+        83,
+        288,
+        261,
+        478
+      ]
+    }
+  ]
+}

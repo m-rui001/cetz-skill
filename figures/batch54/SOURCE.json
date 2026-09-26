@@ -1,0 +1,22 @@
+{
+  "title": "Step-Up DC–DC Converters: A Comprehensive Review of Voltage-Boosting Techniques, Topologies, and Applications",
+  "doi": "10.1109/TPEL.2017.2652318",
+  "pdf": "E:\\pdf\\pdfonly-stem\\pdfcorpus\\out\\pdfs\\vbn\\8d\\8da22c007ab12414f59b180f0f0e67f0f8f736dc.pdf",
+  "figures": [
+    {
+      "id": "pdf036-charge-pump-circuits",
+      "figure_number": 9,
+      "pdf_page": 11,
+      "clip_pt": [
+        51,
+        272,
+        548,
+        461
+      ],
+      "status": "pass",
+      "ppi": 300,
+      "visual_retries": 2,
+      "capacitor_junction_review": "2026-09-26 14:19"
+    }
+  ]
+}
