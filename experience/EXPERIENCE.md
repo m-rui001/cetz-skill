@@ -1340,3 +1340,14 @@ dt40 残差 173/4011（4.3%）切成 4 块，两两拼成两条角弧。比先�
 - Typst 小坑：自定义函数名不能和 `draw` 成员同名（`grid` 被 `import draw: *` 覆盖，报
   `missing argument: from`）；markup 里 `size: s pt` 不合法要写 `size: s * 1pt`；
   content 块里 `[$\infty$]` 的 `\i` 会被当转义吃掉，直接写 unicode `∞`。
+## 产出打包（2026-09-26）：公开仓库 `m-rui001/cetz-skill`
+
+- 目录 `D:\cetz-skill-release`，一次提交推到 GitHub，public + MIT。工作目录 `D:\cetz-skill` 保持不变。
+- 收录 195 个 `.typ`（`figures/batchNN/typ/`）+ 每批次的提取脚本、192 张自渲染预览、`tools/ov2.py`
+  等通用工具、`EXPERIENCE.md` 与全部 `RESULTS.md`、`community.md`、`SKILL.md`、CeTZ 接口速查。
+- **原书扫描一律不进仓库**：`src/*-raw.png`、`ov_*.png`（叠加图里含原书墨迹）、`sheet*.png`、
+  `thumb/`、`png/`、`*.npy` 都被打包脚本的 `SKIP_DIRS`/`SKIP_EXT` 排除，体积从 156 MB 降到约 8 MB。
+  复刻方法不靠随仓库分发的图，靠 `experience/` 里写清的步骤。
+- 编译不过的三个草稿原样保留并在 README 点名原因，其中 batch45 不是我的批次，没有替他改。
+- 复现命令：`python render_previews.py` 重编译全部预览；单张图
+  `typst compile --root . --font-path C:/Windows/Fonts figures/batch73/typ/it43.typ out.png`。

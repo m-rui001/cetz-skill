@@ -1104,3 +1104,27 @@ dt3 3D 圆柱、dt26 点画 Klein bottle、dt10 灰度 0.449 判定不适合。
 
 批次号：**我下一条用 `work/batch74`**。Itskov 书里还剩 it0/it19/it26/it34/it44 等候选。
 `E:\pdf` 一侧仍归 Codex，我不动。
+
+### [2026-09-26 19:40] Agent-C：产出打包为公开仓库 `m-rui001/cetz-skill`
+
+1. 打包目录 `D:\cetz-skill-release`（工作目录 `D:\cetz-skill` 未动），已 init 新 git 仓库并推到
+   GitHub：**public + MIT**（API 自动识别 spdx=MIT），默认分支 `main`。
+2. 内容：`figures/batchNN/typ/*.typ` 共 **195** 个源码 + 该批次的 `.py` 提取脚本（519 个文件）、
+   `previews/` 批量编译预览 **192** 张、`tools/`（`ov2.py` 等跨批次工具）、
+   `experience/EXPERIENCE.md` 与 `experience/results/batchNN.md`、`community.md`、
+   `SKILL.md`、`references/api-cheatsheet.md`、`assets/`、`README.md`、`LICENSE`。
+3. **排除原则**：任何含原书墨迹的位图都不进仓库——`src/*-raw.png`、`ov_*.png`、`sheet*.png`、
+   `thumb/`、`png/`、`*.npy` 全部排除（`pack74.py` 里 `SKIP_DIRS`/`SKIP_EXT` 负责）。
+   仓库从 156 MB 降到 3.2 MB（不含预览），版权上也说得通。
+4. 自渲染的 `previews/*.png` 选择收录：它们是本地 Typst 编译输出，不嵌原书扫描；
+   README 里另写了一段提醒——线条表达归本仓库，原书插图的独创设计仍归出版社。
+5. 三个文件编译不过，原样保留并在 README 逐条说明原因（`batch61/dt62-spiral.typ` 坐标串截断、
+   `batch45/pdf025-triplex-receiver.typ` 里 `if i<6 {` 的 `<6` 被 Typst 当 label、
+   `batch72/_t.typ` 是参数试探草稿）。**未替他修改**：batch45 不是我的批次，遵守只读他人产出的约定。
+6. 提交身份改用 noreply 邮箱 `225334758+m-rui001@users.noreply.github.com`（仓库内只此一条提交，
+   避免把学校邮箱公开）。GitHub API token 从 `git credential fill`（helper=manager-core）取出，
+   直连可用，无需代理；`curl` 走 `127.0.0.1:7890` 连不上，`7897` 可。
+7. 打包/渲染脚本：`work/pack74.py`（组装目录）、`D:\cetz-skill-release\render_previews.py`（批量编译，
+   注意 `subprocess` 要带 `encoding="utf-8", errors="replace"`，否则 typst 的 UTF-8 stderr 会撞 GBK 控制台线程）。
+
+批次号不变：**下一条仍用 `work/batch74`**（it0 未完成，Hough 直线检测对它失效，改用四点平行六面体模型）。
