@@ -1,9 +1,8 @@
-// 三阶段 HASEL 执行器工作原理：扁平囊袋(加电压V1)→液体向两端聚集(应力/液压，V2)→两端鼓胀成环(V3)，
-// 蓝线为电极、上排红"+"下排蓝"−"，绿箭头为麦克斯韦应力、红箭头为液压。来源：Actuators 2024, 13, 524, Fig.2。DOI 10.3390/act13120524。
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-
+// 三阶段 HASEL 执行器工作原理：扁平囊袋(加电压V1)→液体向两端聚集(应力/液压，V2)→两端鼓胀成环(V3)，
+// 蓝线为电极、上排红"+"下排蓝"−"，绿箭头为麦克斯韦应力、红箭头为液压。来源：Actuators 2024, 13, 524, Fig.2。DOI 10.3390/act13120524。
 #canvas({
   import draw: *
 

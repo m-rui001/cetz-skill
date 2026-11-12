@@ -1,11 +1,10 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译结果：横向控制框图，9 个圆角模块（蓝驱动链/橙转矩估计/洋红状态估计/琥珀滑模控制/
 // 紫功率控制），左侧蓝色控制输入与底部绿色反馈回路，中间虚线框内三箭头闭环，右端橙色输出箭标。
 // 来源：Actuators 2025, 14, 347 (DOI 10.3390/act14070347), Figure 19 "A Sliding Mode Control system
 // for regenerative braking in EVs"，按干净线稿平涂重绘。
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #canvas({
   import draw: *
   // 配色：模块填充、线色、强调色
