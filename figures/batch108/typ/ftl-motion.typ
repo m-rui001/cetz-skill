@@ -1,13 +1,12 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译效果：(a) 五条红色粗蛇形中心线叠排，红菱形关节编号 1-4 逐行沿同一路径前移，
 //   行左端青色插入箭头（首行无），过首行关节 4 的黑色竖直点线导引，右上斜体 Follow the leader，
 //   右侧 Shape following 与左下 Insertion 各带红色指引箭头；(b) 三幅线稿快照：顶部法兰+圆柱安装座、
 //   下悬多段连续体（左弯右直、逐幅变长），段界垫片小斜矩形、四条平行骨架线、段号 1..4 与尖端细腱线。
 // 来源：Unlocking the Potential of Cable-Driven Continuum Robots: A Comprehensive Review and
 //   Future Directions. Actuators 2024, 13(2), 52, Figure 18. DOI 10.3390/act13020052.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 // 语义常量：主路径关节点（水平段+下弯 S 段）、行距、插入箭尾长、安装座底高
 #let M = (
   (0, 0), (0.7, 0), (1.4, 0), (2.1, 0),

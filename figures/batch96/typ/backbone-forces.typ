@@ -1,12 +1,11 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译效果：2×2 四联 cable-driven continuum robot 受力分析图。(a) 平行 cable 直梁；
 // (b) S 形弯梁；(c) 收敛斜 cable + 灰虚线参考；(d) 双段梁带中间盘。
 // 每幅含斜纹固支墙、粗黑 backbone、细黑 cable、端盘圆点、红色力箭头与力矩卷曲、红色下标标签。
 // 来源：Unlocking the Potential of Cable-Driven Continuum Robots: A Comprehensive Review and
 // Future Directions. Actuators 2024, 13(2), 52. DOI 10.3390/act13020052, Figure 12.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #let RED = rgb("#D40000")
 #let INK = black
 #let GRAY = rgb("#909090")

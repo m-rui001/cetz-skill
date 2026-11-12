@@ -1,3 +1,6 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 锂离子电池放电示意（ redraw ）
 // 编译效果：顶部中央蓝紫色灯泡（玻璃罩带高光、灯丝锯齿连两根引线、灰色螺纹灯头）；
 // 黑色外电路左横段止于灯泡下方缺口、再竖直落到 Cu 板，右横段自缺口另一侧落到 Al 板；
@@ -8,10 +11,6 @@
 // 层间绿色 Li 球行，并有蓝色点状竖直迁移路径；右下两行 Cathode / (layered transition
 // oxide)。右内 Al 标签＋浅色面/红色侧面 3D 板。底部中右图例：蓝三角＝Co、绿球＝Li、红球＝O。
 // 来源：Batteries 2024, 10, 38, Figure 1. DOI 10.3390/batteries10010038.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #canvas(length: 1cm, {
   import draw: *
 

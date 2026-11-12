@@ -1,9 +1,8 @@
-// 太阳热推进（STP）系统示意图：太阳光聚焦→加热推进剂→推力器喷出动能
-// 来源：Aerospace 2024, 11(7), 502, Figure 40（CAD 渲染转干净线稿平涂；DOI 10.3390/aerospace11070502）
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-
+// 太阳热推进（STP）系统示意图：太阳光聚焦→加热推进剂→推力器喷出动能
+// 来源：Aerospace 2024, 11(7), 502, Figure 40（CAD 渲染转干净线稿平涂；DOI 10.3390/aerospace11070502）
 #canvas({
   import draw: *
 

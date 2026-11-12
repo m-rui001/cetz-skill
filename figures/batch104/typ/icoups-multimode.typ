@@ -1,12 +1,11 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译效果：I-COUPS 多模式推进管路图。左侧四档压力梯（7 – 8 MPa、0.30 MPa、30 kPa、~1 kPa），档间虚线分隔、空心双线箭头；
 // 中央主链自上而下：高压气瓶圆、带柄阀、三通（左 Pressure sensor、右 Drain valve）、机械调压器（蝴蝶结+三角旗）、高压截止阀、
 // 三通右接 Pressure sensor、调节阀、左下传感器经虚线 Feedback control（旋转标签）反馈、Drain valve、低压气瓶、Flow restrictor（矩形+双弧）、离子推力器阀与喷管；
 // 右侧歧管分两组冷气支路，各 2 截止阀→4 推力器阀→4 喷管，底标 CT1 CT2 CT6 CT7 与 CT3 CT4 CT5 CT8；离子与冷气支路间竖直虚线分隔。
 // 来源：Propulsion Technologies for CubeSats: Review, Aerospace 2024, 11(7), 502, Figure 36. DOI 10.3390/aerospace11070502
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 // 地标坐标：主链/压力梯/虚线隔线 x，主链与右支路 y，冷气组表（x 偏移+CT 名）与歧管端点
 #let (mx, lx, sx) = (0, -2.6, 3.6)
 #let (y-tank, y-v1, y-tee1, y-sep1, y-reg, y-cut, y-tee2, y-sep2) = (11.25, 9.75, 9.0, 8.45, 8.05, 7.15, 6.65, 6.45)

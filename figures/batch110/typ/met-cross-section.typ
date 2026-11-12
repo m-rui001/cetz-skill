@@ -1,3 +1,6 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // ============================================================
 // 微波电热推力器剖面示意图（重绘）
 // 编译后外观：矩形外腔，顶部斜线阴影盖板，板中央嵌黑色收敛喷管喉部；
@@ -7,10 +10,6 @@
 // Nozzle / Plasma / Propellant vortex / Separation plate / Antenna。
 // 来源：Propulsion Technologies for CubeSats: Review. Aerospace 2024, 11(7), 502, Figure 18. DOI 10.3390/aerospace11070502.
 // ============================================================
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 // ---- 命名地标（cm）----
 #let cx = 4.0        // 中心轴 / 天线轴
 #let wl = 0.0        // 外腔左壁

@@ -1,12 +1,11 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译效果：上下两面板共享同一放电室。左侧 Propellant Storage 圆角盒经 Flow Control 的 V 阀接入
 // 斜切喷口；腔体双色灰、深蓝边，内有 Propellant Atoms 虚线箭头与 Ionization 星芒，右侧双虚线网格
 // 引出三条虚线离子束，下方花括号标 Ionization Chamber / Grids，右下 Neutralizer 斜棒与 e⁻。
 // (a) 加 Hollow Cathode 弹头与 Magnet Ring 菱形；(b) 换 Electromagnetic Coils 三圆组与 P 激励电源圆。
 // 来源：Propulsion Technologies for CubeSats: Review, Aerospace 2024, 11(7), 502, Figure 22. DOI 10.3390/aerospace11070502.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #canvas(length: 1cm, {
   import draw: *
   // 颜色与通用样式：深蓝描边、星芒灰、中性化器蓝、箭头与引线

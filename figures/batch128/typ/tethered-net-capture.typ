@@ -1,9 +1,8 @@
-// 深空绳网捕获机构线稿：黄色网面 + 三只配重球 + 波浪系绳 + 发射平板 + 网中目标卫星 + 右下地球
-// 依 Mechanics of Space Debris Removal: A Review, Aerospace 2025, 12, 277, Figure 21 重绘. DOI 10.3390/aerospace12040277.
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-
+// 深空绳网捕获机构线稿：黄色网面 + 三只配重球 + 波浪系绳 + 发射平板 + 网中目标卫星 + 右下地球
+// 依 Mechanics of Space Debris Removal: A Review, Aerospace 2025, 12, 277, Figure 21 重绘. DOI 10.3390/aerospace12040277.
 #canvas({
   import draw: *
   // 深空背景（覆盖整个画幅）

@@ -1,9 +1,8 @@
-// 四阶段路线图：四个平涂彩色圆角阶段框 + 横向箭头 + 底部时间轴刻度
-// 来源：Quadruped Robots review, Robotics 2025, 14, 57 — Figure 10. DOI 10.3390/robotics14050057.
-
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
+// 四阶段路线图：四个平涂彩色圆角阶段框 + 横向箭头 + 底部时间轴刻度
+// 来源：Quadruped Robots review, Robotics 2025, 14, 57 — Figure 10. DOI 10.3390/robotics14050057.
 
 #canvas({
   import draw: *

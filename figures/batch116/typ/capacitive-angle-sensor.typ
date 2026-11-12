@@ -1,3 +1,6 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 电容式旋转角度传感器双面板图（redraw，语义重绘）
 // 编译效果：(a) 透视椭圆黄色定子盘——灰外缘环、同心椭圆环＋24 根径向辐条扇区网格、
 //   三个带孔安装耳（上右/左/下右），中央灰圆柱轮毂托白蓝半球罩；其下黄色转子盘带
@@ -5,10 +8,6 @@
 //   (b) 线性拟合图——双轴 0–350 刻度、灰点划网格、红粗对角线＋两端露绿的拟合线、
 //   右中三条目图例、左上五行系数文本，底居中 (b)。
 // 来源：Passive and Active Exoskeleton Solutions: Sensors, Actuators, Applications, and Recent Trends. Sensors 2024, 24, 7095, Figure 2. DOI 10.3390/s24217095.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #canvas(length: 1cm, {
   import draw: *
   // —— 配色与共用助手：透视椭圆点/椭圆/双行标签/引线/圆柱 ——

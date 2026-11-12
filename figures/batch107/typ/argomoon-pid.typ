@@ -1,12 +1,11 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 编译效果：ArgoMoon 混合推进 P&ID。左侧黄色 2-Phase R-134a 储罐（内 P/T 椭圆、底部加热锯齿、
 // 外接 T 椭圆）依次经 10 微米过滤器、双锯齿调节器、两黄 NCV、加注口三通接 Regulated 罐
 // （上下各两阀+漏斗推力器支路）；右侧绿色支路经隔离 NCV、ADN 隔膜罐、冗余双 NCV、第二加注
 // 三通与末端 NCV 接 100 mN 喷嘴；八块鼠尾草圆角横幅以楔形三角指向各自目标。
 // 来源：Propulsion Technologies for CubeSats: Review. Aerospace 2024, 11(7), 502, Figure 37. DOI 10.3390/aerospace11070502.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #context canvas(length: 1cm, {
   import draw: *
   // 颜色与线型

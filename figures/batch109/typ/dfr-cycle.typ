@@ -1,3 +1,6 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // ── 图：面向回收设计的电池生命周期环 ──
 // 编译后画面：中央为蓝色线稿电池（顶部端子排、+/− 标记、圆角框内闪电），
 // 其下为绿色粗体标题 "Design for recycling"。五个阶段环绕：
@@ -6,10 +9,6 @@
 // 5 回收（黄色循环箭头环内含小电池，右侧）；各配淡绿大数字与黑色粗体标签。
 // 小黑箭头 1→2→3→4，大黑弯箭头 4→5 与 5→1 闭环；电池与 2、3、5 间为青色双向箭头。
 // 来源：Batteries 2024, 10, 38 (MDPI), Figure 8. DOI 10.3390/batteries10010038.
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #let ink = rgb("#1a1a1a")
 #let pale = rgb("#dce8d4")
 #let teal-c = rgb("#12c4b0")

@@ -1,3 +1,6 @@
+#set page(width: auto, height: auto, margin: 6pt)
+#set text(font: ("Arial", "Segoe UI"), size: 10pt)
+#import "@preview/cetz:0.4.2": canvas, draw
 // 电弧喷射推进器（Arcjet）结构示意
 // 编译效果：左侧灰色圆角框内两行 "Propellant Storage"；粗黑管道穿过带 "V" 的白色
 // 圆圈，其上方 "Flow Control" 以短黑箭头下指该圆；管道继续进入蓝色细线腔体，腔体右肩
@@ -7,10 +10,6 @@
 // 两行标签 "Heated Gas Exhaust"。
 // 来源：Propulsion Technologies for CubeSats: Review. Aerospace 2024, 11(7), 502, Figure 16.
 // DOI 10.3390/aerospace11070502
-#set page(width: auto, height: auto, margin: 6pt)
-#set text(font: ("Arial", "Segoe UI"), size: 10pt)
-#import "@preview/cetz:0.4.2": canvas, draw
-
 #canvas(length: 1cm, {
   import draw: *
 

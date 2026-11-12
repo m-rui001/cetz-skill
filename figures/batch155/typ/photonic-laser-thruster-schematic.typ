@@ -1,10 +1,9 @@
-// 光子激光推进系统示意图重绘：深空底色+星点，火星/旋涡星系/地球弧面为背景，
-// 中央红色激光锥、粉色增益介质、双 HR 镜、发射平台与常规推进器喷管
-// 来源：Propulsion Technologies for CubeSats: Review, Aerospace 2024, 11(7), 502, Fig.33. DOI 10.3390/aerospace11070502.
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-
+// 光子激光推进系统示意图重绘：深空底色+星点，火星/旋涡星系/地球弧面为背景，
+// 中央红色激光锥、粉色增益介质、双 HR 镜、发射平台与常规推进器喷管
+// 来源：Propulsion Technologies for CubeSats: Review, Aerospace 2024, 11(7), 502, Fig.33. DOI 10.3390/aerospace11070502.
 #canvas({
   import draw: *
 
