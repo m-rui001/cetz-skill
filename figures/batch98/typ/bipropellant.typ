@@ -65,7 +65,7 @@
   // 共享 helper：黑色虚线流箭头 + 标签（straddle 时两行文字骑跨箭头）
   let dashed-flow = (a, b, label, straddle: false) => {
     line(a, b, stroke: (paint: black, thickness: 1.4pt, dash: "dashed"),
-      mark: (end: ">", fill: black, length: .3, width: .22))
+      mark: (end: "stealth", fill: black, length: .3, width: .22))
     let m = ((a.at(0) + b.at(0)) / 2, (a.at(1) + b.at(1)) / 2)
     if straddle { content(m, label) } else { content((m.at(0), m.at(1) + 0.12), anchor: "south", label) }
   }

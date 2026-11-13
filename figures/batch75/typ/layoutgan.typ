@@ -55,7 +55,7 @@
   // 虚线箭头（关系模块里所有元素特征汇聚到 self-attention）
   let dashed-arrow(a, b) = line(
     a, b, stroke: (paint: INK, thickness: 0.65pt, dash: "dashed"),
-    mark: (end: ">"),
+    mark: (end: "stealth", fill: INK),
   )
 
   // 粗块状箭头：方案图里模块之间的大灰箭头

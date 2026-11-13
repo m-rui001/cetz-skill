@@ -19,7 +19,7 @@
   draw.line(z, (r, 0), stroke: (dash: "dashed"))
   draw.line(zb, z, stroke: (dash: "dashed"))
   draw.arc((1.05, 0), radius: 1.05, start: 0deg, stop: 33deg,
-    stroke: (dash: "dashed"), mark: (end: ">"))
+    stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
   draw.arc((0.55 * calc.cos(-33deg), 0.55 * calc.sin(-33deg)),
     radius: 0.55, start: -33deg, stop: 0deg, stroke: (dash: "dashed"))
 

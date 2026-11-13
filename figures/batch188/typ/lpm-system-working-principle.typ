@@ -59,7 +59,7 @@
   content((12.4, 6.7), [Space], anchor: "west")
   circle((11.55, 6.6), radius: 0.16, fill: orange, stroke: none)
   line((11.55, 6.6), (12.2, 4.35), stroke: (paint: dashc, thickness: 1pt, dash: "dashed"))
-  line((12.2, 4.35), (10.8, 2.95), stroke: (paint: dashc, thickness: 1pt, dash: "dashed"), mark: (end: "stealth"))
+  line((12.2, 4.35), (10.8, 2.95), stroke: (paint: dashc, thickness: 1pt, dash: "dashed"), mark: (end: "stealth", fill: dashc))
   circle((10.7, 2.7), radius: 0.15, fill: bluedot, stroke: none)
   circle((11.95, 2.25), radius: 0.15, fill: bluedot, stroke: none)
   circle((12.9, 2.7), radius: 0.15, fill: bluedot, stroke: none)

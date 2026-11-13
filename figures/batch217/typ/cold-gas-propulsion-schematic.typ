@@ -48,9 +48,9 @@
   }
 
   // 腔内气体释放与扩张段虚线箭头
-  line((7.9, 0), (9.7, 0), mark: (end: "stealth"), stroke: (dash: "dashed", thickness: 1.4pt))
+  line((7.9, 0), (9.7, 0), mark: (end: "stealth", fill: black), stroke: (dash: "dashed", thickness: 1.4pt))
   content((8.7, 0.5), [Gas Release])
-  line((11.0, 0), (12.9, 0), mark: (end: "stealth"), stroke: (dash: "dashed", thickness: 1.4pt))
+  line((11.0, 0), (12.9, 0), mark: (end: "stealth", fill: black), stroke: (dash: "dashed", thickness: 1.4pt))
   content((12.0, 0.45), [Gas Expansion])
 
   // 喷管上方方括号＋标签

@@ -46,7 +46,7 @@
   let cm(a, b, double: true) = line(
     a, b,
     stroke: (paint: COMM, thickness: 1.5pt, cap: "round", dash: (1.4pt, 1.0pt)),
-    mark: if double { (start: ">", end: ">", fill: COMM) } else { (end: ">", fill: COMM) },
+    mark: if double { (start: "stealth", end: "stealth", fill: COMM) } else { (end: "stealth", fill: COMM) },
   )
 
   // 文字

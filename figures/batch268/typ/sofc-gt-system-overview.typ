@@ -13,7 +13,7 @@
   let orange = rgb("#e67e22")
   // 通用管线与设备符号。
   let pipe(points, color, dashed: false, arrow: true) = {
-    line(..points, stroke: (paint: color, thickness: 1.2pt, dash: if dashed { "dashed" } else { "solid" }), mark: if arrow { (end: "stealth") } else { none })
+    line(..points, stroke: (paint: color, thickness: 1.2pt, dash: if dashed { "dashed" } else { "solid" }), mark: if arrow { (end: "stealth", fill: color) } else { none })
   }
   let exchanger(x, y) = {
     circle((x, y), radius: 0.32, stroke: 1pt, fill: white)

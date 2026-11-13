@@ -49,7 +49,7 @@
       (c.at(0) + rx * calc.cos(a), c.at(1) + ry * calc.sin(a))
     })
     line(..pts, stroke: (paint: col, thickness: thick, dash: dash),
-      mark: if arrow { (end: "stealth") } else { none })
+      mark: if arrow { (end: "stealth", fill: col) } else { none })
   }
 
   // 助手：红色绕竖轴旋转箭头
@@ -70,7 +70,7 @@
   content((7.7, 7.75), align(center)[Failed\ Spacecraft])
   // 虚线弧表示接近路径（自平台向上弯向捕获点）
   bezier((3.9, 3.6), (0.6, 4.2), (0.2, 8.4), (1.9, 10.7),
-    stroke: (paint: black, thickness: 1pt, dash: "dashed"), mark: (end: "stealth"))
+    stroke: (paint: black, thickness: 1pt, dash: "dashed"), mark: (end: "stealth", fill: black))
   content((2.7, 6.6), align(center)[Approach Path\ (60m)])
   // 下方服务平台
   craft((3.7, 2.4), 15deg, plen: 1.6)
@@ -93,7 +93,7 @@
   // 接近方向（蓝色虚线箭头）
   content((10.35, 8.3), align(center)[Approach\ Direction])
   line((11.6, 8.6), (11.6, 6.95),
-    stroke: (paint: dblue, thickness: 1.0pt, dash: "dashed"), mark: (end: "stealth"))
+    stroke: (paint: dblue, thickness: 1.0pt, dash: "dashed"), mark: (end: "stealth", fill: dblue))
   // 目标（宽太阳翼）
   target((12.7, 6.1), 0deg, plen-l: 3.0, plen-r: 3.0, pw: 0.28)
   // H 轴双箭头与旋转箭头
@@ -121,13 +121,13 @@
   content((19.3, 8.35), align(center)[De-tumbling])
   // 虚线弧表示消旋机动路径（箭头指向目标）
   bezier((19.6, 9.6), (22.4, 9.3), (22.8, 7.0), (21.5, 6.2),
-    stroke: (paint: black, thickness: 1pt, dash: "dashed"), mark: (end: "stealth"))
+    stroke: (paint: black, thickness: 1pt, dash: "dashed"), mark: (end: "stealth", fill: black))
   // 大太阳翼目标与对接环
   target((20.6, 4.6), 0deg, plen-l: 2.9, plen-r: 2.9, pw: 0.6, bw: 1.15, bh: 1.1, ring: true)
   spin((20.6, 5.85), rx: 0.72)
   content((21.55, 6.15), $omega$, fill: red)
   content((17.2, 3.1), align(center)[Normal Direction of\ Docking Ring])
   line((19.1, 3.5), (20.15, 4.25),
-    stroke: (paint: red, thickness: 0.8pt, dash: "dashed"), mark: (end: "stealth"))
+    stroke: (paint: red, thickness: 0.8pt, dash: "dashed"), mark: (end: "stealth", fill: red))
   content((20.6, 0.35), text(size: 10pt)[c])
 })

@@ -78,8 +78,8 @@
   let arrow-path(points, color: INK, w: LW, arrow: "end", dash: none) = line(
     ..points,
     stroke: (paint: color, thickness: w, dash: dash),
-    mark: if arrow == "end" { (end: ">", fill: color) } else if arrow == "start" {
-      (start: ">", fill: color)
+    mark: if arrow == "end" { (end: "stealth", fill: color) } else if arrow == "start" {
+      (start: "stealth", fill: color)
     } else { none },
   )
 
@@ -94,8 +94,8 @@
     }
     segs.push((cur, xb))
     for (i, s) in segs.enumerate() {
-      let m = if arrow == "start" and i == 0 { (start: ">", fill: color) } else if arrow == "end" and i == segs.len() - 1 {
-        (end: ">", fill: color)
+      let m = if arrow == "start" and i == 0 { (start: "stealth", fill: color) } else if arrow == "end" and i == segs.len() - 1 {
+        (end: "stealth", fill: color)
       } else { none }
       line((s.at(0), y), (s.at(1), y), stroke: (paint: color, thickness: w, dash: dash), mark: m)
     }
@@ -253,7 +253,7 @@
   // 紫色虚线箭头指向"导纳"所描述的那段线路
   bezier((17.1, 16.82), (17.5, 17.75), (18.3, 17.95), (18.72, 17.66),
     stroke: (paint: PURPLE, thickness: 1.0pt, dash: (3pt, 2pt)),
-    mark: (end: ">", fill: PURPLE))
+    mark: (end: "stealth", fill: PURPLE))
 
   // ==========================================================================
   // 5. (a) 控制级公共部分：PWM、dq 变换、功率计算

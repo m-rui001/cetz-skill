@@ -92,7 +92,7 @@
   line(
     (xInj + 0.42, 0), (xChEnd - 0.2, 0),
     stroke: (paint: black, thickness: 0.9pt, dash: "dashed"),
-    mark: (end: "stealth", size: 0.12),
+    mark: (end: "stealth", size: 0.12, fill: black),
   )
 
   // ---- 分解区星形爆闪（药柱上缘外侧）----

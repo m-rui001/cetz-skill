@@ -96,13 +96,13 @@
 
   // 电子收集：左向虚线箭头
   for y in (10.62, 10.26, 9.90) {
-    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth"))
+    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
     content((6.72, y + 0.04), $e^(-)$, anchor: "south", stroke: none, fill: none)
   }
 
   // 离子收集：左向虚线箭头
   for y in (6.05, 5.60, 5.15) {
-    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth"))
+    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
     content((6.72, y + 0.04), $+$, anchor: "south", stroke: none, fill: none)
   }
 

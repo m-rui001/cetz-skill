@@ -60,7 +60,7 @@
 
   // 等离子体虚线箭头与标注
   line((xbar + 0.10, yax), (9.45, yax), stroke: (paint: black, thickness: 0.9pt, dash: "dashed"),
-       mark: (end: "stealth"))
+       mark: (end: "stealth", fill: black))
   content((xbar + 0.10, yax + 0.24), [Plasma], anchor: "west")
 
   // 电场 E：矢量标注＋向下箭头
@@ -77,7 +77,7 @@
   content((11.95, 2.45), [Electromagnetically], anchor: "west")
   content((11.95, 1.72), [Accelerated Exhaust], anchor: "west")
   line((11.95, 2.08), (13.35, 2.08), stroke: (paint: black, thickness: 0.9pt, dash: "dashed"),
-       mark: (end: "stealth"))
+       mark: (end: "stealth", fill: black))
 
   // 放电电容：左侧标签＋两条引出线（跨过细框接至腔体左壁）
   content((1.45, 2.00), [Discharge \ Capacitor], anchor: "east")

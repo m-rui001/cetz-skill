@@ -12,7 +12,7 @@
   draw.line(A, Zp, stroke: (dash: "dashed"))
   draw.arc((A.at(0) + 0.9 * calc.cos(72deg), A.at(1) + 0.9 * calc.sin(72deg)),
     radius: 0.9, start: 72deg, stop: 15deg,
-    stroke: (dash: "dashed"), mark: (end: ">"))
+    stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
   draw.bezier((1.6, 0.7), (0.35, 1.7), (1.35, 1.35), (0.8, 1.65),
     stroke: 0.8pt, mark: (end: ">"))
   draw.content((0.55, 1.95), [+])

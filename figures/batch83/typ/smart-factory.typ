@@ -56,7 +56,7 @@
   let flow-to(a, b) = line(
     a, b,
     stroke: (paint: FLOW, thickness: 0.8pt, cap: "round", dash: (2.4pt, 1.8pt)),
-    mark: (end: ">", fill: FLOW, scale: 0.75),
+    mark: (end: "stealth", fill: FLOW, scale: 0.75),
   )
 
   // 5G/6G 虚线链路（蓝色）

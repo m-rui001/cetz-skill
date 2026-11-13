@@ -93,7 +93,7 @@
   sensor((-0.75, y-tee4))
   lab-l((-0.75, y-tee4 - 0.45), [Pressure\ sensor])
   // 虚线反馈：下传感器→调节阀，旋转 Feedback control 标签
-  line((-0.75, y-tee4 + 0.18), (-0.75, y-regv), (-0.3, y-regv), stroke: (dash: "dashed"), mark: (end: ">", stroke: 1pt))
+  line((-0.75, y-tee4 + 0.18), (-0.75, y-regv), (-0.3, y-regv), stroke: (dash: "dashed"), mark: (end: "stealth", stroke: 1pt, fill: black))
   content((-1.45, 5.0), [Feedback\ control], angle: 90deg)
   // 末段：限制器、离子推力器阀、喷管；离子/冷气竖直虚线隔线
   restrictor((mx, y-res))

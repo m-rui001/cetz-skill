@@ -36,7 +36,7 @@
     ((10.4, 10.6), (2.2, 7.8)),
   ) {
     line(a, b, stroke: (paint: green, thickness: 1pt, dash: "dashed"),
-      mark: (end: "stealth"))
+      mark: (end: "stealth", fill: green))
   }
   label2(0.3, 8.4, text(fill: green)[geo-magnetic], text(fill: green)[field],
     anchor: "west")
@@ -44,7 +44,7 @@
   // flight direction 点线箭头
   line((9.5, 14.1), (1.0, 12.4),
     stroke: (paint: black, thickness: 0.9pt, dash: "dotted"),
-    mark: (end: "stealth"))
+    mark: (end: "stealth", fill: black))
   label2(0.5, 14.2, [flight], [direction], anchor: "west")
 
   // 裸绳系与端质量

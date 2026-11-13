@@ -174,7 +174,7 @@
   // 引线：从电解槽右侧中部指向椭圆左下弧 —— 交代“这一块是电解槽的放大剖视”
   line((9.82, 3.72), (10.89, 4.50),
     stroke: (paint: GHOST, thickness: 0.55pt, dash: (3pt, 2.2pt)),
-    mark: (end: ">", fill: GHOST, scale: 0.8))
+    mark: (end: "stealth", fill: GHOST, scale: 0.8))
 
   // ===================== 管路（按物流编号顺序） =====================
   // 1 去离子水罐 → 泵入口

@@ -14,7 +14,7 @@
   let mouth = rgb("#ececec")
   let star = rgb("#a6a6a6")
   let neu = rgb("#4472c4").darken(20%)
-  let head = (end: ">", fill: black)
+  let head = (end: "stealth", fill: black)
   let lab(at, t, anchor: "center") = content(at, anchor: anchor, text(weight: "bold", t))
   let leader(a, b) = line(a, b, stroke: .8pt, mark: (end: ">", fill: black, length: .22, width: .16))
   // 腔体地标：喷口 mx/mh、斜切 fx、半高 H、右壁 rx、双色分界 sx、罩壳左右 el/er、磁环/线圈横标 mg

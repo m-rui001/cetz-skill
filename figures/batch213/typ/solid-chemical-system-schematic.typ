@@ -87,7 +87,7 @@
   // 燃烧产物文字与室内虚线流动
   content((13.90, 4.52), [Burn'd Propellant], align: center)
   line((11.35, 3.90), (15.60, 3.90), stroke: (thickness: 1.1pt, dash: "dashed"),
-       mark: (end: "stealth"))
+       mark: (end: "stealth", fill: black))
 
   // 喷管上壁：收敛段（室角 → 喉部）
   line(..bez-pts((cx1, cy1 + 0.02), (19.30, 5.20), (19.62, 4.78), (tx, tTop)),
@@ -110,7 +110,7 @@
 
   // 燃气排出（穿过喷管，虚线箭头 + 双行标签）
   line((tx, cyc), (26.90, cyc), stroke: (thickness: 1.1pt, dash: "dashed"),
-       mark: (end: "stealth"))
+       mark: (end: "stealth", fill: black))
   content((25.00, 4.34), [Gaseous Propellant], align: center)
   content((25.40, 3.38), [Exhaust], align: center)
 })
