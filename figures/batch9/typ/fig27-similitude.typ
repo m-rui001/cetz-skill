@@ -20,10 +20,17 @@
   line(L, Pd, mark: (end: "stealth", fill: black))
   line(L, Pd1, mark: (end: "stealth", fill: black))
   // angle arc between the rays
-  let r = 1.05
-  draw.arc((L.at(0) + r * calc.cos(ad), L.at(1) + r * calc.sin(ad)), radius: r, start: ad, stop: ad1, mark: (end: "stealth", fill: black))
+  let r = 1.4
+  let arc-start = ad - 4deg
+  draw.arc(
+    (L.at(0) + r * calc.cos(arc-start), L.at(1) + r * calc.sin(arc-start)),
+    radius: r,
+    start: arc-start,
+    stop: ad1 + 6deg,
+    mark: (end: "stealth", fill: black, scale: .5),
+  )
   circle(Z, radius: .07, fill: black)
-  content((2.75, 2.55), [$Z$])
+  content((2.6, 2.55), [$Z$])
   content((1.35, .32), [$L$])
   content((3.7, 3.6), [$d$])
   content((4.15, 2.3), [$d_1$])

@@ -31,8 +31,9 @@
   // tangent arrows
   for t in (2, 3, 4) {
     let u = un(t)
-    line((px(t) - .34 * u.at(0), py(t) - .34 * u.at(1)),
-         (px(t) + .42 * u.at(0), py(t) + .42 * u.at(1)), stroke: tv, mark: (end: "stealth", fill: black))
+    line((px(t) - .24 * u.at(0), py(t) - .24 * u.at(1)),
+         (px(t) + .3 * u.at(0), py(t) + .3 * u.at(1)),
+         stroke: tv, mark: (end: "stealth", fill: black))
   }
   // labels
   content((.85, .55), anchor: "west", [$t = 1$])
@@ -42,9 +43,9 @@
   content((4.2, 4.55), anchor: "west", [$t = N - 1$])
   content((3.85, 5.75), anchor: "west", [$t = N$])
   content((1.9, 5.6), anchor: "west", [Tangent \ vectors])
-  // two pointer curves onto the tangents
-  bezier((2.05, 5.05), (2.5, 3.95), (1.55, 4.6), (2.5, 4.45))
-  line((2.4, 4.1), (2.5, 3.95), stroke: th, mark: (end: "stealth", fill: black))
-  bezier((3.55, 5.15), (3.35, 4.5), (3.75, 4.75), (3.3, 4.7))
-  line((3.42, 4.62), (3.35, 4.5), stroke: th, mark: (end: "stealth", fill: black))
+  // pointers toward the tangents
+  line((2.25, 5.05), (2.68, 4.48), stroke: th,
+       mark: (end: "stealth", fill: black))
+  line((3.25, 5.4), (3.45, 5.03), stroke: th,
+       mark: (end: "stealth", fill: black))
 })

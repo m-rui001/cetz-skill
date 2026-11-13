@@ -47,8 +47,8 @@
   line(path: true, ..arc(0, 0, 1.79, 0, 10.8, 12), stroke: t)
   line(path: true, ..arc(0, 0, 1.69, 180, 190.8, 12), stroke: t)
   line(path: true, ..arc(3.28, 0, 0.41, 0, 18.2, 12), stroke: t)
-  content((1.96, 0.55), anchor: "center", [$theta$])
-  content((-1.90, -0.53), anchor: "center", [$theta$])
+  content((1.96, 0.65), anchor: "center", [$theta$])
+  content((-1.90, -0.68), anchor: "center", [$theta$])
   content((3.58, -0.32), anchor: "center", [$alpha$])
 
   // fringe pattern recorded on the screen

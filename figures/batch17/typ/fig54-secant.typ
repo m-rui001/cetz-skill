@@ -23,7 +23,7 @@
   let p2 = (11.85, 7.05)
   line(p1, p2, stroke: tp)
   line(p1, (p2.at(0), p1.at(1)), stroke: th)
-  line((p2.at(0), p1.at(1)), p2, stroke: th, mark: (end: ">"))
+  line((p2.at(0), p1.at(1)), (p2.at(0), 6.73), stroke: th, mark: (end: ">"))
   arc((p1.at(0) + .55, p1.at(1)), radius: .55, start: 0deg, stop: 17.1deg, stroke: th)
   circle(p1, radius: .1, fill: black, stroke: none)
   circle(p2, radius: .1, fill: black, stroke: none)

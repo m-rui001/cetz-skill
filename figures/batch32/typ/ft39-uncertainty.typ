@@ -58,7 +58,7 @@
   // the three phasors
   line((0, 0), A, stroke: t, mark: (end: ">"))
   line((0, 0), B, stroke: t, mark: (end: ">"))
-  line((0, 0), sub(C, sc(p, 0.8)), stroke: t, mark: (end: ">"))
+  line((0, 0), sub(C, sc(p, 1.5)), stroke: t, mark: (end: ">"))
 
   // curved double arrows at the free tips
   line(path: true, ..arc(B.at(0), B.at(1), 0.9, 99deg, 214deg, 24),
@@ -66,7 +66,7 @@
   line(path: true, ..arc(A.at(0), A.at(1), 0.9, -39deg, 81deg, 24),
     stroke: t, mark: (start: ">", end: ">"))
 
-  content((2.82, 4.95), anchor: "center", [$overline(c)$])
+  content((3.25, 4.75), anchor: "center", [$overline(c)$])
   content((-3.02, 3.03), anchor: "center", [$overline(b)$])
   content((4.73, 2.2), anchor: "center", [$overline(a)$])
 })

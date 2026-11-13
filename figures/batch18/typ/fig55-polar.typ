@@ -37,7 +37,7 @@
   let Q = (ox + 1.5, 2.55)
   let ur = (1.5 / calc.sqrt(1.5 * 1.5 + 2.55 * 2.55), 2.55 / calc.sqrt(1.5 * 1.5 + 2.55 * 2.55))
   let ut = (0.0 - ur.at(1), ur.at(0))
-  line((ox, 0), (ox + 1.78, 3.03), stroke: td)
+  line((ox, 0), Q, stroke: td)
   circle(Q, radius: .08, fill: black, stroke: none)
   line(Q, (Q.at(0) + .95 * ur.at(0), Q.at(1) + .95 * ur.at(1)), stroke: tv, mark: (end: ">"))
   line(Q, (Q.at(0) + .95 * ut.at(0), Q.at(1) + .95 * ut.at(1)), stroke: tv, mark: (end: ">"))

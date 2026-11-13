@@ -16,7 +16,7 @@
   line(A, P, stroke: tv, mark: (end: "stealth", fill: black))
   line(O, P, stroke: tv, mark: (end: "stealth", fill: black))
   content((1.5, 1.15), anchor: "east", [$arrow(A)$])
-  content((2.32, 2.9), anchor: "east", [$arrow(B)$])
+  content((2.17, 2.9), anchor: "east", [$arrow(B)$])
   content((.5, 5.1), anchor: "west", [$arrow(C) = arrow(A) + arrow(B)$])
   bezier((.62, 4.75), (1.82, 3.42), (-.35, 4.1), (1.15, 3.05),
          stroke: th, mark: (end: "stealth", fill: black))

@@ -25,7 +25,7 @@
   content((1.42, -1.68), [$Delta theta$])
   // callouts
   content((-3.15, 1.3), anchor: "west", [length = $|Delta arrow(v)|$])
-  cur((-0.75, 1.05), (0.18, -0.62), (-0.15, 0.35), (0.42, -0.2))
+  cur((-0.75, 1.05), (0.28, -1.2), (-0.8, 0.3), (-0.4, -0.9))
   content((4.6, 1.6), anchor: "west", [length = $|arrow(v)_"final"| = |arrow(v)|$])
   cur((4.7, 1.15), (3.05, -0.42), (3.9, 0.75), (3.35, 0.05))
   content((3.6, -5.3), anchor: "west", [length = $|arrow(v)_"initial"| = |arrow(v)|$])
