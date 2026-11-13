@@ -54,17 +54,20 @@
   let p3 = add(p0, v)
   line(p0, p1, p2, p3, p0, stroke: 1pt + rgb("#186a8f"))
 
-  // 周期边界：上边框引线到标签
-  line((9.0, 4.62), (8.7, 6.05), stroke: 0.8pt + ink)
-  tx((8.2, 6.3), "Periodic boundary", size: 8pt)
+  // 周期边界：从后缘引到左上标签，避开出口箭头
+  line((7.25, 4.48), (6.55, 6.30), stroke: 0.8pt + ink)
+  tx((5.95, 6.5), "Periodic boundary", size: 8pt)
 
   // 热侧：入口红下箭头与出口红上箭头（两处）
   arr((6.35, 4.35), (6.35, 3.05), red)
-  tx((5.7, 3.95), [$T_("h,in") quad P_("h,in")$], size: 8pt)
+  line((5.55, 4.63), (6.32, 4.39), stroke: 0.6pt + ink)
+  tx((4.35, 4.72), [$T_("h,in") quad P_("h,in")$], size: 8pt)
   arr((7.95, 3.55), (7.95, 4.95), red)
-  tx((8.75, 4.6), [$dot(m)_("h,out")$], size: 8pt)
+  line((8.05, 4.98), (9.18, 5.72), stroke: 0.6pt + ink)
+  tx((9.85, 5.85), [$dot(m)_("h,out")$], size: 8pt)
   arr((9.75, 3.95), (9.75, 5.35), red)
-  tx((10.55, 5.1), [$dot(m)_("h,out")$], size: 8pt)
+  line((9.86, 5.40), (10.72, 6.08), stroke: 0.6pt + ink)
+  tx((11.55, 6.20), [$dot(m)_("h,out")$], size: 8pt)
 
   // 冷侧：右上入口双箭头与左下出口箭头
   arr((13.95, 6.15), (12.95, 5.15), blue)

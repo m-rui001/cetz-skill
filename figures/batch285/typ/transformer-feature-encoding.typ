@@ -34,7 +34,7 @@
   let cells = (
     (5.03, [Multi- \ Head \ Attention], 0.45, 4.8pt),
     (6.113, [Add \ and \ normalize], 0.45, 4.8pt),
-    (6.886, [FFN], 0.14, 5.2pt),
+    (6.886, [FFN], 0.22, 4.8pt),
     (7.659, [Add \ and \ normalize], 0.45, 4.8pt),
   )
   // 单路 Transformer encoder：浅灰圆角框＋标题＋四个蓝模块与连线
@@ -55,19 +55,19 @@
   let stream(cy, name, wname, hasfe) = {
     box((0.85, cy), wname, 0.21, name, size: 5.4pt, fill: pink)
     if hasfe {
-      box((2.06, cy), 0.42, 0.23, [Feature \ engineering], size: 4.8pt)
-      arr((0.85 + wname, cy), (1.62, cy))
-      arr((2.48, cy), (2.74, cy))
+      box((2.10, cy), 0.52, 0.24, [Feature \ engineering], size: 4.4pt)
+      arr((0.85 + wname, cy), (1.58, cy))
+      arr((2.62, cy), (2.76, cy))
     } else {
       arr((0.85 + wname, cy), (2.74, cy))
     }
     circle((2.90, cy), radius: 0.13, fill: white, stroke: 0.7pt + ink)
     t((2.90, cy), [+], size: 9pt)
-    circle((2.90, cy + 1.00), radius: 0.30, fill: white, stroke: 0.7pt + ink)
-    t((2.90, cy + 1.00), [PE+CE], size: 5.4pt)
+    circle((2.90, cy + 1.00), radius: 0.36, fill: white, stroke: 0.7pt + ink)
+    t((2.90, cy + 1.00), [PE+CE], size: 5.0pt)
     arr((2.90, cy + 0.70), (2.90, cy + 0.15))
     arr((3.04, cy), (4.34, cy))
-    t((3.66, cy + 0.16), [As K,V], size: 5.4pt)
+    t((3.66, cy + 0.22), [As K,V], size: 5.2pt)
   }
   stream(5.55, [Overload data], 0.72, false)
   stream(3.55, [Fuel data], 0.62, true)
@@ -91,10 +91,10 @@
   arr((8.33, 1.55), (9.00, 1.55))
   junc((8.62, 1.55))
   polyarr((8.62, 1.55), (8.62, 1.06), (10.10, 1.06), (10.10, 1.37))
-  circle((9.28, 5.55), radius: 0.28, fill: bgray, stroke: gray)
-  t((9.28, 5.55), [softmax], size: 5.0pt)
-  circle((9.28, 1.55), radius: 0.28, fill: bgray, stroke: gray)
-  t((9.28, 1.55), [softmax], size: 5.0pt)
+  circle((9.28, 5.55), radius: 0.36, fill: bgray, stroke: gray)
+  t((9.28, 5.55), [softmax], size: 4.8pt)
+  circle((9.28, 1.55), radius: 0.36, fill: bgray, stroke: gray)
+  t((9.28, 1.55), [softmax], size: 4.8pt)
   arr((9.56, 5.55), (9.92, 5.55))
   arr((9.56, 1.55), (9.92, 1.55))
   circle((10.10, 5.55), radius: 0.18, fill: white, stroke: 0.7pt + ink)
@@ -113,6 +113,6 @@
   box((11.30, 3.55), 0.72, 0.22, [Time Window \ Compression], size: 5.4pt, fill: purple)
   arr((12.02, 3.55), (12.23, 3.55))
   box((12.95, 3.55), 0.70, 0.24, [Transformer \ decoder], size: 5.4pt)
-  arr((13.65, 3.55), (13.73, 3.55))
+  arr((13.65, 3.55), (13.74, 3.55))
   box((14.55, 3.55), 0.80, 0.22, [Reconstructed \ data], size: 5.4pt, fill: pink)
 })

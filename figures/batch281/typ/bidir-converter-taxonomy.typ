@@ -28,12 +28,12 @@
   // 根节点与两个一级分支
   box((8.20, 7.80), 2.30, 0.48, fill: rgb("#7a4bc8"), stroke: purple)
   t((8.20, 7.80), [Bidirectional \ DC-DC Converter \ Topologies], size: 7pt, fill: white)
-  box((4.00, 6.85), 1.45, 0.42, fill: red, stroke: red)
-  t((4.00, 6.85), [Non-Isolated \ Topologies], size: 6.8pt, fill: white)
-  box((11.60, 6.85), 1.40, 0.42, fill: orange, stroke: orange)
-  t((11.60, 6.85), [Isolated \ Topologies], size: 6.8pt, fill: white)
-  poly((7.45, 7.32), (7.45, 7.10), (4.00, 7.10), (4.00, 7.27))
-  poly((8.95, 7.32), (8.95, 7.10), (11.60, 7.10), (11.60, 7.27))
+  box((4.00, 6.77), 1.45, 0.40, fill: red, stroke: red)
+  t((4.00, 6.77), [Non-Isolated \ Topologies], size: 6.8pt, fill: white)
+  box((11.60, 6.77), 1.40, 0.40, fill: orange, stroke: orange)
+  t((11.60, 6.77), [Isolated \ Topologies], size: 6.8pt, fill: white)
+  poly((7.45, 7.32), (7.45, 7.22), (4.00, 7.22), (4.00, 7.17))
+  poly((8.95, 7.32), (8.95, 7.22), (11.60, 7.22), (11.60, 7.17))
 
   // 六个二级类目（内容用 content 以支持换行）
   let cats = (
@@ -45,16 +45,14 @@
     (13.80, [Modular and \ Multiport Converters], purple, rgb("#e6dcf5")),
   )
   for (x, s, edge, fill) in cats {
-    box((x, 5.85), 1.08, 0.46, fill: fill, stroke: edge)
-    t((x, 5.85), s, size: 5.6pt, fill: edge)
+    box((x, 5.80), 1.10, 0.48, fill: fill, stroke: edge)
+    t((x, 5.80), s, size: 5.0pt, fill: edge)
   }
   // 一级到二级的总线式连线
-  line((1.55, 6.52), (6.45, 6.52), stroke: 0.6pt + ink)
-  line((4.00, 6.43), (4.00, 6.52), stroke: 0.6pt + ink)
-  for x in (1.55, 4.00, 6.45) { poly((x, 6.52), (x, 6.31)) }
-  line((8.90, 6.52), (13.80, 6.52), stroke: 0.6pt + ink)
-  line((11.60, 6.43), (11.60, 6.52), stroke: 0.6pt + ink)
-  for x in (8.90, 11.35, 13.80) { poly((x, 6.52), (x, 6.31)) }
+  line((1.55, 6.37), (6.45, 6.37), stroke: 0.6pt + ink)
+  for x in (1.55, 4.00, 6.45) { poly((x, 6.37), (x, 6.28)) }
+  line((8.90, 6.37), (13.80, 6.37), stroke: 0.6pt + ink)
+  for x in (8.90, 11.35, 13.80) { poly((x, 6.37), (x, 6.28)) }
 
   // 各二级类目下的具体拓扑（左主干 + 逐个分支箭头）
   let leaves = (
@@ -70,13 +68,13 @@
     let n = names.len()
     let step = if n >= 6 { 0.70 } else { 0.85 }
     let last = 5.10 - step * (n - 1)
-    let trunk = x - 1.04
-    line((x, 5.39), (trunk, 5.39), (trunk, last), stroke: 0.6pt + ink)
+    let trunk = x - 1.12
+    line((x, 5.32), (trunk, 5.32), (trunk, last), stroke: 0.6pt + ink)
     for (i, name) in names.enumerate() {
-      let y = 5.10 - step * i
-      box((x, y), 0.94, 0.30)
-      t((x, y), name, size: 5.2pt)
-      arr((trunk, y), (x - 0.94, y))
+      let y = 4.98 - step * i
+      box((x, y), 0.97, 0.30)
+      t((x, y), name, size: 5.0pt)
+      arr((trunk, y), (x - 0.97, y))
     }
   }
 })
