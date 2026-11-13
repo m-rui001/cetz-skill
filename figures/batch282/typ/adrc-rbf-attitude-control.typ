@@ -33,7 +33,7 @@
     // 四个内部模块
     box((1.85, ymid + 0.62), 0.78, 0.38, [ADRC \ Parameters \ Update], size: 5.7pt, fill: green)
     box((1.85, ymid - 0.62), 0.66, 0.26, [ADRC \ Controller], size: 6.6pt, fill: green)
-    box((4.35, ymid + 1.00), 0.98, 0.20, [RBF Parameters \ Update], size: 6.2pt, fill: yellow)
+    box((4.35, ymid + 1.00), 1.30, 0.20, [RBF Parameters Update], size: 6.5pt, fill: yellow)
     box((4.35, ymid + 0.18), 0.98, 0.34, [RBF Neural \ Network], size: 6.6pt, fill: yellow)
     // 外部输入 e_c 与 x_in
     arr((0.60, ymid + 0.62), (1.19, ymid + 0.62))
@@ -41,27 +41,27 @@
     arr((0.60, ymid - 0.62), (1.19, ymid - 0.62))
     t((0.76, ymid - 0.88), [#xin], size: 6.5pt)
     // 参数更新→RBF 参数更新（∂φ/∂U）
-    arr((2.55, ymid + 0.62), (3.37, ymid + 0.94))
-    t((2.42, ymid + 1.10), [∂#xin#"_rbf" / ∂#uout], size: 5.4pt)
+    arr((2.55, ymid + 0.62), (3.05, ymid + 0.94))
+    t((1.75, ymid + 1.13), [∂#xin#"_rbf" / ∂#uout], size: 6.5pt)
     // RBF 参数更新→RBF 网络（W C H 三路）
     for (i, s) in ("W", "C", "H").enumerate() {
       let x = 3.95 + 0.40 * i
       arr((x, ymid + 0.80), (x, ymid + 0.54))
-      t((x + 0.10, ymid + 0.63), [#s], size: 5.8pt)
+      t((x + 0.18, ymid + 0.63), [#s], size: 5.8pt)
     }
     // ADRC 参数更新→控制器（K_P K_D 与 β1 β2 β3）
     arr((1.62, ymid + 0.28), (1.62, ymid - 0.36))
-    t((1.24, ymid - 0.02), [K_P K_D], size: 5.8pt)
+    t((1.08, ymid - 0.02), [K_P K_D], size: 5.8pt)
     arr((2.16, ymid + 0.28), (2.16, ymid - 0.36))
-    t((2.52, ymid - 0.02), [β_1 β_2 β_3], size: 5.4pt)
+    t((2.82, ymid - 0.02), [β_1 β_2 β_3], size: 5.4pt)
     // 网络与参数更新的反馈（e_rbf、φ_out 由右侧进入）
-    arr((6.90, ymid + 1.00), (5.33, ymid + 1.00))
-    t((6.45, ymid + 1.14), [e_rbf], size: 6.4pt)
+    arr((6.90, ymid + 1.00), (5.65, ymid + 1.00))
+    t((7.55, ymid + 1.14), [e_rbf], size: 6.4pt)
     arr((6.90, ymid + 0.18), (5.33, ymid + 0.18))
-    t((6.40, ymid + 0.40), [#xin#"_out"], size: 5.8pt)
+    t((7.55, ymid + 0.40), [#xin#"_out"], size: 5.8pt)
     // 控制器输出 U 至控制分配
     arr((2.55, ymid - 0.62), (9.13, ymid - 0.62))
-    t((6.10, ymid - 0.46), [#uout], size: 6.4pt)
+    t((7.55, ymid - 0.46), [#uout], size: 6.4pt)
   }
 
   // 三路通道：滚转、俯仰、偏航
