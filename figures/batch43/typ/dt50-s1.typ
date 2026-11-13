@@ -187,8 +187,8 @@
   let arrow = ((256,257),(290,241),(330,228),(370,216),(410,207),(450,200),(490,193),(530,189),(560,185),(597,180))
   line(path: true, ..crm(P(arrow)), stroke: t, mark: (end: hd))
 
-  content(px(922, 226), anchor: "center", text(size: 6.5pt, [$f_1$]))
-  content(px(970, 240), anchor: "center", text(size: 6pt, [$f_{frac(2,3)}$]))
-  content(px(1055, 268), anchor: "center", text(size: 6pt, [$f_{frac(1,3)}$]))
-  content(px(1120, 262), anchor: "center", text(size: 6.5pt, [$f_0$]))
+  content(px(922, 226), anchor: "center", box(fill: white, inset: 0.6pt, text(size: 6.5pt, [$f_1$])))
+  content(px(988, 250), anchor: "center", box(fill: white, inset: 0.6pt, text(size: 6pt, [$f_(frac(2,3))$])))
+  content(px(1072, 291), anchor: "center", box(fill: white, inset: 0.6pt, text(size: 6pt, [$f_(frac(1,3))$])))
+  content(px(1120, 262), anchor: "center", box(fill: white, inset: 0.6pt, text(size: 6.5pt, [$f_0$])))
 })
