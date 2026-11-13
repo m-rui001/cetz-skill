@@ -47,16 +47,16 @@
   let sensors = ("LiDAR", "GPS", "IMU", "RF-Module", "Camera")
   for (i, s) in sensors.enumerate() {
     let y = 6.90 - 0.40 * i
-    box((1.36, y), 0.56, 0.16, s, size: 6.8pt)
-    arr((1.94, y), (2.25, y))
+    box((1.36, y), 0.66, 0.16, s, size: 6.6pt)
+    arr((2.02, y), (2.25, y))
   }
   // 导航/精感模块（竖排文字）
   box((2.62, 6.20), 0.36, 1.15, [], fill: white)
   t((2.62, 6.20), [Navigation Sensors \ Precision Sensors], size: 6.8pt, angle: 90deg)
   // 检测区域黑块回报至模块
-  box((4.60, 5.90), 0.95, 0.75, [], fill: rgb("#111111"), stroke: rgb("#111111"))
-  t((4.60, 5.90), [Front_center \ Front_right \ Front_left \ bottom_center \ back_center],
-    size: 5.9pt, fill: white)
+  box((4.60, 5.90), 1.06, 0.78, [], fill: rgb("#111111"), stroke: rgb("#111111"))
+  t((4.60, 5.90), [Front#sub[center] \ Front#sub[right] \ Front#sub[left] \ bottom#sub[center] \ back#sub[center]],
+    size: 5.6pt, fill: white)
   arr((3.83, 5.90), (2.99, 5.90))
 
   // Current state 六项（蓝虚线子框，标题置于框内左上）
@@ -82,11 +82,11 @@
   arr((6.45, 6.90), (6.45, 4.90))
 
   // 环境感知链：Current state → 环境感知 → 环境状态估计器 → 态势感知
-  box((2.35, 1.55), 1.05, 0.26, [Environment Perception], size: 7pt)
-  box((5.45, 1.55), 1.30, 0.26, [Environmental State Estimator], size: 6.4pt)
+  box((2.30, 1.55), 1.26, 0.26, [Environment Perception], size: 6.2pt)
+  box((5.45, 1.55), 1.46, 0.26, [Environmental State Estimator], size: 5.6pt)
   arr((2.48, 2.20), (2.40, 1.81))
-  arr((3.40, 1.55), (4.15, 1.55))
-  line((6.75, 1.55), (7.90, 1.55), (7.90, 2.50), stroke: 0.6pt + ink,
+  arr((3.60, 1.55), (3.96, 1.55))
+  line((6.94, 1.55), (7.90, 1.55), (7.90, 2.50), stroke: 0.6pt + ink,
     mark: (end: "stealth", scale: 0.65))
 
   // 车辆状态估计器与态势感知（竖排文字）
