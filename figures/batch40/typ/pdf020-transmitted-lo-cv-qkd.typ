@@ -166,8 +166,8 @@
   circle(P(1446,214),radius:(12.4,8),fill:white,stroke:1pt)
   line(P(1440,216),P(1454,206),stroke:1.3pt)
   arrow((1470,199),(1539,149))
-  label(1403,134,[Homodyne],size:13pt)
-  label(1442,175,[Detection],size:13pt)
+  label(1393,126,[Homodyne],size:13pt)
+  label(1432,167,[Detection],size:13pt)
 
   // Unrotated legend uses the same colour meanings as the source.
   for (y,color,c) in ((50,red,[Signal]),(100,green,[Local Oscillator]),(150,black,[Signal + LO])) {
