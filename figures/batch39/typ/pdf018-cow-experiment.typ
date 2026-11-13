@@ -47,9 +47,11 @@
   label(1102,209,[90:10 Coupler],size:8.5pt)
   metal(931,347,46,h:11)
   metal(926,373,47,h:11)
-  label(973,323,[Faraday#linebreak()Mirrors],size:8.5pt)
+  label(973,323,[#set par(leading: 0.9em)
+    Faraday#linebreak()Mirrors],size:8.5pt)
   metal(1123,373,74,h:7)
-  label(1159,351,[50:50#linebreak()Coupler],size:8.5pt)
+  label(1159,351,[#set par(leading: 0.9em)
+    50:50#linebreak()Coupler],size:8.5pt)
   label(1075,400,[Interferometer],size:8.5pt)
 
   // Transmitter plates and short metallic ports.
@@ -70,25 +72,29 @@
   line(P(254,426),P(271,380),P(383,380),P(363,426),close:true,fill:rgb("#aaaaaf"),stroke:none)
   line(P(254,426),P(363,426),P(363,433),P(257,433),close:true,fill:rgb("#77777b"),stroke:none)
   line(P(363,426),P(383,380),P(383,388),P(365,432),close:true,fill:rgb("#333333"),stroke:none)
-  label(318,402,text(fill:white,[Pulse#linebreak()generator]),size:8pt)
+  label(318,402,text(fill:white,[#set par(leading: 0.9em)
+    Pulse#linebreak()generator]),size:8pt)
   line(P(304,438),P(310,426),stroke:(paint:rgb("#aaaaaa"),thickness:1.2pt))
 
   line(P(453,405),P(478,335),P(585,335),P(566,405),close:true,fill:rgb("#e5c754"),stroke:none)
   line(P(453,405),P(566,405),P(566,419),P(457,419),close:true,fill:rgb("#ac963d"),stroke:none)
   line(P(566,405),P(585,335),P(589,352),P(573,419),close:true,fill:rgb("#292929"),stroke:none)
-  label(525,371,[Variable#linebreak()optical#linebreak()attenuator],size:8pt)
+  label(525,371,[#set par(leading: 0.9em)
+    Variable#linebreak()optical#linebreak()attenuator],size:8pt)
   for i in range(8) {let y=365 + i*5;line(P(575,y),P(610 - i*.9,y),stroke:(paint:rgb("#b69d35"),thickness:.3pt))}
   line(P(643,419),P(657,330),P(760,330),P(744,394),P(758,394),P(758,419),close:true,fill:rgb("#303030"),stroke:none)
   line(P(643,395),P(744,395),P(758,419),P(643,419),close:true,fill:rgb("#252525"),stroke:none)
   line(P(744,395),P(760,330),P(760,352),P(776,356),P(758,419),close:true,fill:rgb("#171717"),stroke:none)
-  label(703,363,text(fill:white,[Monitor#linebreak()PIN#linebreak()Detector]),size:8pt)
+  label(703,363,text(fill:white,[#set par(leading: 0.9em)
+    Monitor#linebreak()PIN#linebreak()Detector]),size:8pt)
 
   // Cooler enclosure with the two detector ports on its circular front.
   line(P(1315,161),P(1328,34),P(1438,34),P(1429,161),close:true,fill:rgb("#b4b4b4"),stroke:none)
   line(P(1315,161),P(1429,161),P(1437,237),P(1309,237),close:true,fill:rgb("#878787"),stroke:none)
   line(P(1438,34),P(1445,166),P(1437,237),P(1429,161),close:true,fill:rgb("#2c2c2c"),stroke:none)
   line(P(1445,104),P(1454,105),P(1452,234),P(1438,237),close:true,fill:rgb("#9a9a9a"),stroke:none)
-  label(1383,99,[Stirling#linebreak()cooler],size:8.5pt)
+  label(1383,99,[#set par(leading: 0.9em)
+    Stirling#linebreak()cooler],size:8.5pt)
   for (y,rx,ry,color) in ((206,34,29,rgb("#252525")),(221,34,31,rgb("#777777")),(237,42,37,rgb("#999999")),(252,46,39,rgb("#6f6f6f"))) {
     circle(P(1370,y),radius:(rx*.4,ry*.4),fill:color,stroke:none)
   }
@@ -101,5 +107,6 @@
   }
   label(1444,253,$"SPD"_D$,size:8pt)
   label(1444,279,$"SPD"_M$,size:8pt)
-  label(1450,320,[InGaAs#linebreak()NFADs],size:9pt)
+  label(1450,320,[#set par(leading: 0.9em)
+    InGaAs#linebreak()NFADs],size:9pt)
 })

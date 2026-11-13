@@ -25,15 +25,15 @@
   let line2(a, b) = line(a, b, stroke: 0.7pt + ink)
   let poly(..pts) = line(..pts, stroke: 0.7pt + ink, mark: (end: "stealth", scale: 0.7))
   let junction(c) = circle(c, radius: 0.085, fill: white, stroke: 0.7pt + ink)
-  // 人形＋外骨骼虚线关节
+  // 人形＋外骨骼关节（实心绿点，避免虚线圈在缩小时断裂成弧渣）
   let human(cx, cy) = {
-    circle((cx, cy + 0.13), radius: 0.055, fill: white, stroke: 0.7pt + ink)
-    line2((cx, cy + 0.075), (cx, cy - 0.10))
-    line2((cx - 0.11, cy + 0.02), (cx + 0.11, cy + 0.02))
-    line2((cx, cy - 0.10), (cx - 0.09, cy - 0.24))
-    line2((cx, cy - 0.10), (cx + 0.09, cy - 0.24))
-    for p in ((cx - 0.17, cy + 0.05), (cx + 0.17, cy + 0.05), (cx + 0.15, cy - 0.18)) {
-      circle(p, radius: 0.035, fill: none, stroke: (paint: green, thickness: 0.6pt, dash: "dashed"))
+    circle((cx, cy + 0.15), radius: 0.06, fill: white, stroke: 0.7pt + ink)
+    line2((cx, cy + 0.09), (cx, cy - 0.11))
+    line2((cx - 0.12, cy + 0.02), (cx + 0.12, cy + 0.02))
+    line2((cx, cy - 0.11), (cx - 0.10, cy - 0.27))
+    line2((cx, cy - 0.11), (cx + 0.10, cy - 0.27))
+    for p in ((cx - 0.12, cy + 0.02), (cx + 0.12, cy + 0.02), (cx + 0.10, cy - 0.27)) {
+      circle(p, radius: 0.024, fill: green, stroke: none)
     }
   }
 
@@ -53,8 +53,8 @@
   t((8.60, ya + 0.22), [u(t)], size: 6.6pt)
   arr((8.25, ya), (9.95, ya))
   box((11.45, ya), 1.30, 0.62, [], stroke: navy)
-  t((11.45, ya + 0.20), [Human + EE Robot \ Interaction], size: 6.2pt)
-  human(11.45, ya - 0.22)
+  t((11.45, ya + 0.26), [Human + EE Robot \ Interaction], size: 6.2pt)
+  human(11.45, ya - 0.26)
   t((10.62, ya - 0.38), [$x_b$  $z_b$ \ $V_b$], size: 5pt)
   box((12.20, ya + 1.18), 1.05, 0.28, [External \ Human Forces], size: 6.2pt, stroke: orange)
   line2((11.15, ya + 1.18), (6.10, ya + 1.18))
@@ -78,8 +78,8 @@
   arr((3.63, yb), (3.95, yb))
   box((6.20, yb), 2.25, 0.50, [$"Admittance Control" \ dot(e)(t) = B_d^(-1)(tau_"ext"(t) - M_d dot(dot(e))(t) - K_d e(t))$], size: 5.6pt)
   box((11.55, yb), 1.30, 0.62, [], stroke: navy)
-  t((11.55, yb + 0.20), [Human-Robot \ Interaction], size: 6.2pt)
-  human(11.55, yb - 0.22)
+  t((11.55, yb + 0.26), [Human-Robot \ Interaction], size: 6.2pt)
+  human(11.55, yb - 0.26)
   t((10.72, yb - 0.38), [$x_b$  $z_b$ \ $V_b$], size: 5pt)
   box((12.20, yb + 1.14), 1.05, 0.28, [External \ Human Forces], size: 6.2pt, stroke: orange)
   line2((11.15, yb + 1.14), (6.20, yb + 1.14))

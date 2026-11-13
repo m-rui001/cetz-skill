@@ -109,7 +109,7 @@
   line(o, nj, mark: arrow, stroke: thin)
   line(o, (8.30, 2.86), mark: arrow, stroke: thin)
   content((7.35, 2.55), [$r_i$], anchor: "east")
-  content((8.30, 1.80), [$r_j$], anchor: "west")
+  content((8.52, 1.72), [$r_j$], anchor: "west")
   content((8.22, 2.58), [$bold(r)$], anchor: "west")
 
   // 节点处局部矢量 r_ix、r_jx

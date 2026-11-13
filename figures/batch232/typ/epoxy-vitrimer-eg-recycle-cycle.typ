@@ -79,7 +79,6 @@
   line((7.16, 13.95), (7.30, 13.72), stroke: ck); content((7.40, 13.66), text("O", size: 7.5pt))
   line((7.52, 13.60), (7.68, 13.38), (7.82, 13.14), stroke: ck)
   content((7.82, 12.96), text("HO", size: 7.5pt))
-  line((7.92, 13.06), (8.00, 13.13), (8.08, 13.03), (8.16, 13.10), stroke: (paint: ink, thickness: 0.7pt))
   content((4.55, 12.55), text([Fatty Acid Linker], weight: "bold"))
 
   // 上排右：乙二醇与可逆溶解箭头
@@ -150,9 +149,9 @@
   plate((3.95, 4.30), (5.95, 4.05), (6.40, 4.72), (4.40, 4.97), rgb("#3a3a3a"), rgb("#1d1d1d"), n: 7)
   content((6.62, 5.42), text([Separated Carbon \ Fiber], weight: "bold"), anchor: "west")
   // 标注文字
-  content((8.55, 9.15), text([Reolymerization], weight: "bold", fill: rd))
+  content((8.55, 9.15), text([Repolymerization], weight: "bold", fill: rd))
   content((13.05, 9.50), text([Composite], weight: "bold"), anchor: "west")
-  content((12.95, 4.82), text([Heating], weight: "bold", fill: rd), angle: -28deg)
+  content((12.85, 5.10), text([Heating], weight: "bold", fill: rd), angle: -28deg)
   content((5.85, 2.72), text([Evaporating Remnant EG], weight: "bold", size: 9.5pt, fill: rd), angle: -12deg)
   content((15.10, 3.15), text([Immersing in EG], weight: "bold"))
   content((9.65, 0.28), text([Polymer Matrix Dissolved], weight: "bold"))

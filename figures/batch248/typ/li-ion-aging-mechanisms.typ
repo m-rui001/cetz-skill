@@ -134,9 +134,13 @@
   lab((12.90, 3.75), [CEI layer\ growth])
   lab((14.95, 4.05), [Particle\ cracking])
   lab((16.15, 4.95), [Binder\ decomposition])
-  lab((4.95, 8.55), [Carbon\ Anode], fill: rgb("#6f6b62"))
-  lab((7.55, 7.95), [Li⁺], fill: rgb("#6f6b62"))
-  lab((13.35, 7.85), [Cathode], size: 8pt, fill: white)
+  // 极片内标签：先用极片同色块清出文字区，纹理不穿字
+  rect((4.10, 8.28), (5.80, 8.86), fill: an-f, stroke: none)
+  lab((4.95, 8.55), [Carbon\ Anode], fill: black)
+  rect((7.22, 7.79), (7.88, 8.12), fill: an-f, stroke: none)
+  lab((7.55, 7.95), [Li⁺], fill: black)
+  rect((12.72, 7.70), (13.98, 8.00), fill: cat-f, stroke: none)
+  lab((13.35, 7.85), [Cathode], size: 8pt, fill: black)
   // 竖排部件名
   lab((cu-x, 7.60), [Copper Current Collector], size: 8pt, fill: white, angle: 90deg)
   lab((9.42, 7.40), [Separator], size: 8pt, fill: black, angle: 90deg)

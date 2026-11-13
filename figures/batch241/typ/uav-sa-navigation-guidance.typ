@@ -65,7 +65,7 @@
   let cur = ("Satellite Data", "Offline Map Data", "Probabilistic Map",
              "Onboard Sensory Data", "Dynamic/Static Obstacle", "Wind Magnitude and Direction")
   for (i, s) in cur.enumerate() {
-    box((2.48, 4.30 - 0.36 * i), 1.42, 0.15, s, size: 5.9pt)
+    box((2.48, 4.30 - 0.36 * i), 1.42, 0.15, s, size: if s.len() > 24 { 5.2pt } else { 5.9pt })
   }
   // Vehicular State 五项（蓝虚线子框）
   frame((4.60, 2.40), (6.62, 4.90), col: blue)
