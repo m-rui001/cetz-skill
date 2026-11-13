@@ -61,7 +61,7 @@
   axl(OL, add(OL, n, s: 1.18))
   content(add(OL, u, s: 2.72), [$X_L$], anchor: "west")
   content((4.40, 3.575), [$O_L$], anchor: "north", size: 9.5pt)
-  content(add(add(OL, n, s: 1.10), u, s: -0.22), [$Y_L$], anchor: "east")
+  content((3.65, 4.95), [$Y_L$], anchor: "east")
 
   // 左右履带速度（沿履带方向）
   let va(p, q) = line(p, q, stroke: 1.4pt + blue, mark: (end: "stealth", fill: blue, scale: 0.9))
@@ -105,12 +105,12 @@
   content(add(add(OL, d, s: 1.18), u, s: -0.175), [$epsilon$], size: 8pt)
   line(OL, Oc, stroke: (paint: gray, thickness: 0.6pt, dash: "dashed"))
   line(Oc, cl, stroke: 0.9pt + ink, mark: (start: "stealth", fill: ink, scale: 0.55))
-  line(Oc, rear, stroke: 0.9pt + ink, mark: (start: "stealth", fill: ink, scale: 0.55))
+  line(Oc, rear, stroke: 0.9pt + ink)
   content(add(add(Oc, (cl.at(0) - Oc.at(0), cl.at(1) - Oc.at(1)), s: 0.35), per, s: 0.24), [$R$], size: 9pt)
   content((5.15, 1.89), [$R'$], size: 9pt)
   content((5.90, 2.25), [$a$], size: 9pt)
   arc(Oc, start: 134deg, stop: 162deg, radius: 0.90, stroke: 0.7pt + blue, mode: "OPEN")
-  content((Oc.at(0), Oc.at(1) - 0.14), [$O_c$], anchor: "north", size: 9.5pt)
+  content((Oc.at(0) + 0.30, Oc.at(1) - 0.22), [$O_c$], anchor: "north", size: 9.5pt)
 
   // 履带全长 L 与中心距 b 的尺寸标注
   let bar = (start: "bar", end: "bar", scale: 0.35)
