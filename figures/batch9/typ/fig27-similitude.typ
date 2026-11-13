@@ -11,20 +11,20 @@
   let Pd1 = (L.at(0) + 2.7 * calc.cos(ad1), L.at(1) + 2.7 * calc.sin(ad1))
   let Z = (L.at(0) + 2.35 * calc.cos(ad), L.at(1) + 2.35 * calc.sin(ad))
   // axes
-  line(O, (4.5, 0), mark: (end: ">"))
-  line(O, (0, 3.4), mark: (end: ">"))
+  line(O, (4.5, 0), mark: (end: "stealth", fill: black))
+  line(O, (0, 3.4), mark: (end: "stealth", fill: black))
   content((4.6, -.3), [$x$])
   content((-.35, 3.45), [$y$])
   content((-.32, -.38), [$O$])
   // rays
-  line(L, Pd, mark: (end: ">"))
-  line(L, Pd1, mark: (end: ">"))
+  line(L, Pd, mark: (end: "stealth", fill: black))
+  line(L, Pd1, mark: (end: "stealth", fill: black))
   // angle arc between the rays
   let r = 1.05
-  draw.arc((L.at(0) + r * calc.cos(ad), L.at(1) + r * calc.sin(ad)), radius: r, start: ad, stop: ad1, mark: (end: ">"))
+  draw.arc((L.at(0) + r * calc.cos(ad), L.at(1) + r * calc.sin(ad)), radius: r, start: ad, stop: ad1, mark: (end: "stealth", fill: black))
   circle(Z, radius: .07, fill: black)
   content((2.75, 2.55), [$Z$])
-  content((1.35, .15), [$L$])
+  content((1.35, .32), [$L$])
   content((3.7, 3.6), [$d$])
   content((4.15, 2.3), [$d_1$])
 })

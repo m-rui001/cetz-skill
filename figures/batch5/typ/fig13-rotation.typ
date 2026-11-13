@@ -4,8 +4,8 @@
 #canvas({
   import draw: *
   // axes
-  line((0, 0), (5.5, 0), mark: (end: ">"))
-  line((0, 0), (0, 4.4), mark: (end: ">"))
+  line((0, 0), (5.5, 0), mark: (end: "stealth", fill: black))
+  line((0, 0), (0, 4.4), mark: (end: "stealth", fill: black))
   content((-.15, -.3), [O])
   content((5.45, -.28), [$x$])
   content((.12, 4.45), [$y$])
@@ -22,9 +22,9 @@
   // angle arc, arrow toward Z' ray
   let r = 1.45
   let a0 = 71.6deg
-  arc((A.at(0) + r * calc.cos(a0), A.at(1) + r * calc.sin(a0)), radius: r, start: a0, stop: 24.2deg, mark: (end: ">"))
+  arc((A.at(0) + r * calc.cos(a0), A.at(1) + r * calc.sin(a0)), radius: r, start: a0, stop: 24.2deg, mark: (end: "stealth", fill: black))
   content((3.15, 2.15), [$alpha$])
   // rotation direction arrow
-  bezier((1.45, .49), (.29, 1.73), (1.75, 1.15), (1.05, 1.85), mark: (end: ">"))
-  content((.5, 1.9), [+])
+  bezier((1.45, .49), (.29, 1.73), (1.75, 1.15), (1.05, 1.85), mark: (end: "stealth", fill: black))
+  content((.5, 2.2), [+])
 })

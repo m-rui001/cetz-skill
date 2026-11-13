@@ -13,7 +13,7 @@
 
   // incoming wavefronts and the arrow that pushes them along
   for x in (-1.65, -1.09) { line((x, 1.07), (x, -1.08), stroke: dsh) }
-  line((-2.11, 0.35), (-0.63, 0.35), stroke: t, mark: (end: ">"))
+  line((-2.11, 0.35), (-0.63, 0.35), stroke: t, mark: (end: "stealth", fill: black))
 
   // optical axis, aperture plane S and the screen
   line((-2.11, 0), (5.39, 0), stroke: t)
@@ -33,24 +33,24 @@
   line((0.20, -0.10), (0.62, -0.52), stroke: t)
   content((0.72, -0.58), anchor: "north-west", [$x. sin theta$])
   line((0.02, 0.74), (0.22, 0.66), stroke: t)
-  content((-0.14, 0.60), anchor: "east", [$delta x$])
+  content((-0.36, 0.60), anchor: "east", [$delta x$])
 
   // height x of the secondary source above O
-  line((-0.22, 0.48), (-0.22, 2.07), stroke: t, mark: (end: ">"))
+  line((-0.22, 0.48), (-0.22, 2.07), stroke: t, mark: (end: "stealth", fill: black))
   line((-0.22, 0.10), (-0.22, 0.30), stroke: t)
   content((-0.36, 1.32), anchor: "east", [$x$])
 
   // theta between the axis and the chief ray
   content((1.82, 0.13), anchor: "center", [$theta$])
-  line((1.62, 0.92), (1.78, 0.62), stroke: t, mark: (end: ">"))
-  line((1.62, -0.36), (1.72, -0.06), stroke: t, mark: (end: ">"))
+  line((1.62, 0.92), (1.78, 0.62), stroke: t, mark: (end: "stealth", fill: black))
+  line((1.62, -0.36), (1.72, -0.06), stroke: t, mark: (end: "stealth", fill: black))
 
   content((3.05, 0.46), anchor: "center", [$r_0$])
   content((2.55, 1.34), anchor: "center", [$r_0 - x. sin theta$])
 
   // propagation coordinate along the axis
   line((3.20, -0.46), (3.55, -0.46), stroke: t)
-  line((3.85, -0.46), (4.25, -0.46), stroke: t, mark: (end: ">"))
+  line((3.85, -0.46), (4.25, -0.46), stroke: t, mark: (end: "stealth", fill: black))
   content((3.70, -0.46), anchor: "center", [$z$])
 
   // intensity recorded on the screen, drawn to the left of it

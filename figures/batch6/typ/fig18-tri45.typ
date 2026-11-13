@@ -3,7 +3,7 @@
 
 #canvas({
   import draw: *
-  line((0, 0), (0, 2.35), mark: (end: ">"))
+  line((0, 0), (0, 2.35), mark: (end: "stealth", fill: black))
   content((-.25, 2.4), [$y$])
   let A = (2.04, 4.36)
   let Bp = (5.18, 3.91)
@@ -21,13 +21,13 @@
   arc((c2.at(0) + r * calc.cos(100deg), c2.at(1) + r * calc.sin(100deg)), radius: r, start: 100deg, stop: 190deg, stroke: (dash: "dashed"))
   let c3 = Ap
   arc((c3.at(0) + r * calc.cos(137deg), c3.at(1) + r * calc.sin(137deg)), radius: r, start: 137deg, stop: 26deg, stroke: (dash: "dashed"))
-  content((1.15, 3.45), [$theta$])
+  content((.90, 3.65), [$theta$])
   content((4.55, 2.15), [$theta$])
   content((2.3, 1.05), [$theta$])
   content((1.95, 4.55), [A])
-  content((5.35, 3.95), [B#sym.prime])
+  content((5.5, 3.95), [B#sym.prime])
   content((.05, 4.0), [C#sym.prime])
   content((.3, 1.45), [B])
-  content((5.6, 1.6), [C])
+  content((5.75, 1.6), [C])
   content((2.1, -.25), [A#sym.prime])
 })

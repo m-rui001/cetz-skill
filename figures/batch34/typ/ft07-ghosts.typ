@@ -24,8 +24,8 @@
     line((s.at(0), 0), (s.at(0), s.at(1)), stroke: t)
   }
   // parent lines carry arrowheads
-  line((0, 0), (0, 2.29), stroke: t, mark: (end: ">"))
-  line((4.26, 0), (4.26, 2.26), stroke: t, mark: (end: ">"))
+  line((0, 0), (0, 2.29), stroke: t, mark: (end: "stealth", fill: black))
+  line((4.26, 0), (4.26, 2.26), stroke: t, mark: (end: "stealth", fill: black))
   line((0, 1.86), (0.13, 1.97), stroke: t)
   line((4.13, 1.83), (4.26, 1.94), stroke: t)
 
@@ -40,7 +40,7 @@
 
   content((0, -0.29), anchor: "north", [$nu_c$])
   content((4.26, -0.29), anchor: "north", [$2nu_c$])
-  line((0.42, -0.49), (0.85, -0.49), stroke: t)
+  line((0.42, -0.49), (0.78, -0.49), stroke: t)
   content((1.05, -0.50), anchor: "center", [$overline(nu)$])
-  line((1.25, -0.49), (2.36, -0.49), stroke: t, mark: (end: ">"))
+  line((1.32, -0.49), (2.36, -0.49), stroke: t, mark: (end: "stealth", fill: black))
 })

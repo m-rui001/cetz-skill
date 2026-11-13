@@ -11,7 +11,7 @@
   let B = (1.85, 1.25)
   // axes
   line(O, (3.9, 0))
-  line(O, (0, 3.9), mark: (end: ">"))
+  line(O, (0, 3.9), mark: (end: "stealth", fill: black))
   content((4.05, -.3), [$x$])
   content((-.4, 3.7), [$y$])
   content((-.35, -.35), [$O$])
@@ -34,11 +34,11 @@
   let r2 = .75
   arc((r2 * calc.cos(aBt), r2 * calc.sin(aBt)), radius: r2, start: aBt, stop: aB, stroke: (dash: "dashed"))
   content((.55, 3.0), [$omega t$])
-  content((1.55, .95), [$-omega t$])
+  content((1.55, .72), [$-omega t$])
   // point labels
   content((1.15, 3.35), [$A_t$])
-  content((3.6, 3.75), [$Z$])
+  content((3.65, 3.95), [$Z$])
   content((2.55, .4), [$B_t$])
-  content((2.35, 2.75), [$A$])
-  content((1.95, 1.35), [$B$])
+  content((2.48, 2.82), [$A$])
+  content((2.08, 1.52), [$B$])
 })

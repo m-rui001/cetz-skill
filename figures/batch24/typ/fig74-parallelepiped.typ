@@ -38,10 +38,10 @@
   line(ABC, BC, stroke: td)
 
   // vectors
-  line(O, K, stroke: tv, mark: (end: ">"))
-  line(O, A, stroke: tv, mark: (end: ">"))
-  line(O, B, stroke: tv, mark: (end: ">"))
-  line(O, C, stroke: tv, mark: (end: ">"))
+  line(O, K, stroke: tv, mark: (end: "stealth", fill: black))
+  line(O, A, stroke: tv, mark: (end: "stealth", fill: black))
+  line(O, B, stroke: tv, mark: (end: "stealth", fill: black))
+  line(O, C, stroke: tv, mark: (end: "stealth", fill: black))
 
   // angle phi between the vertical and A
   arc((0, 0.7), radius: 0.7, start: 90deg, stop: 128deg, stroke: th)
@@ -52,13 +52,13 @@
 
   content((-0.15, 4.15), [$arrow(B) times arrow(C)$])
   content((1.55, 4.1), anchor: "west", [Parallelepiped])
-  content((-2.3, 0.0 - 0.72), [Plane containing both $arrow(B)$ and $arrow(C)$])
+  content((-2.3, -1.55), [Plane containing both $arrow(B)$ and $arrow(C)$])
   content((-1.95, 1.8), anchor: "east", [$arrow(A)$])
   content((2.5, 0.0 - 0.45), [$arrow(B)$])
   content((1.95, 0.6), [$arrow(C)$])
-  content((0.52, 2.15), anchor: "west", [Height is])
-  content((0.52, 1.68), anchor: "west", [$abs(arrow(A)) cos(phi)$])
-  content((3.55, 1.0), [Area of base])
-  content((3.55, 0.48), [is $arrow(B) times arrow(C)$])
+  content((-2.2, 3.3), anchor: "east", [Height is])
+  content((-2.2, 2.83), anchor: "east", [$abs(arrow(A)) cos(phi)$])
+  content((6.9, 1.0), anchor: "west", [Area of base])
+  content((6.9, 0.48), anchor: "west", [is $arrow(B) times arrow(C)$])
   content((-0.28, 1.0), anchor: "east", [$phi$])
 })

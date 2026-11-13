@@ -17,7 +17,7 @@
   circle(Mp, radius: .07, fill: black)
   content((1.6, 4.6), [d])
   content((2.3, 4.5), [d#sym.prime])
-  content((1.02, 3.45), [Z])
+  content((1.28, 3.35), [Z])
   content((2.32, 3.18), [Z#sym.prime])
   content((3.3, 1.15), [M#sym.prime])
   content((-.25, 1.7), [L])
