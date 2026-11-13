@@ -67,7 +67,7 @@
   collector(11.40, green, [Current Collector])
   rect((9.05, 1.90), (9.75, 5.00), fill: rgb("#c8d8e8").transparentize(55%), stroke: 0.8pt + rgb("#5a7a9a"))
   content((9.40, 3.35), text(size: 7.5pt, [Separator]), angle: 90deg, frame: none)
-  for p in ((7.75, 4.55), (8.05, 3.55), (8.55, 2.45), (10.55, 4.35), (10.95, 3.35), (10.55, 2.35)) {
+  for p in ((8.05, 4.55), (8.15, 3.55), (8.55, 2.45), (10.55, 4.35), (10.55, 3.35), (10.55, 2.35)) {
     content(p, text(size: 7.5pt, [$"SO"_4^(2-)$]), frame: none)
   }
   for p in ((8.25, 4.10), (8.75, 3.05), (8.45, 2.05), (10.15, 3.95), (10.35, 2.85), (10.85, 2.00)) {
@@ -75,7 +75,7 @@
   }
   line((7.85, 2.35), (7.70, 2.85), (7.85, 3.30), stroke: 1.6pt + blue,
     mark: (end: "stealth", scale: 0.5, fill: blue))
-  line((11.10, 3.30), (11.25, 2.80), (11.10, 2.35), stroke: 1.6pt + blue,
+  line((11.22, 3.22), (11.35, 2.78), (11.22, 2.35), stroke: 1.6pt + blue,
     mark: (end: "stealth", scale: 0.5, fill: blue))
   notes(9.35, 1.05, [Capacitive Faradaic])
 
@@ -87,16 +87,16 @@
   collector(16.90, purple, [Current Collector])
   rect((14.85, 1.90), (15.55, 5.00), fill: pink.transparentize(50%), stroke: 0.8pt + rgb("#a06060"))
   content((15.20, 3.35), text(size: 7.5pt, [Separator]), angle: 90deg, frame: none)
-  for p in ((13.90, 4.55), (14.20, 3.55), (13.92, 2.55), (15.95, 4.35), (16.30, 3.35), (16.00, 2.35)) {
+  for p in ((13.90, 4.55), (14.20, 3.55), (14.35, 2.55), (15.95, 4.35), (16.30, 3.35), (16.00, 2.35)) {
     content(p, text(size: 7.5pt, [$"K"^+$]), frame: none)
   }
-  for p in ((14.55, 4.35), (14.60, 3.10), (14.50, 2.20), (16.35, 4.60), (16.40, 2.60)) {
+  for p in ((14.55, 4.35), (14.60, 3.10), (14.50, 2.20), (16.20, 4.85), (16.40, 2.60)) {
     content(p, text(size: 7.5pt, [$"OH"^-$]), frame: none)
   }
-  line((14.05, 2.20), (13.85, 2.75), (14.00, 3.30), stroke: 1.6pt + rgb("#2f9e44"),
+  line((13.80, 2.15), (13.70, 2.70), (13.80, 3.20), stroke: 1.6pt + rgb("#2f9e44"),
     mark: (end: "stealth", scale: 0.5, fill: rgb("#2f9e44")))
-  line((16.05, 4.85), (16.20, 4.40), (16.05, 3.95), stroke: 1.6pt + rgb("#2f9e44"),
+  line((16.55, 5.05), (16.65, 4.55), (16.55, 4.05), stroke: 1.6pt + rgb("#2f9e44"),
     mark: (end: "stealth", scale: 0.5, fill: rgb("#2f9e44")))
-  notes(14.15, 1.15, [Non- Capacitive\ Faradaic], size: 7.8pt)
+  notes(14.35, 1.10, [Non- Capacitive\ Faradaic], size: 7.8pt)
   notes(17.10, 1.15, [EDLC], size: 8.2pt)
 })
