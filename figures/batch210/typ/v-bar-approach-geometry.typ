@@ -124,12 +124,12 @@
   line(P, (8.8, 7.45), stroke: (paint: black, thickness: th), mark: (end: "stealth"))
 
   // ---- 文字标注 ----
-  content((2.25, 6.05), [Chaser Satellite])
+  content((2.25, 6.85), [Chaser Satellite])
   content((17.0, 9.05), [Target])
   content((23.2, 11.35), [Orbit])
   content((6.55, 8.62), [P])
   content((5.85, 10.28), text(fill: bl)[H-Bar])
-  content((8.02, 9.72), text(fill: bl)[V-Bar])
+  content((8.02, 10.12), text(fill: bl)[V-Bar])
   content((9.0, 7.0), text(fill: bl)[R-Bar])
   content((10.3, 8.6), $r_i$)
   content((12.7, 4.9), $r_P$)

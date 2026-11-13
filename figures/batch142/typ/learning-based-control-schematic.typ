@@ -36,8 +36,8 @@
   content((0.45, 3.95), [Target #xdes], anchor: "west")
   ar((5.7, 3.475), (6.4, 3.475))
   ar((9.6, 3.475), (10.4, 3.475))
-  content((10.0, 4.44), [Actuation], anchor: "center")
-  content((10.0, 4.19), [state], anchor: "center")
+  content((10.0, 4.45), [#text(size: 7.5pt)[Actuation]], anchor: "center")
+  content((10.0, 4.13), [#text(size: 7.5pt)[state]], anchor: "center")
 
   // 采样数据回流路径：机器人底部→左折→下探入控制策略
   ar((12.0, 2.95), (12.0, 1.95), (8.0, 1.95), (8.0, 1.05))

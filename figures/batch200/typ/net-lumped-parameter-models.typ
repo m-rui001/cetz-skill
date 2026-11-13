@@ -21,7 +21,7 @@
   // 两个蓝色面板与白字子图号
   rect((0, 0), (4.2, 4.2), fill: bg, stroke: none)
   rect((4.45, 0), (8.65, 4.2), fill: bg, stroke: none)
-  content((0.14, 4.06), text(fill: white, size: 10pt, "(a)"), anchor: "north-west")
+  content((0.95, 4.06), text(fill: white, size: 10pt, "(a)"), anchor: "north-west")
   content((4.59, 4.06), text(fill: white, size: 10pt, "(b)"), anchor: "north-west")
 
   // ---------- (a) 正交缆索网 / 集总参数网 ----------

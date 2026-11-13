@@ -90,8 +90,8 @@
   for p in (ni, nj) {
     circle(p, radius: 0.10, fill: white, stroke: (paint: cnet, thickness: 0.9pt))
   }
-  content((7.54, 3.70), [Node $i$], anchor: "east")
-  content((9.10, 3.42), [Node $j$], anchor: "west")
+  content((7.54, 3.35), [Node $i$], anchor: "east")
+  content((9.85, 3.42), [Node $j$], anchor: "west")
 
   // 变形构型坐标系
   let o = (7.30, 0.96)
@@ -99,7 +99,7 @@
   line(o, (7.36, 2.10), mark: arrow, stroke: thin)
   line(o, (8.40, 1.30), mark: arrow, stroke: thin)
   line(o, (6.56, 1.36), mark: arrow, stroke: thin)
-  content((6.98, 1.92), [Z], anchor: "east")
+  content((6.98, 1.62), [Z], anchor: "east")
   content((8.52, 1.38), [X], anchor: "west")
   content((6.42, 1.16), [Y], anchor: "east")
   content((7.26, 0.82), [$o$], anchor: "north-east")
@@ -108,7 +108,7 @@
   line(o, ni, mark: arrow, stroke: thin)
   line(o, nj, mark: arrow, stroke: thin)
   line(o, (8.30, 2.86), mark: arrow, stroke: thin)
-  content((7.62, 2.15), [$r_i$], anchor: "west")
+  content((7.35, 2.55), [$r_i$], anchor: "east")
   content((8.30, 1.80), [$r_j$], anchor: "west")
   content((8.22, 2.58), [$bold(r)$], anchor: "west")
 
@@ -116,7 +116,7 @@
   line(ni, (8.08, 4.12), mark: (end: "stealth", fill: black, scale: 0.45), stroke: 0.6pt)
   content((8.16, 3.94), [$r_(i x)$], anchor: "west")
   line(nj, (9.50, 2.98), mark: (end: "stealth", fill: black, scale: 0.45), stroke: 0.6pt)
-  content((9.56, 2.92), [$r_(j x)$], anchor: "west")
+  content((9.80, 2.92), [$r_(j x)$], anchor: "west")
 
   // 初始构型标尺 0–x，长度 l0
   line((6.53, 6.38), (8.92, 6.38), mark: (end: "stealth", fill: black, scale: 0.55), stroke: thin)
