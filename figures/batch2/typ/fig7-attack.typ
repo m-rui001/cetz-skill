@@ -9,12 +9,12 @@
   for i in range(1, 9) {
     let y = i * 0.3
     draw.line((0, y), (-0.12, y), stroke: 0.6pt)
-    draw.content((-0.25, y), labs.at(i - 1), anchor: "east")
+    draw.content((-0.25, y), text(size: 6pt, labs.at(i - 1)), anchor: "east")
   }
   for i in range(0, 5) {
     let x = i * W / 4
     draw.line((x, 0), (x, -0.12), stroke: 0.6pt)
-    draw.content((x, -0.3), str(i * 50), anchor: "north")
+    draw.content((x, -0.3), text(size: 8pt, str(i * 50)), anchor: "north")
   }
   let spikes = ((0.06, 2.4), (0.15, 0.36), (0.3, 0.18), (0.45, 0.09),
     (0.95, 0.15), (1.0, 0.54), (1.08, 0.12), (1.6, 0.33), (1.72, 0.51),
