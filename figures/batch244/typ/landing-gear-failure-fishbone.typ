@@ -41,7 +41,7 @@
 
   // 两个分类框与四条斜脊
   rect((5.55, 12.00), (10.65, 12.55), stroke: 1.6pt + ink)
-  content((8.10, 12.27), text(size: 8.6pt, weight: "bold", [Aluminium alloy components failures]))
+  content((8.10, 12.27), text(size: 7.6pt, weight: "bold", [Aluminium alloy components failures]))
   thick((6.20, 12.00), (4.90, 6.0))
   thick((10.00, 12.00), (13.60, 6.0))
   rect((5.95, 0.48), (10.25, 1.02), stroke: 1.6pt + ink)

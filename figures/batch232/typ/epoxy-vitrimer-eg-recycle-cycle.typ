@@ -52,9 +52,9 @@
       let w = if calc.even(i) { amp } else { -amp }
       (b.at(0) - d.at(1) / L * w, b.at(1) + d.at(0) / L * w)
     })
-    line(..s, stroke: (paint: col, thickness: 1.1pt), mark: (end: "stealth"))
+    line(..s, stroke: (paint: col, thickness: 0.8pt), mark: (end: "stealth", fill: col))
   }
-  let arw(p, q, col) = line(p, q, stroke: (paint: col, thickness: 1.1pt), mark: (end: "stealth"))
+  let arw(p, q, col) = line(p, q, stroke: (paint: col, thickness: 0.8pt), mark: (end: "stealth", fill: col))
 
   // ── 上排左：脂肪链（酯键—二氢吡啶环—双酚 A 二缩水甘油醚）
   let ck = (paint: ink, thickness: 0.8pt)
@@ -78,7 +78,7 @@
   hexc((6.74, 13.95), 0.42)
   line((7.16, 13.95), (7.30, 13.72), stroke: ck); content((7.40, 13.66), text("O", size: 7.5pt))
   line((7.52, 13.60), (7.68, 13.38), (7.82, 13.14), stroke: ck)
-  content((7.86, 12.86), text("HO", size: 7.5pt))
+  content((8.00, 12.72), text("HO", size: 7.5pt))
   content((4.55, 12.55), text([Fatty Acid Linker], weight: "bold"))
 
   // 上排右：乙二醇与可逆溶解箭头
@@ -121,7 +121,7 @@
   hexc((10.84, 12.18), 0.42)
   line((11.26, 12.18), (11.40, 11.94), stroke: ck); content((11.50, 11.88), text("O", size: 7.5pt))
   line((11.62, 11.82), (11.78, 11.60), (11.94, 11.82), (12.08, 11.58), stroke: ck)
-  content((11.88, 11.44), text("HO", size: 7.5pt)); content((12.18, 11.64), text("OH", size: 7.5pt))
+  content((11.88, 11.44), text("HO", size: 7.5pt)); content((12.38, 11.64), text("OH", size: 7.5pt))
 
   // ── 下部闭环：流程箭头先画，色块与文字后画覆盖
   translate((0, 1.25))
@@ -151,7 +151,7 @@
   // 标注文字
   content((8.55, 9.15), text([Repolymerization], weight: "bold", fill: rd))
   content((13.05, 9.50), text([Composite], weight: "bold"), anchor: "west")
-  content((13.05, 5.25), text([Heating], weight: "bold", fill: rd), angle: -28deg)
+  content((12.90, 5.50), text([Heating], weight: "bold", fill: rd), angle: -28deg)
   content((5.85, 2.72), text([Evaporating Remnant EG], weight: "bold", size: 9.5pt, fill: rd), angle: -12deg)
   content((15.10, 3.15), text([Immersing in EG], weight: "bold"))
   content((9.65, 0.28), text([Polymer Matrix Dissolved], weight: "bold"))
