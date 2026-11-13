@@ -48,7 +48,7 @@
       content(P(add(sc(Cx, 0.62), (0.12, 0.0 - .58))), anchor: "north", [$A'_x$])
       content(P(add(sc(Cy, 0.55), (0.0 - .30, 0.06))), anchor: "east", [$A'_y$])
     }
-    content(P(if primed { (1.55, 1.15) } else { (1.00, 0.86) }), anchor: "west", [$arrow(A)$])
+    content(P(if primed { (1.63, 1.17) } else { (1.08, 0.88) }), anchor: "west", [$arrow(A)$])
     content(P((0.0 - .15, 0.0 - 3.95)), anchor: "center", [#(tag)])
   }
 
