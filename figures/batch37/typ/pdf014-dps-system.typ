@@ -86,6 +86,6 @@
     circle(P(1120,y),radius:(5.4,14.2),fill:rgb("#00a1a5"),stroke:none)
     line(P(1170,y),P(1302,y),stroke:(paint:blue,thickness:2.2pt))
     circle(P(1302,y),radius:3.8,stroke:(paint:cyan,thickness:1pt))
-    label(1206,y + 33,l,size:20pt)
+    label(1180,y + 30,l,size:18pt)
   }
 })

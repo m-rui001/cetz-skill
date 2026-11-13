@@ -267,7 +267,7 @@ canvas(length:1pt,{
   line(P(938,601),P(939,582),P(922,590),close:true,fill:blue,stroke:none)
   label(880,572,[1],size:15pt)
   label(895,536,[2],size:15pt)
-  label(960,571,[3],size:15pt)
+  label(968,556,[3],size:15pt)
   label(909,654,[CIR],size:23pt)
   rect(P(1078,422),P(1203,637),fill:rgb("#d5e2bb"),stroke:none)
   label(1141,440,[SSPD],size:19pt)
