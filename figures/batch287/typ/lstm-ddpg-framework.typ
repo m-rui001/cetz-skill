@@ -11,8 +11,8 @@
   import draw: *
   let ink = black
   let gray = rgb("#9a9a9a")
-  let thin = 0.9pt + ink
-  let dashthin = (paint: ink, thickness: 0.9pt, dash: "dashed")
+  let thin = (paint: ink, thickness: 0.8pt)
+  let dashthin = (paint: ink, thickness: 0.8pt, dash: "dashed")
   let boxstroke = 1.0pt + ink
   let tan = rgb("#e7c9a3")
   let grn = rgb("#a9d3a6")
@@ -39,8 +39,8 @@
   }
   nbox(5.05, 5.95, 8.15, 7.45, [Actor Network], 8.5pt)
   nbox(9.95, 5.95, 12.55, 7.45, [Critic Network], 8.5pt)
-  nbox(5.05, 2.05, 8.15, 3.45, [Target Actor Network], 6.2pt)
-  nbox(9.95, 2.05, 12.55, 3.45, [Target Critic Network], 6.2pt)
+  nbox(5.05, 2.05, 8.15, 3.45, [#text(size: 8pt)[Target Actor Network]], 6.2pt)
+  nbox(9.95, 2.05, 12.55, 3.45, [#text(size: 7pt)[Target Critic Network]], 6.2pt)
 
   // 网络缩略图：输入节点 + （LSTM 条 / 中间节点）+ 输出节点
   let net(cx, cy, lstm: true) = {
@@ -92,7 +92,7 @@
 
   // ---------- 策略梯度与损失 ----------
   rect((5.05, 4.45), (7.55, 5.28), radius: 0.06, fill: white, stroke: 0.9pt + ink)
-  content((5.14, 5.12), [Policy], size: 6.5pt, anchor: "west")
+  content((5.14, 5.03), [#text(size: 8pt)[Policy]], size: 6.5pt, anchor: "west")
   content((5.14, 4.66), [Gradient], size: 6.5pt, anchor: "west")
   content((7.05, 4.78), [$nabla_(theta^mu) J$], size: 7.5pt)
   rect((11.55, 4.45), (13.25, 5.30), radius: 0.06, fill: white, stroke: 0.9pt + ink)
@@ -111,12 +111,12 @@
   cell(9.80, 1.38)
   cell(10.80, 1.38)
   cell(11.80, 1.38)
-  line((9.94, 1.38), (10.63, 1.38), stroke: 0.7pt + ink, mark: ar)
-  line((10.94, 1.38), (11.63, 1.38), stroke: 0.7pt + ink, mark: ar)
+  line((9.94, 1.38), (10.63, 1.38), stroke: (paint: ink, thickness: 0.8pt), mark: ar)
+  line((10.94, 1.38), (11.63, 1.38), stroke: (paint: ink, thickness: 0.8pt), mark: ar)
   content((9.53, 1.38), [$o_(t-T-1)$], size: 6.5pt, anchor: "east")
   content((10.80, 1.74), [$o_(t-1)$], size: 6.5pt)
   content((11.80, 1.74), [$o_t$], size: 6.5pt)
-  content((10.40, 0.98), [Recurrent Neural Network], size: 5.8pt)
+  content((10.40, 0.98), [#text(size: 8pt)[Recurrent Neural Network]], size: 5.8pt)
   content((10.40, 0.70), [LSTM], size: 5.8pt)
 
   // ---------- 参数更新虚线双向箭头 ----------
@@ -131,10 +131,10 @@
   // 环境观测 o_t 与上一动作 a_t 送入 Actor
   line((1.15, 5.80), (1.15, 7.15), stroke: thin)
   line((1.15, 7.15), (5.05, 7.15), stroke: thin, mark: ar)
-  content((4.55, 7.30), [$o_t$], size: 8.5pt)
+  content((4.55, 7.38), [$o_t$], size: 8.5pt)
   line((1.45, 5.80), (1.45, 6.80), stroke: thin)
   line((1.45, 6.80), (5.05, 6.80), stroke: thin, mark: ar)
-  content((4.55, 6.92), [$a_t$], size: 8.5pt)
+  content((4.55, 7.03), [$a_t$], size: 8.5pt)
   // Actor 输出动作 a_t 回到环境
   line((5.05, 6.42), (2.05, 6.42), stroke: thin)
   line((2.05, 6.42), (2.05, 5.80), stroke: thin, mark: ar)
@@ -142,12 +142,12 @@
   // 回放池采样 o_i 送入 Actor
   line((4.18, 4.60), (4.18, 6.05), stroke: thin)
   line((4.18, 6.05), (5.05, 6.05), stroke: thin, mark: ar)
-  content((4.55, 6.18), [$o_i$], size: 8.5pt)
+  content((4.55, 6.28), [$o_i$], size: 8.5pt)
   // 环境经验入池
   line((2.55, 3.25), (3.10, 3.25), stroke: thin)
   line((3.10, 3.25), (3.10, 3.85), stroke: thin)
   line((3.10, 3.85), (3.50, 3.85), stroke: thin, mark: ar)
-  content((3.30, 3.02), [$(r_t, o_(t+1))$], size: 7.5pt, anchor: "north")
+  content((3.15, 3.02), [#text(size: 8pt)[$(r_t, o_(t+1))$]], size: 7.5pt, anchor: "north-west")
   // Actor → Critic（动作 a）
   line((8.15, 6.95), (9.95, 6.95), stroke: thin, mark: ar)
   content((9.05, 7.20), [$a$], size: 8.5pt)
@@ -169,7 +169,7 @@
   arc((7.85, 4.90), start: 0deg, stop: 180deg, radius: hopr, stroke: thin, mode: "OPEN")
   line((7.75, 4.90), (7.55, 4.90), stroke: thin, mark: ar)
   // 策略梯度 → Actor
-  line((5.60, 5.20), (5.60, 5.95), stroke: thin, mark: ar)
+  line((5.60, 5.28), (5.60, 5.95), stroke: thin, mark: ar)
 
   // Critic 的 Q 值 → 损失函数
   line((11.25, 5.95), (11.25, 5.50), stroke: thin)

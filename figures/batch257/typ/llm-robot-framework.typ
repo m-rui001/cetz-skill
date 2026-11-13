@@ -83,51 +83,53 @@
   // 输入连线：治疗师输入进 Entertain，用户请求进 Decision 与 Converse
   wr((4.3, 12.6), (10.35, 12.6), blue)
   wr((4.35, 10.8), (6.05, 10.8), blue)
-  line((4.35, 10.45), (5.0, 10.45), (5.0, 8.4), (12.55, 8.4), stroke: 1pt + blue,
+  line((4.35, 10.45), (5.0, 10.45), (5.0, 8.4), (12.55, 8.4), stroke: (paint: blue, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: blue))
   // 决策到娱乐/会话两路绿线
-  line((8.25, 11.10), (9.2, 11.10), (9.2, 13.05), (10.35, 13.05), stroke: 1pt + green,
+  line((8.25, 11.10), (9.2, 11.10), (9.2, 13.05), (10.35, 13.05), stroke: (paint: green, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: green))
-  line((8.75, 11.35), (9.6, 11.35), (9.6, 10.5), (12.55, 10.5), stroke: 1pt + green,
+  line((8.75, 11.35), (9.6, 11.35), (9.6, 10.5), (12.55, 10.5), stroke: (paint: green, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: green))
   // 三路深蓝粗箭头输出
-  line((12.35, 13.3), (15.85, 13.3), (15.85, 13.22), stroke: 3pt + navy,
+  line((12.35, 13.3), (15.85, 13.3), (15.85, 13.22), stroke: (paint: navy, thickness: 3pt),
     mark: (end: "stealth", scale: 0.7, fill: navy))
-  line((14.65, 10.15), (16.15, 10.15), stroke: 3pt + navy,
+  line((14.65, 10.15), (16.15, 10.15), stroke: (paint: navy, thickness: 3pt),
     mark: (end: "stealth", scale: 0.7, fill: navy))
-  line((14.65, 7.8), (16.3, 7.8), stroke: 3pt + navy,
+  line((14.65, 7.8), (16.3, 7.8), stroke: (paint: navy, thickness: 3pt),
     mark: (end: "stealth", scale: 0.7, fill: navy))
 
   // 机器人回路：传感器→行为、脚本→控制器、控制器→传感器
-  wr((2.55, 3.5), (2.55, 6.325), blue)
+  line((1.4, 3.25), (1.1, 3.25), (1.1, 6.325), (1.85, 6.325),
+    stroke: (paint: blue, thickness: 0.8pt),
+    mark: (end: "stealth", scale: 0.5, fill: blue))
   wr((4.55, 4.85), (3.7, 4.85), blue)
   wr((2.55, 4.3), (2.55, 3.5), blue)
 
   // Script 文档块与 Σ 求和点
   rect((4.55, 4.4), (5.65, 5.35), stroke: 1pt + ink, fill: white)
-  line((4.72, 4.4), (4.72, 5.35), stroke: 0.8pt + ink)
-  line((4.90, 4.4), (4.90, 5.35), stroke: 0.8pt + ink)
+  line((4.72, 4.4), (4.72, 5.35), stroke: (paint: ink, thickness: 0.8pt))
+  line((4.90, 4.4), (4.90, 5.35), stroke: (paint: ink, thickness: 0.8pt))
   content((5.30, 4.87), text(size: 7pt, [Script]), angle: 90deg, frame: none)
   circle((6.35, 6.25), radius: 0.22, stroke: 1pt + ink, fill: white)
-  line((6.22, 6.25), (6.48, 6.25), stroke: 0.8pt + ink)
-  line((6.35, 6.12), (6.35, 6.38), stroke: 0.8pt + ink)
+  line((6.22, 6.25), (6.48, 6.25), stroke: (paint: ink, thickness: 0.8pt))
+  line((6.35, 6.12), (6.35, 6.38), stroke: (paint: ink, thickness: 0.8pt))
   // Prompt 4 黄线进 Σ，Σ 输出写入 Script
   line((12.85, 8.30), (12.70, 8.30), (12.70, 6.55), (5.35, 6.55), (5.35, 6.25), (6.13, 6.25),
-    stroke: 1pt + yellow, mark: (end: "stealth", scale: 0.5, fill: yellow))
-  line((6.35, 6.47), (6.35, 6.85), (5.1, 6.85), (5.1, 5.35), stroke: 1pt + blue,
+    stroke: (paint: yellow, thickness: 1pt), mark: (end: "stealth", scale: 0.5, fill: yellow))
+  line((6.35, 6.47), (6.35, 6.85), (5.1, 6.85), (5.1, 5.35), stroke: (paint: blue, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: blue))
 
   // 底部总线：RGB 图像回馈进 Converse，娱乐输出下行并入总线，青线进 Σ
-  line((2.55, 2.5), (2.55, 2.1), (15.4, 2.1), stroke: 1pt + cyan)
-  line((13.9, 2.1), (13.9, 5.85), stroke: 1pt + cyan,
+  line((2.55, 2.5), (2.55, 2.1), (15.4, 2.1), stroke: (paint: cyan, thickness: 1pt))
+  line((13.9, 2.1), (13.9, 5.85), stroke: (paint: cyan, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: cyan))
-  line((6.35, 2.1), (6.35, 6.03), stroke: 1pt + cyan,
+  line((6.35, 2.1), (6.35, 6.03), stroke: (paint: cyan, thickness: 1pt),
     mark: (end: "stealth", scale: 0.5, fill: cyan))
-  line((12.35, 12.0), (15.4, 12.0), (15.4, 2.1), stroke: 0.9pt + blue)
+  line((12.35, 12.0), (15.4, 12.0), (15.4, 2.1), stroke: (paint: blue, thickness: 0.9pt))
   txt(8.3, 2.28, [Output = RGB image of user])
 
   // 四个说明文字块
   txt(7.55, 7.62, [Input = user request\ output = user#sub[request] +\ entertain(user#sub[request])\ OR\ converse(user#sub[request])], size: 6.8pt)
-  txt(5.85, 3.25, [Script serves as a buffer\ between LLM responses and\ the execution of these\ responses by the low-level\ controller], size: 6.5pt)
+  txt(8.15, 3.25, [Script serves as a buffer\ between LLM responses and\ the execution of these\ responses by the low-level\ controller], size: 6.5pt)
   txt(10.35, 5.55, [Input=response user request\ Output=Script containing\ textual to user +\ embedded atomic actions], size: 6.6pt)
 })

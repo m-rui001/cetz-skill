@@ -10,7 +10,7 @@
   let thin = (paint: ink, thickness: 0.55pt)
   let dashc = (paint: rgb("#b3b3b3"), thickness: 0.5pt, dash: "dashed")
   let red = rgb("#c0392b")
-  let arrow = (paint: red, thickness: 0.6pt)
+  let arrow = (paint: red, thickness: 0.8pt)
 
   // 通用文字标签
   let lbl(p, body, size: 9pt, anchor: "west") = draw.content(p, text(size: size, body), anchor: anchor)
@@ -48,7 +48,7 @@
   // 加压罐：外壁与内部水囊
   draw.circle((0, 8.2), radius: 1.4, stroke: st)
   draw.circle((0, 7.9), radius: 0.7, stroke: thin)
-  lbl((0.3, 9.05), [Pressurizing \ gas], size: 8pt, anchor: "center")
+  lbl((0, 9.05), [Pressurizing \ gas], size: 7pt, anchor: "center")
   lbl((0, 7.9), [Liquid \ water], size: 7.5pt, anchor: "center")
 
   // 罐体引出与左侧支管
@@ -85,7 +85,7 @@
 
   // 双密封说明框
   draw.rect((-5.55, 5.8), (-3.98, 6.26), radius: 0.08, stroke: thin)
-  lbl((-4.765, 6.03), [\*: double seal], size: 8.5pt, anchor: "center")
+  lbl((-4.765, 6.03), [\*: double seal], size: 7pt, anchor: "center")
 
   // 汽化室主体
   draw.rect((-0.8, 3.6), (0.8, 4.4), stroke: st)
@@ -101,13 +101,13 @@
 
   // 汽化室引注
   lbl((2.35, 4.78), [Vaporization Chamber], size: 8.5pt, anchor: "west")
-  draw.line((2.3, 4.72), (0.76, 4.3), stroke: arrow, mark: (end: "stealth"))
+  draw.line((2.3, 4.72), (0.76, 4.3), stroke: arrow, mark: (end: "stealth", fill: red))
 
   // 加压罐引注
   lbl((1.9, 8.7), [Pressurizing Tank], anchor: "west")
-  draw.line((1.85, 8.66), (1.34, 8.52), stroke: arrow, mark: (end: "stealth"))
+  draw.line((1.85, 8.66), (1.34, 8.52), stroke: arrow, mark: (end: "stealth", fill: red))
   lbl((1.9, 7.5), [Water Bladder], anchor: "west")
-  draw.line((1.85, 7.55), (0.67, 7.88), stroke: arrow, mark: (end: "stealth"))
+  draw.line((1.85, 7.55), (0.67, 7.88), stroke: arrow, mark: (end: "stealth", fill: red))
 
   // 汽化室出口分流总管
   draw.line((0, 3.6), (0, 3.15), stroke: st)
@@ -124,7 +124,7 @@
   }
 
   // 推力器阀组名称
-  lbl((-2.55, 1.95), [ΔV Thruster \ valve], size: 9pt, anchor: "east")
+  lbl((-2.75, 1.95), [ΔV Thruster \ valve], size: 9pt, anchor: "east")
   lbl((2.65, 1.9), [RCS \ Thruster \ Valve], size: 9pt, anchor: "west")
 
   // 底部括号（两组）
@@ -132,19 +132,19 @@
     draw.line((x1, y), (x1, y - d), (x1 + 0.1, y - d - 0.06), stroke: thin)
     draw.line((x2, y), (x2, y - d), (x2 - 0.1, y - d - 0.06), stroke: thin)
   }
-  bracket(-2.5, -1.4, 1.03)
+  bracket(-2.5, -1.4, 1.03, d: 0)
   bracket(0.2, 2.55, 1.03)
 
   // 底部隔热层注释框（左：ΔV；右：RCS）
   lbl((-2.3, 0.78), [Delta-V Thruster], size: 8.5pt, anchor: "center")
   draw.rect((-3.8, 0.6), (-0.85, -0.85), radius: 0.06, stroke: thin)
   for (i, t) in ([Pre-heater], [DVT Thermal Insulator], [Nozzle]).enumerate() {
-    lbl((-3.68, 0.34 - i * 0.38), t, size: 8pt)
+    lbl((-3.68, 0.34 - i * 0.38), t, size: 7pt)
   }
 
   lbl((1.5, 0.78), [RCS Thruster], size: 8.5pt, anchor: "center")
   draw.rect((0.1, 0.6), (3.0, -0.85), radius: 0.06, stroke: thin)
   for (i, t) in ([Pre-heater], [RCT Thermal Insulator], [Nozzle]).enumerate() {
-    lbl((0.22, 0.34 - i * 0.38), t, size: 8pt)
+    lbl((0.22, 0.34 - i * 0.38), t, size: 7pt)
   }
 })

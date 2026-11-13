@@ -54,7 +54,7 @@
   // 根节点与一级分支（绿）
   nb(8.40, 8.55, 4.50, 0.58, [*Debris Removal Methods*], rfill, brown, size: 8.8pt)
   nb(4.40, 7.35, 3.60, 0.62, [Contact Removal\ Methods], gfill, green, size: 8.0pt)
-  nb(8.40, 7.35, 2.50, 0.62, [Self-Eating\ Satellite], gfill, green, size: 8.0pt)
+  nb(8.40, 7.35, 2.50, 0.62, [Self-Eating\ Satellite], gfill, green, size: 6.8pt)
   nb(12.75, 7.35, 3.95, 0.62, [Contactless Removal\ Methods], gfill, green, size: 8.0pt)
 
   // 二级分支（蓝）

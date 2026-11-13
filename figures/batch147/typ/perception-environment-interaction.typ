@@ -31,7 +31,7 @@
   for (x0, x1, x2) in ((2.35, 2.1, 2.45), (2.7, 2.45, 2.8), (3.9, 3.8, 4.1), (4.25, 4.15, 4.45)) {
     line((x0, 5.45), (x1, 4.9), (x2, 4.2), stroke: mk)
   }
-  content((3.2, 6.9), [*Quadruped Robot*])
+  content((3.2, 7.3), [*Quadruped Robot*])
 
   // ===== 中上：RGB-D 灰度深度图 =====
   rect((8.9, 9.1), (12.9, 12.1), fill: rgb("#cfcfcf"), stroke: none)
@@ -169,9 +169,8 @@
       circle((x, y), radius: 0.1, stroke: mk)
       circle((x, y), radius: 0.03, fill: ink, stroke: none)
     } else if k == "arrow" {
-      line((x - 0.2, y - 0.15), (x + 0.18, y + 0.15), stroke: mk)
-      line((x + 0.18, y + 0.15), (x + 0.04, y + 0.14), stroke: mk)
-      line((x + 0.18, y + 0.15), (x + 0.17, y + 0.01), stroke: mk)
+      line((x - 0.2, y - 0.15), (x + 0.18, y + 0.15),
+           stroke: (paint: ink, thickness: 0.8pt), mark: (end: "stealth", fill: ink))
     } else if k == "wave" {
       line((x - 0.22, y + 0.05), (x - 0.1, y - 0.14), (x + 0.02, y + 0.14),
            (x + 0.14, y - 0.12), (x + 0.22, y + 0.04), stroke: mk)

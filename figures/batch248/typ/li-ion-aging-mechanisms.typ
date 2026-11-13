@@ -126,7 +126,7 @@
   lab((14.65, 11.00), [Structure\ disordering])
   lab((16.52, 10.45), [Aluminum\ corrosion])
   lab((2.95, 5.10), [Copper\ Cracking])
-  lab((5.20, 3.00), [SEI layer\ decomposition and\ participation])
+  lab((4.40, 3.00), [SEI layer\ decomposition and\ participation])
   lab((7.45, 3.35), [Particle cracking])
   lab((7.95, 2.42), [SEI formation\ and growth])
   lab((9.90, 1.85), [Lithium plating\ & dendrite\ formation])

@@ -63,28 +63,29 @@
   content((-2.1, 0), [*Flow*], anchor: "center")
 
   // 标注：氧化铝介质层
-  content((-2.55, 4.15), align(center)[*Aluminum Oxide* \ *Dielectric Layer*],
+  content((-2.55, 4.35), align(center)[*Aluminum Oxide* \ *Dielectric Layer*],
     anchor: "center", size: 8.5pt)
   line((-2.55, 3.9), (-2.55, 3.45), (-0.1, 3.45), (-0.1, 3.2),
-       mark: (end: "stealth"), stroke: black)
+       mark: (end: "stealth", fill: black), stroke: black)
 
   // 标注：交流电源电压
   content((0.6, 4.15), [20-125 kHz AC Voltage], anchor: "west", size: 8.5pt)
-  line((0.55, 4.07), (0.24, 3.98), mark: (end: "stealth"), stroke: black)
+  line((0.55, 4.07), (0.24, 3.98), mark: (end: "stealth", fill: black), stroke: black)
 
   // 标注：铝基板
-  content((-3.55, 2.85), [*Aluminum Substrate*], anchor: "west", size: 8.5pt)
-  line((-3.55, 2.7), (-3.55, 2.45), (-1.6, 2.45), mark: (end: "stealth"), stroke: black)
+  content((-4.75, 2.85), [*Aluminum Substrate*], anchor: "west", size: 8.5pt)
+  line((-4.75, 2.7), (-4.75, 2.45), (-1.6, 2.45),
+       mark: (end: "stealth", fill: black), stroke: black)
 
   // 标注：超音速喷管
-  content((1.55, 2.6), [*Supersonic Nozzle*], anchor: "west", size: 8.5pt)
-  line((1.9, 2.47), (1.9, 2.24), mark: (end: "stealth"), stroke: black)
+  content((1.55, 2.8), [*Supersonic Nozzle*], anchor: "west", size: 8.5pt)
+  line((1.9, 2.47), (1.9, 2.24), mark: (end: "stealth", fill: black), stroke: black)
 
   // 标注：放电区温度
-  content((-3.45, -1.75), [$T_0$ #sym.tilde 900 K Discharge], anchor: "west", size: 8.5pt)
-  line((-0.8, -1.5), (-0.18, -0.42), mark: (end: "stealth"), stroke: black)
+  content((-4.65, -1.75), [$T_0$ #sym.tilde 900 K Discharge], anchor: "west", size: 8.5pt)
+  line((-0.8, -1.5), (-0.18, -0.42), mark: (end: "stealth", fill: black), stroke: black)
 
   // 标注：羽流温度（置于喷管下方，避免压住色块）
   content((2.72, -2.15), [$T_0$ #sym.tilde 500 K Exhaust Plume], anchor: "west", size: 8.5pt)
-  line((2.45, -2.0), (2.45, -0.98), mark: (end: "stealth"), stroke: black)
+  line((2.45, -2.0), (2.45, -0.98), mark: (end: "stealth", fill: black), stroke: black)
 })
