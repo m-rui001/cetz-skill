@@ -69,7 +69,7 @@
   line((3.88, 13.70), (3.96, 13.98), stroke: ck); line((3.98, 13.66), (4.06, 13.94), stroke: ck)
   content((4.10, 14.06), text("O", size: 7.5pt)); content((4.26, 13.36), text("O", size: 7.5pt))
   line((4.42, 13.42), (4.58, 13.64), (4.74, 13.40), (4.92, 13.62), stroke: ck)
-  content((4.72, 13.24), text("HO", size: 7.5pt)); content((5.02, 13.66), text("O", size: 7.5pt))
+  content((4.72, 13.14), text("HO", size: 7.5pt)); content((5.02, 13.66), text("O", size: 7.5pt))
   line((5.10, 13.74), (5.24, 13.88), stroke: ck)
   // 双酚 A 单元
   hexc((5.62, 13.95), 0.42)
@@ -78,14 +78,14 @@
   hexc((6.74, 13.95), 0.42)
   line((7.16, 13.95), (7.30, 13.72), stroke: ck); content((7.40, 13.66), text("O", size: 7.5pt))
   line((7.52, 13.60), (7.68, 13.38), (7.82, 13.14), stroke: ck)
-  content((7.82, 12.96), text("HO", size: 7.5pt))
+  content((7.86, 12.86), text("HO", size: 7.5pt))
   content((4.55, 12.55), text([Fatty Acid Linker], weight: "bold"))
 
   // 上排右：乙二醇与可逆溶解箭头
   content((9.55, 13.82), text("+", size: 11pt))
-  content((9.95, 13.54), text("HO", size: 7.5pt, fill: rd))
+  content((9.86, 13.48), text("HO", size: 7.5pt, fill: rd))
   line(..zig(10.28, 13.54, 3, 0.28, 0.26), stroke: cr)
-  content((11.28, 13.72), text("OH", size: 7.5pt, fill: rd))
+  content((11.40, 13.76), text("OH", size: 7.5pt, fill: rd))
   content((10.85, 12.55), text([Ethylene Glycol], weight: "bold", fill: rd))
   arw((13.55, 14.10), (16.35, 14.10), ink); arw((16.35, 13.68), (13.55, 13.68), ink)
   content((14.95, 14.32), text([Dissolution], weight: "bold", size: 9.5pt))
@@ -107,7 +107,7 @@
   line((5.57, 11.88), (5.57, 12.12), stroke: ck); line((5.67, 11.88), (5.67, 12.12), stroke: ck)
   content((5.62, 12.24), text("O", size: 7.5pt)); content((5.96, 11.54), text("O", size: 7.5pt))
   line(..zig(6.14, 11.58, 2, 0.28, 0.24), stroke: cr)
-  content((6.80, 11.64), text("OH", size: 7.5pt, fill: rd))
+  content((6.88, 11.66), text("OH", size: 7.5pt, fill: rd))
 
   // 下排右：双酚 A 缩水甘油醚片段
   content((7.58, 11.58), text("+", size: 11pt))
@@ -151,7 +151,7 @@
   // 标注文字
   content((8.55, 9.15), text([Repolymerization], weight: "bold", fill: rd))
   content((13.05, 9.50), text([Composite], weight: "bold"), anchor: "west")
-  content((12.85, 5.10), text([Heating], weight: "bold", fill: rd), angle: -28deg)
+  content((13.05, 5.25), text([Heating], weight: "bold", fill: rd), angle: -28deg)
   content((5.85, 2.72), text([Evaporating Remnant EG], weight: "bold", size: 9.5pt, fill: rd), angle: -12deg)
   content((15.10, 3.15), text([Immersing in EG], weight: "bold"))
   content((9.65, 0.28), text([Polymer Matrix Dissolved], weight: "bold"))
