@@ -127,12 +127,13 @@
        mark: (end: "stealth", scale: 0.8))
 
   // 标签：Altitude, 1000km
+  rect((0.50, 6.08), (4.10, 6.62), fill: white, stroke: none)
   content((2.3, 6.35), text(weight: "bold", size: 12pt)[Altitude, 1000km], anchor: "center")
 
   // 标签：Burn up in the atmosphere
-  content((9.6, 2.7), text(weight: "bold", size: 12pt)[Burn up in \ the atmosphere],
+  content((10.9, 2.3), text(weight: "bold", size: 12pt)[Burn up in \ the atmosphere],
           anchor: "center")
-  line((7.85, 2.95), (7.02, 3.10), stroke: (paint: black, thickness: 1.2pt),
+  line((9.7, 2.35), (7.02, 3.10), stroke: (paint: black, thickness: 1.2pt),
        mark: (end: "stealth", scale: 0.8))
 
   // 标签：Ground-based laser
