@@ -46,9 +46,8 @@
   // angle phi between the vertical and A
   arc((0, 0.7), radius: 0.7, start: 90deg, stop: 128deg, stroke: th)
 
-  // curly brace marking the height
-  bezier((0.38, 2.10), (0.10, 1.05), (0.38, 1.75), (0.32, 1.28), stroke: th)
-  bezier((0.10, 1.05), (0.38, 0.02), (0.32, 0.82), (0.38, 0.35), stroke: th)
+  // height line: vertical double arrow from base plane to top face
+  line((0.30, 0.30), (0.30, 2.05), stroke: th, mark: (start: "stealth", end: "stealth", fill: black))
 
   content((-0.15, 4.15), [$arrow(B) times arrow(C)$])
   content((1.55, 4.1), anchor: "west", [Parallelepiped])

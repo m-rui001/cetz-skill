@@ -10,7 +10,7 @@
   line(Z, (2.27, 0), stroke: (paint: black, thickness: 0.8pt, dash: "dashed"), mark: (end: "stealth", fill: black))
   circle(Z, radius: .06, fill: black)
   let r = 1.0
-  arc((r * calc.cos(10deg), r * calc.sin(10deg)), radius: r, start: 10deg, stop: 217deg, stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
+  arc((r * calc.cos(90deg), r * calc.sin(90deg)), radius: r, start: 90deg, stop: 217deg, stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   content((-.2, 3.4), [$y$])
   content((4.75, -.25), [$x$])
   content((-1.8, -1.55), [$a$])
