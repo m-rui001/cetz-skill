@@ -44,7 +44,7 @@
   circle(px(368, 710), radius: 8.5 / S, fill: black, stroke: none)
 
   content(px(146, 217), anchor: "center", [$S$])
-  content(px(462, 200), anchor: "north-west", [$"  "(x_1, x_2, G (x_1, x_2))$])
+  content(px(490, 420), anchor: "north-west", [$"  "(x_1, x_2, G (x_1, x_2))$])
   content(px(26, 706), anchor: "center", [#text(weight: "bold", [$R^2$])])
-  content(px(345, 714), anchor: "north-west", [$"(x_1, x_2)"$])
+  content(px(390, 720), anchor: "north-west", [$"(x_1, x_2)"$])
 })

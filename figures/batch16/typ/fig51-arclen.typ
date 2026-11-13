@@ -11,20 +11,20 @@
   let R = (mv * calc.cos(-25deg), mv * calc.sin(-25deg))
   let dTB = 155deg + 80deg
   let B = (R.at(0) + mv * calc.cos(dTB), R.at(1) + mv * calc.sin(dTB))
-  let cur = (p0, p1, c1, c2) => bezier(p0, p1, c1, c2, stroke: th, mark: (end: ">"))
+  let cur = (p0, p1, c1, c2) => bezier(p0, p1, c1, c2, stroke: th, mark: (end: "stealth", fill: black))
   // particle path (dashed)
   arc((-4.35, -2.0), radius: 7.913, start: 135.3deg, stop: 29deg, stroke: td)
   // arc of radius |v| joining the two vector tips: length = |v| delta-theta
   arc(T, radius: mv, start: 155deg, stop: 235deg, stroke: th)
   // velocity triangle
-  line(T, R, stroke: tv, mark: (end: ">"))
-  line(R, B, stroke: tv, mark: (end: ">"))
-  line(T, B, stroke: tv, mark: (end: ">"))
+  line(T, R, stroke: tv, mark: (end: "stealth", fill: black))
+  line(R, B, stroke: tv, mark: (end: "stealth", fill: black))
+  line(T, B, stroke: tv, mark: (end: "stealth", fill: black))
   // angle at the head of the upper vector
   arc((R.at(0) + .65 * calc.cos(155deg), R.at(1) + .65 * calc.sin(155deg)), radius: .65, start: 155deg, stop: 235deg, stroke: th)
   content((1.42, -1.68), [$Delta theta$])
   // callouts
-  content((-2.85, 1.15), anchor: "west", [length = $|Delta arrow(v)|$])
+  content((-3.15, 1.3), anchor: "west", [length = $|Delta arrow(v)|$])
   cur((-0.75, 1.05), (0.18, -0.62), (-0.15, 0.35), (0.42, -0.2))
   content((4.6, 1.6), anchor: "west", [length = $|arrow(v)_"final"| = |arrow(v)|$])
   cur((4.7, 1.15), (3.05, -0.42), (3.9, 0.75), (3.35, 0.05))

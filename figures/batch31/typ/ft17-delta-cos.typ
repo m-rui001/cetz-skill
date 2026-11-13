@@ -18,7 +18,7 @@
   content((2.02, 2.86), anchor: "south-east", [$x = a$])
   content((-0.08, -0.24), anchor: "north-east", text(weight: "bold", [$0$]))
   content((3.35, -0.62), anchor: "north", text(weight: "bold", [$x$]))
-  line((3.85, -0.75), (5.15, -0.75), stroke: tb, mark: (end: ">"))
+  line((3.85, -0.75), (5.15, -0.75), stroke: tb, mark: (end: "stealth", fill: black))
 
   // ---- bottom: cosine with peak spacing 1/a ----
   let yb = -5.9
@@ -40,10 +40,10 @@
   let ya = yb + amp + 0.55
   line((k1, yb + amp), (k1, ya + 0.1), stroke: t)
   line((k2, yb + amp), (k2, ya + 0.1), stroke: t)
-  line((k1 + 0.9, ya), (k1 + 0.08, ya), stroke: t, mark: (end: ">"))
-  line((k2 - 0.9, ya), (k2 - 0.08, ya), stroke: t, mark: (end: ">"))
-  content(((k1 + k2) / 2, ya), anchor: "center", text(weight: "bold", [$1 slash a$]))
+  line((k1 + 0.9, ya), (k1 + 0.08, ya), stroke: t, mark: (end: "stealth", fill: black))
+  line((k2 - 0.9, ya), (k2 - 0.08, ya), stroke: t, mark: (end: "stealth", fill: black))
+  content(((k1 + k2) / 2, ya + 0.12), anchor: "south", text(weight: "bold", [$1 slash a$]))
 
   content((1.55, yb - 2.05), anchor: "north", text(weight: "bold", [$p$]))
-  line((2.05, yb - 2.18), (3.35, yb - 2.18), stroke: tb, mark: (end: ">"))
+  line((2.05, yb - 2.18), (3.35, yb - 2.18), stroke: tb, mark: (end: "stealth", fill: black))
 })
