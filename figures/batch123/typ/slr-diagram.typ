@@ -65,7 +65,7 @@
 
   // 设备标签（随镜筒倾角旋转）
   content(rp(C, ang, 0.30, 1.05), [laser], angle: 50deg)
-  content((2.18, 1.90), [detec- #linebreak() tor], angle: 50deg)
+  content((2.10, 1.82), [detector], angle: 50deg)
 
   // 发射 Tx 与接收 Rx 光路
   line((4.25, 3.55), (5.90, 7.75), stroke: (paint: org, thickness: 1.1pt), mark: (end: "stealth", scale: 2.2))
