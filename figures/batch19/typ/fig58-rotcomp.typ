@@ -17,7 +17,7 @@
     line((ox - 2.6 * v.at(0), 0 - 2.6 * v.at(1)), (ox + 2.6 * v.at(0), 2.6 * v.at(1)), stroke: td)
     content((ox + 3.15, -.45), anchor: "west", [$x$])
     content((ox - .25, 2.85), anchor: "east", [$y$])
-    content((ox + 2.45 * u.at(0) + .3, 2.45 * u.at(1) + .2), [$x'$])
+    content((ox + 2.45 * u.at(0) + .65, 2.45 * u.at(1) + .35), [$x'$])
     content((ox + 2.5 * v.at(0) - .35, 2.5 * v.at(1) + .2), [$y'$])
     let p = (ox + P.at(0), P.at(1))
     line((ox, 0), p, stroke: tv, mark: (end: ">"))
@@ -27,8 +27,8 @@
       line((ox, 0), (ox, P.at(1)), stroke: th, mark: (end: ">"))
       line((ox, P.at(1)), p, stroke: th, mark: (end: ">"))
       content((ox + P.at(0) / 2, -.45), [$A_x$])
-      content((ox - .3, P.at(1) / 2), anchor: "east", [$A_y$])
-      content((p.at(0) - .35, p.at(1) - .35), anchor: "east", [$arrow(A)$])
+      content((ox - 1.1, P.at(1) / 2), anchor: "east", [$A_y$])
+      content((p.at(0) - .8, p.at(1) - .35), anchor: "east", [$arrow(A)$])
     } else {
       let t1 = P.at(0) * u.at(0) + P.at(1) * u.at(1)
       let t2 = P.at(0) * v.at(0) + P.at(1) * v.at(1)
@@ -40,7 +40,7 @@
       line(f2, p, stroke: th)
       content((f1.at(0) + .35, f1.at(1) - .45), [$A'_x$])
       content((f2.at(0) - .3, f2.at(1) - .45), anchor: "east", [$A'_y$])
-      content((p.at(0) - .3, p.at(1) - .4), anchor: "east", [$arrow(A)$])
+      content((p.at(0) + .45, p.at(1) + .25), anchor: "west", [$arrow(A)$])
     }
     content((ox + .2, -3.9), if car { [(a)] } else { [(b)] })
   }

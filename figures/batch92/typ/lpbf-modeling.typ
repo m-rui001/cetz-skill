@@ -120,7 +120,7 @@
     // 扫描速度矢量 v_lsr（沿 +x）
     line(iso(xs - 0.10, 1.14, zc), iso(xs + 1.52, 1.14, zc),
       stroke: (paint: INK, thickness: 0.6pt), mark: (end: ">", fill: INK, scale: 0.36))
-    lab(iso(xs + 1.86, 1.06, zc).at(0), iso(xs + 1.86, 1.06, zc).at(1), [$arrow(v)_"lsr"$], size: 8pt, anchor: "west")
+    lab(iso(xs + 1.86, 1.36, zc).at(0), iso(xs + 1.86, 1.36, zc).at(1), [$arrow(v)_"lsr"$], size: 8pt, anchor: "west")
 
     // 三维坐标系 x1 / x2 / x3（左上角，与源图同向）
     let O = iso(0.10, 1.18, 0.30)
@@ -318,9 +318,9 @@
     line((8.36, 4.56), (10.42, 4.38), stroke: thin, mark: (end: ">", fill: INK, scale: 0.28))
 
     // Melt pool：两个标签分列中间空档，各指一侧熔池
-    lab(6.95, 3.52, [Melt pool], size: 8pt, anchor: "east")
+    lab(6.95, 3.78, [Melt pool], size: 8pt, anchor: "east")
     line((6.92, 3.48), (5.02, 2.88), stroke: thin, mark: (end: ">", fill: INK, scale: 0.28))
-    lab(8.28, 3.52, [Melt pool], size: 8pt, anchor: "west")
+    lab(8.28, 3.78, [Melt pool], size: 8pt, anchor: "west")
     line((8.30, 3.48), (10.10, 2.88), stroke: thin, mark: (end: ">", fill: INK, scale: 0.28))
   })
   melt-mode-panel(0.35, 9.50)
@@ -394,7 +394,7 @@
       stroke: (paint: INK, thickness: 0.45pt), mark: (end: ">", fill: INK, scale: 0.28))
     bezier((4.98, 3.02), (4.62, 4.12), (5.05, 3.45), (4.72, 3.80),
       stroke: (paint: INK, thickness: 0.45pt), mark: (end: ">", fill: INK, scale: 0.28))
-    lab(7.10, 4.14, [Vapor], size: 8pt, anchor: "west")
+    lab(7.10, 4.48, [Vapor], size: 8pt, anchor: "west")
     lab(4.90, 4.48, [Vapor], size: 8pt, anchor: "south-east")
 
     // Recoil Pressure：反冲压力把熔体压向孔壁（孔内一串向下小箭头）

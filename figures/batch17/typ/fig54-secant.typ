@@ -30,6 +30,6 @@
   content((9.35, 6.95), anchor: "east", [$(x_1, y_1)$])
   content((11.85, 7.5), [$(x_2, y_2)$])
   content((10.7, 5.85), [$Delta x = "run"$])
-  content((12.15, 6.55), anchor: "west", [$Delta y = "rise"$])
+  content((11.7, 5.3), anchor: "west", [$Delta y = "rise"$])
   content((10.55, 4.35), [$"Slope" = frac("rise", "run") = frac(Delta y, Delta x)$])
 })

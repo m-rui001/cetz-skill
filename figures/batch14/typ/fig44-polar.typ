@@ -33,11 +33,11 @@
       line(add(o, A), Fx, stroke: th, mark: (end: ">"))
       line(add(o, A), Fy, stroke: th, mark: (end: ">"))
       content(add(Fx, (.12, -.42)), anchor: "west", [$A'_x$])
-      content(add(Fy, (-.22, .12)), anchor: "east", [$A'_y$])
+      content(add(Fy, (-.85, -.12)), anchor: "east", [$A'_y$])
     } else {
       line(add(o, A), (add(o, A).at(0), 0), stroke: th, mark: (end: ">"))
       line(add(o, A), (ox, A.at(1)), stroke: th, mark: (end: ">"))
-      content((A.at(0) / 2 + ox, -.42), anchor: "center", [$A_x$])
+      content((A.at(0) / 2 + ox, -.75), anchor: "center", [$A_x$])
       content((ox - .28, .92), anchor: "east", [$A_y$])
     }
   }

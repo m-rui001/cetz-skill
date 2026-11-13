@@ -35,7 +35,7 @@
       line(P((0, T.at(1))), P(T), stroke: tc)
       line(P((T.at(0), 0)), P(T), stroke: tc)
       content(P((0.52, 0.0 - .18)), anchor: "north", [$A_x$])
-      content(P((0.0 - .22, 1.00)), anchor: "east", [$A_y$])
+      content(P((0.0 - .70, 1.00)), anchor: "east", [$A_y$])
     } else {
       let a = T.at(0) * ex.at(0) + T.at(1) * ex.at(1)
       let b = T.at(0) * ey.at(0) + T.at(1) * ey.at(1)
@@ -45,10 +45,10 @@
       line(P((0, 0)), P(Cy), stroke: tc, mark: (end: ">"))
       line(P(Cy), P(T), stroke: tc)
       line(P(Cx), P(T), stroke: tc)
-      content(P(add(sc(Cx, 0.62), (0.12, 0.0 - .34))), anchor: "north", [$A'_x$])
+      content(P(add(sc(Cx, 0.62), (0.12, 0.0 - .58))), anchor: "north", [$A'_x$])
       content(P(add(sc(Cy, 0.55), (0.0 - .30, 0.06))), anchor: "east", [$A'_y$])
     }
-    content(P((1.00, 0.86)), anchor: "west", [$arrow(A)$])
+    content(P(if primed { (1.55, 1.15) } else { (1.00, 0.86) }), anchor: "west", [$arrow(A)$])
     content(P((0.0 - .15, 0.0 - 3.95)), anchor: "center", [#(tag)])
   }
 
