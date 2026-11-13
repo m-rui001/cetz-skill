@@ -103,7 +103,7 @@
   content(px(403, 592), text(style: "italic")[C])
 
   content(px(240, 70), [(9)9])
-  content(px(240, 220), [(10)12])
+  content(px(234, 232), [(10)12])
   content(px(349, 148), [(0)3])
   content(px(545, 175), [(0)25])
   content(px(612, 225), [(18)25])
@@ -116,5 +116,5 @@
   content(px(438, 452), [(0)3])
   content(px(534, 458), [(1)3])
   content(px(655, 470), [(7)7])
-  content(px(238, 553), [(5)5])
+  content(px(240, 566), [(5)5])
 })
