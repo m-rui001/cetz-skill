@@ -107,7 +107,7 @@
   line((5.57, 11.88), (5.57, 12.12), stroke: ck); line((5.67, 11.88), (5.67, 12.12), stroke: ck)
   content((5.62, 12.24), text("O", size: 7.5pt)); content((5.96, 11.54), text("O", size: 7.5pt))
   line(..zig(6.14, 11.58, 2, 0.28, 0.24), stroke: cr)
-  content((6.88, 11.66), text("OH", size: 7.5pt, fill: rd))
+  content((7.00, 11.72), text("OH", size: 7.5pt, fill: rd))
 
   // 下排右：双酚 A 缩水甘油醚片段
   content((7.58, 11.58), text("+", size: 11pt))
