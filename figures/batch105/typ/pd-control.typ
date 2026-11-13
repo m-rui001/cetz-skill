@@ -91,8 +91,8 @@
   poly(((deriv.at(0) - .45, yd), (xm, yd), (xm, yfb)))
   // 信号标签：Reference 双行、θ ω、Filtered Angle、Angle θ、Angular Velocity
   let refm = (R("full").at(0) + L("sum").at(0)) / 2 + .18
-  lab((refm, .5), "south", [Reference])
-  lab((refm, .14), "south", [$theta_r, omega_r$])
+  lab((refm, .62), "south", [Reference])
+  lab((refm, .08), "south", [$theta_r, omega_r$])
   lab((xj + .15, -1.3), "west", [$theta, omega$])
   lab((filter.at(0) - fw / 2 - .9, yfb + .15), "south", [Filtered #linebreak() Angle $theta$])
   lab(((filter.at(0) + fw / 2 + C.flex.at(0)) / 2, yfb - .15), "north", [Angle $theta$])
