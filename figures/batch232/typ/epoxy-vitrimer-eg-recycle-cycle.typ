@@ -85,7 +85,7 @@
   content((9.55, 13.82), text("+", size: 11pt))
   content((9.86, 13.48), text("HO", size: 7.5pt, fill: rd))
   line(..zig(10.28, 13.54, 3, 0.28, 0.26), stroke: cr)
-  content((11.40, 13.76), text("OH", size: 7.5pt, fill: rd))
+  content((11.52, 13.72), text("OH", size: 7.5pt, fill: rd))
   content((10.85, 12.55), text([Ethylene Glycol], weight: "bold", fill: rd))
   arw((13.55, 14.10), (16.35, 14.10), ink); arw((16.35, 13.68), (13.55, 13.68), ink)
   content((14.95, 14.32), text([Dissolution], weight: "bold", size: 9.5pt))

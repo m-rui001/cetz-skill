@@ -125,7 +125,7 @@
   lab((12.35, 11.85), [Transition metal\ dissolution &\ electrolyte\ decomposition])
   lab((14.65, 11.00), [Structure\ disordering])
   lab((16.52, 10.45), [Aluminum\ corrosion])
-  lab((2.75, 5.22), [Copper\ Cracking])
+  lab((2.95, 5.10), [Copper\ Cracking])
   lab((5.20, 3.00), [SEI layer\ decomposition and\ participation])
   lab((7.45, 3.35), [Particle cracking])
   lab((7.95, 2.42), [SEI formation\ and growth])
