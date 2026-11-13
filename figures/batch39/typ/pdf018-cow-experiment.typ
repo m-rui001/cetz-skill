@@ -50,7 +50,7 @@
   label(973,323,[#set par(leading: 0.9em)
     Faraday#linebreak()Mirrors],size:8.5pt)
   metal(1123,373,74,h:7)
-  label(1159,351,[#set par(leading: 0.9em)
+  label(1159,340,[#set par(leading: 0.9em)
     50:50#linebreak()Coupler],size:8.5pt)
   label(1075,400,[Interferometer],size:8.5pt)
 
@@ -79,8 +79,8 @@
   line(P(453,405),P(478,335),P(585,335),P(566,405),close:true,fill:rgb("#e5c754"),stroke:none)
   line(P(453,405),P(566,405),P(566,419),P(457,419),close:true,fill:rgb("#ac963d"),stroke:none)
   line(P(566,405),P(585,335),P(589,352),P(573,419),close:true,fill:rgb("#292929"),stroke:none)
-  label(525,371,[#set par(leading: 0.9em)
-    Variable#linebreak()optical#linebreak()attenuator],size:8pt)
+  label(525,368,[#set par(leading: 0.9em)
+    Variable#linebreak()optical#linebreak()attenuator],size:7pt)
   for i in range(8) {let y=365 + i*5;line(P(575,y),P(610 - i*.9,y),stroke:(paint:rgb("#b69d35"),thickness:.3pt))}
   line(P(643,419),P(657,330),P(760,330),P(744,394),P(758,394),P(758,419),close:true,fill:rgb("#303030"),stroke:none)
   line(P(643,395),P(744,395),P(758,419),P(643,419),close:true,fill:rgb("#252525"),stroke:none)
