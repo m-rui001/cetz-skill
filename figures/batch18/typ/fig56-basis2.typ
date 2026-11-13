@@ -6,7 +6,7 @@
   let th = (thickness: 1pt)
   let tv = (thickness: 2.2pt)
   let cur = (p0, p1, c1, c2) => bezier(p0, p1, c1, c2, stroke: th, mark: (end: ">"))
-  let axes = (ox) => {
+  let axes = (ox, ty: .38) => {
     line((ox, 0), (ox - 2.6, -2.6), stroke: th, mark: (end: ">"))
     line((ox, 0), (ox + 3.1, 0), stroke: th, mark: (end: ">"))
     line((ox, 0), (ox, 3.1), stroke: th, mark: (end: ">"))
@@ -15,7 +15,7 @@
     content((ox + .18, 2.95), anchor: "west", [$z$])
     for t in (1, 2) {
       line((ox + t, -.12), (ox + t, .12), stroke: th)
-      content((ox + t, .38), [#(str(t))])
+      content((ox + t, ty), [#(str(t))])
       line((ox - .12, t), (ox + .12, t), stroke: th)
       content((ox - .3, t), anchor: "east", [#(str(t))])
     }
@@ -36,7 +36,7 @@
   content((.2, -3.9), [(a)])
   // (b) skewed basis
   let ox = 8.2
-  axes(ox)
+  axes(ox, ty: -.28)
   line((ox, 0), (ox - 2.15, .3), stroke: tv, mark: (end: ">"))
   line((ox, 0), (ox + 2.6, .55), stroke: tv, mark: (end: ">"))
   line((ox, 0), (ox + .95, 1.85), stroke: tv, mark: (end: ">"))
@@ -45,6 +45,6 @@
   content((ox - 2.35, -.75), anchor: "east", [$arrow(e)_1$])
   cur((ox - 2.2, -.5), (ox - 1.6, .12), (ox - 1.95, -.28), (ox - 1.75, -.12))
   content((ox + 3.05, -1.0), anchor: "west", [$arrow(e)_2$])
-  cur((ox + 2.9, -.7), (ox + 2.0, .28), (ox + 2.6, -.3), (ox + 2.15, .05))
+  cur((ox + 2.9, -.7), (ox + 2.3, .32), (ox + 2.55, -.25), (ox + 2.38, .12))
   content((ox + .2, -3.9), [(b)])
 })
