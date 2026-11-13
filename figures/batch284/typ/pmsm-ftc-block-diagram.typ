@@ -88,8 +88,8 @@
   t((10.35, 3.55), [PMSM], size: 7pt, fill: white)
 
   // ── 电压/电流检测、Clark、αβ/abc、故障诊断与 K_i 开关
-  box((8.57, 7.10), 0.52, 0.34, [Voltage \ Sensing \ Module], size: 5.6pt)
-  box((8.57, 4.70), 0.52, 0.34, [Current \ Sensing \ Module], size: 5.6pt)
+  box((8.57, 7.10), 0.62, 0.62, [Voltage \ Sensing \ Module], size: 5.6pt)
+  box((8.57, 4.70), 0.62, 0.62, [Current \ Sensing \ Module], size: 5.6pt)
   // 检测抽头母线（三相线上打点后汇入模块）
   line2((10.80, 7.10), (9.04, 7.10))
   junc((10.35, 7.10))
@@ -106,8 +106,11 @@
   arr((8.05, 7.28), (6.18, 7.28))
   arr((8.05, 7.10), (6.18, 7.10))
   arr((8.05, 6.92), (6.18, 6.92))
+  rect((6.36, 7.28), (6.68, 7.48), fill: white, stroke: none)
   t((6.52, 7.37), [$u_a$], size: 6.2pt)
+  rect((6.36, 7.10), (6.68, 7.30), fill: white, stroke: none)
   t((6.52, 7.19), [$u_b$], size: 6.2pt)
+  rect((6.36, 6.92), (6.68, 7.12), fill: white, stroke: none)
   t((6.52, 7.01), [$u_c$], size: 6.2pt)
   // Clark → FDU（u_β/u_α）
   arr((5.35, 6.79), (5.35, 5.05))
@@ -117,8 +120,10 @@
   // 电流模块 → αβ/abc（i_a/i_b），αβ/abc → FDU（i_α/i_β）
   arr((8.07, 4.86), (7.42, 4.86))
   arr((8.07, 4.56), (7.42, 4.56))
-  t((7.76, 4.98), [$i_a$], size: 6.2pt)
-  t((7.76, 4.38), [$i_b$], size: 6.2pt)
+  rect((7.36, 4.88), (7.68, 5.10), fill: white, stroke: none)
+  t((7.52, 4.98), [$i_a$], size: 6.2pt)
+  rect((7.36, 4.26), (7.68, 4.48), fill: white, stroke: none)
+  t((7.52, 4.38), [$i_b$], size: 6.2pt)
   arr((6.68, 4.86), (6.19, 4.86))
   arr((6.68, 4.56), (6.19, 4.56))
   t((6.38, 4.98), [$i_alpha$], size: 6.2pt)
@@ -153,12 +158,14 @@
   circle((4.38, 4.35), radius: 0.035, fill: white, stroke: 0.7pt + ink)
   line2((2.35, 5.35), (4.38, 5.35))
   line2((4.38, 5.35), (4.38, 5.08))
-  t((4.60, 4.94), [$K_i$], size: 6.6pt)
+  rect((4.80, 4.68), (5.10, 4.90), fill: white, stroke: none)
+  t((4.95, 4.79), [$K_i$], size: 6.6pt)
   t((4.28, 5.13), [1], size: 6.4pt, anchor: "east")
   t((4.28, 4.27), [2], size: 6.4pt, anchor: "east")
 
   // ── 转速与角度反馈
   polyarr((9.73, 3.72), (7.70, 3.72), (7.70, 8.15), (7.30, 8.15), (7.30, 8.77))
+  rect((7.82, 4.08), (8.16, 4.36), fill: white, stroke: none)
   t((7.86, 4.22), [$theta$], size: 6.8pt, anchor: "west")
   polyarr((10.35, 2.93), (10.35, 1.35), (8.02, 1.35))
   t((9.92, 1.50), [$omega$], size: 6.8pt)

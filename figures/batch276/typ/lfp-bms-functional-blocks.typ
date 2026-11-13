@@ -40,7 +40,7 @@
 
   // 测量汇总（竖排）
   rect((3.85, 2.95), (4.55, 6.00), fill: cream, stroke: 1pt + ink)
-  content((4.20, 4.48), text(size: 7.2pt, [Measurement through sensors]), angle: 90deg, frame: none)
+  content((4.20, 4.48), text(size: 6.6pt, [Measurement\ through sensors]), angle: 90deg, frame: none)
 
   // 上层估计链：SOC → 能力估计 → RUL
   box(7.40, 5.95, 1.65, 0.90, [SOC\ estimation], lblue)
@@ -61,22 +61,22 @@
   content((15.82, 3.45), text(size: 7.5pt, [Controlled transceiver]), angle: 90deg, frame: none)
 
   // 测量口到 SOC / SOT
-  tx(5.05, 5.98, [$V_("Pack")$], size: 6.6pt, anchor: "west")
+  tx(5.05, 6.04, [$V_("Pack")$], size: 6.6pt, anchor: "west")
   arr((4.55, 5.85), (6.55, 5.85))
   tx(5.05, 5.62, [$I_("Pack")$], size: 6.6pt, anchor: "west")
   arr((4.55, 5.50), (6.55, 5.50))
-  tx(5.05, 4.62, [$I_("Pack")$], size: 6.6pt, anchor: "west")
+  tx(5.05, 4.68, [$I_("Pack")$], size: 6.6pt, anchor: "west")
   line((4.55, 4.55), (5.45, 4.55), (5.45, 4.05), (6.45, 4.05), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
-  tx(5.05, 3.95, [$V_("Pack")$], size: 6.6pt, anchor: "west")
+  tx(5.05, 4.00, [$V_("Pack")$], size: 6.6pt, anchor: "west")
   arr((4.55, 3.88), (6.45, 3.88))
-  tx(5.05, 3.55, [$T_("Pack")$], size: 6.6pt, anchor: "west")
+  tx(5.05, 3.60, [$T_("Pack")$], size: 6.6pt, anchor: "west")
   arr((4.55, 3.48), (6.45, 3.48))
 
   // SOC 输出与至能力估计的输入
   arr((8.22, 5.85), (9.55, 5.85))
   tx(8.60, 6.10, [SOC], size: 7.2pt, anchor: "west")
-  tx(9.00, 6.28, [$T_("Pack")$], size: 6.6pt, anchor: "east")
+  tx(9.00, 6.44, [$T_("Pack")$], size: 6.6pt, anchor: "east")
   tx(9.00, 5.75, [$V_("Pack")$], size: 6.6pt, anchor: "east")
   arr((9.05, 6.28), (9.55, 6.28))
   arr((9.05, 5.75), (9.55, 5.75))
@@ -87,9 +87,9 @@
   // SOH 输出 Capability、Cycle number 输入
   line((8.22, 4.70), (9.05, 4.70), (9.05, 5.45), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
-  tx(9.85, 4.62, [Capability], size: 7pt)
+  tx(10.25, 4.68, [Capability], size: 7pt)
   arr((9.40, 4.30), (8.22, 4.30))
-  tx(8.85, 4.48, [Cycle number], size: 6.8pt)
+  tx(9.25, 4.42, [Cycle number], size: 6.8pt, anchor: "west")
   // SOT 输出 Fan / Heater
   arr((8.32, 3.70), (9.10, 3.70))
   tx(9.45, 3.70, [Fan], size: 7.2pt, anchor: "west")
@@ -103,20 +103,20 @@
   tx(6.95, 1.90, [Discharge switch signals], size: 6.8pt, anchor: "east")
   line((10.30, 2.62), (11.35, 2.62), (11.35, 3.55), (12.65, 3.55), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
-  tx(11.05, 2.86, [End of balancing], size: 6.8pt, anchor: "west")
+  tx(10.55, 3.42, [End of balancing], size: 6.8pt, anchor: "east")
   line((13.55, 3.12), (11.35, 3.12), (11.35, 2.35), (10.30, 2.35), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
-  tx(11.75, 2.12, [Charge initialize signal], size: 6.8pt, anchor: "west")
+  tx(12.20, 1.80, [Charge initialize signal], size: 6.8pt, anchor: "east")
   // 故障诊断三路输入与 Leakage level 输出
-  tx(8.55, 1.40, [$V_("Pack")$], size: 6.6pt, anchor: "east")
+  tx(7.95, 1.48, [$V_("Pack")$], size: 6.6pt, anchor: "east")
   arr((8.05, 1.33), (8.72, 1.33))
-  tx(8.55, 1.10, [$I_("Pack")$], size: 6.6pt, anchor: "east")
+  tx(7.95, 1.18, [$I_("Pack")$], size: 6.6pt, anchor: "east")
   arr((8.05, 1.06), (8.72, 1.06))
-  tx(8.55, 0.80, [$T_("Pack")$], size: 6.6pt, anchor: "east")
+  tx(7.95, 0.88, [$T_("Pack")$], size: 6.6pt, anchor: "east")
   arr((8.05, 0.80), (8.72, 0.80))
   line((10.38, 1.10), (12.35, 1.10), (12.35, 3.10), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
-  tx(11.25, 1.34, [Leakage level], size: 6.8pt, anchor: "west")
+  tx(10.55, 1.40, [Leakage level], size: 6.8pt, anchor: "west")
 
   // 能力输出 Capability 进信号发送、Correspondence 回环与顶部限制
   line((11.00, 5.45), (11.00, 4.60), (13.90, 4.60), (13.90, 4.00), stroke: 1pt + ink,
@@ -125,8 +125,8 @@
   line((7.40, 6.42), (7.40, 6.90), (15.70, 6.90), (15.70, 5.30), stroke: 1pt + ink,
     mark: (end: "stealth", scale: 0.55, fill: ink))
   tx(11.00, 7.05, [Correspondence], size: 7.2pt)
-  line((12.85, 6.00), (12.85, 6.38), (15.90, 6.38), (15.90, 5.30), stroke: 1pt + ink)
-  tx(13.05, 6.60, [Charge/discharge\ current limitation], size: 6.8pt)
+  line((12.85, 6.00), (12.85, 6.15), (15.90, 6.15), (15.90, 5.30), stroke: 1pt + ink)
+  tx(14.00, 6.55, [Charge/discharge\ current limitation], size: 6.6pt)
   // 信号发送与收发器之间的橙色双箭头
   line((14.42, 3.55), (15.55, 3.55), stroke: (paint: orange, thickness: 2.6pt),
     mark: (start: "stealth", end: "stealth", scale: 0.6, fill: orange))

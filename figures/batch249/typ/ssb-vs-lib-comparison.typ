@@ -57,10 +57,12 @@
   for p in ((1.7, 4.7), (2.3, 3.9), (3.5, 3.1), (4.0, 2.2), (5.15, 4.35), (6.0, 5.7), (5.9, 3.3), (6.0, 2.4)) {
     ion(p)
   }
+  rect((4.55, 5.33), (6.10, 5.63), fill: white, stroke: none)
   charg(4.9, 5.15)
   content((5.35, 5.48), text(size: 8pt, [Charging]))
+  rect((2.95, 3.13), (4.50, 3.43), fill: white, stroke: none)
   disch(4.3, 2.95)
-  content((3.95, 3.28), text(size: 8pt, [Discharging]))
+  content((3.80, 3.28), text(size: 7pt, [Discharging]))
   content((4.6, 6.88), text(size: 9.5pt, [Separator]))
   // 灯泡回路
   line((2.5, 6.35), (2.5, 7.7), (4.7, 7.7), stroke: 2pt + ink)
@@ -82,8 +84,10 @@
   }
   line((13.95, 6.88), (14.0, 6.25), stroke: 1pt + ink)
   content((13.85, 7.12), text(size: 9.5pt, [Lithium ion]))
+  rect((13.00, 5.33), (14.55, 5.63), fill: white, stroke: none)
   charg(13.35, 5.15)
   content((13.8, 5.48), text(size: 8pt, [Charging]))
+  rect((11.65, 3.13), (13.20, 3.43), fill: white, stroke: none)
   disch(12.85, 2.95)
   content((12.5, 3.28), text(size: 8pt, [Discharging]))
   // 灯泡回路
