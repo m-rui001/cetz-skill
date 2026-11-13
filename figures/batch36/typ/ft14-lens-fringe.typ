@@ -34,7 +34,7 @@
   line((0.36, -1.16), (0.43, -1.30), stroke: t)
 
   // aperture width
-  line((-0.53, 0.97), (-0.53, -0.99), stroke: (thickness: 1.0pt), mark: (start: ">", end: ">"))
+  line((-0.53, 0.97), (-0.53, -0.99), stroke: (thickness: 1.0pt), mark: (start: "stealth", end: "stealth", fill: black))
   content((-0.72, 0.45), anchor: "center", [$w$])
 
   // rays
@@ -47,9 +47,9 @@
   line(path: true, ..arc(0, 0, 1.79, 0, 10.8, 12), stroke: t)
   line(path: true, ..arc(0, 0, 1.69, 180, 190.8, 12), stroke: t)
   line(path: true, ..arc(3.28, 0, 0.41, 0, 18.2, 12), stroke: t)
-  content((1.96, 0.22), anchor: "center", [$theta$])
-  content((-1.90, -0.24), anchor: "center", [$theta$])
-  content((3.58, 0.22), anchor: "center", [$alpha$])
+  content((1.96, 0.55), anchor: "center", [$theta$])
+  content((-1.90, -0.53), anchor: "center", [$theta$])
+  content((3.58, -0.32), anchor: "center", [$alpha$])
 
   // fringe pattern recorded on the screen
   let fr = ()

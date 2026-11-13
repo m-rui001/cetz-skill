@@ -15,8 +15,8 @@
     (dx / l, dy(t) / l)
   }
   // axes
-  line((-.6, 0), (5.2, 0), stroke: th, mark: (end: ">"))
-  line((0, -.8), (0, 5.7), stroke: th, mark: (end: ">"))
+  line((-.6, 0), (5.2, 0), stroke: th, mark: (end: "stealth", fill: black))
+  line((0, -.8), (0, 5.7), stroke: th, mark: (end: "stealth", fill: black))
   content((5.3, -.42), anchor: "west", [$x$])
   content((.25, 5.4), anchor: "west", [$y$])
   // the trajectory, sampled as a polyline
@@ -32,19 +32,19 @@
   for t in (2, 3, 4) {
     let u = un(t)
     line((px(t) - .34 * u.at(0), py(t) - .34 * u.at(1)),
-         (px(t) + .42 * u.at(0), py(t) + .42 * u.at(1)), stroke: tv, mark: (end: ">"))
+         (px(t) + .42 * u.at(0), py(t) + .42 * u.at(1)), stroke: tv, mark: (end: "stealth", fill: black))
   }
   // labels
   content((.85, .55), anchor: "west", [$t = 1$])
   content((1.62, 2.05), anchor: "west", [$t = 2$])
   content((2.3, 2.75), anchor: "west", [$t = 3$])
   content((3.05, 3.6), anchor: "west", [$t = 4$])
-  content((3.85, 4.55), anchor: "west", [$t = N - 1$])
-  content((3.6, 5.5), anchor: "west", [$t = N$])
+  content((4.2, 4.55), anchor: "west", [$t = N - 1$])
+  content((3.85, 5.75), anchor: "west", [$t = N$])
   content((1.9, 5.6), anchor: "west", [Tangent \ vectors])
   // two pointer curves onto the tangents
   bezier((2.05, 5.05), (2.5, 3.95), (1.55, 4.6), (2.5, 4.45))
-  line((2.4, 4.1), (2.5, 3.95), stroke: th, mark: (end: ">"))
+  line((2.4, 4.1), (2.5, 3.95), stroke: th, mark: (end: "stealth", fill: black))
   bezier((3.55, 5.15), (3.35, 4.5), (3.75, 4.75), (3.3, 4.7))
-  line((3.42, 4.62), (3.35, 4.5), stroke: th, mark: (end: ">"))
+  line((3.42, 4.62), (3.35, 4.5), stroke: th, mark: (end: "stealth", fill: black))
 })
