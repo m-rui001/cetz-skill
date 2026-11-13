@@ -72,21 +72,21 @@
   line(P(254,426),P(271,380),P(383,380),P(363,426),close:true,fill:rgb("#aaaaaf"),stroke:none)
   line(P(254,426),P(363,426),P(363,433),P(257,433),close:true,fill:rgb("#77777b"),stroke:none)
   line(P(363,426),P(383,380),P(383,388),P(365,432),close:true,fill:rgb("#333333"),stroke:none)
-  label(318,402,text(fill:white,[#set par(leading: 0.9em)
-    Pulse#linebreak()generator]),size:8pt)
+  label(318,405,text(fill:white,[#set par(leading: 0.85em)
+    Pulse#linebreak()generator]),size:7pt)
   line(P(304,438),P(310,426),stroke:(paint:rgb("#aaaaaa"),thickness:1.2pt))
 
   line(P(453,405),P(478,335),P(585,335),P(566,405),close:true,fill:rgb("#e5c754"),stroke:none)
   line(P(453,405),P(566,405),P(566,419),P(457,419),close:true,fill:rgb("#ac963d"),stroke:none)
   line(P(566,405),P(585,335),P(589,352),P(573,419),close:true,fill:rgb("#292929"),stroke:none)
-  label(525,368,[#set par(leading: 0.9em)
-    Variable#linebreak()optical#linebreak()attenuator],size:7pt)
+  label(525,371,[#set par(leading: 0.85em)
+    Variable#linebreak()optical#linebreak()attenuator],size:6.4pt)
   for i in range(8) {let y=365 + i*5;line(P(575,y),P(610 - i*.9,y),stroke:(paint:rgb("#b69d35"),thickness:.3pt))}
   line(P(643,419),P(657,330),P(760,330),P(744,394),P(758,394),P(758,419),close:true,fill:rgb("#303030"),stroke:none)
   line(P(643,395),P(744,395),P(758,419),P(643,419),close:true,fill:rgb("#252525"),stroke:none)
   line(P(744,395),P(760,330),P(760,352),P(776,356),P(758,419),close:true,fill:rgb("#171717"),stroke:none)
-  label(703,363,text(fill:white,[#set par(leading: 0.9em)
-    Monitor#linebreak()PIN#linebreak()Detector]),size:8pt)
+  label(703,367,text(fill:white,[#set par(leading: 0.85em)
+    Monitor#linebreak()PIN#linebreak()Detector]),size:7pt)
 
   // Cooler enclosure with the two detector ports on its circular front.
   line(P(1315,161),P(1328,34),P(1438,34),P(1429,161),close:true,fill:rgb("#b4b4b4"),stroke:none)
