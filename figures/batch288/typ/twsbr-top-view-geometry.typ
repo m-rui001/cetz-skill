@@ -15,7 +15,7 @@
   let rB = a / calc.sqrt(2) // 机体半对角线
   let hd = 3.00 // 参考框半对角线
   let angB = 45deg // 机体姿态角 φ
-  let angF = 50deg // 参考框偏航角 ψ
+  let angF = 56deg // 参考框偏航角 ψ
 
   // 极坐标取点助手
   let at(c, r, ang) = (c.at(0) + r * calc.cos(ang), c.at(1) + r * calc.sin(ang))
@@ -97,14 +97,16 @@
   arc(at(C, 0.30, 270deg), start: 270deg, stop: 360deg, radius: 0.30, mode: "PIE", fill: black, stroke: none)
   circle(C, radius: 0.30, stroke: (paint: black, thickness: 0.7pt), fill: none)
 
-  // ψ 偏航角：参考框右前角的内角弧
-  arc(at(K1, 0.75, angF + 180deg), start: angF + 180deg, stop: angF + 270deg, radius: 0.75, stroke: (paint: black, thickness: 0.5pt), mark: (start: "stealth", end: "stealth", scale: 0.5))
+  // ψ 偏航角：机体参考射线与参考框角射线之间的窄角（大半径小弧，近似直尺量角线）
+  let rpsi = hd - 0.18
+  arc(at(C, rpsi, angB), start: angB, stop: angF, radius: rpsi,
+    stroke: (paint: black, thickness: 0.5pt), mark: (start: "stealth", end: "stealth", scale: 0.5))
   // φ 摆角：机体姿态与水平线之间的弧
-  arc(at(C, 0.75, 3deg), start: 3deg, stop: angB, radius: 0.75, stroke: (paint: black, thickness: 0.5pt), mark: (end: "stealth", scale: 0.5))
+  arc(at(C, 0.95, 3deg), start: 3deg, stop: angB, radius: 0.95, stroke: (paint: black, thickness: 0.5pt), mark: (end: "stealth", scale: 0.5))
 
   // 轴名与角度标注
   content((-0.16, 8.02), $y$, anchor: "east")
   content((8.66, -0.18), $x$, anchor: "north")
-  content(at(K1, 1.15, angF - 82deg), $psi$, angle: angF - 90deg)
-  content(at(C, 1.70, 22deg), $phi$, angle: -55deg)
+  content(at(C, rpsi + 0.42, (angB + angF) / 2), $psi$, angle: -45deg)
+  content(at(C, 1.46, 23deg), $phi$, angle: -45deg)
 })

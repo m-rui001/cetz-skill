@@ -65,9 +65,11 @@
 
   // 底盘：L 形外轮廓，右边界为轮拱长弧
   let arch = ()
-  for p in cub((196, 54), (188, 80), (175, 130), (170, 170), 8) { arch.push(P(..p)) }
+  for p in cub((240, 58), (206, 88), (178, 128), (170, 170), 10) { arch.push(P(..p)) }
   for p in cub((170, 170), (163, 230), (148, 320), (123, 351), 8).slice(1) { arch.push(P(..p)) }
-  line(P(48, 352), P(48, 37), P(322, 37), P(322, 52), ..arch, P(100, 352), P(70, 352),
+  let corner = ()
+  for p in cub((224, 37), (236, 37), (240, 44), (240, 58), 6).slice(1) { corner.push(P(..p)) }
+  line(P(48, 352), P(48, 37), P(224, 37), ..corner, ..arch, P(100, 352), P(70, 352),
     close: true, fill: ch-fill, stroke: 0.7pt)
 
   // 车轮块（圆角矩形）与地面剖面线
@@ -86,7 +88,7 @@
   // θ_SL 大弧（水平→竖直）、θ_SL(min) 极限虚线与上方包络弧
   sarc((146, 115), 62, -8, -90, mark: (end: "stealth", fill: black))
   line(P(146, 53), P(168, 99), stroke: (paint: rgb(89, 89, 89), thickness: 0.5pt, dash: "dashed"))
-  bezier(P(266, 53), P(232, 55), P(202, 64), P(186, 95))
+  bezier(P(238, 56), P(222, 55), P(202, 60), P(186, 95), stroke: (paint: rgb(90, 90, 90), thickness: 0.45pt))
 
   // 减振器主筒 + 沿轴排布的弹簧线圈
   line(P(..G), P(208, 251), stroke: (paint: bar-c, thickness: 0.55))
