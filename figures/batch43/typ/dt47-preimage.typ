@@ -34,7 +34,7 @@
     out.push(pts.at(-1)); out
   }
 
-  // ---- outer boundary of X ----
+  // outer boundary of X
   let leftEdge = ((48,12),(35,24),(26,36),(19,48),(14,60),(12,72),(11,84),(11,96),(14,108),
                   (17,120),(23,132),(31,144),(37,156),(40,168),(41,180),(39,192),(35,204),
                   (28,216),(19,228),(12,240),(7,252),(3,264),(2,276),(2,288),(3,300),(7,312),
@@ -48,7 +48,7 @@
   line(px(46, 8), px(324, 8), stroke: tb)
   line(px(30, 349), px(247, 349), stroke: tb)
 
-  // ---- closed curve inside f^-1(Z) ----
+  // closed curve inside f^-1(Z)
   let loop = ((171,177),(155,168),(145,155),(144,140),(148,126),(158,114),(172,107),(188,107),
               (202,113),(214,124),(221,138),(221,152),(215,164),(210,175),(216.3,186.8),
               (221.6,200.7),(219.5,214.3),(210.1,227.0),(196.2,237.1),(178.8,243.7),
@@ -56,7 +56,7 @@
               (113.2,184.6),(120.9,173.7),(133.5,167.8),(148.7,166.7),(162.9,169.6),(171,177))
   line(path: true, ..crm(P(loop)), stroke: tb)
 
-  // ---- the S curve f^-1(Z) ----
+  // the S curve f^-1(Z)
   let scurve = ((83,105),(82,116),(86,130),(94,144),(105,155),(118,163),(133,169),(150,174),
                 (171,178),(186,190),(198,203),(209,215),(221,225),(234,230),(246,233),(255,234))
   line(path: true, ..crm(P(scurve)), stroke: tb)
@@ -65,31 +65,31 @@
   content(px(108, 88), anchor: "center", text(size: 7.8pt, $f^(-1)(Z)$))
   content(px(136, 373), anchor: "center", [$X$])
 
-  // ---- f arrow ----
+  // f arrow
   line(px(339, 176), px(488, 176), stroke: tr, mark: (end: hdl))
   content(px(402, 151), anchor: "center", [$f$])
 
-  // ---- rectangle Y ----
+  // rectangle Y
   line(px(522.5, 6.5), px(522.5, 347.5), stroke: tr)
   line(px(750, 6.5), px(750, 347.5), stroke: tr)
   line(px(522.5, 6.5), px(750, 6.5), stroke: tr)
   line(px(522.5, 347.5), px(750, 347.5), stroke: tr)
   content(px(639, 369), anchor: "center", [$Y$])
 
-  // ---- circle + Z line inside Y ----
+  // circle + Z line inside Y
   circle(px(634, 174), radius: 66.0 / S, stroke: tc)
   line(px(523, 175), px(752, 175), stroke: tr)
   content(px(545, 194), anchor: "center", [$Z$])
   content(px(634, 148), anchor: "center", [$y$])
   circle(px(634, 176), radius: 10.0 / S, fill: black, stroke: none)
 
-  // ---- g arrow ----
+  // g arrow
   let gc = ((753,187),(772,196),(795,203),(822,209),(855,214),(895,217),(940,218),(980,215),
             (1015,208),(1045,198),(1068,188),(1085,180))
   line(path: true, ..crm(P(gc)), stroke: tg, mark: (end: hdg))
   content(px(918, 205), anchor: "center", [$g$])
 
-  // ---- R^1 axis ----
+  // R^1 axis
   line(px(1104, 2), px(1104, 350), stroke: tc)
   circle(px(1101, 177), radius: 10.0 / S, fill: black, stroke: none)
   content(px(1121, 172), anchor: "center", [$0$])

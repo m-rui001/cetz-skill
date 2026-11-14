@@ -107,7 +107,6 @@
     for i in range(4) {bezier(P(x,y + i*6),P(x,y + (i + 1)*6),P(x - 8,y + i*6),P(x - 8,y + (i + 1)*6),stroke:(paint:gray,thickness:.9pt))}
   }
 
-
   let diode=(x,y,up:true)=>{
     wire(((x,y - 15),(x,y + 15)))
     let d=if up {-1} else {1}
@@ -140,7 +139,6 @@
     wire(((x + 8*ux - 7*uy,y + 8*uy + 7*ux),(x + 8*ux + 7*uy,y + 8*uy - 7*ux)))
   }
   let vout=(x,y,n)=>lab(x,y,[$V_"out" = #n V_"in"$])
-
 
   let vout=(x,y,n)=>content(P(x,y),text(size:7pt,[$V_"out" = #n V_"in"$]))
   let fc=(x,y,top,bot)=>{

@@ -1,4 +1,3 @@
-// ============================================================================
 // 三相并网变流器：功率级 + 双模式（GFL / GFM）控制 + 小信号阻抗模型
 // 源图：How Many Grid-Forming Converters Do We Need? A Perspective From
 //       Small Signal Stability（IEEE Trans. Power Systems, 2024）
@@ -13,7 +12,6 @@
 //   (b)-阻抗模型：理想电压源 + Z_GFL/Z_GFM + Z_g 串到 AC grid，标出节点电压与注入电流
 //
 // 布局全部走网格：COL("列名") / ROW("行名")，改一处即可整体错位或缩放。
-// ============================================================================
 #set page(width: auto, height: auto, margin: 6pt)
 #import "@preview/cetz:0.4.2": canvas, draw
 #set text(font: ("Times New Roman", "DejaVu Serif"), size: 8pt)
@@ -21,7 +19,7 @@
 #canvas({
   import draw: *
 
-  // ======================= 0. 配色与线宽 =======================
+  // 0. 配色与线宽
   let INK = rgb("#1a1a1a")     // 信号线 / 方块边框 / 通用文字
   let BLUE = rgb("#1f77b4")    // GFL（跟网）支路
   let ORANGE = rgb("#e07b00")  // GFM（构网）支路
@@ -34,7 +32,7 @@
   let LW = 0.8pt   // 信号线
   let TW = 0.6pt   // 方块细边框 / 器件符号
 
-  // ======================= 1. 通用绘图函数 =======================
+  // 1. 通用绘图函数
 
   // 文字：pos 处放一段文字，anchor 决定挂在点的哪一侧
   let txt(pos, body, size: 7.5pt, fill: INK, anchor: "center", weight: "regular") = content(
@@ -155,7 +153,7 @@
     line((cx + 0.02, cy), (cx + 0.86, cy), stroke: (paint: INK, thickness: TW))
   }
 
-  // ======================= 2. 网格 =======================
+  // 2. 网格
   // 列：所有方块边、竖线、信号名都取这里的值
   let GX = (
     frame_l: 0.6, frame_r: 26.3,
@@ -187,7 +185,7 @@
   let COL(i) = GX.at(i)
   let ROW(j) = GY.at(j)
 
-  // ======================= 3. 两个大虚线框 =======================
+  // 3. 两个大虚线框
   // Power Part：功率级（器件 + 无源滤波 + 电网），黑虚线
   dashed-region(COL("frame_l"), 16.4, COL("frame_r"), 18.7)
   txt((COL("frame_r") - 0.35, 16.9), [Power Part], size: 9.5pt, anchor: "east")
@@ -198,11 +196,9 @@
   txt((COL("frame_l") + 0.2, 18.42), [(a)], size: 9pt, anchor: "west", weight: "bold")
   txt((COL("frame_l") + 0.2, 5.1), [(b)], size: 9pt, anchor: "west", weight: "bold")
 
-  // ==========================================================================
   // 4. (a) 功率级（Power Part）
   //    这一路是能量通道：直流侧经三相桥逆变成交流，L_F/C_F 滤波后经 L_g 并入电网。
   //    U*abc 是调制波（来自控制级的 PWM），Iabc/Uabc 是并网点量（回送控制级）。
-  // ==========================================================================
   let PWR = ROW("pw")
 
   // 三相桥（圆角方框 + 单桥臂符号）
@@ -255,17 +251,15 @@
     stroke: (paint: PURPLE, thickness: 1.0pt, dash: (3pt, 2pt)),
     mark: (end: "stealth", fill: PURPLE))
 
-  // ==========================================================================
   // 5. (a) 控制级公共部分：PWM、dq 变换、功率计算
-  // ==========================================================================
 
-  // ---- 5.1 PWM：把 dq 电压指令还原成三相调制波送回功率级 ----
+  // 5.1 PWM：把 dq 电压指令还原成三相调制波送回功率级
   // 这是"控制级 → 功率级"的唯一通道，向上穿出控制框
   block(COL("pwm"), ROW("pwm"), 1.2, 0.45, [PWM], size: 8.5pt)
   arrow-path(((COL("pwm"), ROW("pwm") + 0.225), (COL("pwm"), PWR), (COL("conv_l"), PWR)),
     arrow: "end")
 
-  // ---- 5.2 小 abc/dq：dq 电压指令 → abc（反变换），两个输入是 θ 与 U*dq ----
+  // 5.2 小 abc/dq：dq 电压指令 → abc（反变换），两个输入是 θ 与 U*dq
   rect((COL("trf_l"), 14.05), (COL("trf_r"), 14.95), fill: white,
     stroke: (paint: INK, thickness: 0.95pt))
   line((COL("trf_l"), 14.05), (COL("trf_r"), 14.95), stroke: (paint: INK, thickness: TW))
@@ -273,7 +267,7 @@
   txt((COL("trf_r") - 0.10, 14.15), [dq], size: 8pt, anchor: "south-east")
   arrow-path(((COL("pwm"), 14.95), (COL("pwm"), ROW("pwm") - 0.225)), arrow: "end")
 
-  // ---- 5.3 大 abc/dq：采样量 → dq（正变换），输出六个 dq 量给各环路 ----
+  // 5.3 大 abc/dq：采样量 → dq（正变换），输出六个 dq 量给各环路
   rect((COL("big_l"), 14.3), (COL("big_r"), 15.3), fill: white,
     stroke: (paint: INK, thickness: 0.95pt))
   line((COL("big_l"), 14.3), (COL("big_r"), 15.3), stroke: (paint: INK, thickness: TW))
@@ -289,7 +283,7 @@
     txt((x, ROW("trf_out")), lab, size: 8pt)
   }
 
-  // ---- 5.4 功率计算：由三相电压电流算 PE、QE ----
+  // 5.4 功率计算：由三相电压电流算 PE、QE
   block(17.1, ROW("pcalc"), 3.0, 0.8, [])
   txt((17.1, ROW("pcalc") + 0.13), [Power], size: 8pt)
   txt((17.1, ROW("pcalc") - 0.13), [Calculation], size: 8pt)
@@ -302,11 +296,9 @@
     txt((19.28, y), lab, size: 8.5pt, anchor: "west")
   }
 
-  // ==========================================================================
   // 6. PLL 支路（红）：Vq → PI_PLL → Δω → (加 ω0) → 1/s → θ
   //    θ 同时送给两个 dq 变换：GFL 模式下 PLL 锁住电网相位，整条控制都建在这个坐标上；
   //    GFM 模式下开关切到 2，θ 改由 fP(s) 的有功-频率下垂给出（机组自己"造"频率）。
-  // ==========================================================================
   // GFL 区浅灰底（PI_PLL / PI_PC / PI_VC 三个环路都放在这一块里）
   rect((COL("gfl_l"), 8.75), (COL("gfl_r"), 13.6), radius: 0.25, fill: PANEL, stroke: none)
   txt((COL("gfl_l") + 0.35, 12.72), [Grid-following], size: 9pt, fill: BLUE,
@@ -343,11 +335,9 @@
   arrow-path(((COL("theta"), ROW("trf")), (COL("trf_r"), ROW("trf"))), arrow: "end")
   arrow-path(((COL("theta"), ROW("big")), (COL("big_l"), ROW("big"))), arrow: "end")
 
-  // ==========================================================================
   // 7. 电流环（Current Control Loop，灰框）
   //    d/q 两路对称：Id_ref/Iq_ref 与实测 Id/Iq 相减 → PI_CC → 叠加滤波电压前馈
   //    KvF/(TvFs+1) 与 ωL_F 解耦项 → U*d / U*q → 再做 dq→abc → PWM
-  // ==========================================================================
   rect((COL("ccl_l"), ROW("ccl_bot")), (COL("ccl_r"), ROW("ccl_top")), radius: 0.2,
     fill: none, stroke: (paint: GRAY, thickness: 0.8pt))
   txt((8.7, 12.14), [Current Control Loop], size: 9pt)
@@ -357,7 +347,7 @@
   arrow-path(((COL("bar") - 0.05, 9.75), (COL("pwm"), 9.75), (COL("pwm"), 14.05)),
     arrow: "end")
 
-  // ---- d 轴链 ----
+  // d 轴链
   sum-junction(COL("sum"), ROW("c_d"), signs: ((0.02, 0.10, "+"), (0.10, -0.02, "+"),
     (-0.02, -0.10, "-")))
   txt((4.78, ROW("c_d") + 0.26), $U^*_d$, size: 8.5pt, anchor: "west")
@@ -378,7 +368,7 @@
   arrow-path(((COL("filt_l"), ROW("filt_d")), (COL("sum"), ROW("filt_d")),
     (COL("sum"), ROW("c_d") + 0.21)), arrow: "end")
 
-  // ---- q 轴链（与 d 轴镜像）----
+  // q 轴链（与 d 轴镜像）
   sum-junction(COL("sum"), ROW("c_q"), signs: ((0.02, 0.10, "+"), (0.10, -0.02, "+"),
     (-0.02, -0.10, "+")))
   txt((4.78, ROW("c_q") + 0.26), $U^*_q$, size: 8.5pt, anchor: "west")
@@ -396,7 +386,7 @@
   arrow-path(((COL("filt_l"), ROW("filt_q")), (COL("sum"), ROW("filt_q")),
     (COL("sum"), ROW("c_q") - 0.21)), arrow: "end")
 
-  // ---- ωL_F 交叉解耦：d 轴补 q 轴分量、q 轴补 d 轴分量，两条线在中间交叉 ----
+  // ωL_F 交叉解耦：d 轴补 q 轴分量、q 轴补 d 轴分量，两条线在中间交叉
   block(7.3, ROW("wl_u"), 1.2, 0.36, $ω L_F$, size: 8.5pt)
   block(7.3, ROW("wl_q"), 1.2, 0.36, $ω L_F$, size: 8.5pt)
   // I_Cd：从 d 轴求和点下方引出，一路进 ωL_F、一路就是反馈电流本身
@@ -419,11 +409,9 @@
   txt((8.7, 7.75), [Mode 1: Grid-following control], size: 9.5pt, fill: RED)
   txt((8.7, 7.45), [Mode 2: Grid-forming control], size: 9.5pt, fill: RED)
 
-  // ==========================================================================
   // 8. GFL 支路（蓝）：PI_PC 调有功、PI_VC 调电压
   //    跟网模式下变流器把电网当理想电压源：P/Q 由电流指令跟踪给定，
   //    所以三个 PI 的输出都是"电流指令"，经开关 1 号端子进入电流环。
-  // ==========================================================================
   // PI_PC：Pref(+) − PE(−) → Id_ref（有功由 d 轴电流跟踪）
   pi-block(19.35, ROW("pc"), 2.5, 0.4, $"PI"_"PC"(s)$, BLUE)
   sum-junction(COL("gsum"), ROW("pc"), r: 0.24, signs: ((0.04, 0.13, "+"), (0.13, 0.0, "-")))
@@ -452,12 +440,10 @@
   wire(ROW("vc"), COL("swt"), COL("pil_l"), hops: (COL("idsum"), COL("green")),
     color: BLUE, arrow: "start")
 
-  // ==========================================================================
   // 9. GFM 支路（橙/绿）：fP(s) 造频率、−PI_VC(s) 造电压支撑
   //    构网模式下变流器自己定频率与电压，所以开关切到 2 号端子：
   //      · PLL 输入改由 fP(s)（有功-频率下垂）给出 Δω → θ 由自己积分
   //      · 电流指令不再来自功率 PI，而由两个 −PI_VC(s) 加电流前馈给出
-  // ==========================================================================
   rect((COL("gfm_l"), ROW("gfm_bot")), (COL("gfm_r"), ROW("gfm_top")), radius: 0.25,
     fill: PANEL, stroke: none)
   txt((15.9, 6.05), [Grid-forming loop connection], size: 8.5pt, fill: ORANGE,
@@ -508,10 +494,8 @@
   arrow-path(((COL("iqsum"), ROW("iqsum") + 0.21), (COL("iqsum"), ROW("c_q") - 0.75),
     (COL("swt") + 0.075, ROW("c_q") - 0.75)), color: ORANGE, arrow: "end")
 
-  // ==========================================================================
   // 10. (b) 小信号阻抗模型：把上面两套控制折算成一个串在理想电压源后的阻抗
   //     ΔUs = 0 → 端口电压 ΔV' = −Z·ΔI'，所以"注入电流"箭头指向源侧。
-  // ==========================================================================
   let BT = ROW("b_top")
   let BB = ROW("b_bot")
   // 紫色标题：Z_GFL / Z_GFM 二选一（取决于上面三个开关的位置）

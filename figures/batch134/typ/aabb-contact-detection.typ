@@ -50,14 +50,14 @@
     }
   }
 
-  // ---- (a) 网箱与目标箱分离：第一层检测 ----
+  // (a) 网箱与目标箱分离：第一层检测
   net-box(0)
   content((1.45, 0.85), [Net Box \ $N$], anchor: "center")
   rect((9.2, 2.2), (11.4, 4.3), stroke: 0.6pt)
   content((10.3, 3.25), [Target Box \ $T$], anchor: "center")
   line((7.0, 3.25), (9.0, 3.25), stroke: 1.1pt, mark: (end: "stealth"))
 
-  // ---- (b) 两箱相交：第二层检测 ----
+  // (b) 两箱相交：第二层检测
   let dx = 12.4
   net-box(dx)
   content((dx + 1.45, 0.85), [Net Box \ $N$], anchor: "center")

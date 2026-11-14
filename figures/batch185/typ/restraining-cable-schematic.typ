@@ -33,7 +33,7 @@
     line(..pts, stroke: stroke, fill: fill)
   }
 
-  // ---------------- (a) 直杆与弯曲杆 ----------------
+  // (a) 直杆与弯曲杆
   ground(0.6, 3.6, 6.6)
   ground(4.3, 7.1, 6.6)
 
@@ -89,7 +89,7 @@
   content((4.0, 7.55), $d - alpha$)
   content((3.55, 6.05), text(font: "Times New Roman", size: 12pt)[(a)])
 
-  // ---------------- (b) 平台受力 ----------------
+  // (b) 平台受力
   rect((9.55, 6.7), (18.05, 11.6), fill: rgb("#f4f5f8"), stroke: none)
   // 两块竖直平台板（圆角 + 侧缘薄盘）
   let plate(x) = {
@@ -121,7 +121,7 @@
   content((14.05, 11.45), text(fill: blu, weight: "bold", size: 10pt)[Platform 2])
   content((12.4, 6.35), text(font: "Times New Roman", size: 12pt)[(b)])
 
-  // ---------------- (c) 实验装置线稿 ----------------
+  // (c) 实验装置线稿
   // 辐条轮盘
   let disc(cx, cy, r, spokes: 6) = {
     circle((cx, cy), radius: r, stroke: (paint: black, thickness: 1.4pt), fill: white)
@@ -146,7 +146,7 @@
   }
   content((3.7, 0.22), text(font: "Times New Roman", size: 12pt)[(c)])
 
-  // ---------------- (d) 拉线布置 ----------------
+  // (d) 拉线布置
   // 左：三层透视盘 + 交叉拉线
   let ys = (4.45, 3.15, 1.85)
   for y in ys {

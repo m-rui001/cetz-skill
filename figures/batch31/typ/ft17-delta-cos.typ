@@ -8,7 +8,7 @@
   let t = (thickness: 1.25pt)
   let tb = (thickness: 2.4pt)
 
-  // ---- top: two impulses at x = +/- a ----
+  // top: two impulses at x = +/- a
   line((-5.6, 0), (5.6, 0), stroke: t)
   line((0, -0.6), (0, 4.2), stroke: t)
   for xa in (-2.1, 2.1) {
@@ -20,7 +20,7 @@
   content((3.35, -0.62), anchor: "north", text(weight: "bold", [$x$]))
   line((3.85, -0.75), (5.15, -0.75), stroke: tb, mark: (end: "stealth", fill: black))
 
-  // ---- bottom: cosine with peak spacing 1/a ----
+  // bottom: cosine with peak spacing 1/a
   let yb = -5.9
   let amp = 1.35
   let per = 2.15

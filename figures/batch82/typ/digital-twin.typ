@@ -1,4 +1,3 @@
-// ============================================================================
 // 面向智能制造的数字孪生设计总图（Digital twin for smart manufacturing）
 // 源论文：Digital twin for smart manufacturing: A review
 //        (HAL hal-04337931, 2023) Fig.2 "The design of the digital twin for manufacturing"
@@ -19,7 +18,6 @@
 // 说明：源图里的彩色实心照片/剪影图标全部改为单色线稿（每个图标一个命名函数），
 //       仅保留浅灰填充（圆环带 / 大箭头 / 图标底盘）区分面；全部线宽在 0.6–0.9pt 之间。
 // 坐标：1 canvas 单位 = UNIT，圆弧与扇区全部由“圆心 + 半径 + 角度区间”参数生成。
-// ============================================================================
 #set page(width: auto, height: auto, margin: 6pt)
 #import "@preview/cetz:0.4.2": canvas, draw
 #set text(font: ("Times New Roman", "Segoe UI"), size: 7pt)
@@ -35,7 +33,7 @@
 )
 
 #context {
-  // ---- 逐字实测字宽（单位 pt），用于把弧段文字均匀铺在圆弧上 ----
+  // 逐字实测字宽（单位 pt），用于把弧段文字均匀铺在圆弧上
   let band-w = (:)
   for lab in BAND-LABELS {
     band-w.insert(lab, lab.clusters().map(ch => measure(
@@ -46,7 +44,7 @@
   canvas(length: UNIT, {
     import draw: *
 
-    // ===================== 一、配色与线型（单色线稿） =====================
+    // 一、配色与线型（单色线稿）
     let INK = rgb("#141414")   // 全部线条墨色
     let BAND = rgb("#e6e6e6")  // 圆环带填充（浅灰，用于区分环带）
     let DISK = rgb("#f0f0f0")  // 底部圆形图标底盘
@@ -59,7 +57,7 @@
 
     let st(w) = (paint: INK, thickness: w, cap: "round")
 
-    // ===================== 二、几何参数（避免散落魔数） =====================
+    // 二、几何参数（避免散落魔数）
     let R = 4.30                 // 大圆外半径
     let BW = 0.78                // 圆环带宽度
     let RI = R - BW              // 环内半径
@@ -75,7 +73,7 @@
     let BOT-X = range(6).map(i => 2.35 + i * (21.65 - 2.35) / 5)  // 六个圆心 x
     let BUS-Y = 8.52             // 底部图标的引出母线高度
 
-    // ===================== 三、几何小工具 =====================
+    // 三、几何小工具
     // 极坐标取点：圆心 c、半径 r、角度 a
     let pol(c, r, a) = (c.at(0) + r * calc.cos(a), c.at(1) + r * calc.sin(a))
 
@@ -142,7 +140,7 @@
       }
     }
 
-    // ===================== 四、图标小工具 =====================
+    // 四、图标小工具
     // 齿轮轮廓：teeth 个齿（每齿 4 个采样点交替内外半径）+ 轴孔
     let gear(c, r, teeth: 8, tooth-h: 0.30, stroke: st(LW-FINE)) = {
       let pts = range(teeth * 4).map(i => {
@@ -154,7 +152,7 @@
       circle(c, radius: r * 0.42, stroke: stroke)
     }
 
-    // ===================== 五、图标函数（照片 / 实心剪影 → 线稿） =====================
+    // 五、图标函数（照片 / 实心剪影 → 线稿）
 
     // 铅笔 + 直尺：Redesign（重新设计）
     let icon-sensing(c, s: 0.48) = {
@@ -428,7 +426,7 @@
       }
     }
 
-    // ===================== 六、圆弧粗箭头 =====================
+    // 六、圆弧粗箭头
     // 环形带 + 三角箭头：c 弧圆心、r 弧半径、a0 尾端角、a1 头端角（角减小即顺时针）
     let big-arrow(c, r, a0, a1) = {
       let hw = 0.24   // 箭头带半宽
@@ -447,13 +445,13 @@
       )
     }
 
-    // ===================== 七、外框 =====================
+    // 七、外框
     rect(
       (FRAME.at(0), FRAME.at(1)), (FRAME.at(2), FRAME.at(3)),
       radius: 0.55, stroke: (paint: INK, thickness: LW-MID, dash: "dashed"),
     )
 
-    // ===================== 八、两个大圆 =====================
+    // 八、两个大圆
     // 圆环带：外圆（浅灰填充）+ 内圆 + 弧段分隔线 + 逐字贴弧的弧段标签
     let draw-ring(c, segs) = {
       circle(c, radius: R, fill: BAND, stroke: st(LW-OUT))
@@ -473,7 +471,7 @@
       line(..pts, close: true, stroke: st(LW-IN))
     }
 
-    // ---- 左圆：Physical System ----
+    // 左圆：Physical System
     // 外圈四段弧标签（顶部 / 左侧 / 左下 / 右下）
     draw-ring(LC, (
       (from: 35deg, to: 140deg, name: "Advanced Sensing"),
@@ -501,7 +499,7 @@
     // 圆心机床
     icon-machine(LC)
 
-    // ---- 右圆：Digital System ----
+    // 右圆：Digital System
     // 外圈三段弧标签（顶部 / 左侧 / 右侧）
     draw-ring(DC, (
       (from: 40deg, to: 145deg, name: "Big Data"),
@@ -528,7 +526,7 @@
     // 圆心机床
     icon-machine(DC)
 
-    // ===================== 九、两条大箭头与圆外文字 =====================
+    // 九、两条大箭头与圆外文字
     // 顶部 Digital mapping：左 → 右（弧心在下方，箭头落在右圆上沿）
     big-arrow((MIDX, 8.87), 9.08, 110.2deg, 69.8deg)
     // 底部 Feedback driving：右 → 左（弧心在上方，箭头落在左圆下沿）
@@ -540,7 +538,7 @@
     txt((LC.at(0), 9.45), [Physical System], size: 9.5pt, weight: "bold")
     txt((DC.at(0), 9.45), [Digital System], size: 9.5pt, weight: "bold")
 
-    // ===================== 十、下方六个能力图标 =====================
+    // 十、下方六个能力图标
     // 引出线：外框中点 → 竖直短线 → 水平母线 → 六条下垂线
     line((MIDX, FRAME.at(1)), (MIDX, BUS-Y), stroke: st(LW-MID))
     line((BOT-X.first(), BUS-Y), (BOT-X.last(), BUS-Y), stroke: st(LW-MID))

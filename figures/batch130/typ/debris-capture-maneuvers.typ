@@ -55,7 +55,7 @@
   // 助手：红色绕竖轴旋转箭头
   let spin(c, rx: 0.82, ry: 0.3) = arcline(c, rx, ry, 200deg, 520deg, red)
 
-  // ===== 子图 a：接近路径 + 捕获 =====
+  // 子图 a：接近路径 + 捕获
   craft((3.2, 11.5), 20deg, plen: 1.7)
   // 绿色捕获臂与爪
   line((3.45, 11.15), (4.35, 10.65), stroke: (paint: twine, thickness: 1.2pt))
@@ -80,7 +80,7 @@
   content((5.4, 1.4), align(center)[Service\ Platform])
   content((3.7, 0.35), text(size: 10pt)[a])
 
-  // ===== 子图 b：自旋消旋 + 接近方向 =====
+  // 子图 b：自旋消旋 + 接近方向
   craft((12.7, 11.9), 15deg, plen: 2.0)
   // 绿色系绳与小弯钩
   line((12.56, 11.45), (12.48, 10.45), stroke: (paint: twine, thickness: 1.1pt))
@@ -107,7 +107,7 @@
   line((12.7, 5.6), (13.45, 4.5), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
   content((12.7, 0.35), text(size: 10pt)[b])
 
-  // ===== 子图 c：柔性刷消旋 + 对接环法向 =====
+  // 子图 c：柔性刷消旋 + 对接环法向
   craft((18.2, 11.7), 15deg, plen: 1.8)
   // 黑色柔性刷（三条弯曲刷毛）
   bezier((17.9, 11.25), (17.7, 10.7), (18.15, 10.45), (17.95, 9.9),

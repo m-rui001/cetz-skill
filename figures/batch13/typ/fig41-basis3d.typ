@@ -14,7 +14,7 @@
     content((ox + 2.15, -.32), anchor: "west", [$y$])
     content((ox - 1.3, -1.35), anchor: "east", [$x$])
   }
-  // ---- (a) free displacement vector ----
+  // (a) free displacement vector
   axes(0)
   let p0 = (1.15, -.75)
   let p1 = (2.35, 1.4)
@@ -24,7 +24,7 @@
   content((2.55, 1.5), anchor: "west", [$(x_"end", y_"end", z_"end")$])
   content((1.1, -1.3), anchor: "center", [$(x_"start", y_"start", z_"start")$])
   content((.7, -2.3), [(a)])
-  // ---- (b) same vector moved to the origin ----
+  // (b) same vector moved to the origin
   let ox = 7.0
   axes(ox)
   let q1 = (ox + 1.2, 2.15)

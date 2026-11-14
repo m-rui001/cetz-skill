@@ -1,7 +1,6 @@
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-// ============================================================
 // 微波电热推力器剖面示意图（重绘）
 // 编译后外观：矩形外腔，顶部斜线阴影盖板，板中央嵌黑色收敛喷管喉部；
 // 腔内竖线填充的内管，管顶灰色星芒状等离子体，其下空心弧形箭头表示
@@ -9,8 +8,7 @@
 // 圆头天线杆自底部斜线阴影馈通穿入内管；右侧五条引出线依次标注
 // Nozzle / Plasma / Propellant vortex / Separation plate / Antenna。
 // 来源：Propulsion Technologies for CubeSats: Review. Aerospace 2024, 11(7), 502, Figure 18. DOI 10.3390/aerospace11070502.
-// ============================================================
-// ---- 命名地标（cm）----
+// 命名地标（cm）
 #let cx = 4.0        // 中心轴 / 天线轴
 #let wl = 0.0        // 外腔左壁
 #let wr = 8.0        // 外腔右壁

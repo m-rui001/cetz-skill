@@ -18,7 +18,7 @@
   // 弯曲箭头助手（三次贝塞尔＋实心箭头）
   let arrow(a, c1, c2, b) = bezier(a, c1, c2, b, stroke: arr, mark: (end: "stealth", fill: ink, scale: 1.1))
 
-  // ===== 左侧：四足机器人 =====
+  // 左侧：四足机器人
   // 机身与头颈
   line((1.9, 6.1), (4.1, 6.3), (4.4, 5.7), (2.1, 5.3), close: true,
        fill: rgb("#f2c53d").transparentize(25%), stroke: mk)
@@ -33,7 +33,7 @@
   }
   content((3.2, 7.3), [*Quadruped Robot*])
 
-  // ===== 中上：RGB-D 灰度深度图 =====
+  // 中上：RGB-D 灰度深度图
   rect((8.9, 9.1), (12.9, 12.1), fill: rgb("#cfcfcf"), stroke: none)
   rect((8.9, 10.6), (11.0, 12.1), fill: rgb("#6e6e6e"), stroke: none)
   rect((10.6, 10.1), (12.6, 11.9), fill: rgb("#a8a8a8"), stroke: none)
@@ -41,7 +41,7 @@
   circle((11.9, 11.1), radius: 0.7, fill: rgb("#bdbdbd"), stroke: none)
   content((10.9, 12.45), [*RGB - D*])
 
-  // ===== 中部：LiDAR 彩色点云 =====
+  // 中部：LiDAR 彩色点云
   rect((8.9, 5.6), (12.9, 8.6), fill: rgb("#101b3a"), stroke: none)
   for (x0, y0, x1, y1, c) in (
     (9.00, 7.70, 10.00, 8.40, "#2e7d32"), (9.90, 7.90, 10.80, 8.50, "#4caf50"),
@@ -57,7 +57,7 @@
   // 省略号表示其余传感器
   content((10.9, 5.2), [*...*])
 
-  // ===== 定位与导航：折页地图 + 红色图钉 =====
+  // 定位与导航：折页地图 + 红色图钉
   content((10.9, 2.95), [*Localisation & Navigation*])
   line((8.7, 1.1), (10.9, 0.5), (12.9, 1.1), (12.9, 2.4), (10.9, 1.8), (8.7, 2.5), close: true,
        fill: rgb("#e9e1c9"), stroke: (paint: rgb("#b9ae8c"), thickness: 0.7pt))
@@ -72,7 +72,7 @@
   circle((10.9, 2.1), radius: 0.28, fill: rgb("#d63b2f"), stroke: none)
   circle((10.9, 2.1), radius: 0.11, fill: white, stroke: none)
 
-  // ===== 右上：多传感数据融合街景缩略图 =====
+  // 右上：多传感数据融合街景缩略图
   rect((17.0, 6.8), (27.0, 12.45), fill: rgb("#10203a"), stroke: none)
   content((22.0, 12.68), [*Front-Background Segmentation*])
   // 透视网格（向上收束）
@@ -111,7 +111,7 @@
     line((x, y - 0.12 * s), (x + 0.05 * s, y - 0.26 * s), stroke: (paint: pale, thickness: 0.7pt * s))
   }
 
-  // ===== 图标绘制助手 =====
+  // 图标绘制助手
   let glyph(x, y, k) = {
     if k == "bomb" {
       circle((x, y - 0.06), radius: 0.15, fill: ink, stroke: none)
@@ -179,7 +179,7 @@
     }
   }
 
-  // ===== 目标分类：两行图标卡片 =====
+  // 目标分类：两行图标卡片
   content((18.2, 2.9), [*Object Classification*])
   let cls = (
     (15.85, 2.3, "bomb"), (17.0, 2.3, "balloon"), (18.15, 2.3, "umbrella"),
@@ -193,7 +193,7 @@
     glyph(x, y, k)
   }
 
-  // ===== 障碍识别：四列图标卡片 =====
+  // 障碍识别：四列图标卡片
   content((25.3, 4.0), [*Obstacle Recognition*])
   let obs = (
     (23.5, 3.4, "bars"), (24.65, 3.4, "gear"), (25.8, 3.4, "table"), (26.95, 3.4, "chip"),
@@ -206,7 +206,7 @@
     glyph(x, y, k)
   }
 
-  // ===== 数据流箭头 =====
+  // 数据流箭头
   // 机器人 → 传感器组
   arrow((5.6, 6.1), (6.8, 6.4), (7.8, 7.9), (8.7, 8.2))
   // 传感器组 → 多传感融合

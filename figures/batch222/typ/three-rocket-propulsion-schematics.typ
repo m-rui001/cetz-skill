@@ -64,7 +64,7 @@
   // 标签：居中内容
   let lab(p, t, size: 9pt, anchor: "center") = content(p, text(size: size, t), anchor: anchor)
 
-  // ---- 面板 (a) 固体发动机 ----
+  // 面板 (a) 固体发动机
   rect((2.3, 11.9), (8.55, 12.5), radius: 0.25, fill: fuel, stroke: none)
   rect((2.3, 10.5), (8.55, 11.1), radius: 0.25, fill: fuel, stroke: none)
   body(1.45, 8.6, 10.4, 12.6)
@@ -83,7 +83,7 @@
   lab((5.3, 9.9), [*Solid Rocket Propulsion*], size: 10pt)
   lab((5.3, 9.55), [(a)], size: 9pt)
 
-  // ---- 面板 (b) 液体发动机 ----
+  // 面板 (b) 液体发动机
   tank(1.2, 5.4, 8.0, 8.9, fuel)
   tank(1.2, 5.4, 6.8, 7.7, lox)
   // 输送管路：两路汇入喷注器
@@ -104,7 +104,7 @@
   lab((4.6, 6.3), [*Liquid Rocket Propulsion*], size: 10pt)
   lab((4.6, 5.95), [(b)], size: 9pt)
 
-  // ---- 面板 (c) 混合发动机 ----
+  // 面板 (c) 混合发动机
   tank(0.6, 4.5, 3.5, 4.9, lox, band: 0.6)
   line((4.5, 4.2), (5.15, 4.2), (5.62, 4.2), stroke: (paint: metal, thickness: 2.2pt))
   valve((5.15, 4.2), r: 0.3)

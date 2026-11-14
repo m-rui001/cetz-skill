@@ -6,7 +6,6 @@
   let t = (thickness: 1.5pt)
   let hd = (symbol: ">", fill: black, length: 5pt, width: 2.2pt)
 
-
   let top = (0, 1.588)
   let bl = (-1.318, -0.757)
   let br = (1.331, -0.757)

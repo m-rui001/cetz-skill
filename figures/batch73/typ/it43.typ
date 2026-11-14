@@ -14,7 +14,7 @@
 #canvas({
   import draw: *
 
-  // ---- shaded summation regions ----
+  // shaded summation regions
   let regL = (px(35,336), px(35,299), px(72,299), px(72,262), px(109,262), px(109,225),
     px(146,225), px(146,188), px(183,188), px(183,151), px(220,151), px(220,114),
     px(294,114), px(294,336))
@@ -25,13 +25,13 @@
     line(stroke: none, fill: fillc, close: true, ..r)
   }
 
-  // ---- light grid ----
+  // light grid
   for x in (72,109,146,183,220,257,294) { line(stroke: gl(), px(x,39), px(x,336)) }
   for y in (39,76,113,150,187,224,261,298) { line(stroke: gl(), px(35,y), px(294,y)) }
   for x in (422,459,496,533,570,607,644,681) { line(stroke: gl(), px(x,39), px(x,336)) }
   for y in (39,76,113,150,187,224,261,298) { line(stroke: gl(), px(385,y), px(681,y)) }
 
-  // ---- axes ----
+  // axes
   line(stroke: ink(t: 0.6pt), px(35,336), px(35,28))
   line(stroke: none, fill: black, close: true, px(35,3), px(28,28), px(41,28))
   line(stroke: ink(t: 0.6pt), px(35,335), px(316,335))
@@ -41,36 +41,36 @@
   line(stroke: ink(t: 0.6pt), px(385,335), px(674,335))
   line(stroke: none, fill: black, close: true, px(698,335), px(674,329), px(674,342))
 
-  // ---- staircases ----
+  // staircases
   line(stroke: ink(), ..(px(34,298), px(72,298), px(72,262), px(108,262), px(108,224), px(145,224),
     px(145,188), px(182,188), px(182,150), px(219,150)))
   line(stroke: ink(), ..(px(384,298), px(422,298), px(422,262), px(460,262), px(460,224), px(496,224),
     px(496,188), px(533,188), px(533,150), px(570,150)))
 
-  // ---- vertical arrows (left panel) ----
+  // vertical arrows (left panel)
   for a in ((52,302),(90,266),(127,228),(164,192),(201,154)) {
     line(stroke: ink(t: 0.45pt), px(a.at(0), 335), px(a.at(0), a.at(1) + 15))
     line(stroke: ink(t: 0.45pt), ..(px(a.at(0) - 4, a.at(1) + 15), px(a.at(0), a.at(1)),
       px(a.at(0) + 4, a.at(1) + 15)))
   }
 
-  // ---- horizontal arrows (right panel) ----
+  // horizontal arrows (right panel)
   for a in ((533,170),(496,206),(459,243),(422,280),(385,317)) {
     line(stroke: ink(t: 0.45pt), px(a.at(0), a.at(1)), px(552, a.at(1)))
     line(stroke: ink(t: 0.45pt), ..(px(551, a.at(1) - 4), px(569, a.at(1) - 1), px(551, a.at(1) + 4)))
   }
 
-  // ---- brace ----
+  // brace
   line(stroke: ink(t: 0.45pt), ..(px(571,157), px(576,163), px(576,219), px(589,232),
     px(576,245), px(576,319), px(571,323)))
 
-  // ---- dashed rectangle corners ----
+  // dashed rectangle corners
   for d in ((113,118),(126,134),(142,150)) { line(stroke: ink(t: 0.45pt), px(220,d.at(0)), px(220,d.at(1))) }
   for d in ((228,239),(246,256)) { line(stroke: ink(t: 0.45pt), px(d.at(0),113), px(d.at(1),113)) }
   for d in ((113,118),(127,134),(143,150)) { line(stroke: ink(t: 0.45pt), px(570,d.at(0)), px(570,d.at(1))) }
   line(stroke: ink(t: 0.45pt), px(583,113), px(591,113))
 
-  // ---- dash-dot i = k lines ----
+  // dash-dot i = k lines
   for d in ((238,132,249,121),(263,107,274,96),(287,83,298,72)) {
     line(stroke: ink(t: 0.45pt), px(d.at(0), d.at(1)), px(d.at(2), d.at(3)))
   }
@@ -81,7 +81,7 @@
     circle(px(d.at(0), d.at(1)), radius: 1.1 / S, fill: black, stroke: none)
   }
 
-  // ---- labels ----
+  // labels
   let tx = (x, y, s, t) => content(px(x, y), anchor: "center", [#text(size: s * 1pt)[#t]])
   tx(13.5, 26.5, 4.6, [$i$])
   tx(358.5, 26.5, 4.6, [$i$])

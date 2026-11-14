@@ -12,7 +12,7 @@
   let add = (p, q) => (p.at(0) + q.at(0), p.at(1) + q.at(1))
   let dot = (p) => circle(p, radius: .10, fill: luma(15%), stroke: none)
 
-  // ---- panel (a): y' and z' tilted, the mass line horizontal ----
+  // panel (a): y' and z' tilted, the mass line horizontal
   let A = (ox) => {
     let P = (p) => (p.at(0) + ox, p.at(1))
     let ey = u(27deg)
@@ -43,7 +43,7 @@
     content(P((0.2, 0.0 - 3.35)), anchor: "center", [(a)])
   }
 
-  // ---- panel (b): y' horizontal, z' vertical ----
+  // panel (b): y' horizontal, z' vertical
   let B = (ox) => {
     let P = (p) => (p.at(0) + ox, p.at(1))
     line(P((-3.05, 0)), P((3.15, 0)), stroke: ta, mark: (end: ">"))

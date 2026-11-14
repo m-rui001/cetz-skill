@@ -1,4 +1,3 @@
-// =====================================================================
 // 锂离子电池回收分流流程图 —— 语义重绘（线稿，非照片）
 // 源图：A Review of Lithium-Ion Battery Recycling: Technologies,
 //       Sustainability, and Open Issues. Batteries 2024, 10(1), 38.
@@ -15,7 +14,6 @@
 // 配色：品红 #E5009D、teal #3BBFAD、blue #0F6FE8、gray #6E6A67。
 // 三个右面板由 PANELS 表 + panel() 助手循环生成；菱形 / 水平线+下箭头 /
 // 圆角面板 / 左列圆 / 箭头 / 预处理框均为共享助手，坐标全部由常量推导。
-// =====================================================================
 #set page(width: auto, height: auto, margin: 6pt)
 #import "@preview/cetz:0.4.2": canvas, draw
 #set text(font: ("Arial", "Segoe UI"), size: 8.5pt, fill: rgb("#1a1a1a"))
@@ -23,7 +21,7 @@
 #canvas(length: 1cm, {
   import draw: *
 
-  // ======================= 配色与线型 =======================
+  // 配色与线型
   let INK = rgb("#1a1a1a")
   let MAGENTA = rgb("#E5009D")   // 左列：废电池 / 预处理 / 连接箭头
   let TEAL = rgb("#3BBFAD")      // 面板 1：Other
@@ -31,7 +29,7 @@
   let GRAY = rgb("#6E6A67")      // 面板 3：Anode
   let EDGE = rgb("#D8D8D8")      // 右列面板浅灰描边
 
-  // ======================= 语义坐标常量 =======================
+  // 语义坐标常量
   let LEFT_X = 2.85              // 左列中心 x
   let CIRC_CY = 10.7             // 废电池圆心 y
   let CIRC_R = 1.9               // 废电池圆半径
@@ -59,7 +57,7 @@
   let AFTER_RULE = 0.35          // 箭头尖端到首行产物的间距
   let GROUP_GAP = 0.30           // bold 引导词组之间的额外间距
 
-  // ======================= 共享助手 =======================
+  // 共享助手
   // 文字落位：anchor 控制对齐，body 内可含 *bold* 与 #linebreak()
   let put(pos, body, anchor: "center", size: 8.5pt) = content(pos, anchor: anchor, text(size: size, body))
 
@@ -144,7 +142,7 @@
     }
   }
 
-  // ======================= 右列：三个分流面板（表驱动） =======================
+  // 右列：三个分流面板（表驱动）
   // 每行 = (color, 菱形标签, bold 引导词组[(正文,行数)], 分隔线上方标题, 产物行)
   let CHEM = [Chemical and physical methods for separation of components]
   let PANELS = (
@@ -173,7 +171,7 @@
     ytop -= h + GAP
   }
 
-  // ======================= 左列：废电池 → 预处理 → 右列 =======================
+  // 左列：废电池 → 预处理 → 右列
   waste-circle()
   mag-arrow((LEFT_X, CIRC_CY - CIRC_R), (LEFT_X, BOX_TOP + 0.05))   // 圆 → 预处理框（向下）
   pretreat-box()

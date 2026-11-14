@@ -107,7 +107,6 @@
     for i in range(4) {bezier(P(x,y + i*6),P(x,y + (i + 1)*6),P(x - 8,y + i*6),P(x - 8,y + (i + 1)*6),stroke:(paint:gray,thickness:.9pt))}
   }
 
-
   let diode=(x,y,up:true)=>{
     wire(((x,y - 15),(x,y + 15)))
     let d=if up {-1} else {1}

@@ -135,7 +135,6 @@
   spring((7.88, 5.80), (6.12, 5.18))
   spring((8.62, 5.86), (8.28, 3.88))
 
-
   // 轮毂：两根交叉搭板（各跨一对臂）+ 深灰中心块 + 绿色横销 + 红色短销
   line(..bar(H, 1.90, 0.30, 24), close: true, fill: rgb("#b3b3ba"), stroke: (paint: ink, thickness: 0.9pt))
   line(..bar(H, 1.90, 0.30, 94), close: true, fill: rgb("#a5a5ac"), stroke: (paint: ink, thickness: 0.9pt))

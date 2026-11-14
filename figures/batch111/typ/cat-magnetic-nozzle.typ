@@ -1,4 +1,3 @@
-// ------------------------------------------------------------------
 // 编译外观：CubeSat 双极推力器（CAT）磁喷管示意图。
 //   右半为浅灰 SPACECRAFT 块，标签在其内部右下角；
 //   黑色粗阶梯轮廓为法拉第屏蔽：左侧窄开口壁向右阶跃为更宽的上下壳体；
@@ -10,7 +9,6 @@
 //   全部标签逐字保留原文，折行与原图一致，引线指向各自部件。
 // 来源：Propulsion Technologies for CubeSats: Review. Aerospace 2024,
 //   11(7), 502, Figure 30. DOI 10.3390/aerospace11070502.
-// ------------------------------------------------------------------
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw

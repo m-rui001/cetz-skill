@@ -107,7 +107,6 @@
     for i in range(4) {bezier(P(x,y + i*6),P(x,y + (i + 1)*6),P(x - 8,y + i*6),P(x - 8,y + (i + 1)*6),stroke:(paint:gray,thickness:.9pt))}
   }
 
-
   let cellport=(x,y,c,below:false)=>{
     circle(P(x,y),radius:1.3,fill:white,stroke:.9pt)
     lab(x,y + (if below {12} else {-12}),c)

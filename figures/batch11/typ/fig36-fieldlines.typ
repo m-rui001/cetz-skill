@@ -3,7 +3,7 @@
 
 #canvas({
   import draw: *
-  // ---- (a) two vortices between two curved streamlines ----
+  // (a) two vortices between two curved streamlines
   circle((1.3, 4.4), radius: .72, stroke: (paint: black, thickness: 0.8pt))
   circle((1.3, .1), radius: .72, stroke: (paint: black, thickness: 0.8pt))
   let ah = (p, a) => {
@@ -22,7 +22,7 @@
   content((1.3, .1), [3])
   content((1.3, 2.25), [2])
   content((1.2, -1.6), [(a)])
-  // ---- (b) shear profile ----
+  // (b) shear profile
   let ox = 4.6
   for i in range(7) {
     let y = 3.1 - i * .52
@@ -38,7 +38,7 @@
   content((ox + .85, 2.30), [5])
   content((ox + .85, 1.26), [4])
   content((ox + .8, -1.6), [(b)])
-  // ---- (c) radial star ----
+  // (c) radial star
   let cx = 9.6
   let cy = 1.6
   line((cx - 1.7, cy), (cx + 1.7, cy), stroke: (paint: black, thickness: 0.8pt))

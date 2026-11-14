@@ -21,7 +21,7 @@
   let ar = (end: "stealth", fill: ink, scale: 0.7)
   let ar2 = (start: "stealth", end: "stealth", fill: ink, scale: 0.6)
 
-  // ---------- Agent 外框与环境 ----------
+  // Agent 外框与环境
   rect((2.95, 0.55), (13.50, 8.00), radius: 0.10, fill: panel, stroke: (paint: ink, thickness: 1.0pt, dash: "dashed"))
   content((3.22, 0.80), [Agent], size: 10pt, anchor: "west")
   rect((0.30, 2.90), (2.55, 5.80), radius: 0.18, fill: white, stroke: boxstroke)
@@ -32,7 +32,7 @@
   rect((1.30, 4.36), (1.56, 5.00), radius: 0.05, fill: rgb("#e6be5c"), stroke: 0.6pt + ink)
   rect((1.37, 4.58), (1.49, 4.80), radius: 0.03, fill: rgb("#333333"), stroke: none)
 
-  // ---------- 四个网络框 ----------
+  // 四个网络框
   let nbox(x1, y1, x2, y2, title, tsize) = {
     rect((x1, y1), (x2, y2), radius: 0.08, fill: white, stroke: boxstroke)
     content(((x1 + x2) / 2, y1 + 0.23), title, size: tsize)
@@ -76,7 +76,7 @@
   net(6.60, 2.86, lstm: true)
   net(11.25, 2.86, lstm: false)
 
-  // ---------- 经验回放池（圆柱） ----------
+  // 经验回放池（圆柱）
   rect((3.50, 3.30), (4.85, 4.45), radius: 0.02, fill: rgb("#eef3f8"), stroke: 0.9pt + ink)
   let ell(cx, cy) = {
     let pts = ()
@@ -90,7 +90,7 @@
   content((4.175, 3.94), [Replay], size: 9pt)
   content((4.175, 3.66), [buffer], size: 9pt)
 
-  // ---------- 策略梯度与损失 ----------
+  // 策略梯度与损失
   rect((5.05, 4.45), (7.55, 5.28), radius: 0.06, fill: white, stroke: 0.9pt + ink)
   content((5.14, 5.03), [#text(size: 8pt)[Policy]], size: 6.5pt, anchor: "west")
   content((5.14, 4.66), [Gradient], size: 6.5pt, anchor: "west")
@@ -100,7 +100,7 @@
   content((11.72, 4.72), [Function], size: 7pt, anchor: "west")
   content((13.02, 5.10), [$L$], size: 8pt)
 
-  // ---------- LSTM 面板 ----------
+  // LSTM 面板
   rect((8.30, 0.45), (12.45, 1.95), radius: 0.08, fill: panel,
     stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"))
   let cell(cx, cy) = {
@@ -119,7 +119,7 @@
   content((10.40, 0.98), [#text(size: 8pt)[Recurrent Neural Network]], size: 5.8pt)
   content((10.40, 0.70), [LSTM], size: 5.8pt)
 
-  // ---------- 参数更新虚线双向箭头 ----------
+  // 参数更新虚线双向箭头
   line((7.85, 3.45), (7.85, 5.95), stroke: dashthin, mark: ar2)
   line((10.25, 3.45), (10.25, 5.95), stroke: dashthin, mark: ar2)
   content((7.60, 5.77), [Update], size: 7pt, anchor: "east")
@@ -127,7 +127,7 @@
   content((9.98, 5.77), [Update], size: 7pt, anchor: "east")
   content((9.98, 5.44), [$theta^(Q') quad theta^Q$], size: 7pt, anchor: "east")
 
-  // ---------- 数据流 ----------
+  // 数据流
   // 环境观测 o_t 与上一动作 a_t 送入 Actor
   line((1.15, 5.80), (1.15, 7.15), stroke: thin)
   line((1.15, 7.15), (5.05, 7.15), stroke: thin, mark: ar)

@@ -8,7 +8,7 @@
 #canvas({
   import draw: *
 
-  // ---------------- 配色 ----------------
+  // 配色
   let c-alu = rgb("#d6d6d6")
   let c-macor = rgb("#eeeeee")
   let c-cav = rgb("#fbfbfb")
@@ -42,7 +42,7 @@
     }
   }
 
-  // ---------------- 关键地标 ----------------
+  // 关键地标
   let ymid = 2.2   // 推力器轴线
   let L = -0.35    // 左壁
   let R = 4.0      // 机体右缘

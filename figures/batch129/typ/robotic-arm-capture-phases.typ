@@ -11,7 +11,7 @@
   let red = rgb("#c00000")
   let lw = 0.9pt
 
-  // ---- 向量助手 ----
+  // 向量助手
   let add(a, b) = (a.at(0) + b.at(0), a.at(1) + b.at(1))
   let mul(a, k) = (a.at(0) * k, a.at(1) * k)
   let xf(o, a, p) = {
@@ -33,7 +33,7 @@
     out
   }
 
-  // ---- 基础图元 ----
+  // 基础图元
   let quad(pts, fill: white) = line(..pts, close: true, fill: fill, stroke: navy + lw)
 
   // 三维盒体：c 中心，u 半宽向量，v 半高向量，w 深度向量
@@ -83,7 +83,7 @@
     circle(pts.last(), radius: 0.10, fill: white, stroke: navy + 1.1pt)
   }
 
-  // ---- 四阶段场景表 ----
+  // 四阶段场景表
   let scenes = (
     (
       o: (0, 0),

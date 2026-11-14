@@ -24,7 +24,7 @@
   content((0.95, 4.06), text(fill: white, size: 10pt, "(a)"), anchor: "north-west")
   content((4.59, 4.06), text(fill: white, size: 10pt, "(b)"), anchor: "north-west")
 
-  // ---------- (a) 正交缆索网 / 集总参数网 ----------
+  // (a) 正交缆索网 / 集总参数网
   let ax0 = 0.85
   let ax1 = 3.35
   let ay0 = 0.65
@@ -72,7 +72,7 @@
     circle((c.at(0), c.at(1)), radius: 0.033, fill: rgb(245, 245, 245), stroke: none)
   }
 
-  // ---------- (b) 三角缆索网 / 绳网模型 ----------
+  // (b) 三角缆索网 / 绳网模型
   let bx0 = 5.45
   let bx1 = 7.85
   let by0 = 0.78

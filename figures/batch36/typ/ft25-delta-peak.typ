@@ -6,13 +6,13 @@
   let t = (thickness: 0.9pt)
   // 100 px of the book figure = 1 canvas unit; panel (b) baseline is y = 0
   let ya = 6.05
-  // ---- (a)  delta at the origin and a second one at lambda_0
+  // (a)  delta at the origin and a second one at lambda_0
   content((-0.55, ya + 2.35), anchor: "north-west", [(a)])
   line((0.50, ya), (7.90, ya), stroke: t)
   line((1.10, ya), (1.10, 9.60), stroke: t)
   line((5.25, ya), (5.25, 8.42), stroke: t)
   content((5.45, ya - 0.12), anchor: "north", [$delta (lambda - lambda_0)$])
-  // ---- (b)  the same two lines broadened into a peak
+  // (b)  the same two lines broadened into a peak
   content((-0.55, 3.05), anchor: "north-west", [(b)])
   line((0.55, 0), (8.00, 0), stroke: t)
   line((1.20, 0), (1.20, 3.05), stroke: t)

@@ -12,7 +12,7 @@
   // 圆弧采样为折线点列
   let arcpts(c, r, a0, a1, n: 22) = range(n + 1).map(i => pol(c, r, a0 + (a1 - a0) * i / n))
 
-  // ---- 命名地标 ----
+  // 命名地标
   let A0 = (4.6, 0.8)      // 剖切面左下角
   let C0 = (8.4, 4.6)      // 剖切面右上角
   let O = (6.5, 2.7)       // 环形腔中心
@@ -46,7 +46,7 @@
   line((1.8, 5.8), (4.9, 5.8), stroke: 0.5pt)
   line((4.9, 5.8), (4.9, 4.4), stroke: 0.5pt)
 
-  // ---- 坐标系 ----
+  // 坐标系
   line(O, (6.5, 6.7), stroke: 1pt, mark: (end: "stealth"))
   line(O, (9.8, 4.2), stroke: 1pt, mark: (end: "stealth"))
   line(O, (8.9, 0.85), stroke: 1pt, mark: (end: "stealth"))
@@ -81,7 +81,7 @@
        mark: (end: "stealth"))
   content((8.48, 2.72), [B], size: 10pt, fill: rgb("#2ca02c"))
 
-  // ---- 引线标注 ----
+  // 引线标注
   line((2.30, 6.10), (3.20, 5.82), stroke: 0.5pt)
   content((1.55, 6.45), [Neutral \ Gas Feed], size: 9pt)
 

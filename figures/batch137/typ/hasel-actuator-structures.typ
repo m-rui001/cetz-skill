@@ -8,7 +8,7 @@
 #canvas({
   import draw: *
 
-  // ---- 共享配色与助手 ----
+  // 共享配色与助手
   let gold = rgb(140, 128, 28)
   let golddk = rgb(87, 79, 13)
   let cream = rgb(245, 237, 189)
@@ -30,7 +30,7 @@
     (c.at(0) + r_x * calc.cos(a), c.at(1) + r_y * calc.sin(a))
   })
 
-  // ================= 面板 (A) =================
+  // 面板 (A)
   // 透明亚克力左右立柱
   for x in (0.62, 4.18) {
     rect((x, 2.30), (x + 0.28, 11.42), fill: glass.transparentize(60%), stroke: (paint: grey, thickness: 0.6pt))
@@ -75,7 +75,7 @@
   line((2.55, 11.42), (2.55, 10.58), stroke: (paint: dk, thickness: 2pt))
   line((2.55, 2.92), (2.55, 2.14), stroke: (paint: dk, thickness: 2pt))
 
-  // ================= 面板 (B) =================
+  // 面板 (B)
   let cx = 15.30
   let yt = 8.45
   let yb = 5.35
@@ -131,7 +131,7 @@
   tab(-1)
   tab(1)
 
-  // ================= 面板标号 =================
+  // 面板标号
   content((0.42, 13.35), text(size: 15pt, weight: "bold", fill: black)[(A)], anchor: "west")
   content((10.90, 13.35), text(size: 15pt, weight: "bold", fill: black)[(B)], anchor: "west")
 })

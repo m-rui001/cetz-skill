@@ -1,4 +1,3 @@
-// =====================================================================
 // TPL（双光子聚合）3D 打印系统光路 + 体素阈值示意图
 // 源图：Two-Photon Polymerization Lithography for Optics and Photonics
 //       (Advanced Functional Materials, 2023)  Fig. 2
@@ -13,7 +12,6 @@
 //
 // 线型约定：激发光 = 红色实线；照明光 / 成像光 = 黄绿色虚线；
 //           结构线 = 0.6–0.8pt 黑色线稿，透镜 / 分光片允许浅灰填充。
-// =====================================================================
 #set page(width: auto, height: auto, margin: 6pt)
 #import "@preview/cetz:0.4.2": canvas, draw
 #set text(font: ("Segoe UI", "Times New Roman"), size: 6.8pt)
@@ -21,7 +19,7 @@
 #canvas(length: 0.5cm, {
   import draw: *
 
-  // ======================= 配色与线型 =======================
+  // 配色与线型
   let INK = rgb("#1b1b1b") // 结构线墨色
   let LENSF = rgb("#e8e8e8") // 透镜 / 棱镜浅灰填充
   let EXC = rgb("#b8352a") // 激发光：红
@@ -90,7 +88,7 @@
     line((x + w, y), (x + w + d, y + d), (x + w + d, y + h + d), stroke: MAIN)
   }
 
-  // ======================= (a) 布局常量 =======================
+  // (a) 布局常量
   let AY = 9.15 // 激光—扩束段光轴高度
   let COL = 15.20 // 竖直光轴：Dichroic / Objective / Lens / CCD
   let DI = (COL, 9.35) // 二向色镜中心
@@ -103,7 +101,7 @@
   let CCD_BOT = 11.90 // CCD 机身底面
   let IMG_LENS = 11.15 // 成像透镜中心高度
 
-  // ======================= (a) 光学元件 =======================
+  // (a) 光学元件
 
   // 激光器：飞秒激光头（外壳 + 出光接口）
   let laser(x, y, w: 3.60, h: 1.60) = {
@@ -264,13 +262,13 @@
     circle((x - 0.24, y + h / 2), radius: 0.07, stroke: THIN, fill: LENSF)
   }
 
-  // ======================= (b) 体素剖面与阈值曲线 =======================
+  // (b) 体素剖面与阈值曲线
   // 体素剖面 + 阈值曲线：(b) 整块面板（基板 / 未固化树脂 / 光锥 / 体素 / 曲线）
   let voxel-plot() = {
     // 外框：浅蓝虚线圆角框
     rect((22.30, 1.90), (36.75, 11.50), radius: 0.45, stroke: (paint: TEAL, thickness: 0.7pt, dash: (3pt, 2pt)))
 
-    // ---- 样品剖面：基板 + 未固化树脂块 ----
+    // 样品剖面：基板 + 未固化树脂块
     let bx = 26.00
     let by = 3.75
     let bw = 4.20
@@ -283,7 +281,7 @@
     line((bx, by + bh), (bx + bd, by + bh + bd), (bx + bw + bd, by + bh + bd), (bx + bw, by + bh), stroke: MAIN)
     line((bx + bw, by), (bx + bw + bd, by + bd), (bx + bw + bd, by + bh + bd), stroke: MAIN)
 
-    // ---- 激光会聚光锥（上方收敛、下方发散）----
+    // 激光会聚光锥（上方收敛、下方发散）
     let ax = 28.10
     let ay = 6.60
     let ry1 = 9.62 // 上端入射光阑高度
@@ -302,7 +300,7 @@
       line((ax - hd, yd), (ax + hd, yd), stroke: (paint: BEAMF, thickness: 0.6pt))
     }
 
-    // ---- 已固化椭球体素（连成打印线条，末端即焦点体素）----
+    // 已固化椭球体素（连成打印线条，末端即焦点体素）
     let vox = ((26.75, 7.75), (27.15, 7.45), (27.50, 7.15), (27.80, 6.90), (28.00, 6.72))
     for p in vox {
       circle(p, radius: (0.31, 0.22), stroke: MAIN, fill: white)
@@ -311,7 +309,7 @@
     circle((ax, ay), radius: (0.18, 0.13), stroke: MAIN, fill: white)
     circle((ax, ay), radius: 0.055, fill: EXC, stroke: none)
 
-    // ---- 阈值曲线坐标系 ----
+    // 阈值曲线坐标系
     let ox = 32.00
     let oy = 3.55
     line((ox, oy), (ox, 9.55), stroke: MAIN, mark: (end: ">", fill: INK))
@@ -346,7 +344,7 @@
     line((ox + 2.90, 8.55), (ox + 2.90, oy + 0.18), stroke: DASH)
     line((ax + 0.20, ay), (ox + 2.90, ay), stroke: DASH)
 
-    // ---- (b) 标签 ----
+    // (b) 标签
     lbl((28.10, 10.15), [Laser])
     lbl((22.55, 9.55), [Uncured resist], anchor: "west")
     line((25.95, 9.50), (26.55, 8.95), stroke: THIN) // 引线
@@ -361,9 +359,9 @@
     lbl((31.72, 8.20), [Intensity], angle: 90deg)
   }
 
-  // ======================= 绘制 =======================
+  // 绘制
 
-  // ---- (a) 光学元件 ----
+  // (a) 光学元件
   laser(0.80, 8.35)
   attenuator(5.90, AY)
   beam-expander(6.95, AY)
@@ -377,7 +375,7 @@
   led(19.00, 3.60)
   lens(COL, IMG_LENS, h: 0.50, t: 0.20)
 
-  // ---- (a) 光路 ----
+  // (a) 光路
   // 激发光（红线实线）：激光器 → 衰减片 → 扩束镜；扩束镜 → 快门 → 振镜 → 反射镜 → 二向色镜 → 样品
   beam(((4.82, AY), (7.00, AY)))
   beam(((8.96, AY), SH, GV, MI, DI, (COL, SAMP)))
@@ -399,7 +397,7 @@
     mark: (end: ">", fill: AUX),
   )
 
-  // ---- (a) 标签 ----
+  // (a) 标签
   lbl((2.75, 10.55), [Laser])
   lbl((6.55, 10.05), [Attenuator])
   lbl((7.55, 8.05), [Expander])
@@ -414,7 +412,7 @@
   lbl((15.55, 2.18), [Mirror], anchor: "east")
   lbl((20.00, 5.50), [LED])
 
-  // ---- (b) ----
+  // (b)
   voxel-plot()
 
   // 面板编号

@@ -43,7 +43,7 @@
   let ca = -20deg
   hd((0.78 * calc.cos(ca), 3.77 + 0.2 * calc.sin(ca)), (.35, .94), .13)
 
-  // ---- mass 5 (upper right, v into page) ----
+  // mass 5 (upper right, v into page)
   let m5 = (2.23, 3.77)
   let l5 = (0.85, 4.54)
   line(O, m5, stroke: th, mark: (end: ">"))
@@ -54,7 +54,7 @@
   cross((2.83, 3.46))
   content((3.15, 2.95), anchor: "west", [Velocity $arrow(v_5)$ is \ into page])
 
-  // ---- mass 4 (left, v out of page) ----
+  // mass 4 (left, v out of page)
   let m4 = (0.0 - 2.12, 1.31)
   let l4 = (0.0 - 1.62, 2.12)
   line(O, m4, stroke: th, mark: (end: ">"))
@@ -65,7 +65,7 @@
   bullet((-2.65, 0.69))
   content((-2.95, 0.42), anchor: "east", [Velocity $arrow(v_4)$ is \ out of page])
 
-  // ---- mass 1 (lower right, v into page) ----
+  // mass 1 (lower right, v into page)
   let m1 = (2.12, 0.0 - 1.15)
   let l1 = (2.65, 0.0 - 0.27)
   line(O, m1, stroke: th, mark: (end: ">"))

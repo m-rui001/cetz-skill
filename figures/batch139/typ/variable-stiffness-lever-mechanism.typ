@@ -54,7 +54,7 @@
     (cx + r * calc.cos(a), cy + r * calc.sin(a))
   })
 
-  // ===== 左侧：整机结构 =====
+  // 左侧：整机结构
   rect((0.2, 1.4), (11.4, 12.2), fill: rgb("#eeeeee"), stroke: none)
   for x in (2.6, 3.9, 7.3, 8.6) {
     line((x, 3.4), (x, 11.9), stroke: (paint: gy, thickness: 2.6pt))
@@ -95,7 +95,7 @@
   line((2.9, 0.9), (3.1, 4.2), stroke: (paint: black, thickness: 0.6pt))
   content((2.8, 0.7), lb9[SMA], anchor: "east")
 
-  // ===== 中上：约束盘侧视放大 =====
+  // 中上：约束盘侧视放大
   rect((13.0, 6.4), (18.4, 12.2), fill: white,
     stroke: (paint: rgb("#3f9e6b"), thickness: 1pt))
   for x in (14.7, 16.9) {
@@ -112,7 +112,7 @@
   line((15.9, 7.4), (14.9, 6.85), stroke: (paint: black, thickness: 0.6pt))
   content((14.7, 6.85), lb9[Thread], anchor: "east")
 
-  // ===== 中下：驱动杆与杠杆放大 =====
+  // 中下：驱动杆与杠杆放大
   rect((13.0, 1.4), (18.4, 6.0), fill: white,
     stroke: (paint: bl, thickness: 1pt))
   let outr = arcp(12.4, 3.6, 4.7, -28, 28, 12)
@@ -126,7 +126,7 @@
   circle((16.1, 1.9), radius: 0.15, fill: rd, stroke: none)
   content((16.6, 1.9), lb9[A], anchor: "west")
 
-  // ===== 右上：Unlock / Locked 原理 =====
+  // 右上：Unlock / Locked 原理
   rect((19.4, 6.4), (24.2, 12.2), fill: gr, stroke: (paint: gd, thickness: 0.8pt))
   rect((19.4, 11.4), (24.2, 12.2), fill: gr2, stroke: (paint: gd, thickness: 0.8pt))
   content((21.8, 11.8), lb9[Unlock])
@@ -156,7 +156,7 @@
   cellc(19.4)
   cellc(24.7, locked: true)
 
-  // ===== 右下：杠杆简图 =====
+  // 右下：杠杆简图
   rect((19.4, 1.4), (24.2, 6.0), fill: gr, stroke: (paint: gd, thickness: 0.8pt))
   rect((24.7, 1.4), (29.5, 6.0), fill: lb, stroke: (paint: gd, thickness: 0.8pt))
   let lever(x0, locked: false) = {
@@ -183,7 +183,7 @@
   lever(19.4)
   lever(24.7, locked: true)
 
-  // ===== 底部引线标注 =====
+  // 底部引线标注
   line((15.0, 1.0), (15.5, 2.6), stroke: (paint: black, thickness: 0.6pt))
   content((14.8, 0.8), lb9[Drive rod], anchor: "east")
   line((20.7, 1.0), (21.3, 2.2), stroke: (paint: black, thickness: 0.6pt))

@@ -18,7 +18,7 @@
 #canvas({
   import draw: *
 
-  // ======================= 配色与线型 =======================
+  // 配色与线型
   let INK = rgb("#1a1a1a")        // 图标与母线墨色
   let POWER = rgb("#c02a1c")      // 功率线：源图为红色粗线
   let COMM = rgb("#5d686c")       // 通信线：灰色虚线
@@ -59,7 +59,7 @@
     lbl(x, y - dy, b, size: size, anchor: anchor)
   }
 
-  // ======================= 图标函数（照片 → 线稿） =======================
+  // 图标函数（照片 → 线稿）
 
   // 输电铁塔：代表外部主电网（Main grid）；源图是铁塔照片
   let pylon(cx) = {
@@ -339,7 +339,7 @@
     content((x1 - 0.16, y0 + 0.16), anchor: "south-east", text(size: 9.0pt, style: "italic", br))
   }
 
-  // ======================= 版面常量 =======================
+  // 版面常量
   let TOPY = 16.60      // 主电网母线（Main grid 进线）
   let PCCY = 13.30      // PCC 母线
   let LBY = 10.90       // 三条 Local bus
@@ -348,18 +348,18 @@
   let L1 = 8.05         // Local bus 1 负载串中心（灯泡 / 住宅）
   let L2 = 14.55        // Local bus 2 负载串中心（电机 / 住宅）
 
-  // ======================= 微电网外框 =======================
+  // 微电网外框
   rect((3.25, 3.55), (25.55, 17.92), radius: 0.35, fill: none,
     stroke: (paint: TITLE, thickness: 0.8pt, dash: (3pt, 2pt)))
   lbl(22.45, 17.30, [Microgrid], size: 14.7pt, fill: TITLE, weight: "bold")
 
-  // ======================= 主电网 + 进线 =======================
+  // 主电网 + 进线
   pylon(1.45)
   lbl2(1.45, 8.82, [Main], [grid], size: 11.9pt, dy: 0.29)
   // 铁塔横担 → 主电网母线（功率进线）
   line((2.47, TOPY), (3.90, TOPY), stroke: (paint: INK, thickness: 1.2pt))
 
-  // ======================= 母线 =======================
+  // 母线
   bus((3.90, TOPY), (24.60, TOPY))
   bus((3.90, PCCY), (24.60, PCCY))
   bus((4.35, LBY), (8.85, LBY))
@@ -367,7 +367,7 @@
   bus((18.55, LBY), (22.70, LBY))
   lbl(21.60, PCCY + 0.34, [PCC], size: 10.5pt)
 
-  // ======================= 隔离开关 =======================
+  // 隔离开关
   // 竖直导体 + 打开的刀闸（铰点在下方，刀片向右上抬起）
   line((8.40, TOPY), (8.40, 15.55), stroke: bold)
   line((8.40, 14.72), (8.40, PCCY), stroke: bold)
@@ -376,11 +376,11 @@
   circle((8.40, 15.55), radius: 0.038, fill: INK, stroke: none)
   lbl2(9.12, 15.15, [Isolation], [switch], size: 9.8pt, anchor: "west")
 
-  // ======================= MGCC/EMS 中央控制器 =======================
+  // MGCC/EMS 中央控制器
   ems-terminal(13.30, 14.34)
   lbl(13.76, 15.46, [MGCC/EMS], size: 10.5pt, anchor: "west")
 
-  // ======================= Local bus 1：AC/DC + DC/AC（风机） =======================
+  // Local bus 1：AC/DC + DC/AC（风机）
   lbl(4.48, LBY + 0.52, [Local bus], size: 9.0pt, anchor: "west")
   rect((4.35, 7.75), (6.75, 10.55), radius: 0.05, fill: none,
     stroke: (paint: GREYBOX, thickness: 0.55pt, dash: (2.2pt, 1.6pt)))
@@ -401,7 +401,7 @@
   lbl(L1 + 0.80, 7.94, [Loads], size: 8.7pt, anchor: "west")
   lbl2(L1 + 0.84, 8.90, [Local], [Controller], size: 7.8pt, anchor: "west", dy: 0.18)
 
-  // ======================= Local bus 2：AC/DC + DC/DC（光伏） =======================
+  // Local bus 2：AC/DC + DC/DC（光伏）
   lbl(11.12, LBY + 0.52, [Local bus], size: 9.0pt, anchor: "west")
   rect((11.15, 7.75), (13.55, 10.55), radius: 0.05, fill: none,
     stroke: (paint: GREYBOX, thickness: 0.55pt, dash: (2.2pt, 1.6pt)))
@@ -420,7 +420,7 @@
   lbl(L2 + 0.78, 7.94, [Loads], size: 8.7pt, anchor: "west")
   lbl2(L2 + 0.82, 8.92, [Local], [Controller], size: 7.8pt, anchor: "west", dy: 0.18)
 
-  // ======================= Local bus 3：PCS / 常规机组 / ESS =======================
+  // Local bus 3：PCS / 常规机组 / ESS
   lbl(18.55, LBY + 0.52, [Local bus], size: 9.0pt, anchor: "west")
   rect((18.70, 8.90), (20.60, 10.10), radius: 0.04, fill: ORANGE,
     stroke: (paint: INK, thickness: 0.7pt))
@@ -444,7 +444,7 @@
   battery(20.68, 5.96)
   lbl(20.68, 5.82, [Battery], size: 8.7pt)
 
-  // ======================= RES：风机 + 光伏 =======================
+  // RES：风机 + 光伏
   rect((3.60, 4.35), (13.95, 6.95), radius: 0.05, fill: none,
     stroke: (paint: INK, thickness: 0.8pt, dash: (4pt, 2pt, 0.8pt, 2pt)))
   lbl(8.60, 6.30, [RES], size: 11.2pt, weight: "bold")
@@ -453,7 +453,7 @@
   pv-array(12.35, 4.84)
   lbl(12.35, 4.56, [PV array], size: 8.7pt)
 
-  // ======================= 通信 / 控制通道（灰色虚线） =======================
+  // 通信 / 控制通道（灰色虚线）
   // MGCC/EMS ↔ 主电网母线
   cm((13.10, TOPY), (13.10, 15.80))
   // MGCC/EMS ↔ PCC 母线
@@ -463,7 +463,7 @@
   cm((12.54, 14.62), (12.98, LBY + 0.02), double: false)
   cm((13.66, 15.02), (21.05, LBY + 0.02))
 
-  // ======================= 图例 =======================
+  // 图例
   line((9.10, 2.72), (10.10, 2.72), stroke: (paint: POWER, thickness: 1.6pt, cap: "round"))
   lbl(10.24, 2.72, [Power], size: 8.7pt, anchor: "west")
   line((13.40, 2.72), (14.40, 2.72),

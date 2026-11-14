@@ -7,7 +7,7 @@
 #canvas({
   import draw: *
 
-  // ---- 共享助手 ----
+  // 共享助手
   let add(p, q) = (p.at(0) + q.at(0), p.at(1) + q.at(1))
   let mul(p, k) = (p.at(0) * k, p.at(1) * k)
   let poly(pts, fill: none, paint: black, th: 0.6pt) = draw.line(
@@ -99,7 +99,7 @@
     }
   }
 
-  // ---- 上方面板：交会与捕获 ----
+  // 上方面板：交会与捕获
   draw.rect((0, 9.9), (18.6, 18.5), stroke: (paint: black, thickness: 1pt, dash: "dashed"))
   content((9.3, 17.7), [Rendezvous and Capture], size: 13pt)
   chaser((4.3, 14.5))
@@ -108,10 +108,10 @@
   draw.line((4.92, 14.92), (10.45, 15.25), stroke: (paint: cRed, thickness: 2pt))
   content((9.4, 14.35), [Gripper], size: 13pt)
 
-  // ---- 中间粗箭头 ----
+  // 中间粗箭头
   draw.line((9.3, 9.82), (9.3, 8.95), stroke: (paint: black, thickness: 2.4pt), mark: (end: "stealth"))
 
-  // ---- 下方面板：拖曳清除 ----
+  // 下方面板：拖曳清除
   draw.rect((0, 0), (18.6, 8.6), stroke: (paint: black, thickness: 1pt, dash: "dashed"))
   chaser((4.3, 4.4))
   gripper((12.0, 5.0))

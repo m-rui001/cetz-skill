@@ -11,9 +11,9 @@
 #set text(font: ("Arial", "Segoe UI"), size: 5pt)
 
 #canvas({
-  import draw: * 
+  import draw: *
 
-  // ---------------- 调色板与基础工具 ----------------
+  // 调色板与基础工具
   let INK = rgb("#111111")
   let MUT = rgb("#777777")
   let PINK = rgb("#f2b7b7")        // 类别概率 p 的条
@@ -118,11 +118,11 @@
     }
   }
 
-  // ================= 上半部分：Generator =================
+  // 上半部分：Generator
   // 左侧竖排说明：这一行是生成器
   lbl(0.85, 6.75, "Generator", size: 7pt)
 
-  // ---- ① 随机输入 Random Input ----
+  // ① 随机输入 Random Input
   // 标题 + 两个分布示意图：均匀分布（方波）与高斯分布（钟形曲线）
   lbl(4.35, 9.08, "Random Input", size: 6.8pt)
   // 均匀分布：方波
@@ -152,7 +152,7 @@
   // 整批元素写成一个集合
   lbl(4.02, 5.62, [${(p_1, theta_1), ..., (p_N, theta_N)}$], size: 4.6pt)
 
-  // ---- ② 编码器 Encoder ----
+  // ② 编码器 Encoder
   // 每个元素的 (p, θ) 先各自过两层全连接 fc，得到特征 f(p_i, x_i)
   lbl(8.42, 8.96, "Encoder", size: 6.8pt)
   panel(7.26, 5.38, 9.58, 8.55)
@@ -164,7 +164,7 @@
 
   block-arrow(9.66, 6.92)
 
-  // ---- ③ 堆叠关系模块 Stacked Relation Module ----
+  // ③ 堆叠关系模块 Stacked Relation Module
   // 把所有元素特征放进一个集合，用 self-attention 让每个元素看到其它元素
   lbl(15.3, 8.62, "Stacked Relation Module", size: 6.8pt)
   panel(10.48, 5.12, 20.02, 8.36, fill: MODULE, stroke: MODULE_ST, r: 0.45)
@@ -212,7 +212,7 @@
 
   block-arrow(20.10, 6.92)
 
-  // ---- ④ 解码器 Decoder ----
+  // ④ 解码器 Decoder
   // 细化特征再过两层 fc，解回每个元素的类别概率与几何参数
   lbl(22.06, 8.96, "Decoder", size: 6.8pt)
   panel(20.88, 5.38, 23.18, 8.55)
@@ -231,7 +231,7 @@
   rect((23.92, 5.52), (24.08, 6.62), fill: GREEN, stroke: ink(0.55pt))
   lbl(24.00, 6.76, "fc", size: 4.7pt)
 
-  // ---- ⑤ 细化后的布局输出 ----
+  // ⑤ 细化后的布局输出
   block-arrow(24.16, 7.55, w: 0.46, h: 0.3)
   block-arrow(24.16, 6.10, w: 0.46, h: 0.3)
   two-line(25.28, 8.22, "Class", "Probabilities", size: 4.2pt)
@@ -243,17 +243,17 @@
   brace-right(27.30, 6.36, 7.86)
   lbl(26.05, 6.06, [${(p'_1, theta'_1), ..., (p'_N, theta'_N)}$], size: 4.5pt)
 
-  // ---- 生成器与判别器之间的分隔线 ----
+  // 生成器与判别器之间的分隔线
   line(
     (0.0, 4.62), (28.55, 4.62),
     stroke: (paint: rgb("#777777"), thickness: 0.8pt, dash: (2.2pt, 1.2pt, 0.35pt, 1.2pt)),
   )
 
-  // ================= 下半部分：Wireframe Rendering Discriminator =================
+  // 下半部分：Wireframe Rendering Discriminator
   // 左侧说明：这一行是线框渲染判别器
   two-line(1.05, 2.62, "Wireframe Rendering", "Discriminator", size: 7pt)
 
-  // ---- ① 判别器输入：生成器输出的布局参数 ----
+  // ① 判别器输入：生成器输出的布局参数
   two-line(3.55, 4.14, "Class", "Probabilities", size: 4.2pt)
   two-line(5.15, 4.14, "Geometric", "Parameters", size: 4.2pt)
   brace-left(2.55, 1.70, 3.66)
@@ -265,7 +265,7 @@
 
   block-arrow(6.42, 2.75)
 
-  // ---- ② 可微线框渲染：把图形域的参数画成可视域图像 ----
+  // ② 可微线框渲染：把图形域的参数画成可视域图像
   panel(7.20, 1.62, 10.55, 3.78, fill: RENDER, stroke: rgb("#d99a63"), r: 0.42)
   lbl(8.88, 3.02, "Differentiable", size: 5.7pt)
   lbl(8.88, 2.70, "Wireframe Rendering", size: 5.7pt)
@@ -273,7 +273,7 @@
 
   block-arrow(10.62, 2.75)
 
-  // ---- ③ 线框布局图：每个设计元素带一个彩色包围框 ----
+  // ③ 线框布局图：每个设计元素带一个彩色包围框
   lbl(13.02, 4.14, "Wireframe Layout", size: 6.8pt)
   rect((11.30, 0.82), (14.72, 3.78), fill: rgb("#1f4a45"), stroke: ink(0.6pt))
   // 地面色带
@@ -318,7 +318,7 @@
 
   block-arrow(14.82, 2.75)
 
-  // ---- ④ CNN：三层特征图逐层缩小，学习线框布局的空间模式 ----
+  // ④ CNN：三层特征图逐层缩小，学习线框布局的空间模式
   lbl(18.25, 4.14, "CNN", size: 6.8pt)
   panel(15.48, 1.10, 21.18, 3.80, r: 0.45)
   slab(16.05, 1.45, 0.92, 1.90, d: 0.32, cols: 3, rows: 4)
@@ -329,7 +329,7 @@
 
   block-arrow(21.26, 2.45, w: 0.62, h: 0.4)
 
-  // ---- ⑤ fc + Real / Fake 二分类输出 ----
+  // ⑤ fc + Real / Fake 二分类输出
   rect((21.98, 1.92), (22.14, 3.10), fill: rgb("#d0d0d0"), stroke: ink(0.55pt))
   lbl(22.06, 3.24, "fc", size: 4.7pt)
   arrow((22.20, 2.50), (22.72, 2.50))

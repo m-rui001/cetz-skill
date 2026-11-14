@@ -11,7 +11,7 @@
   let sc = (p, k) => (p.at(0) * k, p.at(1) * k)
   let add = (p, q) => (p.at(0) + q.at(0), p.at(1) + q.at(1))
 
-  // ---- top row: triangle wave train ----
+  // top row: triangle wave train
   let w = 1.0
   let hh = 1.55
   let x0 = -0.2
@@ -25,7 +25,7 @@
 
   content((0.1, -2.3), anchor: "center", text(size: 22pt, weight: "bold", [$=$]))
 
-  // ---- bottom row: rect * rect * comb ----
+  // bottom row: rect * rect * comb
   let yb = -5.6
   let rectf = (cx) => {
     line((cx - 1.5, yb), (cx + 1.5, yb), stroke: t)

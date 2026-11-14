@@ -1,4 +1,3 @@
-// ============================================================
 // 激光增材制造的同轴熔池监测光路图（coaxial melt-pool monitoring）
 //
 // 源图：Process monitoring and machine learning for defect detection in
@@ -18,7 +17,6 @@
 // 几何约定：所有 45° 镜面均为 "/" 朝向（左下→右上）。按真实反射关系，
 //   "/" 镜把 ↓ 光束折向 ←、把 ← 光束折向 ↓、把 ↑ 光束折向 →、把 → 光束折向 ↑。
 // 激光与可见光共轴反向传播，共路段各偏光轴 GAP，避免实线与虚线完全重叠。
-// ============================================================
 #set page(width: auto, height: auto, margin: 6pt)
 #import "@preview/cetz:0.4.2": canvas, draw
 #set text(font: ("Segoe UI", "Arial"), size: 8pt)
@@ -26,7 +24,7 @@
 #canvas({
   import draw: *
 
-  // ==================== 配色与线宽 ====================
+  // 配色与线宽
   let INK = rgb("#1b1b1b")       // 元件轮廓与激光光束（实线）
   let VIS = rgb("#5f666b")       // 熔池可见光（虚线）
   let HINT = rgb("#8b9195")      // 剖面线、引线、镜架细节
@@ -38,7 +36,7 @@
 
   let pen(t: LW, c: INK) = (paint: c, thickness: t, cap: "round")
 
-  // ==================== 版面常量（光轴位置） ====================
+  // 版面常量（光轴位置）
   let AXIS-X = 3.20       // 振镜—扫描透镜—熔池 的竖直光轴
   let DICH-X = 8.40       // 二向色镜中心的 x
   let SPLIT-X = 12.40     // 半透半反镜中心的 x
@@ -56,7 +54,7 @@
   let DIODE-W = 1.85
   let DIODE-H = 1.40
 
-  // ==================== 通用助手 ====================
+  // 通用助手
 
   // 45° 镜面端点：中心 (cx, cy)、长度 len，沿 "/" 方向（左下 → 右上）
   let mirror-pts(cx, cy, len: MIRROR-LEN) = {
@@ -96,7 +94,7 @@
     pos, anchor: anchor, text(size: size, body),
   )
 
-  // ==================== 光学元件（每件一个命名函数） ====================
+  // 光学元件（每件一个命名函数）
 
   // 激光器：矩形机身，向下出光（源图 "laser" 方框）
   let laser(cx, yb, yt, w: 2.20) = {
@@ -223,7 +221,7 @@
     lbl((cx, cy - half - 0.30), [melt pool (visible light)], size: 7.8pt)
   }
 
-  // ==================== 元件布置 ====================
+  // 元件布置
 
   // 工件：基板 + 熔池（源图底部熔池，激光落点）
   workpiece(AXIS-X, SURF-Y)
@@ -262,7 +260,7 @@
   aperture-filter(SPLIT-X - GAP, APERT-Y)
   lbl((SPLIT-X - GAP + 0.82, APERT-Y), [aperture / filter], anchor: "west", size: 7.2pt)
 
-  // ==================== 光路 ====================
+  // 光路
 
   // 激光光束（实线）：laser ↓ 二向色镜 ← 扫描振镜 ↓ 扫描透镜 ↓ 熔池
   beam(
@@ -295,7 +293,7 @@
     arrows: ((0, 0.45),),
   )
 
-  // ==================== 图例与面板编号 ====================
+  // 图例与面板编号
   line((5.05, 9.00), (5.85, 9.00), stroke: (paint: INK, thickness: 0.75pt, cap: "round"))
   lbl((5.95, 9.00), [laser beam], anchor: "west", size: 7.2pt)
   line((5.05, 8.55), (5.85, 8.55),

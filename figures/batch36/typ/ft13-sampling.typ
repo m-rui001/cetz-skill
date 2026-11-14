@@ -18,7 +18,7 @@
     pts
   }
 
-  // ---- panel A: Phi(v), one wavelet above a short axis
+  // panel A: Phi(v), one wavelet above a short axis
   let ya = 4.34
   line((1.31, ya), (2.26, ya), stroke: t)
   line((1.45, ya), (1.45, 4.69), stroke: t)
@@ -26,7 +26,7 @@
   content((2.10, 4.62), anchor: "center", [$Phi (v)$])
   line((1.66, 4.17), (1.66, 3.70), stroke: t, mark: (end: ">"))
 
-  // ---- panel B: Phi_s(v), the wavelet repeated with period 0.54
+  // panel B: Phi_s(v), the wavelet repeated with period 0.54
   let yb = 3.20
   line((0.74, yb), (2.23, yb), stroke: t)
   line((1.45, yb), (1.45, 3.56), stroke: t)
@@ -38,7 +38,7 @@
   content((2.06, 3.62), anchor: "center", [$Phi_s (v)$])
   line((2.64, 3.34), (3.11, 3.34), stroke: t, mark: (end: ">"))
 
-  // ---- panel C: Phi_p(v), the train stretched out
+  // panel C: Phi_p(v), the train stretched out
   line((3.51, yb), (8.69, yb), stroke: t)
   line(path: true, ..curve(3.44, 8.72, 0.014, x => {
     let s = 0
@@ -48,7 +48,7 @@
   for x in (4.56, 5.71, 7.16) { line((x, yb), (x, 3.56), stroke: t) }
   content((6.30, 3.90), anchor: "center", [$Phi_p (v)$])
 
-  // ---- panel D: F(t), the smooth spectrum with a central dip
+  // panel D: F(t), the smooth spectrum with a central dip
   let yd = 1.13
   line((0.04, yd), (2.84, yd), stroke: t)
   line((1.45, yd), (1.45, 1.80), stroke: t)
@@ -65,7 +65,7 @@
     line((x, d.at(0)), (x, d.at(1)), stroke: t, mark: (end: ">"))
   }
 
-  // ---- panel E: the sampled comb under a dashed envelope
+  // panel E: the sampled comb under a dashed envelope
   line((4.32, yd), (7.15, yd), stroke: t)
   line((5.71, yd), (5.71, 2.11), stroke: t)
   for k in range(-4, 5) {

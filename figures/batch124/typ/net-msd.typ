@@ -40,7 +40,7 @@
       fill: white, stroke: 1.3pt)
   }
 
-  // ---------- 左：四颗子弹与牵引线（先画，网点覆盖其上） ----------
+  // 左：四颗子弹与牵引线（先画，网点覆盖其上）
   let bullets = (
     (c: (0.55, 13.0), lp: (1.35, 13.0), an: "west", name: "Bullet 1", corner: (1.6, 11.6)),
     (c: (10.65, 13.0), lp: (9.85, 13.0), an: "east", name: "Bullet 3", corner: (9.6, 11.6)),
@@ -53,7 +53,7 @@
     content(b.lp, text(weight: "bold", size: 11pt, b.name), anchor: b.an)
   }
 
-  // ---------- 左：9×9 网面 ----------
+  // 左：9×9 网面
   let n = 9
   let pt(i, j) = (1.6 + i, 3.6 + j)
   // 网线
@@ -75,7 +75,7 @@
   line((6.55, 6.9), (14.0, 7.55), stroke: (paint: cPur, thickness: 2.6pt),
     mark: (end: "stealth", scale: 2.2))
 
-  // ---------- 右：放大 cable element 单元 ----------
+  // 右：放大 cable element 单元
   let tl = (15.1, 8.1)
   let tr = (18.3, 8.1)
   let bl = (15.1, 5.1)

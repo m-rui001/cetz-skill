@@ -17,7 +17,7 @@
 #canvas({
   import draw: *
 
-  // ======================= 配色与线型 =======================
+  // 配色与线型
   let INK = rgb("#1f4a4e")        // 线稿主墨色（源图深青色线条）
   let PALE = rgb("#eef2d8")       // 设备浅灰绿填充
   let GREYF = rgb("#dfe4e3")      // 料箱 / 货物浅灰填充
@@ -82,7 +82,7 @@
     line(..pts, stroke: (paint: paint, thickness: 0.8pt, cap: "round", join: "round"))
   }
 
-  // ======================= 图标函数（照片 → 线稿） =======================
+  // 图标函数（照片 → 线稿）
 
   // 卡车：侧视重型卡车（车厢 + 驾驶室 + 挡风玻璃 + 三轴车轮）；对应 Supply / Delivery 的物流照片
   let truck(cx, cy) = {
@@ -385,7 +385,7 @@
     circle((cx + 0.44, cy + 1.36), radius: 0.07, fill: ACCENT, stroke: thin)
   }
 
-  // ======================= 版面常量 =======================
+  // 版面常量
   let X_TITLE = 14.45        // 标题中心
   let Y_TITLE = 21.35
   let FRAME_L = 0.60         // 车间外框
@@ -400,12 +400,12 @@
   let FLOW1_Y = 17.15        // 物流主线（上层）
   let FLOW3_Y = 7.45         // 物流主线（下层）
 
-  // ======================= 顶部标题 + 车间外框 =======================
+  // 顶部标题 + 车间外框
   lbl(X_TITLE, Y_TITLE, [6G-based Smart Factory], size: 15.5pt, fill: RED, weight: "bold")
   rect((FRAME_L, FRAME_B), (FRAME_R, FRAME_T), radius: 0.55, fill: none,
     stroke: (paint: GREY, thickness: 0.9pt))
 
-  // ======================= 物流虚线主线（米色，方向按源图） =======================
+  // 物流虚线主线（米色，方向按源图）
   // 上层：供应链 → AGV → 移动机器人 → 柔性产线 → 传感器
   flow((5.55, FLOW1_Y), (25.35, FLOW1_Y))
   flow-to((13.30, FLOW1_Y), (13.90, FLOW1_Y))
@@ -418,18 +418,18 @@
   flow-to((13.10, FLOW3_Y), (13.70, FLOW3_Y))
   flow-to((19.90, FLOW3_Y), (20.50, FLOW3_Y))
 
-  // ======================= 第 1 行左侧：Supply Management（卡车物流） =======================
+  // 第 1 行左侧：Supply Management（卡车物流）
   truck(3.30, FY1)
   lbl(2.95, 19.96, [Supply], size: 9.2pt)
   lbl(2.95, 19.58, [Management], size: 9.2pt)
   wifi(4.95, 19.30)
 
-  // ======================= 第 1 行：AGV 自动搬运车 =======================
+  // 第 1 行：AGV 自动搬运车
   agv(8.45, FY1)
   wifi(7.60, 18.80)
   lbl(8.45, 16.55, [AGV], size: 9.2pt)
 
-  // ======================= 第 1 行：Mobile Robots（两台移动机械臂） =======================
+  // 第 1 行：Mobile Robots（两台移动机械臂）
   mobile-robot(11.40, FY1)
   mobile-robot(13.80, FY1)
   wifi(11.40, 19.28)
@@ -438,7 +438,7 @@
     stroke: (paint: GREY, thickness: 0.6pt))
   lbl(12.75, 19.87, [Mobile Robots], size: 8.6pt)
 
-  // ======================= 第 1 行：Flexible Assembly Line（柔性装配线） =======================
+  // 第 1 行：Flexible Assembly Line（柔性装配线）
   conveyor(16.90, FY1, w: 3.40)
   crate(15.55, 17.94)
   crate(16.55, 17.94)
@@ -447,18 +447,18 @@
   lbl(16.90, 16.80, [Flexible], size: 8.8pt)
   lbl(16.90, 16.44, [Assembly Line], size: 8.8pt)
 
-  // ======================= 第 1 行右侧：Sensors（无线传感节点） =======================
+  // 第 1 行右侧：Sensors（无线传感节点）
   sensor-node(22.10, 17.58)
   wifi(22.10, 18.12)
   lbl(22.10, 16.55, [Sensors], size: 9.2pt)
 
-  // ======================= 第 2 行左：AR/VR-based HMI（工人头显） =======================
+  // 第 2 行左：AR/VR-based HMI（工人头显）
   hmi-helmet(3.10, FY2)
   wifi(4.10, 13.30)
   lbl(2.60, 14.62, [AR/VR-based], size: 9.2pt)
   lbl(2.60, 14.22, [HMI], size: 9.2pt)
 
-  // ======================= 第 2 行中：Process Monitoring & Control（监控终端） =======================
+  // 第 2 行中：Process Monitoring & Control（监控终端）
   // 浅黄绿色圆角框（源图为浅色发光框，强调该区域为监控中枢）
   rect((7.20, 11.55), (12.40, 14.15), radius: 0.28, fill: none,
     stroke: (paint: rgb("#c3cc63"), thickness: 0.8pt))
@@ -474,7 +474,7 @@
   lbl(9.80, 10.95, [Process Monitoring &], size: 9.0pt)
   lbl(9.80, 10.58, [Control], size: 9.0pt)
 
-  // ======================= 第 2 行中右：Integration with Industrial Ethernet =======================
+  // 第 2 行中右：Integration with Industrial Ethernet
   line((14.05, 12.05), (18.35, 12.05), stroke: (paint: INK, thickness: 0.9pt, cap: "round"))
   for i in range(4) {
     let x = 14.40 + i * 1.15
@@ -486,12 +486,12 @@
   lbl(16.20, 10.95, [Integration with], size: 9.0pt)
   lbl(16.20, 10.58, [Industrial Ethernet], size: 9.0pt)
 
-  // ======================= 第 2 行右：Motion Control（机械臂） =======================
+  // 第 2 行右：Motion Control（机械臂）
   robot-arm(22.20, FY2, dir: -1)
   wifi(22.80, 14.30)
   lbl(22.60, 11.05, [Motion Control], size: 9.2pt)
 
-  // ======================= 第 3 行左：Factory overview（源图为工厂等轴测照片，这里改线稿） =======================
+  // 第 3 行左：Factory overview（源图为工厂等轴测照片，这里改线稿）
   rect((0.90, 7.10), (6.30, 9.80), radius: 0.10, fill: BLUEF,
     stroke: (paint: BLUEINK, thickness: 0.8pt))
   lbl(3.60, 9.44, [Factory overview], size: 9.2pt, weight: "bold", fill: BLUEINK)
@@ -509,18 +509,18 @@
   cell(2.85, 8.10)
   cell(4.35, 8.10)
 
-  // ======================= 第 3 行：Inventory Management（托盘货架） =======================
+  // 第 3 行：Inventory Management（托盘货架）
   warehouse(9.30, FY3)
   wifi(9.30, 9.50)
   lbl(9.30, 7.06, [Inventory], size: 9.2pt)
   lbl(9.30, 6.69, [Management], size: 9.2pt)
 
-  // ======================= 第 3 行：AGV（产线到出库） =======================
+  // 第 3 行：AGV（产线到出库）
   agv(16.30, FY3)
   wifi(16.05, 9.46)
   lbl(16.30, 6.88, [AGV], size: 9.2pt)
 
-  // ======================= 第 3 行右：Delivery Management =======================
+  // 第 3 行右：Delivery Management
   truck(24.60, FY3)
   wifi(25.85, 9.58)
   lbl(23.10, 7.06, [Delivery], size: 9.2pt)

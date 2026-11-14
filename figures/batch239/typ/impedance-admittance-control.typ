@@ -41,7 +41,7 @@
   rect((0.40, 4.60), (16.95, 8.45), radius: 0.25, fill: rgb("#f4f4f4"), stroke: 0.6pt + rgb("#9a9a9a"))
   rect((0.40, 0.55), (16.95, 4.30), radius: 0.25, fill: rgb("#f4f4f4"), stroke: 0.6pt + rgb("#9a9a9a"))
 
-  // ===== (a) 阻抗控制 =====
+  // (a) 阻抗控制
   let ya = 6.55
   box((1.55, ya), 1.02, 0.34, [Desired \ Trajectory], size: 6.6pt)
   junction((3.55, ya))
@@ -68,7 +68,7 @@
   t((3.74, ya - 0.28), [+], size: 9pt)
   t((8.60, 4.47), [(a) Impedance control block diagram], size: 7.2pt)
 
-  // ===== (b) 导纳控制 =====
+  // (b) 导纳控制
   let yb = 2.40
   box((1.55, yb), 1.02, 0.34, [Desired \ Trajectory], size: 6.6pt)
   junction((3.55, yb))

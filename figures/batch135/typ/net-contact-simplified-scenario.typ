@@ -6,14 +6,14 @@
 #canvas({
   import draw: *
 
-  // ---- 共享样式与向量助手 ----
+  // 共享样式与向量助手
   let netstroke = (paint: rgb("#1e35c8"), thickness: 0.6pt)
   let nodefill = rgb("#e01b12")
   let add(p, q) = (p.at(0) + q.at(0), p.at(1) + q.at(1))
   let half(v) = (v.at(0) / 2, v.at(1) / 2)
   let node(p, r: 0.055) = circle(p, radius: r, fill: nodefill, stroke: none)
 
-  // ---- 绳网参数方程：u 横向 0→1，v 纵向 0→1（左端外鼓、右端收拢）----
+  // 绳网参数方程：u 横向 0→1，v 纵向 0→1（左端外鼓、右端收拢）
   let netpt(u, v) = {
     let t = 2 * v - 1
     let bulge = 1.15 - 0.6 * u
@@ -23,7 +23,7 @@
     (x, mid + halfh * t)
   }
 
-  // ---- 左图：横向绳线（加密采样成光滑曲线）----
+  // 左图：横向绳线（加密采样成光滑曲线）
   let NU = 8
   let NV = 8
   for i in range(NV + 1) {
@@ -31,19 +31,19 @@
       line(netpt(k / (NU * 4), i / NV), netpt((k + 1) / (NU * 4), i / NV), stroke: netstroke)
     }
   }
-  // ---- 左图：纵向绳线 ----
+  // 左图：纵向绳线
   for j in range(NU + 1) {
     for k in range(NV * 4) {
       line(netpt(j / NU, k / (NV * 4)), netpt(j / NU, (k + 1) / (NV * 4)), stroke: netstroke)
     }
   }
-  // ---- 左图：网格节点 ----
+  // 左图：网格节点
   for i in range(NV + 1) {
     for j in range(NU + 1) {
       node(netpt(j / NU, i / NV))
     }
   }
-  // ---- 左图：松散绳头（牵引线）----
+  // 左图：松散绳头（牵引线）
   for (u, v, q) in (
     (0, 1, (1.48, 6.25)),
     (1, 1, (3.95, 4.92)),
@@ -54,7 +54,7 @@
     node(q)
   }
 
-  // ---- 细长绿色目标盒：以三个轴向量定形状（OB 为前下左角）----
+  // 细长绿色目标盒：以三个轴向量定形状（OB 为前下左角）
   let OB = (2.25, 2.95)
   let LB = (1.35, -0.10)   // 长轴：向右略下
   let HB = (0.00, 0.62)    // 高度轴
@@ -80,12 +80,12 @@
   }
   mkbox(0)
 
-  // ---- 中部：黑色右向箭头 ----
+  // 中部：黑色右向箭头
   line((5.20, 3.05), (6.72, 3.05),
     stroke: (paint: black, thickness: 4pt),
     mark: (end: "stealth", fill: black, scale: 2.6))
 
-  // ---- 右图：抖动的散点云（表驱动抖动 + 抽样）----
+  // 右图：抖动的散点云（表驱动抖动 + 抽样）
   let jit = ((0.11, 0.07), (-0.09, 0.12), (0.05, -0.13), (-0.14, -0.05),
     (0.13, -0.02), (-0.04, -0.10), (0.08, 0.14), (-0.12, 0.06),
     (0.02, 0.09), (-0.07, -0.14), (0.15, 0.02), (-0.10, 0.11),
@@ -99,7 +99,7 @@
       }
     }
   }
-  // ---- 右图：同款目标盒与盒面残留节点 ----
+  // 右图：同款目标盒与盒面残留节点
   mkbox(7.9)
   node(boxcenter(7.9), r: 0.065)
 })

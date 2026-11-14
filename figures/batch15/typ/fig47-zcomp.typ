@@ -14,13 +14,13 @@
     content((ox + 2.15, -.35), anchor: "west", [$y$])
     content((ox - 1.2, -1.25), anchor: "east", [$x$])
   }
-  // ---- (a) the vector itself ----
+  // (a) the vector itself
   axes(0)
   line((0, 0), (1.15, 1.95), stroke: tv, mark: (end: ">"))
   content((.45, 1.3), anchor: "east", [$arrow(A)$])
   content((1.35, 2.1), anchor: "west", [$(0, 3, 3)$])
   content((.2, -1.95), [(a)])
-  // ---- (b) its y and z components ----
+  // (b) its y and z components
   let ox = 5.8
   let tip = (ox + 1.15, 1.95)
   axes(ox)

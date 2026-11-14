@@ -3,7 +3,7 @@
 
 #canvas({
   import draw: *
-  // ---- panel (a): small, left ----
+  // panel (a): small, left
   let Oa = (0, 0)
   let Ba = (2.0, .95)
   let Aa = (.75, .95)
@@ -17,7 +17,7 @@
   content((Aa.at(0) - .2, Aa.at(1) + .2), [$arrow(A)$])
   content((Ba.at(0) + .12, Ba.at(1) - .3), [$arrow(B)$])
   content((.1, -1.9), [(a)])
-  // ---- panel (b): large, right ----
+  // panel (b): large, right
   let Ob = (3.6, .1)
   let Bb = (6.9, 1.35)
   let Ab = (4.9, 2.6)

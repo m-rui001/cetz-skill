@@ -6,7 +6,7 @@
   let e1 = (.62, 1.5)
   let e2 = (1.55, 0)
   let A = (5.0, 1.5)
-  // ---- (a) component along e1 ----
+  // (a) component along e1
   line((-.9, 0), (5.7, 0), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   line((0, -.7), (0, 3.4), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   content((5.85, -.35), [$x$])
@@ -24,7 +24,7 @@
   content((2.6, -.45), [$(4, 0)$])
   content((1.1, .8), [$A^1 arrow(e)_1$])
   content((.1, -2.0), [(a)])
-  // ---- (b) component along e2 ----
+  // (b) component along e2
   let ox = 7.8
   line((ox - .9, 0), (ox + 5.7, 0), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   line((ox, -.7), (ox, 3.4), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))

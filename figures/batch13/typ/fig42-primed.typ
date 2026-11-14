@@ -6,7 +6,7 @@
   let th = (thickness: 1.2pt)
   let td = (dash: "dashed", thickness: 1pt)
   let dot = (p) => circle(p, radius: .08, fill: black, stroke: none)
-  // ---------- (a) ----------
+  // (a)
   let O = (0, 0)
   let uy = (.906, .423)   // y' at 25 deg
   let uz = (-.423, .906)  // z' at 115 deg
@@ -34,7 +34,7 @@
   content((1.75, -.35), anchor: "west", [$m_1$])
   content((.25, 2.5), anchor: "west", [$m_5$])
   content((.1, -2.5), [(a)])
-  // ---------- (b) ----------
+  // (b)
   let ox = 6.6
   line((ox - 2.7, 0), (ox + 2.8, 0), stroke: th, mark: (end: ">"))
   line((ox, -1.9), (ox, 2.9), stroke: th, mark: (end: ">"))

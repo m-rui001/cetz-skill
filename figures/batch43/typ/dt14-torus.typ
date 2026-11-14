@@ -52,15 +52,15 @@
   let td = (thickness: 1.0pt, dash: (array: (2.4pt, 2.2pt)))
   let hd = (symbol: ">", fill: black, length: 5.4pt, width: 2.4pt)
 
-  // ---------- square ----------
+  // square
   line(path: true, close: true, ..P(rr(16, 18, 155, 152, 9)), stroke: t)
 
-  // ---------- arrow 1 ----------
+  // arrow 1
   line(px(198, 83.5), px(399, 83.5), stroke: t, mark: (end: hd))
   content(px(297, 56), anchor: "center", [Glue])
   content(px(299.5, 112), anchor: "center", [top to bottom])
 
-  // ---------- cylinder ----------
+  // cylinder
   line(path: true, ..P(ell(453.5, 84.5, 17.5, 33.0, 0, 360)), stroke: t)
   line(px(453.5, 51.5), px(717, 51.5), stroke: t)
   line(px(453.5, 117.5), px(717, 117.5), stroke: t)
@@ -68,12 +68,12 @@
   line(path: true, ..P(ell(717.0, 84.5, 18.0, 33.0, 90, 270)), stroke: td)
   content(px(579, 183), anchor: "center", [Cylinder])
 
-  // ---------- arrow 2 ----------
+  // arrow 2
   line(px(776, 83.5), px(975, 83.5), stroke: t, mark: (end: hd))
   content(px(873.5, 57), anchor: "center", [Glue])
   content(px(875.5, 112), anchor: "center", [ends of cylinder])
 
-  // ---------- torus ----------
+  // torus
   line(path: true, ..P(ell(1127.0, 85.0, 117.0, 60.0, 0, 360)), stroke: t)
   line(path: true, ..P(ell(1127.5, 83.5, 47.5, 19.5, 0, 360)), stroke: t)
   let loopSolid = ((1072,97),(1082,90),(1086,82),(1081,73),(1071,66),(1057,61),(1042,60),
@@ -83,7 +83,7 @@
   line(path: true, ..crm(P(loopDash)), stroke: td)
   content(px(1125, 180.5), anchor: "center", [Torus])
 
-  // ---------- long arc G ----------
+  // long arc G
   let gpts = ((148,224),(166,232),(180,238),(200,247),(220,255),(240,263),(260,269),
               (280,275),(300,280),(320,285),(340,289),(360,293),(380,296),(400,299),
               (420,302),(440,304),(460,306),(480,307),(500,308),(520,309),(540,310),

@@ -1,7 +1,6 @@
 #set page(width: auto, height: auto, margin: 6pt)
 #set text(font: ("Arial", "Segoe UI"), size: 10pt)
 #import "@preview/cetz:0.4.2": canvas, draw
-// ============================================================
 // 逆运动学迭代求解流程图（重绘）
 // 编译后外观：绿色粗描边、白底、无阴影的纯线稿流程图。左列自上而下为
 // "Initial angle θ"小框 → 误差说明大框（四行说明＋居中公式）→ 菱形收敛
@@ -11,7 +10,6 @@
 // 来源：Unlocking the Potential of Cable-Driven Continuum Robots: A Comprehensive
 // Review and Future Directions. Actuators 2024, 13, 52, Figure 16.
 // DOI 10.3390/act13020052.
-// ============================================================
 #canvas(length: 1cm, {
   import draw: *
   // 统一配色：绿色描边、白色填充
