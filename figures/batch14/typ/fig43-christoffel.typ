@@ -25,11 +25,11 @@
     [in the $hat(e)_r$ direction],
     [has zero \ magnitude],
     [caused by a \ change in $theta$],
-    [The change \ in $\hat(e)_r$])
+    [The change \ in $hat(e)_r$])
   panel(7.6,
     [$Gamma^theta_(r theta) = frac(1, r)$],
     [in the $hat(e)_theta$ direction],
     [varies inversely \ with distance],
     [caused by a \ change in $theta$],
-    [The change \ in $\hat(e)_r$])
+    [The change \ in $hat(e)_r$])
 })
