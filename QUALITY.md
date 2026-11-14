@@ -31,3 +31,10 @@ python tools/compile_all.py --jobs 4
 
 - 编译成功不等于视觉正确：文字重叠、箭头穿越、留白仍需按 README 的人工视觉复核流程检查。
 - 原论文插图版权归各作者；本仓库只对重绘源码主张 MIT。
+
+## Typst 源码风格
+
+在 `style-typst` 分支完成（标准 `tools/TYPST_STYLE.md`，量具 `tools/style_audit.py`）。
+361 个文件：装饰横幅 496→0，>120 字符行 421→361（每图保留一条 `#figure(...)` 调用），
+裸 LaTeX 30→28（剩余全在 `//` 注释），`$\hat(e)_r$` 等 2 处改为 Typst 语义符号。
+逐项读数与剩余项判定见 [STYLE_AUDIT.md](STYLE_AUDIT.md)。编译门槛不变：361/361，0 失败。
