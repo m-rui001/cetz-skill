@@ -67,9 +67,12 @@
     leader((0.9, 2.9), ml("Collection", "electrodes"), (ep(C, 3.15, 1.47, 0.8, 65deg), ep(C, 3.15, 1.47, 0.8, 35deg)))
     leader((3.1, 2.9), ml("Guard", "electrodes"), (ep(C, 3.3, 1.55, 1, 25deg), ep(C, 3.3, 1.55, 1, 0deg)))
     leader((-3.7, -3.5), [Rotor], (ep(R, 3.0, 1.4, 1, 200deg),), anchor: "north")
-    leader((-1.6, -3.9), ml("Coupling", "electrodes"), (ep(R, 2.85, 1.32, 0.75, 235deg), ep(R, 2.85, 1.32, 0.75, 265deg)), anchor: "north")
-    leader((1.0, -3.9), ml("Sensitive", "electrodes"), (ep(R, 2.85, 1.32, 0.75, 300deg), ep(R, 2.85, 1.32, 0.75, 330deg)), anchor: "north")
-    leader((3.3, -3.7), ml("Guard", "electrodes"), (ep(R, 3.0, 1.4, 1, 340deg), ep(C, 3.3, 1.55, 1, 340deg)), anchor: "north")
+    leader((-1.6, -3.9), ml("Coupling", "electrodes"),
+      (ep(R, 2.85, 1.32, 0.75, 235deg), ep(R, 2.85, 1.32, 0.75, 265deg)), anchor: "north")
+    leader((1.0, -3.9), ml("Sensitive", "electrodes"),
+      (ep(R, 2.85, 1.32, 0.75, 300deg), ep(R, 2.85, 1.32, 0.75, 330deg)), anchor: "north")
+    leader((3.3, -3.7), ml("Guard", "electrodes"),
+      (ep(R, 3.0, 1.4, 1, 340deg), ep(C, 3.3, 1.55, 1, 340deg)), anchor: "north")
     content((0, -4.95), [(a)])
   })
 
@@ -97,7 +100,8 @@
     content((-1.1, H / 2), [Output (degree)], angle: 90deg)
     // —— (b) 对角线：绿拟合线全长→蓝测量带 x 标记→红粗线覆盖中段 ——
     line((sx(-14), sy(-14)), (sx(389), sy(389)), stroke: (paint: rgb("#2ecc40"), thickness: 1.6pt))
-    line((sx(0), sy(0)), (sx(360), sy(360)), stroke: (paint: rgb("#3b6db4"), thickness: 3.2pt), mark: (start: "x", end: "x"))
+    line((sx(0), sy(0)), (sx(360), sy(360)),
+      stroke: (paint: rgb("#3b6db4"), thickness: 3.2pt), mark: (start: "x", end: "x"))
     line((sx(2), sy(2)), (sx(358), sy(358)), stroke: (paint: rgb("#e60000"), thickness: 2pt))
     // —— (b) 右中图例三条目：蓝 x / 绿星 / 红虚线 x ——
     let entries = (

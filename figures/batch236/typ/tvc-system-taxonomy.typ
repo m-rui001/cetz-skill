@@ -45,7 +45,8 @@
   let cols = (
     (name: "Movable|platform", kids: ("Gimbal|mechanism", "Stewart|platform", "Hinge")),
     (name: "Secondary|injection", kids: ("Liquid|injection", "Gas|injection")),
-    (name: "Movable|nozzle", kids: ("Flexible|nozzle joint", "Ball and|socket joint", "Rotatable|offset nozzle", "Supersonic|split line")),
+    (name: "Movable|nozzle",
+      kids: ("Flexible|nozzle joint", "Ball and|socket joint", "Rotatable|offset nozzle", "Supersonic|split line")),
     (name: "Mechanical|deflection", kids: ("Jet deflector", "Jet tab", "Jetevator", "Jet vane")),
     (name: "Others", kids: ("Vernier|thruster", "Differentially|throttling")),
   )

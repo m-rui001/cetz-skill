@@ -277,8 +277,10 @@
 
   // 两台液压缸 + 基座板
   // 液压缸先画，基座板随后覆盖其顶部（近处遮挡远处）
-  hydraulic-cylinder(OX + (C1A + C1B) / 2 * SC, OY + YC * SC - 0.05, OY + 1.02 * SC, 1.12 * SC, 1.12 * KV * SC)   // 供粉仓下方（上升）
-  hydraulic-cylinder(OX + (C2A + C2B) / 2 * SC, OY + YC * SC - 0.05, OY + 1.02 * SC, 1.12 * SC, 1.12 * KV * SC)   // 成形仓下方（下降）
+  hydraulic-cylinder(OX + (C1A + C1B) / 2 * SC, OY + YC * SC - 0.05,
+    OY + 1.02 * SC, 1.12 * SC, 1.12 * KV * SC)   // 供粉仓下方（上升）
+  hydraulic-cylinder(OX + (C2A + C2B) / 2 * SC, OY + YC * SC - 0.05,
+    OY + 1.02 * SC, 1.12 * SC, 1.12 * KV * SC)   // 成形仓下方（下降）
   // 基座板（承载两个粉仓的底板）
   ln3((C1A, YC, 0), (C2B, YC, 0), (C2B, YB, 0), (C1A, YB, 0), close: true, fill: PART, stroke: bold)     // 前面
   hatch(C1A, YC, C2B, YB, step: 0.34)

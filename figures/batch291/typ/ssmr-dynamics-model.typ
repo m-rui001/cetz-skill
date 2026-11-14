@@ -27,7 +27,8 @@
     rect((-2.0, -1.45), (2.3, 1.45), radius: 0.35, fill: beige, stroke: none)
     rect((2.6, -1.9), (4.9, 1.95), radius: 0.12, fill: grey, stroke: (paint: rgb(186, 186, 186), thickness: 0.6pt))
     for (wx, wy) in ((2.45, 1.55), (2.45, -1.55), (-1.05, 1.55), (-1.05, -1.55)) {
-      rect((wx - 0.52, wy - 0.31), (wx + 0.52, wy + 0.31), radius: 0.07, fill: tire, stroke: (paint: rgb(78, 78, 78), thickness: 0.5pt))
+      rect((wx - 0.52, wy - 0.31), (wx + 0.52, wy + 0.31), radius: 0.07, fill: tire,
+        stroke: (paint: rgb(78, 78, 78), thickness: 0.5pt))
       for i in range(-3, 4) {
         line((wx + 0.145 * i, wy - 0.25), (wx + 0.145 * i, wy + 0.25), stroke: (paint: rgb(92, 92, 92), thickness: 0.45pt))
       }
@@ -46,7 +47,8 @@
   dl((-1.05, -2.3), (-1.05, 2.3))
   dl((-2.55, -2.3), (-2.55, 2.3))
   // 尺寸箭头
-  let dim(a, b) = line(Pv(a), Pv(b), stroke: (paint: blu, thickness: 0.6pt), mark: (start: "stealth", end: "stealth", fill: blu, scale: 0.38))
+  let dim(a,
+    b) = line(Pv(a), Pv(b), stroke: (paint: blu, thickness: 0.6pt), mark: (start: "stealth", end: "stealth", fill: blu, scale: 0.38))
   dim((-0.45, 0.78), (-0.45, 1.53))
   dim((0.05, 0.75), (2.42, 0.75))
   dim((-1.62, 1.12), (-1.08, 1.12))
@@ -63,12 +65,14 @@
   line(P(0, 0), P(0, 3.45), stroke: ax, mark: (end: "stealth", fill: blk, scale: 0.7))
   line((0, 0), (0, 4.6), stroke: ax, mark: (end: "stealth", fill: blk, scale: 0.7))
   // 绕 z′ 的横摆角速度 ω
-  bezier((-0.55, 4.0), (0.55, 4.0), (-0.56, 4.44), (0.56, 4.44), stroke: (paint: blk, thickness: 0.7pt), mark: (end: "stealth", fill: blk, scale: 0.45))
+  bezier((-0.55, 4.0), (0.55, 4.0), (-0.56, 4.44), (0.56, 4.44),
+    stroke: (paint: blk, thickness: 0.7pt), mark: (end: "stealth", fill: blk, scale: 0.45))
 
   // 航向角 ψ：自 X 轴量至 x′ 轴
   let O = P(2.45, 0)
   line(O, (O.at(0) + 1.45, O.at(1)), stroke: (paint: blk, thickness: 0.6pt, dash: "dashed"))
-  bezier(O, (O.at(0) + 0.75, O.at(1)), (O.at(0), O.at(1) + 0.75), (O.at(0), O.at(1) + 0.75), stroke: (paint: blk, thickness: 0.6pt))
+  bezier(O, (O.at(0) + 0.75, O.at(1)), (O.at(0), O.at(1) + 0.75),
+    (O.at(0), O.at(1) + 0.75), stroke: (paint: blk, thickness: 0.6pt))
 
   // 车体关键点：C、B、H=(x,y) 与几何中心 L
   for p in ((-1.7, 0), (-1.0, 0), (0.8, 0), (2.45, 0)) {
@@ -91,9 +95,12 @@
   }
 
   // 右下角全局坐标系 G 插图
-  line((3.95, -3.62), (5.45, -3.62), (5.45, -2.1), (3.95, -2.1), (3.95, -3.62), stroke: (paint: brn, thickness: 1pt, dash: "dashed"))
-  line((4.32, -3.28), (4.32, -2.52), stroke: (paint: blk, thickness: 0.9pt), mark: (end: "stealth", fill: blk, scale: 0.45))
-  line((4.32, -3.28), (5.05, -3.28), stroke: (paint: blk, thickness: 0.9pt), mark: (end: "stealth", fill: blk, scale: 0.45))
+  line((3.95, -3.62), (5.45, -3.62), (5.45, -2.1), (3.95, -2.1), (3.95, -3.62),
+    stroke: (paint: brn, thickness: 1pt, dash: "dashed"))
+  line((4.32, -3.28), (4.32, -2.52),
+    stroke: (paint: blk, thickness: 0.9pt), mark: (end: "stealth", fill: blk, scale: 0.45))
+  line((4.32, -3.28), (5.05, -3.28),
+    stroke: (paint: blk, thickness: 0.9pt), mark: (end: "stealth", fill: blk, scale: 0.45))
   circle((4.32, -3.28), radius: 0.075, fill: white, stroke: (paint: blk, thickness: 0.8pt))
   circle((4.32, -3.28), radius: 0.025, fill: blk, stroke: none)
   T((5.28, -2.3), $G$, col: brn, size: 9pt)

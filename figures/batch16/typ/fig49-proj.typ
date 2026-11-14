@@ -11,7 +11,8 @@
   let A = (2.2, .85)
   let panel = (ox, par) => {
     line((ox - 1.6, 0), (ox + 3.4, 0), stroke: th, mark: (end: "stealth", fill: black))
-    line((ox - 1.5 * u.at(0), 0 - 1.5 * u.at(1)), (ox + 2.6 * u.at(0), 2.6 * u.at(1)), stroke: th, mark: (end: "stealth", fill: black))
+    line((ox - 1.5 * u.at(0), 0 - 1.5 * u.at(1)),
+      (ox + 2.6 * u.at(0), 2.6 * u.at(1)), stroke: th, mark: (end: "stealth", fill: black))
     content((ox + 3.5, -.42), anchor: "west", [$x$])
     content((ox + 1.25, 2.45), anchor: "west", [$y$])
     arc((ox - 1.35, 0), radius: 1.35, start: 180deg, stop: 245deg, stroke: th, mark: (end: "stealth", fill: black))

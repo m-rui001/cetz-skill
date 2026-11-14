@@ -241,7 +241,8 @@
     let h = 1.00
     let d = 0.24
     rect((cx - w / 2, ybot), (cx + w / 2, ybot + h), stroke: MAIN, fill: white)
-    line((cx - w / 2, ybot + h), (cx - w / 2 + d, ybot + h + d), (cx + w / 2 + d, ybot + h + d), (cx + w / 2, ybot + h), stroke: MAIN)
+    line((cx - w / 2, ybot + h), (cx - w / 2 + d, ybot + h + d),
+      (cx + w / 2 + d, ybot + h + d), (cx + w / 2, ybot + h), stroke: MAIN)
     line((cx + w / 2, ybot), (cx + w / 2 + d, ybot + d), (cx + w / 2 + d, ybot + h + d), stroke: MAIN)
     // 镜头接口
     rect((cx - 0.24, ybot - 0.24), (cx + 0.24, ybot), stroke: MAIN, fill: white)

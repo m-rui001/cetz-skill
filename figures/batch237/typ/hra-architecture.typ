@@ -62,17 +62,21 @@
   rbox((1.95, 1.21), 2.30, 0.86, ("Actuator An",), stroke: cGray, size: 9pt)
 
   // 力矩限制菱形
-  let (dl, dt, dr, db) = ((dia.at(0) - 2.92, dia.at(1)), (dia.at(0), dia.at(1) + 1.00), (dia.at(0) + 2.92, dia.at(1)), (dia.at(0), dia.at(1) - 1.00))
+  let (dl, dt, dr,
+    db) = ((dia.at(0) - 2.92, dia.at(1)), (dia.at(0), dia.at(1) + 1.00), (dia.at(0) + 2.92, dia.at(1)), (dia.at(0), dia.at(1) - 1.00))
   line(..(dl, dt, dr, db), close: true, fill: rgb(184, 217, 230), stroke: rgb(89, 153, 184))
   ml(dia, ("Torque Limiters", "(Load Distribution)"), size: 10pt)
 
   // 软体单元框与椭圆
   rect((12.05, 3.32), (17.05, 5.85), radius: 0.35, stroke: cBlu, fill: none)
-  ell(soft, 1.78, 0.65, ("Soft Robotics", "(Shock Absorption)"), stroke: rgb(158, 148, 64), fill: rgb(252, 250, 219), size: 9pt)
+  ell(soft, 1.78, 0.65, ("Soft Robotics", "(Shock Absorption)"),
+    stroke: rgb(158, 148, 64), fill: rgb(252, 250, 219), size: 9pt)
 
   // 先进特性框内两个椭圆
-  ell(mbd, 2.75, 0.80, ("MBD-ILAR", "(Bio-inspired Robustness)"), stroke: rgb(184, 76, 76), fill: rgb(247, 199, 199), size: 9.5pt)
-  ell(mag, 2.30, 0.62, ("Magnetic Control", "(Precision Efficiency)"), stroke: cGrn, fill: rgb(158, 214, 158), size: 9.5pt)
+  ell(mbd, 2.75, 0.80, ("MBD-ILAR", "(Bio-inspired Robustness)"),
+    stroke: rgb(184, 76, 76), fill: rgb(247, 199, 199), size: 9.5pt)
+  ell(mag, 2.30, 0.62, ("Magnetic Control", "(Precision Efficiency)"),
+    stroke: cGrn, fill: rgb(158, 214, 158), size: 9.5pt)
 
   // 输出轴
   rbox(out, 2.50, 1.15, ("Output Shaft", "(End Effector)"), stroke: cGray, size: 9pt)

@@ -50,5 +50,6 @@
   lab((15.85, 2.15), [$q_d$], size: 10pt, anchor: "west")
 
   // 底部注记（逐字保留）
-  content((4.55, 1.05), text(size: 9pt)[Remark: The variables with the "\*" superscript represent the \ expected values.], anchor: "west", frame: none)
+  content((4.55, 1.05),
+    text(size: 9pt)[Remark: The variables with the "\*" superscript represent the \ expected values.], anchor: "west", frame: none)
 })

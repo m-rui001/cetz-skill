@@ -12,7 +12,8 @@
   import draw: *
 
   // 黑/红/蓝文字标签
-  let tag(p, body, color: black, anchor: "center", size: 10pt) = content(p, text(fill: color, size: size, weight: "bold", body), anchor: anchor)
+  let tag(p, body, color: black, anchor: "center",
+    size: 10pt) = content(p, text(fill: color, size: size, weight: "bold", body), anchor: anchor)
 
   // 斜纹固支地面
   let ground(x0, x1, y: 0) = {

@@ -70,9 +70,12 @@
   }
 
   // 下端配重箱：正面 / 顶面 / 侧面三块
-  line((4.28, 2.90), (4.28, 1.95), (6.10, 1.95), (6.10, 2.90), close: true, fill: box-c, stroke: (paint: ink, thickness: 0.8pt))
-  line((4.28, 2.90), (4.88, 3.30), (6.70, 3.30), (6.10, 2.90), close: true, fill: box-c.lighten(30%), stroke: (paint: ink, thickness: 0.8pt))
-  line((6.10, 2.90), (6.70, 3.30), (6.70, 2.35), (6.10, 1.95), close: true, fill: box-d, stroke: (paint: ink, thickness: 0.8pt))
+  line((4.28, 2.90), (4.28, 1.95), (6.10, 1.95), (6.10, 2.90), close: true,
+    fill: box-c, stroke: (paint: ink, thickness: 0.8pt))
+  line((4.28, 2.90), (4.88, 3.30), (6.70, 3.30), (6.10, 2.90), close: true,
+    fill: box-c.lighten(30%), stroke: (paint: ink, thickness: 0.8pt))
+  line((6.10, 2.90), (6.70, 3.30), (6.70, 2.35), (6.10, 1.95), close: true,
+    fill: box-d, stroke: (paint: ink, thickness: 0.8pt))
 
   // 上端配重块
   rect((tx - tw / 2 - 0.05, yt), (tx + tw / 2 + 0.05, yt + 0.90), fill: mass-c, stroke: (paint: ink, thickness: 0.8pt))
@@ -96,13 +99,15 @@
 
   // 电子收集：左向虚线箭头
   for y in (10.62, 10.26, 9.90) {
-    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
+    line((6.95, y), (xr + 0.03, y),
+      stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
     content((6.72, y + 0.04), $e^(-)$, anchor: "south", stroke: none, fill: none)
   }
 
   // 离子收集：左向虚线箭头
   for y in (6.05, 5.60, 5.15) {
-    line((6.95, y), (xr + 0.03, y), stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
+    line((6.95, y), (xr + 0.03, y),
+      stroke: (paint: ink, thickness: 0.9pt, dash: "dashed"), mark: (end: "stealth", fill: ink))
     content((6.72, y + 0.04), $+$, anchor: "south", stroke: none, fill: none)
   }
 

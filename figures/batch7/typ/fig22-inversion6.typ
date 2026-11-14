@@ -23,7 +23,8 @@
   let r1 = .95
   arc((r1, 0), radius: r1, start: 0deg, stop: 40deg, stroke: (paint: c, thickness: 0.8pt))
   let r2 = .6
-  arc((r2, 0), radius: r2, start: 0deg, stop: -42deg, stroke: (paint: c, thickness: 0.8pt), mark: (end: "stealth", fill: c))
+  arc((r2, 0), radius: r2, start: 0deg, stop: -42deg,
+    stroke: (paint: c, thickness: 0.8pt), mark: (end: "stealth", fill: c))
   content((-.15, -.4), [O])
   content((3.3, -.25), [$x$])
   content((-.18, 2.62), [$y$])

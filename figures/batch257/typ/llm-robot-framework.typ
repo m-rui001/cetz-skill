@@ -129,7 +129,10 @@
   txt(8.3, 2.28, [Output = RGB image of user])
 
   // 四个说明文字块
-  txt(7.55, 7.62, [Input = user request\ output = user#sub[request] +\ entertain(user#sub[request])\ OR\ converse(user#sub[request])], size: 6.8pt)
-  txt(8.15, 3.25, [Script serves as a buffer\ between LLM responses and\ the execution of these\ responses by the low-level\ controller], size: 6.5pt)
-  txt(10.35, 5.55, [Input=response user request\ Output=Script containing\ textual to user +\ embedded atomic actions], size: 6.6pt)
+  txt(7.55, 7.62,
+    [Input = user request\ output = user#sub[request] +\ entertain(user#sub[request])\ OR\ converse(user#sub[request])], size: 6.8pt)
+  txt(8.15, 3.25,
+    [Script serves as a buffer\ between LLM responses and\ the execution of these\ responses by the low-level\ controller], size: 6.5pt)
+  txt(10.35, 5.55,
+    [Input=response user request\ Output=Script containing\ textual to user +\ embedded atomic actions], size: 6.6pt)
 })

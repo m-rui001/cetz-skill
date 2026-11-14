@@ -130,9 +130,12 @@
   arw((8.60, 1.72), (3.15, 3.05), rd)
   wavy((14.10, 5.05), (12.15, 4.00), rd); wavy((7.20, 8.72), (9.20, 8.72), rd)
   // 敞口模具：前壁、侧壁、上沿、内腔织物与树脂层
-  line((3.55, 8.08), (6.35, 8.08), (6.35, 8.55), (3.55, 8.55), close: true, fill: white, stroke: (paint: gs, thickness: 0.7pt))
-  line((6.35, 8.08), (6.95, 9.10), (6.95, 9.55), (6.35, 8.55), close: true, fill: rgb("#eef0f2"), stroke: (paint: gs, thickness: 0.7pt))
-  line((3.55, 8.55), (6.35, 8.55), (6.95, 9.55), (4.15, 9.55), close: true, fill: white, stroke: (paint: gs, thickness: 0.8pt))
+  line((3.55, 8.08), (6.35, 8.08), (6.35, 8.55), (3.55, 8.55), close: true,
+    fill: white, stroke: (paint: gs, thickness: 0.7pt))
+  line((6.35, 8.08), (6.95, 9.10), (6.95, 9.55), (6.35, 8.55), close: true,
+    fill: rgb("#eef0f2"), stroke: (paint: gs, thickness: 0.7pt))
+  line((3.55, 8.55), (6.35, 8.55), (6.95, 9.55), (4.15, 9.55), close: true,
+    fill: white, stroke: (paint: gs, thickness: 0.8pt))
   plate((3.92, 8.76), (6.06, 8.76), (6.55, 9.34), (4.41, 9.34), gl, rgb("#c08a2e"), n: 5)
   line((4.10, 8.86), (5.92, 8.86), (6.32, 9.26), (4.50, 9.26), close: true, fill: rgb(233, 190, 90, 55%), stroke: none)
   // 复材板（带厚度侧面）

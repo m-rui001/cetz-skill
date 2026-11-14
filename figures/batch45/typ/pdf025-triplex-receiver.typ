@@ -8,7 +8,8 @@
   let P=(x,y)=>(s*x,s*(145 - y))
   let poly=(pts,c)=>line(..pts.map(p=>P(..p)),close:true,fill:rgb(c),stroke:none)
   let wave=(pts,t:1.1,c:"#f4f3ef")=>line(..pts.map(p=>P(..p)),stroke:(paint:rgb(c),thickness:s*t*1pt))
-  let curve=(a,b,c,d,t:1.1,color:"#f4f3ef")=>bezier(P(..a),P(..b),P(..c),P(..d),stroke:(paint:rgb(color),thickness:s*t*1pt))
+  let curve=(a,b,c,d,t:1.1,
+    color:"#f4f3ef")=>bezier(P(..a),P(..b),P(..c),P(..d),stroke:(paint:rgb(color),thickness:s*t*1pt))
   let label=(x,y,c,size:7,fill:white)=>content(P(x,y),text(size:s*size*1pt,fill:fill,c))
   let box=(x,y,w,h,c)=>rect(P(x,y),P(x + w,y + h),fill:rgb(c),stroke:none)
   let heater=(x,y,w,h)=>{
@@ -55,7 +56,8 @@
   let pts=((279,61),(279,38),)
   for i in range(7) {
     let x=279 + i*32
-    pts+=((x,37),(x + 22,37),(x + 26,40),(x + 26,56),(x + 21,57),(x + 12,57),(x + 9,54),(x + 9,48),(x + 13,45),(x + 20,45),(x + 20,42),(x + 6,42),(x + 5,46),(x + 5,59),(x + 10,61),(x + 28,61))
+    pts+=((x,37),(x + 22,37),(x + 26,40),(x + 26,56),(x + 21,57),(x + 12,57),(x + 9,54),(x + 9,48),(x + 13,45),
+      (x + 20,45),(x + 20,42),(x + 6,42),(x + 5,46),(x + 5,59),(x + 10,61),(x + 28,61))
     if i < 6 {pts+=((x + 32,61),(x + 32,38))}
   }
   pts+=((507,61),(507,66))

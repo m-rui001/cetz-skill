@@ -89,7 +89,8 @@
       leader((3.9, -1.6), (5.2, -.2))
       // 磁环：上下菱形 + 引线标签
       for y in (H, -H) {
-        line((mg - .75, y), (mg, y + .22), (mg + .75, y), (mg, y - .22), close: true, fill: star, stroke: (paint: ink, thickness: 1pt))
+        line((mg - .75, y), (mg, y + .22), (mg + .75, y), (mg, y - .22),
+          close: true, fill: star, stroke: (paint: ink, thickness: 1pt))
       }
       lab((9.4, 2.55), [Magnet Ring], anchor: "south-west")
       leader((9.6, 2.45), (8.6, 2.3))

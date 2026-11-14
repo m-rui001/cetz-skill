@@ -6,7 +6,8 @@
 #canvas(length:1pt,{
   import draw:*
   let P=(x,y)=>(.45*x,.45*(534 - y))
-  let label=(x,y,c,size:11pt,fill:black,weight:"bold")=>content(P(x,y),turn-text(4deg,text(size:size,fill:fill,weight:weight,c)))
+  let label=(x,y,c,size:11pt,fill:black,
+    weight:"bold")=>content(P(x,y),turn-text(4deg,text(size:size,fill:fill,weight:weight,c)))
   let path=(points)=>{
     line(..points.map(p=>P(..p)),stroke:(paint:rgb("#828282"),thickness:3.4pt))
     line(..points.map(p=>P(..p)),stroke:(paint:rgb("#aaaaaa"),thickness:2pt))
@@ -17,8 +18,10 @@
   }
   let plate=(x,y,w,h,color,c,size:11pt)=>{
     let dy=.071*w
-    line(P(x,y),P(x + w,y + dy),P(x + w - 3,y + h + dy),P(x - 3,y + h),close:true,fill:color,stroke:(paint:color.darken(20%),thickness:.4pt))
-    line(P(x - 3,y + h),P(x + w - 3,y + h + dy),P(x + w - 3,y + h + dy + 7),P(x - 3,y + h + 7),close:true,fill:color.darken(20%),stroke:none)
+    line(P(x,y),P(x + w,y + dy),P(x + w - 3,y + h + dy),P(x - 3,y + h),close:true,
+      fill:color,stroke:(paint:color.darken(20%),thickness:.4pt))
+    line(P(x - 3,y + h),P(x + w - 3,y + h + dy),P(x + w - 3,y + h + dy + 7),
+      P(x - 3,y + h + 7),close:true,fill:color.darken(20%),stroke:none)
     label(x + w/2,y + h/2 + dy/2,c,size:size)
   }
   let beam-splitter=(x,y,c,polar:false)=>{
@@ -30,12 +33,15 @@
   }
   let adjustment=(x,y,down:false)=>{
     let d=if down {-1} else {1}
-    let pts=((x - 8,y + d*33),(x - 5,y + d*10),(x - 14,y + d*9),(x + 1,y - d*5),(x + 13,y + d*10),(x + 4,y + d*11),(x + 1,y + d*34))
+    let pts=((x - 8,y + d*33),(x - 5,y + d*10),(x - 14,y + d*9),(x + 1,y - d*5),
+      (x + 13,y + d*10),(x + 4,y + d*11),(x + 1,y + d*34))
     line(..pts.map(p=>P(..p)),close:true,fill:rgb("#e7d7b3"),stroke:(paint:rgb("#bdb08f"),thickness:.35pt))
     for i in range(5) {let yy=y + d*(14 + i*3);line(P(x - 5,yy),P(x + 2,yy + 1),stroke:(paint:rgb("#bdb08f"),thickness:.3pt))}
   }
-  line(P(105,24),P(1119,106),P(1088,284),P(77,203),close:true,fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
-  line(P(71,224),P(1299,309),P(1268,513),P(41,413),close:true,fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
+  line(P(105,24),P(1119,106),P(1088,284),P(77,203),close:true,
+    fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
+  line(P(71,224),P(1299,309),P(1268,513),P(41,413),close:true,
+    fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
   // Bob's two detector paths and the phase/frequency arms.
   curve((310,87),(390,111),(336,106),(374,66))
   curve((390,111),(426,129),(393,125),(407,130))
@@ -83,7 +89,8 @@
   }
   // Source and detectors cover the fibers at their physical ports.
   plate(159,26,152,105,rgb("#898989"),[DU],size:13pt)
-  for y in (86,97,120,132) {rect(P(300,y - 6),P(314,y + 6),fill:rgb("#858585"),stroke:(paint:rgb("#5e5e5e"),thickness:.3pt))}
+  for y in (86,97,120,
+    132) {rect(P(300,y - 6),P(314,y + 6),fill:rgb("#858585"),stroke:(paint:rgb("#5e5e5e"),thickness:.3pt))}
   rect(P(296,134),P(307,145),fill:rgb("#70e531"),stroke:.3pt)
   plate(554,64,138,27,rgb("#ff9931"),[PM])
   let fs=()

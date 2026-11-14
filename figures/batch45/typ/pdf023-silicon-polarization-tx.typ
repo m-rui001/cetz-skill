@@ -8,7 +8,8 @@
   let P=(x,y)=>(s*x,s*(176 - y))
   let poly=(pts,c)=>line(..pts.map(p=>P(..p)),close:true,fill:rgb(c),stroke:none)
   let wave=(pts,t:1.1,c:"#f4f3ef")=>line(..pts.map(p=>P(..p)),stroke:(paint:rgb(c),thickness:s*t*1pt))
-  let curve=(a,b,c,d,t:1.1,color:"#f4f3ef")=>bezier(P(..a),P(..b),P(..c),P(..d),stroke:(paint:rgb(color),thickness:s*t*1pt))
+  let curve=(a,b,c,d,t:1.1,
+    color:"#f4f3ef")=>bezier(P(..a),P(..b),P(..c),P(..d),stroke:(paint:rgb(color),thickness:s*t*1pt))
   let label=(x,y,c,size:7,fill:white)=>content(P(x,y),text(size:s*size*1pt,fill:fill,c))
   let box=(x,y,w,h,c)=>rect(P(x,y),P(x + w,y + h),fill:rgb(c),stroke:none)
   let heater=(x,y,w,h)=>{
@@ -69,7 +70,8 @@
   label(225,76,[VOA],size:9)
   label(29,96,[Input],size:9)
   label(356,29,[Output],size:8.6)
-  for (y,c,t) in ((58,"#ffffff",[220nm Si]),(70,"#cf5368",[90nm Si]),(82,"#edc24a",[N Doping]),(94,"#148bc3",[P Doping])) {
+  for (y,c,
+    t) in ((58,"#ffffff",[220nm Si]),(70,"#cf5368",[90nm Si]),(82,"#edc24a",[N Doping]),(94,"#148bc3",[P Doping])) {
     box(289,y - 2.5,5,5,c)
     content(P(300,y),text(size:s*8.9pt,fill:white,t),anchor:"west")
   }

@@ -35,7 +35,8 @@
   }
   let mod=(x,y,w,c)=>{
     rect(P(x,y),P(x + w,y + 44),fill:cyan,stroke:(thickness:.4pt,dash:(array:(.6pt,.7pt))))
-    line(P(x + 15,y + 22),P(x + 30,y + 10),P(x + w - 20,y + 10),P(x + w - 6,y + 22),P(x + w - 20,y + 35),P(x + 30,y + 35),close:true,fill:orange,stroke:none)
+    line(P(x + 15,y + 22),P(x + 30,y + 10),P(x + w - 20,y + 10),P(x + w - 6,y + 22),
+      P(x + w - 20,y + 35),P(x + 30,y + 35),close:true,fill:orange,stroke:none)
     label(x + w/2 + 4,y + 22,c,size:9pt)
   }
   let iso=(x,y)=>{
@@ -54,7 +55,8 @@
   mod(159,110,87,[AM])
   rect(P(258,110),P(406,154),fill:cyan,stroke:(thickness:.4pt,dash:(array:(.6pt,.7pt))))
   for (x,l) in ((297,[PM]),(371,[AM])) {
-    line(P(x - 35,132),P(x - 22,120),P(x + 22,120),P(x + 35,132),P(x + 22,145),P(x - 22,145),close:true,fill:orange,stroke:none)
+    line(P(x - 35,132),P(x - 22,120),P(x + 22,120),P(x + 35,132),
+      P(x + 22,145),P(x - 22,145),close:true,fill:orange,stroke:none)
     label(x,133,l,size:9pt)
   }
   line(P(332,133),P(336,133),stroke:wire)
@@ -82,7 +84,8 @@
   label(852,111,[Signal],size:9pt)
   arrow((882,171),(919,171),color:red)
   label(866,171,[LO],size:9pt)
-  for x in (750,774,798) {circle(P(x,123),radius:5.2,stroke:(paint:red,thickness:.6pt));circle(P(x,123),radius:.7,stroke:(paint:red,thickness:.4pt))}
+  for x in (750,774,
+    798) {circle(P(x,123),radius:5.2,stroke:(paint:red,thickness:.6pt));circle(P(x,123),radius:.7,stroke:(paint:red,thickness:.4pt))}
   line(P(725,134),P(819,134),stroke:(paint:red,thickness:2pt))
   label(774,99,[PC],size:9pt)
   for x in (972,980,988) {circle(P(x,199),radius:5.5,stroke:(paint:red,thickness:.6pt))}
@@ -136,13 +139,16 @@
   for x in (286,326) {line(P(x,441),P(x,491),stroke:(thickness:.6pt,dash:(array:(1pt,1pt))))}
   arrow((250,452),(286,452))
   arrow((361,452),(326,452))
-  for (x,y) in ((454,405),(527,398),(601,411),(677,377),(850,404),(958,357),(1034,445),(1073,404)) {rect(P(x,y),P(x + 18,495),fill:green,stroke:none)}
-  for (x,y) in ((489,488),(562,492),(638,492),(714,492),(885,489),(923,485),(996,490),(1111,492)) {rect(P(x,y),P(x + 19,495),fill:red,stroke:none)}
+  for (x,
+    y) in ((454,405),(527,398),(601,411),(677,377),(850,404),(958,357),(1034,445),(1073,404)) {rect(P(x,y),P(x + 18,495),fill:green,stroke:none)}
+  for (x,
+    y) in ((489,488),(562,492),(638,492),(714,492),(885,489),(923,485),(996,490),(1111,492)) {rect(P(x,y),P(x + 19,495),fill:red,stroke:none)}
   // The c-panel has a taller red pulse at its second quantum-signal position.
   rect(P(923,486),P(942,495),fill:red,stroke:none)
   label(589,363,[Stabilization pulses],size:9pt)
   label(1081,363,[Stabilization pulses],size:9pt)
   label(607,539,[Quantum signals],size:9pt)
   label(1004,539,[Quantum signals],size:9pt)
-  for (a,b) in (((505,378),(480,400)),((563,378),(546,392)),((600,378),(609,405)),((646,378),(673,398)),((1025,378),(985,405)),((1047,385),(1042,439)),((1073,378),(1085,400)),((520,526),(508,506)),((566,526),(572,505)),((639,526),(647,506)),((677,526),(720,505)),((940,526),(914,505)),((980,526),(949,505)),((1000,526),(1008,505)),((1080,526),(1117,505))) {arrow(a,b,width:.4pt)}
+  for (a,
+    b) in (((505,378),(480,400)),((563,378),(546,392)),((600,378),(609,405)),((646,378),(673,398)),((1025,378),(985,405)),((1047,385),(1042,439)),((1073,378),(1085,400)),((520,526),(508,506)),((566,526),(572,505)),((639,526),(647,506)),((677,526),(720,505)),((940,526),(914,505)),((980,526),(949,505)),((1000,526),(1008,505)),((1080,526),(1117,505))) {arrow(a,b,width:.4pt)}
 })

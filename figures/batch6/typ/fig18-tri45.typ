@@ -16,9 +16,12 @@
   // dashed theta arcs at C', C, A'
   let r = .7
   // arc 的 pos 是弧起点；起点放在顶点圆上，圆心即顶点。扫描方向为逆时针短弧。
-  arc((Cp.at(0) + r * calc.cos(-65deg), Cp.at(1) + r * calc.sin(-65deg)), radius: r, start: -65deg, stop: 0deg, stroke: (dash: "dashed"))
-  arc((C.at(0) + r * calc.cos(142deg), C.at(1) + r * calc.sin(142deg)), radius: r, start: 142deg, stop: 180deg, stroke: (dash: "dashed"))
-  arc((Ap.at(0) + r * calc.cos(52deg), Ap.at(1) + r * calc.sin(52deg)), radius: r, start: 52deg, stop: 115deg, stroke: (dash: "dashed"))
+  arc((Cp.at(0) + r * calc.cos(-65deg), Cp.at(1) + r * calc.sin(-65deg)),
+    radius: r, start: -65deg, stop: 0deg, stroke: (dash: "dashed"))
+  arc((C.at(0) + r * calc.cos(142deg), C.at(1) + r * calc.sin(142deg)), radius: r,
+    start: 142deg, stop: 180deg, stroke: (dash: "dashed"))
+  arc((Ap.at(0) + r * calc.cos(52deg), Ap.at(1) + r * calc.sin(52deg)), radius: r,
+    start: 52deg, stop: 115deg, stroke: (dash: "dashed"))
   content((1.01, 3.52), [$theta$])
   content((4.77, 1.91), [$theta$])
   content((2.26, 0.81), [$theta$])

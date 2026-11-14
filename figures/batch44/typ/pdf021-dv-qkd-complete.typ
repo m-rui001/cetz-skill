@@ -8,7 +8,8 @@ let turn-text=rotate
 canvas(length:1pt,{
   import draw:*
   let P=(x,y)=>(.45*x,.45*(534 - y))
-  let label=(x,y,c,size:11pt,fill:black,weight:"bold")=>content(P(x,y),turn-text(4deg,text(size:size,fill:fill,weight:weight,c)))
+  let label=(x,y,c,size:11pt,fill:black,
+    weight:"bold")=>content(P(x,y),turn-text(4deg,text(size:size,fill:fill,weight:weight,c)))
   let path=(points)=>{
     line(..points.map(p=>P(..p)),stroke:(paint:rgb("#828282"),thickness:3.4pt))
     line(..points.map(p=>P(..p)),stroke:(paint:rgb("#aaaaaa"),thickness:2pt))
@@ -19,8 +20,10 @@ canvas(length:1pt,{
   }
   let plate=(x,y,w,h,color,c,size:11pt)=>{
     let dy=.071*w
-    line(P(x,y),P(x + w,y + dy),P(x + w - 3,y + h + dy),P(x - 3,y + h),close:true,fill:color,stroke:(paint:color.darken(20%),thickness:.4pt))
-    line(P(x - 3,y + h),P(x + w - 3,y + h + dy),P(x + w - 3,y + h + dy + 7),P(x - 3,y + h + 7),close:true,fill:color.darken(20%),stroke:none)
+    line(P(x,y),P(x + w,y + dy),P(x + w - 3,y + h + dy),P(x - 3,y + h),close:true,
+      fill:color,stroke:(paint:color.darken(20%),thickness:.4pt))
+    line(P(x - 3,y + h),P(x + w - 3,y + h + dy),P(x + w - 3,y + h + dy + 7),
+      P(x - 3,y + h + 7),close:true,fill:color.darken(20%),stroke:none)
     label(x + w/2,y + h/2 + dy/2,c,size:size)
   }
   let beam-splitter=(x,y,c,polar:false)=>{
@@ -32,12 +35,15 @@ canvas(length:1pt,{
   }
   let adjustment=(x,y,down:false)=>{
     let d=if down {-1} else {1}
-    let pts=((x - 8,y + d*33),(x - 5,y + d*10),(x - 14,y + d*9),(x + 1,y - d*5),(x + 13,y + d*10),(x + 4,y + d*11),(x + 1,y + d*34))
+    let pts=((x - 8,y + d*33),(x - 5,y + d*10),(x - 14,y + d*9),(x + 1,y - d*5),
+      (x + 13,y + d*10),(x + 4,y + d*11),(x + 1,y + d*34))
     line(..pts.map(p=>P(..p)),close:true,fill:rgb("#e7d7b3"),stroke:(paint:rgb("#bdb08f"),thickness:.35pt))
     for i in range(5) {let yy=y + d*(14 + i*3);line(P(x - 5,yy),P(x + 2,yy + 1),stroke:(paint:rgb("#bdb08f"),thickness:.3pt))}
   }
-  line(P(105,24),P(1119,106),P(1088,284),P(77,203),close:true,fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
-  line(P(71,224),P(1299,309),P(1268,513),P(41,413),close:true,fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
+  line(P(105,24),P(1119,106),P(1088,284),P(77,203),close:true,
+    fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
+  line(P(71,224),P(1299,309),P(1268,513),P(41,413),close:true,
+    fill:rgb("#f7efdd"),stroke:(paint:rgb("#c7c3b6"),thickness:.3pt))
   // Bob's two detector paths and the phase/frequency arms.
   curve((310,87),(390,111),(336,106),(374,66))
   curve((390,111),(426,129),(393,125),(407,130))
@@ -85,7 +91,8 @@ canvas(length:1pt,{
   }
   // Source and detectors cover the fibers at their physical ports.
   plate(159,26,152,105,rgb("#898989"),[DU],size:13pt)
-  for y in (86,97,120,132) {rect(P(300,y - 6),P(314,y + 6),fill:rgb("#858585"),stroke:(paint:rgb("#5e5e5e"),thickness:.3pt))}
+  for y in (86,97,120,
+    132) {rect(P(300,y - 6),P(314,y + 6),fill:rgb("#858585"),stroke:(paint:rgb("#5e5e5e"),thickness:.3pt))}
   rect(P(296,134),P(307,145),fill:rgb("#70e531"),stroke:.3pt)
   plate(554,64,138,27,rgb("#ff9931"),[PM])
   let fs=()
@@ -164,7 +171,8 @@ canvas(length:1pt,{
   label(117,211,[Laser],size:15pt)
   for a in range(0,360,step:45) {
     let t=a*1deg
-    line(P(117 + 6*calc.cos(t),270 + 6*calc.sin(t)),P(117 + 28*calc.cos(t),270 + 28*calc.sin(t)),stroke:(paint:rgb("#b92313"),thickness:3.6pt))
+    line(P(117 + 6*calc.cos(t),270 + 6*calc.sin(t)),
+      P(117 + 28*calc.cos(t),270 + 28*calc.sin(t)),stroke:(paint:rgb("#b92313"),thickness:3.6pt))
   }
   circle(P(117,270),radius:4,fill:rgb("#b92313"),stroke:none)
   for y in (181,270) { rect(P(412,y - 7),P(456,y + 7),fill:rgb("#a0a0a0"),stroke:none) }
@@ -294,7 +302,8 @@ canvas(length:1pt,{
   let label=(x,y,c,size:8.2pt)=>content(P(x,y),hidden-text(text(size:size,c)))
   let metal=(x,y,w,h:14)=>{
     line(P(x,y),P(x + w,y),P(x + w - 3,y + h),P(x - 3,y + h),close:true,fill:rgb("#777777"),stroke:none)
-    line(P(x + 1,y + 2),P(x + w - 2,y + 2),P(x + w - 4,y + h - 3),P(x - 1,y + h - 3),close:true,fill:rgb("#aaaaaa"),stroke:none)
+    line(P(x + 1,y + 2),P(x + w - 2,y + 2),P(x + w - 4,y + h - 3),
+      P(x - 1,y + h - 3),close:true,fill:rgb("#aaaaaa"),stroke:none)
     line(P(x + 3,y + 3),P(x + w - 4,y + 3),stroke:(paint:rgb("#cfcfcf"),thickness:.6pt))
   }
   // Thin fibers first; each optical component will cover its physical segment.
@@ -374,7 +383,8 @@ canvas(length:1pt,{
   line(P(1438,34),P(1445,166),P(1437,237),P(1429,161),close:true,fill:rgb("#2c2c2c"),stroke:none)
   line(P(1445,104),P(1454,105),P(1452,234),P(1438,237),close:true,fill:rgb("#9a9a9a"),stroke:none)
   label(1383,99,[Stirling#linebreak()cooler],size:8.5pt)
-  for (y,rx,ry,color) in ((206,34,29,rgb("#252525")),(221,34,31,rgb("#777777")),(237,42,37,rgb("#999999")),(252,46,39,rgb("#6f6f6f"))) {
+  for (y,rx,ry,
+    color) in ((206,34,29,rgb("#252525")),(221,34,31,rgb("#777777")),(237,42,37,rgb("#999999")),(252,46,39,rgb("#6f6f6f"))) {
     circle(P(1370,y),radius:(rx*.4,ry*.4),fill:color,stroke:none)
   }
   circle(P(1370,236),radius:(12,7.2),fill:rgb("#bcbcbc"),stroke:none)
@@ -426,15 +436,23 @@ canvas(length:1pt,{
   import draw:*
   let P=(x,y)=>(x - 66,244 - y)
   rect((0,0),(483,192),fill:none,stroke:none)
-  bezier(P(409.524017,195.345032),P(389.825012,199.606018),P(409.238983,195.297974),P(389.825012,199.606018),stroke:0.751181pt)
-  line(P(392.759003,198.953979),P(393.899017,197.160950),P(389.091003,199.770020),P(394.552002,200.095032),P(392.759003,198.953979),close:true,fill:black,stroke:none)
-  line(P(392.759003,198.954956),P(393.899994,197.160950),P(389.091003,199.770996),P(394.552002,200.095032),P(392.759003,198.954956),close:false,fill:none,stroke:0.400630pt)
+  bezier(P(409.524017,195.345032),P(389.825012,199.606018),
+    P(409.238983,195.297974),P(389.825012,199.606018),stroke:0.751181pt)
+  line(P(392.759003,198.953979),P(393.899017,197.160950),P(389.091003,199.770020),
+    P(394.552002,200.095032),P(392.759003,198.953979),close:true,fill:black,stroke:none)
+  line(P(392.759003,198.954956),P(393.899994,197.160950),P(389.091003,199.770996),
+    P(394.552002,200.095032),P(392.759003,198.954956),close:false,fill:none,stroke:0.400630pt)
   line(P(409.052002,203.583008),P(385.997009,206.035950),close:false,fill:none,stroke:0.750000pt)
-  line(P(388.977997,205.720032),P(390.310028,204.066956),P(385.251007,206.117981),P(390.630005,207.052002),P(388.977997,205.720032),close:true,fill:black,stroke:none)
-  line(P(388.977020,205.720032),P(390.309021,204.067993),P(385.250000,206.117981),P(390.630005,207.052002),P(388.977020,205.720032),close:false,fill:none,stroke:0.400000pt)
+  line(P(388.977997,205.720032),P(390.310028,204.066956),P(385.251007,206.117981),
+    P(390.630005,207.052002),P(388.977997,205.720032),close:true,fill:black,stroke:none)
+  line(P(388.977020,205.720032),P(390.309021,204.067993),P(385.250000,206.117981),
+    P(390.630005,207.052002),P(388.977020,205.720032),close:false,fill:none,stroke:0.400000pt)
   line(P(442.579010,195.927002),P(466.485016,194.922974),close:false,fill:none,stroke:0.750000pt)
-  line(P(463.489014,195.047974),P(462.052002,196.609985),P(467.235016,194.888000),P(461.927002,193.609985),P(463.489014,195.047974),close:true,fill:black,stroke:none)
-  line(P(463.489014,195.047974),P(462.050995,196.609985),P(467.235016,194.888000),P(461.925995,193.609985),P(463.489014,195.047974),close:false,fill:none,stroke:0.400000pt)
-  line(P(327.470001,238.504944),P(331.485016,238.504944),P(331.485016,231.851990),P(335.841003,231.851990),P(335.841003,238.523987),P(339.899017,238.523987),close:false,fill:none,stroke:0.750000pt)
+  line(P(463.489014,195.047974),P(462.052002,196.609985),P(467.235016,194.888000),
+    P(461.927002,193.609985),P(463.489014,195.047974),close:true,fill:black,stroke:none)
+  line(P(463.489014,195.047974),P(462.050995,196.609985),P(467.235016,194.888000),
+    P(461.925995,193.609985),P(463.489014,195.047974),close:false,fill:none,stroke:0.400000pt)
+  line(P(327.470001,238.504944),P(331.485016,238.504944),P(331.485016,231.851990),P(335.841003,231.851990),
+    P(335.841003,238.523987),P(339.899017,238.523987),close:false,fill:none,stroke:0.750000pt)
 })]
 ]

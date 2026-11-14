@@ -21,7 +21,8 @@
   line(R, B, stroke: tv, mark: (end: "stealth", fill: black))
   line(T, B, stroke: tv, mark: (end: "stealth", fill: black))
   // angle at the head of the upper vector
-  arc((R.at(0) + .65 * calc.cos(155deg), R.at(1) + .65 * calc.sin(155deg)), radius: .65, start: 155deg, stop: 235deg, stroke: th)
+  arc((R.at(0) + .65 * calc.cos(155deg), R.at(1) + .65 * calc.sin(155deg)),
+    radius: .65, start: 155deg, stop: 235deg, stroke: th)
   content((1.42, -1.68), [$Delta theta$])
   // callouts
   content((-3.15, 1.3), anchor: "west", [length = $|Delta arrow(v)|$])

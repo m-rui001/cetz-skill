@@ -67,7 +67,8 @@
   line(..((7.60, 3.30), (7.95, 3.40), (8.05, 3.10), (7.70, 3.00)).map(p => p), close: true, fill: land, stroke: none)
 
   // 六个卫星标记（环上角度：1 号在左下，顺时针）
-  let steps = ((215, false, true), (160, false, false), (105, false, false), (50, true, false), (5, true, false), (-55, true, false))
+  let steps = ((215, false, true), (160, false, false), (105, false, false),
+    (50, true, false), (5, true, false), (-55, true, false))
   for (a, dish, pod) in steps {
     sat(P(C, a, 3.02), a + 90, dish: dish, pod: pod, s: 1.0)
   }

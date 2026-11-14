@@ -80,6 +80,7 @@
 
   bezier(addb((1.8, 1.78)), addb((0.85, 1.78)), addb((1.55, 1.5)), addb((1.1, 1.62)), stroke: tt, mark: (end: ">"))
   bezier(addb((2.42, 0.0 - 0.28)), addb((1.3, 0.72)), addb((2.2, 0.15)), addb((1.5, 0.5)), stroke: tt, mark: (end: ">"))
-  bezier(addb((-1.62, 0.0 - 0.45)), addb((-1.12, 0.0 - 0.1)), addb((-1.5, 0.0 - 0.28)), addb((-1.22, 0.0 - 0.12)), stroke: tt, mark: (end: ">"))
+  bezier(addb((-1.62, 0.0 - 0.45)), addb((-1.12, 0.0 - 0.1)), addb((-1.5, 0.0 - 0.28)),
+    addb((-1.22, 0.0 - 0.12)), stroke: tt, mark: (end: ">"))
   content(addb((0, 0.0 - 2.6)), [(b)])
 })

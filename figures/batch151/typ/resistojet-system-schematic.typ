@@ -56,7 +56,8 @@
   line((9.35, 0.85), (9.55, 0.85), stroke: 1pt)
   line((9.0, 1.1), (9.0, 1.82), stroke: 1pt, mark: (end: "stealth"))
   // 加热后气流的粗虚线箭头（穿出蓝框进入喷管）
-  line((9.62, ax), (11.9, ax), stroke: (paint: black, thickness: 2pt, dash: "dashed"), mark: (end: "stealth", fill: black))
+  line((9.62, ax), (11.9, ax),
+    stroke: (paint: black, thickness: 2pt, dash: "dashed"), mark: (end: "stealth", fill: black))
   // 喷管上下壁：镜像两段三次曲线在喉部相接（bezier 参数序＝起点,终点,控制1,控制2）
   for s in (-1, 1) {
     let m(y) = ax + s * (y - ax)

@@ -9,7 +9,8 @@
   let red=rgb("#ee0015")
   let green=rgb("#00ef00")
   let thin=(thickness:.9pt)
-  let label=(x,y,c,size:10.5pt,angle:-34deg,fill:black,weight:"bold")=>content(P(x,y),turn-text(angle,text(size:size,fill:fill,weight:weight,c)))
+  let label=(x,y,c,size:10.5pt,angle:-34deg,fill:black,
+    weight:"bold")=>content(P(x,y),turn-text(angle,text(size:size,fill:fill,weight:weight,c)))
   let path=(pts,color)=>line(..pts.map(p=>P(..p)),stroke:(paint:color,thickness:.85pt))
   let curve=(a,b,c,d,color)=>bezier(P(..a),P(..b),P(..c),P(..d),stroke:(paint:color,thickness:.85pt))
   let arrow=(a,b,width:.9pt)=>{
@@ -22,7 +23,8 @@
     let x=b.at(0) - 29*ux
     let y=b.at(1) - 29*uy
     line(P(..b),P(x - uy*8,y + ux*8),P(x + uy*8,y - ux*8),close:true,fill:black,stroke:none)
-    line(P(x + 10*ux,y + 10*uy),P(x + 18*ux - uy*6,y + 18*uy + ux*6),P(x + 18*ux + uy*6,y + 18*uy - ux*6),close:true,fill:white,stroke:none)
+    line(P(x + 10*ux,y + 10*uy),P(x + 18*ux - uy*6,y + 18*uy + ux*6),
+      P(x + 18*ux + uy*6,y + 18*uy - ux*6),close:true,fill:white,stroke:none)
   }
   let box=(a,b,c,d,h,l,size:10.5pt)=>{
     let lower=p=>(p.at(0),p.at(1) + h)
@@ -174,7 +176,8 @@
     line(P(103,y),P(141,y),stroke:(paint:color,thickness:.9pt))
     content(P(152,y),text(size:13pt,c),anchor:"west")
   }
-  for (y,c) in ((466,[L: Laser]),(515,[FM: Faraday Mirror]),(565,[PIN: PIN photodiode]),(613,[PM: Phase Modulator]),(663,[AM: Amplitude Modulator]),(711,[VATT: Variable Attenuator]),(761,[PBS: Polarization Beam Splitter]),(809,[DPC: Dynamic Polarization Controller])) {
+  for (y,
+    c) in ((466,[L: Laser]),(515,[FM: Faraday Mirror]),(565,[PIN: PIN photodiode]),(613,[PM: Phase Modulator]),(663,[AM: Amplitude Modulator]),(711,[VATT: Variable Attenuator]),(761,[PBS: Polarization Beam Splitter]),(809,[DPC: Dynamic Polarization Controller])) {
     content(P(1782,y),text(size:12.5pt,c),anchor:"east")
   }
 })

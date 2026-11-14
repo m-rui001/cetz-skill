@@ -8,7 +8,8 @@
   circle((1.3, .1), radius: .72, stroke: (paint: black, thickness: 0.8pt))
   let ah = (p, a) => {
     let u = (calc.cos(a), calc.sin(a))
-    line((p.at(0) - .16 * u.at(0), p.at(1) - .16 * u.at(1)), (p.at(0) + .16 * u.at(0), p.at(1) + .16 * u.at(1)), mark: (end: "stealth", fill: black), stroke: (paint: black, thickness: 0.8pt))
+    line((p.at(0) - .16 * u.at(0), p.at(1) - .16 * u.at(1)), (p.at(0) + .16 * u.at(0), p.at(1) + .16 * u.at(1)),
+      mark: (end: "stealth", fill: black), stroke: (paint: black, thickness: 0.8pt))
   }
   ah((1.3, 5.12), 180deg)
   ah((1.3, 3.68), 0deg)
@@ -46,7 +47,8 @@
     let a = i * 45deg
     let u = (calc.cos(a), calc.sin(a))
     if a != 0deg and a != 180deg {
-      line((cx + 1.55 * u.at(0), cy + 1.55 * u.at(1)), (cx - 1.55 * u.at(0), cy - 1.55 * u.at(1)), mark: (end: "stealth", fill: black), stroke: (paint: black, thickness: 0.8pt))
+      line((cx + 1.55 * u.at(0), cy + 1.55 * u.at(1)), (cx - 1.55 * u.at(0), cy - 1.55 * u.at(1)),
+        mark: (end: "stealth", fill: black), stroke: (paint: black, thickness: 0.8pt))
     }
   }
   line((cx, cy), (cx, cy + 1.6), mark: (end: "stealth", fill: black), stroke: (paint: black, thickness: 0.8pt))

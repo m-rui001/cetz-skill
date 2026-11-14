@@ -32,14 +32,17 @@
   }
   // 图标：部件制造（颗粒与极片）
   let icoComp(p, s) = {
-    rect(at(p, -0.52 * s, 0.00 * s), at(p, -0.18 * s, 0.40 * s), stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#cfe3f7"))
-    rect(at(p, 0.12 * s, -0.44 * s), at(p, 0.46 * s, -0.04 * s), stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#ffdcb0"))
+    rect(at(p, -0.52 * s, 0.00 * s), at(p, -0.18 * s, 0.40 * s),
+      stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#cfe3f7"))
+    rect(at(p, 0.12 * s, -0.44 * s), at(p, 0.46 * s, -0.04 * s),
+      stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#ffdcb0"))
     circle(at(p, -0.08 * s, 0.44 * s), radius: 0.15 * s, stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#f6c9dd"))
     circle(at(p, -0.32 * s, -0.40 * s), radius: 0.13 * s, stroke: (paint: ink, thickness: 1.1pt), fill: rgb("#c9a8e0"))
   }
   // 图标：电芯（圆柱壳与正极帽）
   let icoCell(p, s) = {
-    rect(at(p, -0.20 * s, -0.50 * s), at(p, 0.20 * s, 0.26 * s), stroke: (paint: ink, thickness: 1.4pt), fill: rgb("#bfe6d8"))
+    rect(at(p, -0.20 * s, -0.50 * s), at(p, 0.20 * s, 0.26 * s),
+      stroke: (paint: ink, thickness: 1.4pt), fill: rgb("#bfe6d8"))
     line(at(p, -0.08 * s, 0.26 * s), at(p, -0.08 * s, 0.42 * s), stroke: (paint: ink, thickness: 1.2pt))
     line(at(p, 0.08 * s, 0.26 * s), at(p, 0.08 * s, 0.42 * s), stroke: (paint: ink, thickness: 1.2pt))
     line(at(p, -0.08 * s, 0.42 * s), at(p, 0.08 * s, 0.42 * s), stroke: (paint: ink, thickness: 1.2pt))
@@ -49,20 +52,25 @@
   let icoUse(p, s) = {
     rect(at(p, -0.54 * s, 0.06 * s), at(p, -0.02 * s, 0.42 * s), stroke: (paint: ink, thickness: 1.3pt), fill: white)
     line(at(p, -0.64 * s, 0.00 * s), at(p, 0.08 * s, 0.00 * s), stroke: (paint: ink, thickness: 1.6pt))
-    line(at(p, 0.14 * s, -0.20 * s), at(p, 0.22 * s, -0.34 * s), at(p, 0.58 * s, -0.34 * s), at(p, 0.64 * s, -0.20 * s), close: true, stroke: (paint: ink, thickness: 1.2pt), fill: white)
+    line(at(p, 0.14 * s, -0.20 * s), at(p, 0.22 * s, -0.34 * s), at(p, 0.58 * s, -0.34 * s),
+      at(p, 0.64 * s, -0.20 * s), close: true, stroke: (paint: ink, thickness: 1.2pt), fill: white)
     circle(at(p, 0.26 * s, -0.40 * s), radius: 0.07 * s, fill: ink, stroke: none)
     circle(at(p, 0.54 * s, -0.40 * s), radius: 0.07 * s, fill: ink, stroke: none)
   }
   // 图标：废电池（三支短电芯）
   let icoWaste(p, s) = {
-    rect(at(p, -0.46 * s, -0.36 * s), at(p, -0.16 * s, 0.26 * s), stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
-    rect(at(p, -0.12 * s, -0.42 * s), at(p, 0.18 * s, 0.20 * s), stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
-    rect(at(p, 0.22 * s, -0.30 * s), at(p, 0.50 * s, 0.32 * s), stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
+    rect(at(p, -0.46 * s, -0.36 * s), at(p, -0.16 * s, 0.26 * s),
+      stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
+    rect(at(p, -0.12 * s, -0.42 * s), at(p, 0.18 * s, 0.20 * s),
+      stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
+    rect(at(p, 0.22 * s, -0.30 * s), at(p, 0.50 * s, 0.32 * s),
+      stroke: (paint: ink, thickness: 1.2pt), fill: rgb("#f7c9c9"))
   }
   // 图标：填埋（垃圾箱与散料）
   let icoFill(p, s) = {
     line(at(p, -0.44 * s, 0.12 * s), at(p, 0.42 * s, 0.12 * s), stroke: (paint: ink, thickness: 1.8pt))
-    line(at(p, -0.30 * s, 0.12 * s), at(p, -0.36 * s, -0.44 * s), at(p, 0.34 * s, -0.44 * s), at(p, 0.28 * s, 0.12 * s), stroke: (paint: ink, thickness: 1.3pt))
+    line(at(p, -0.30 * s, 0.12 * s), at(p, -0.36 * s, -0.44 * s), at(p, 0.34 * s, -0.44 * s),
+      at(p, 0.28 * s, 0.12 * s), stroke: (paint: ink, thickness: 1.3pt))
     circle(at(p, -0.10 * s, 0.28 * s), radius: 0.09 * s, fill: ink, stroke: none)
     circle(at(p, 0.12 * s, 0.34 * s), radius: 0.07 * s, fill: ink, stroke: none)
   }
@@ -76,12 +84,16 @@
 
   // 四条回流环：紫（再生）、蓝（修复）、青（梯次利用）、黄（收集），先画以便被色块遮盖
   bezier((5.28, 1.08), (0.52, 2.20), (3.20, 0.72), (0.52, 1.30), stroke: (paint: pur, thickness: 2.8pt))
-  bezier((0.52, 2.20), (0.74, 6.62), (0.50, 3.70), (0.44, 5.10), stroke: (paint: pur, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
+  bezier((0.52, 2.20), (0.74, 6.62), (0.50, 3.70), (0.44, 5.10),
+    stroke: (paint: pur, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
   bezier((5.34, 1.40), (2.04, 2.80), (3.80, 1.06), (2.10, 1.86), stroke: (paint: blu, thickness: 2.8pt))
-  bezier((2.04, 2.80), (2.10, 5.70), (2.00, 4.00), (1.94, 5.00), stroke: (paint: blu, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
+  bezier((2.04, 2.80), (2.10, 5.70), (2.00, 4.00), (1.94, 5.00),
+    stroke: (paint: blu, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
   bezier((5.22, 1.28), (3.48, 2.58), (3.95, 1.12), (3.28, 2.02), stroke: (paint: tea, thickness: 2.8pt))
-  bezier((3.48, 2.58), (6.06, 3.34), (3.64, 3.30), (4.58, 3.52), stroke: (paint: tea, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
-  bezier((5.96, 1.06), (6.72, 3.30), (7.06, 1.12), (7.22, 2.80), stroke: (paint: yel, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
+  bezier((3.48, 2.58), (6.06, 3.34), (3.64, 3.30), (4.58, 3.52),
+    stroke: (paint: tea, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
+  bezier((5.96, 1.06), (6.72, 3.30), (7.06, 1.12), (7.22, 2.80),
+    stroke: (paint: yel, thickness: 2.8pt), mark: (end: "stealth", scale: 0.45))
 
   // 洋红主链：1→2→3→4→5→6
   for (a, b) in (("1", "2"), ("2", "3"), ("3", "4"), ("4", "5"), ("5", "6")) {
@@ -106,7 +118,8 @@
   }
 
   // 七个主链节点：彩色圆环＋内部图标
-  for (k, c, icon) in (("1", mag, icoMine), ("2", mag, icoComp), ("3", mag, icoCell), ("4", mag, icoUse), ("5", mag, icoWaste), ("6", mag, icoFill), ("0", yel, icoFix)) {
+  for (k, c,
+    icon) in (("1", mag, icoMine), ("2", mag, icoComp), ("3", mag, icoCell), ("4", mag, icoUse), ("5", mag, icoWaste), ("6", mag, icoFill), ("0", yel, icoFix)) {
     let (p, r) = N.at(k)
     circle(p, radius: r, stroke: (paint: c, thickness: 2.2pt), fill: white)
     icon(p, r)

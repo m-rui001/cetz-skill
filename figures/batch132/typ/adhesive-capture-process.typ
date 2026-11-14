@@ -33,7 +33,8 @@
   // 两行居中标签
   let cap(pos, body) = content(pos, block(width: 2.2cm, align(center, body)), anchor: "center")
   // 绿色粘附盘
-  let pad(px, py, cx, y) = rect((px + cx - 0.46, py + y), (px + cx + 0.46, py + y + 0.2), fill: green, stroke: green, radius: 0.06)
+  let pad(px, py, cx,
+    y) = rect((px + cx - 0.46, py + y), (px + cx + 0.46, py + y + 0.2), fill: green, stroke: green, radius: 0.06)
   // 锁紧/释放截面详图：三绿齿 + 两侧品红销，tilt 控制销张开角
   let sect(px, py, bx, by, tilt) = {
     rect((px + bx - 0.8, py + by), (px + bx + 0.8, py + by + 0.12), fill: green, stroke: green)

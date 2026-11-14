@@ -103,7 +103,8 @@
     let dx=b.at(0) - a.at(0);let dy=b.at(1) - a.at(1)
     let r=calc.sqrt(dx*dx + dy*dy);let ux=dx/r;let uy=dy/r
     line(P(..a),P(b.at(0) - ux*w,b.at(1) - uy*w),stroke:(paint:c,thickness:t))
-    line(P(..b),P(b.at(0) - ux*w - uy*w*.45,b.at(1) - uy*w + ux*w*.45),P(b.at(0) - ux*w + uy*w*.45,b.at(1) - uy*w - ux*w*.45),close:true,fill:c,stroke:none)
+    line(P(..b),P(b.at(0) - ux*w - uy*w*.45,b.at(1) - uy*w + ux*w*.45),
+      P(b.at(0) - ux*w + uy*w*.45,b.at(1) - uy*w - ux*w*.45),close:true,fill:c,stroke:none)
   }
   let input-circle=(x,y,current:false)=>{
     circle(P(x,y),radius:16*s,fill:white,stroke:1.1pt)

@@ -102,7 +102,8 @@
   arc(at(C, rpsi, angB), start: angB, stop: angF, radius: rpsi,
     stroke: (paint: black, thickness: 0.5pt), mark: (start: "stealth", end: "stealth", scale: 0.5))
   // φ 摆角：机体姿态与水平线之间的弧
-  arc(at(C, 0.95, 3deg), start: 3deg, stop: angB, radius: 0.95, stroke: (paint: black, thickness: 0.5pt), mark: (end: "stealth", scale: 0.5))
+  arc(at(C, 0.95, 3deg), start: 3deg, stop: angB, radius: 0.95,
+    stroke: (paint: black, thickness: 0.5pt), mark: (end: "stealth", scale: 0.5))
 
   // 轴名与角度标注
   content((-0.16, 8.02), $y$, anchor: "east")

@@ -73,9 +73,11 @@
   input(196,268,228,307);wire(((280,228),(280,247)));sw(280,262);wire(((280,286),(280,307)))
   dot(280,228);dot(280,307);output(341,374,228,307)
   lab(239,215,[$L$]);lab(309,215,[$D$]);lab(267,268,[$S$]);lab(289,327,[(a)])
-  line(P(418,244),P(457,244),P(457,214),P(496,269),P(457,324),P(457,294),P(418,294),close:true,fill:rgb("#e8b6b2"),stroke:none)
+  line(P(418,244),P(457,244),P(457,214),P(496,269),P(457,324),P(457,294),
+    P(418,294),close:true,fill:rgb("#e8b6b2"),stroke:none)
   lab(453,269,[Two Active\ Switch])
-  line(P(273,350),P(330,350),P(330,382),P(366,382),P(303,413),P(240,382),P(273,382),close:true,fill:rgb("#e8b6b2"),stroke:none)
+  line(P(273,350),P(330,350),P(330,382),P(366,382),P(303,413),P(240,382),
+    P(273,382),close:true,fill:rgb("#e8b6b2"),stroke:none)
   lab(302,378,[Magnetic\ Coupling])
   // (b) auxiliary switch in series with a reversed diode.
   input(504,195,152,231);wire(((504,152),(551,152)));ind(551,152)

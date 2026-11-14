@@ -127,7 +127,8 @@
   let diagonal=(xl,xr,top,mid)=>{
     let xm=(xl + xr)/2
     wire(((xl,top),(xm - 3,(top + mid)/2 - 2)))
-    bezier(P(xm - 3,(top + mid)/2 - 2),P(xm + 3,(top + mid)/2 + 2),P(xm - 2,(top + mid)/2 - 7),P(xm + 5,(top + mid)/2 - 2),stroke:.9pt)
+    bezier(P(xm - 3,(top + mid)/2 - 2),P(xm + 3,(top + mid)/2 + 2),
+      P(xm - 2,(top + mid)/2 - 7),P(xm + 5,(top + mid)/2 - 2),stroke:.9pt)
     wire(((xm + 3,(top + mid)/2 + 2),(xr,mid)))
   }
 

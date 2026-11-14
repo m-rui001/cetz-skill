@@ -27,7 +27,8 @@
 
   // 外框、标题与两条橙色识别横幅
   rect((0.25, 0.35), (15.15, 8.95), stroke: 0.7pt + ink)
-  t((7.70, 8.70), [PRISMA 2020 flow diagram for new systematic reviews which included \ searches of databases, registers and other sources], size: 5.8pt)
+  t((7.70, 8.70),
+    [PRISMA 2020 flow diagram for new systematic reviews which included \ searches of databases, registers and other sources], size: 5.8pt)
   rect((0.55, 7.95), (8.05, 8.35), fill: orange, stroke: 0.6pt + ink)
   t((4.30, 8.15), [Identification of studies via databases and registers], size: 6.0pt)
   rect((8.45, 7.95), (15.05, 8.35), fill: orange, stroke: 0.6pt + ink)
@@ -42,7 +43,8 @@
 
   // 数据库通道
   boxw((2.55, 7.00), 1.55, 0.32, [Records identified from: \ Databases (n = 1880)])
-  boxw((5.90, 6.95), 1.25, 0.62, [Records removed #emph[before] \ #emph[screening]: \ Records marked as \ ineligible by automation \ tools (n = 270)], size: 5.0pt)
+  boxw((5.90, 6.95), 1.25, 0.62,
+    [Records removed #emph[before] \ #emph[screening]: \ Records marked as \ ineligible by automation \ tools (n = 270)], size: 5.0pt)
   boxw((2.55, 5.55), 1.55, 0.28, [Records screened \ (n = 100)])
   boxw((5.90, 5.55), 1.25, 0.28, [Records excluded \ (n = 1780)])
   boxw((2.55, 4.25), 1.55, 0.32, [Reports sought for retrieval \ (n = 9)])
@@ -64,7 +66,8 @@
   boxw((11.30, 4.55), 1.30, 0.32, [Reports sought for retrieval \ (n = 31)])
   boxw((13.95, 4.55), 1.10, 0.28, [Reports not retrieved \ (n = 143)])
   boxw((11.30, 2.60), 1.30, 0.32, [Reports assessed for eligibility \ (n = 22)])
-  boxw((13.95, 2.55), 1.10, 0.62, [Reports excluded: \ Experiment used \ off-device inference \ (n = 6); Experiment \ lacked a use case (n = 3)], size: 5.0pt)
+  boxw((13.95, 2.55), 1.10, 0.62,
+    [Reports excluded: \ Experiment used \ off-device inference \ (n = 6); Experiment \ lacked a use case (n = 3)], size: 5.0pt)
   arr((11.30, 6.68), (11.30, 4.89))
   arr((12.60, 4.55), (12.83, 4.55))
   arr((11.30, 4.23), (11.30, 2.94))

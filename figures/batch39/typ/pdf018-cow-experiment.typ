@@ -9,7 +9,8 @@
   let label=(x,y,c,size:8.2pt)=>content(P(x,y),text(size:size,c))
   let metal=(x,y,w,h:14)=>{
     line(P(x,y),P(x + w,y),P(x + w - 3,y + h),P(x - 3,y + h),close:true,fill:rgb("#777777"),stroke:none)
-    line(P(x + 1,y + 2),P(x + w - 2,y + 2),P(x + w - 4,y + h - 3),P(x - 1,y + h - 3),close:true,fill:rgb("#aaaaaa"),stroke:none)
+    line(P(x + 1,y + 2),P(x + w - 2,y + 2),P(x + w - 4,y + h - 3),
+      P(x - 1,y + h - 3),close:true,fill:rgb("#aaaaaa"),stroke:none)
     line(P(x + 3,y + 3),P(x + w - 4,y + 3),stroke:(paint:rgb("#cfcfcf"),thickness:.6pt))
   }
   // Thin fibers first; each optical component will cover its physical segment.
@@ -95,7 +96,8 @@
   line(P(1445,104),P(1454,105),P(1452,234),P(1438,237),close:true,fill:rgb("#9a9a9a"),stroke:none)
   label(1383,99,[#set par(leading: 0.9em)
     Stirling#linebreak()cooler],size:8.5pt)
-  for (y,rx,ry,color) in ((206,34,29,rgb("#252525")),(221,34,31,rgb("#777777")),(237,42,37,rgb("#999999")),(252,46,39,rgb("#6f6f6f"))) {
+  for (y,rx,ry,
+    color) in ((206,34,29,rgb("#252525")),(221,34,31,rgb("#777777")),(237,42,37,rgb("#999999")),(252,46,39,rgb("#6f6f6f"))) {
     circle(P(1370,y),radius:(rx*.4,ry*.4),fill:color,stroke:none)
   }
   circle(P(1370,236),radius:(12,7.2),fill:rgb("#bcbcbc"),stroke:none)

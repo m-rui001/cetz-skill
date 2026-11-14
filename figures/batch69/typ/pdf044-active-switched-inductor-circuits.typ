@@ -74,7 +74,8 @@
   }
   let arrtip=(a,b)=>{
     let dx=b.at(0) - a.at(0);let dy=b.at(1) - a.at(1);let r=calc.sqrt(dx*dx + dy*dy);let ux=dx/r;let uy=dy/r
-    line(P(..a),P(a.at(0) + 5*ux - 2*uy,a.at(1) + 5*uy + 2*ux),P(a.at(0) + 5*ux + 2*uy,a.at(1) + 5*uy - 2*ux),close:true,fill:black,stroke:none)
+    line(P(..a),P(a.at(0) + 5*ux - 2*uy,a.at(1) + 5*uy + 2*ux),
+      P(a.at(0) + 5*ux + 2*uy,a.at(1) + 5*uy - 2*ux),close:true,fill:black,stroke:none)
   }
   let ratio=(a,b,c,d,p,angle:0deg)=>{
     bezier(P(..a),P(..b),P(..c),P(..d),stroke:.4pt);arrtip(a,c);arrtip(b,d)

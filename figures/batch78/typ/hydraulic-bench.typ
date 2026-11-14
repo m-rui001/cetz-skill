@@ -445,7 +445,8 @@
   lab((8.10, 4.82), [HF2], anchor: "south", size: 5.4pt)
   line((7.98, 3.76), (7.98, 2.97), stroke: ST)
   line((8.22, 3.76), (8.22, 2.97), stroke: ST)
-  arc((8.10, 3.37), start: 200deg, stop: 340deg, radius: 0.25, stroke: SF, mark: (end: "stealth", fill: black, scale: 0.7))
+  arc((8.10, 3.37), start: 200deg, stop: 340deg, radius: 0.25, stroke: SF,
+    mark: (end: "stealth", fill: black, scale: 0.7))
   pump((8.10, 2.55), r: 0.42, dir: -1)
   lab((8.58, 2.10), [HP#sub[2]], anchor: "north-west", size: 6.5pt)
   // 油路：C 左右两段 + 泵左右两段

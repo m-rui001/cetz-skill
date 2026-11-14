@@ -67,7 +67,8 @@
     }
   }
   // 圆弧锚点助手：圆心偏移起点
-  let arc-at(c, r, a0, a1, ..st) = arc((c.at(0) + r * calc.cos(a0), c.at(1) + r * calc.sin(a0)), start: a0, stop: a1, radius: r, ..st)
+  let arc-at(c, r, a0, a1,
+    ..st) = arc((c.at(0) + r * calc.cos(a0), c.at(1) + r * calc.sin(a0)), start: a0, stop: a1, radius: r, ..st)
   // 鼓包壳助手：扁平圆角矩形或双鼓包窄颈
   let pouch(l, r, cy, bw, bh, nh) = {
     if bw == 0 {

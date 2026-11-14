@@ -26,9 +26,11 @@
   }
   // 极片轮廓
   let an = ((2.95, 9.80), (4.50, 10.35), (7.40, 10.12), (8.42, 8.05), (7.45, 5.55), (4.25, 5.02), (2.90, 7.00))
-  let cat = ((11.80, 10.50), (14.20, 10.50), (16.10, 8.20), (15.30, 5.95), (14.85, 5.05), (14.15, 6.15), (13.35, 5.10), (11.30, 5.30), (10.60, 7.90))
+  let cat = ((11.80, 10.50), (14.20, 10.50), (16.10, 8.20), (15.30, 5.95), (14.85, 5.05),
+    (14.15, 6.15), (13.35, 5.10), (11.30, 5.30), (10.60, 7.90))
   // 红色粗箭头（退化路径），支持折线
-  let arrow(..pts, t: 4.5pt, c: red) = line(..pts, stroke: (paint: c, thickness: t), mark: (end: "stealth", fill: c, scale: 1.8))
+  let arrow(..pts, t: 4.5pt,
+    c: red) = line(..pts, stroke: (paint: c, thickness: t), mark: (end: "stealth", fill: c, scale: 1.8))
   // 星形颗粒开裂爆点
   let star(pos, r) = {
     let pts = range(12).map(i => {
@@ -42,7 +44,8 @@
   let solvent(pos) = {
     for k in range(5) {
       let a = 2 * calc.pi * k / 5
-      circle((pos.at(0) + 0.11 * calc.cos(a), pos.at(1) + 0.11 * calc.sin(a)), radius: 0.085, fill: rgb("#f3a6b8"), stroke: (paint: rgb("#d9617c"), thickness: 0.5pt))
+      circle((pos.at(0) + 0.11 * calc.cos(a), pos.at(1) + 0.11 * calc.sin(a)), radius: 0.085,
+        fill: rgb("#f3a6b8"), stroke: (paint: rgb("#d9617c"), thickness: 0.5pt))
     }
     circle(pos, radius: 0.06, fill: rgb("#d9617c"), stroke: none)
   }
@@ -57,7 +60,8 @@
   for i in range(20) {
     for j in range(14) {
       let p = (3.10 + i * 0.27, 5.30 + j * 0.35)
-      if inside(p, an) and inside((p.at(0) + 0.15, p.at(1) + 0.15), an) { line(p, (p.at(0) + 0.15, p.at(1) + 0.15), stroke: (paint: rgb("#cbc8bf"), thickness: 0.4pt)) }
+      if inside(p,
+        an) and inside((p.at(0) + 0.15, p.at(1) + 0.15), an) { line(p, (p.at(0) + 0.15, p.at(1) + 0.15), stroke: (paint: rgb("#cbc8bf"), thickness: 0.4pt)) }
     }
   }
   for i in range(26) {
@@ -71,11 +75,13 @@
   arrow((1.62, 9.95), (1.62, 10.62), (4.30, 10.62))
   // 两侧粘结剂
   rect((1.82, 6.05), (2.94, 9.55), radius: 0.52, fill: rgb("#f8eec6"), stroke: (paint: rgb("#cbb071"), thickness: 0.8pt))
-  rect((16.18, 6.10), (17.30, 9.60), radius: 0.52, fill: rgb("#f8eec6"), stroke: (paint: rgb("#cbb071"), thickness: 0.8pt))
+  rect((16.18, 6.10), (17.30, 9.60), radius: 0.52, fill: rgb("#f8eec6"),
+    stroke: (paint: rgb("#cbb071"), thickness: 0.8pt))
   // SEI 条带与石墨剥离尖刺
   line((4.30, 10.34), (6.65, 10.02), stroke: (paint: rgb("#9a958c"), thickness: 3.2pt))
   for k in range(3) {
-    line((9.02, 7.10 + k * 0.42), (8.00, 7.30 + k * 0.42), (9.02, 7.52 + k * 0.42), close: true, fill: rgb("#4c7a2f"), stroke: (paint: rgb("#2f5a1c"), thickness: 0.5pt))
+    line((9.02, 7.10 + k * 0.42), (8.00, 7.30 + k * 0.42), (9.02, 7.52 + k * 0.42), close: true,
+      fill: rgb("#4c7a2f"), stroke: (paint: rgb("#2f5a1c"), thickness: 0.5pt))
   }
   // 锂枝晶穿过隔膜底部
   line((10.05, 6.35), (10.90, 6.75), (11.60, 6.10), (12.50, 6.45), stroke: (paint: dend, thickness: 1.4pt))
@@ -101,25 +107,33 @@
   for p in ((6.95, 9.90), (6.72, 7.55), (7.05, 4.95), (8.30, 4.35), (10.10, 4.40)) { solvent(p) }
   // 负极底部 SEI 分解碎屑
   for p in ((4.15, 4.62), (4.55, 4.40), (5.00, 4.68), (5.50, 4.45), (5.95, 4.75), (6.30, 4.50)) {
-    line((p.at(0) - 0.10, p.at(1) - 0.12), (p.at(0) + 0.12, p.at(1) + 0.10), (p.at(0) + 0.02, p.at(1) + 0.16), close: true, fill: rgb("#d8d5ce"), stroke: (paint: rgb("#9a968d"), thickness: 0.4pt))
+    line((p.at(0) - 0.10, p.at(1) - 0.12), (p.at(0) + 0.12, p.at(1) + 0.10), (p.at(0) + 0.02, p.at(1) + 0.16),
+      close: true, fill: rgb("#d8d5ce"), stroke: (paint: rgb("#9a968d"), thickness: 0.4pt))
   }
   // 开裂颗粒
-  line((6.05, 5.72), (6.42, 6.15), (6.80, 5.75), (6.60, 5.35), (6.20, 5.40), close: true, fill: white, stroke: (paint: rgb("#b0aca3"), thickness: 0.7pt))
+  line((6.05, 5.72), (6.42, 6.15), (6.80, 5.75), (6.60, 5.35), (6.20, 5.40), close: true,
+    fill: white, stroke: (paint: rgb("#b0aca3"), thickness: 0.7pt))
   line((6.42, 6.15), (6.38, 5.75), (6.74, 5.55), stroke: (paint: rgb("#b0aca3"), thickness: 0.5pt))
   // 铜集流体开裂
-  line((1.60, 6.55), (1.88, 6.88), (1.66, 7.20), (1.92, 7.52), (1.62, 7.82), stroke: (paint: rgb("#f6e6d8"), thickness: 1.5pt))
+  line((1.60, 6.55), (1.88, 6.88), (1.66, 7.20), (1.92, 7.52), (1.62, 7.82),
+    stroke: (paint: rgb("#f6e6d8"), thickness: 1.5pt))
   line((1.62, 8.35), (1.86, 8.60), (1.68, 8.88), stroke: (paint: rgb("#f6e6d8"), thickness: 1.2pt))
   // 铝集流体腐蚀（蓝色锯齿块）
-  line((17.36, 9.55), (17.56, 9.28), (17.40, 9.02), (17.58, 8.78), (17.38, 8.52), (17.54, 8.28), (17.34, 8.04), (17.46, 7.76), (17.30, 7.96), (17.42, 8.34), (17.26, 8.70), (17.40, 9.10), (17.26, 9.38), close: true, fill: rgb("#2f6fb5"), stroke: none)
+  line((17.36, 9.55), (17.56, 9.28), (17.40, 9.02), (17.58, 8.78), (17.38, 8.52), (17.54, 8.28),
+    (17.34, 8.04), (17.46, 7.76), (17.30, 7.96), (17.42, 8.34), (17.26, 8.70), (17.40, 9.10),
+    (17.26, 9.38), close: true, fill: rgb("#2f6fb5"), stroke: none)
   // 正极底部 CEI 层
   line((11.38, 5.34), (13.28, 5.12), stroke: (paint: rgb("#8fbf72"), thickness: 3.6pt))
   // 析锂箭头、SEI 分解双向箭头、结构无序箭头
   arrow((7.85, 4.55), (8.35, 5.40), t: 4pt)
-  line((5.15, 3.95), (5.15, 4.78), stroke: (paint: red, thickness: 3.6pt), mark: (start: "stealth", end: "stealth", fill: red, scale: 1.6))
+  line((5.15, 3.95), (5.15, 4.78), stroke: (paint: red, thickness: 3.6pt),
+    mark: (start: "stealth", end: "stealth", fill: red, scale: 1.6))
   line((13.70, 9.55), (14.05, 9.05), stroke: (paint: red, thickness: 4pt))
-  line((14.05, 9.05), (14.28, 8.85), stroke: (paint: rgb("#1f5fa8"), thickness: 4pt), mark: (end: "stealth", fill: rgb("#1f5fa8"), scale: 1.6))
+  line((14.05, 9.05), (14.28, 8.85), stroke: (paint: rgb("#1f5fa8"), thickness: 4pt),
+    mark: (end: "stealth", fill: rgb("#1f5fa8"), scale: 1.6))
   // 标注文字
-  let lab(pos, body, size: 7pt, fill: brown, angle: 0deg) = content(pos, body, size: size, fill: fill, weight: "bold", angle: angle)
+  let lab(pos, body, size: 7pt, fill: brown,
+    angle: 0deg) = content(pos, body, size: size, fill: fill, weight: "bold", angle: angle)
   lab((3.30, 11.80), [Copper dissolution\ and dendrite\ formation])
   lab((7.55, 11.55), [Solvent\ co-intercalation\ & graphite\ exfoliation])
   lab((12.35, 11.85), [Transition metal\ dissolution &\ electrolyte\ decomposition])

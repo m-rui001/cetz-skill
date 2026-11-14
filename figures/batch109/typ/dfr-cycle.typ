@@ -25,14 +25,16 @@
 
 // 通用助手：平移定位、多行标签、淡绿数字、黑色单箭头、青色双箭头
 #let at(p, f) = draw.group({ draw.translate(p); f() })
-#let lab(p, s) = draw.content(p, align(center, stack(dir: ttb, spacing: 2pt, ..s.split("\n").map(t => text(size: 9pt, weight: "bold", t)))))
+#let lab(p,
+  s) = draw.content(p, align(center, stack(dir: ttb, spacing: 2pt, ..s.split("\n").map(t => text(size: 9pt, weight: "bold", t)))))
 #let num(p, n) = draw.content(p, text(size: 26pt, weight: "bold", fill: pale, str(n)))
 #let arr(a, b) = draw.line(a, b, stroke: (paint: ink, thickness: 2.5pt), mark: (end: ">"))
 #let dbl(a, b) = draw.line(a, b, stroke: (paint: teal-c, thickness: 2.5pt), mark: (start: "<", end: ">"))
 
 // 阶段1图标：黄色矿车，满载黄/橄榄色矿石
 #let cart = () => {
-  draw.line((-1.1, 0.75), (-0.7, 1.15), (-0.25, 0.9), (0.15, 1.3), (0.65, 0.95), (1.1, 0.75), close: true, fill: olive, stroke: os)
+  draw.line((-1.1, 0.75), (-0.7, 1.15), (-0.25, 0.9), (0.15, 1.3),
+    (0.65, 0.95), (1.1, 0.75), close: true, fill: olive, stroke: os)
   draw.line((-0.55, 0.95), (-0.3, 1.2), (-0.05, 0.95), (-0.3, 0.75), close: true, fill: yellow, stroke: os)
   draw.line((0.2, 0.9), (0.45, 1.15), (0.7, 0.9), (0.45, 0.72), close: true, fill: yellow, stroke: os)
   draw.rect((-1.3, 0.5), (1.3, 0.78), fill: yellow, stroke: os)
@@ -78,7 +80,8 @@
   for x in (-0.5, 0.35) { draw.rect((x, -1.0), (x + 0.2, -0.85), fill: pink, stroke: os) }
   for a in (90, 210, 330) {
     draw.arc((0, 0.05), radius: 0.28, start: a * 1deg, stop: (a + 100) * 1deg, stroke: (paint: ink, thickness: 2.5pt))
-    draw.arc((0, 0.05), radius: 0.28, start: a * 1deg, stop: (a + 100) * 1deg, stroke: (paint: white, thickness: 1.2pt), mark: (end: ">", fill: white, stroke: (paint: ink, thickness: 0.6pt), length: 0.16cm, width: 0.13cm))
+    draw.arc((0, 0.05), radius: 0.28, start: a * 1deg, stop: (a + 100) * 1deg, stroke: (paint: white, thickness: 1.2pt),
+      mark: (end: ">", fill: white, stroke: (paint: ink, thickness: 0.6pt), length: 0.16cm, width: 0.13cm))
   }
   draw.content((0, -0.55), text(size: 8pt, weight: "bold", "BATTERY"))
 }
@@ -86,7 +89,8 @@
 #let ring = () => {
   for (a, b) in ((170, 40), (350, 220)) {
     draw.arc((0, 0), radius: 1.0, start: a * 1deg, stop: b * 1deg, stroke: (paint: ink, thickness: 5.5pt))
-    draw.arc((0, 0), radius: 1.0, start: a * 1deg, stop: b * 1deg, stroke: (paint: yellow, thickness: 3.5pt), mark: (end: ">", fill: yellow, stroke: (paint: ink, thickness: 1pt), length: 0.4cm, width: 0.35cm))
+    draw.arc((0, 0), radius: 1.0, start: a * 1deg, stop: b * 1deg, stroke: (paint: yellow, thickness: 3.5pt),
+      mark: (end: ">", fill: yellow, stroke: (paint: ink, thickness: 1pt), length: 0.4cm, width: 0.35cm))
   }
   draw.rect((-0.55, -0.3), (0.45, 0.3), fill: white, stroke: os)
   draw.rect((0.45, -0.12), (0.62, 0.12), fill: white, stroke: os)
@@ -141,8 +145,10 @@
   arr((2.1, 5.7), (2.1, 5.0))
   arr((3.5, 1.9), (4.3, 1.5))
   // 大黑弯箭头：4→5 与 5→1，闭合生命周期环
-  draw.bezier((6.4, 1.1), (11.7, 3.9), (8.4, 0.7), (10.6, 2.2), stroke: (paint: ink, thickness: 3.5pt), mark: (end: ">", fill: ink, length: 0.5cm, width: 0.45cm))
-  draw.bezier((11.6, 7.4), (6.8, 9.5), (10.9, 9.0), (8.9, 9.9), stroke: (paint: ink, thickness: 3.5pt), mark: (end: ">", fill: ink, length: 0.5cm, width: 0.45cm))
+  draw.bezier((6.4, 1.1), (11.7, 3.9), (8.4, 0.7), (10.6, 2.2),
+    stroke: (paint: ink, thickness: 3.5pt), mark: (end: ">", fill: ink, length: 0.5cm, width: 0.45cm))
+  draw.bezier((11.6, 7.4), (6.8, 9.5), (10.9, 9.0), (8.9, 9.9),
+    stroke: (paint: ink, thickness: 3.5pt), mark: (end: ">", fill: ink, length: 0.5cm, width: 0.45cm))
   // 青色双向箭头：中央电池 ↔ 阶段 2、3、5
   dbl((4.0, 6.6), (5.6, 6.9))
   dbl((4.0, 4.2), (5.6, 4.6))

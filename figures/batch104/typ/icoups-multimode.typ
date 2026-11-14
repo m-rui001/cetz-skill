@@ -37,7 +37,8 @@
 // 共享 helper：喷管（小矩形+下扩梯形）
 #let nozzle(x, yt) = {
   draw.rect((x - 0.22, yt - 0.5), (x + 0.22, yt), fill: white)
-  draw.line((x - 0.22, yt - 0.5), (x + 0.22, yt - 0.5), (x + 0.42, yt - 1.1), (x - 0.42, yt - 1.1), close: true, fill: white)
+  draw.line((x - 0.22, yt - 0.5), (x + 0.22, yt - 0.5),
+    (x + 0.42, yt - 1.1), (x - 0.42, yt - 1.1), close: true, fill: white)
 }
 // 共享 helper：流量限制器（矩形+相向双弧）
 #let restrictor(at) = {
@@ -56,14 +57,16 @@
 #let harrow(x, ya, yb) = {
   let s = if yb > ya { 1 } else { -1 }
   let yh = yb - s * 0.3
-  draw.line((x - 0.05, ya), (x - 0.05, yh), (x - 0.16, yh), (x, yb), (x + 0.16, yh), (x + 0.05, yh), (x + 0.05, ya), close: true, fill: white)
+  draw.line((x - 0.05, ya), (x - 0.05, yh), (x - 0.16, yh), (x, yb), (x + 0.16, yh),
+    (x + 0.05, yh), (x + 0.05, ya), close: true, fill: white)
 }
 
 #canvas({
   import draw: *
   // 左压力梯：三条虚线分隔、八支空心箭头、四档压力标签
   for (y, x1) in ((y-sep1, sx), (y-sep2, sx), (2.55, -1.0)) { line((lx - 0.8, y), (x1, y), stroke: (dash: "dashed")) }
-  for (ya, yb) in ((10.45, 12.0), (9.8, 8.5), (7.6, 8.4), (7.0, 6.5), (4.6, 6.4), (3.9, 2.6), (1.8, 2.5), (1.2, 0.55)) { harrow(lx, ya, yb) }
+  for (ya,
+    yb) in ((10.45, 12.0), (9.8, 8.5), (7.6, 8.4), (7.0, 6.5), (4.6, 6.4), (3.9, 2.6), (1.8, 2.5), (1.2, 0.55)) { harrow(lx, ya, yb) }
   for (y, t) in ((10.1, [7 – 8 MPa]), (7.35, [0.30 MPa]), (4.35, [30 kPa]), (1.5, [\~1 kPa])) { content((lx, y), t) }
   // 主管与高压段：气瓶、带柄阀、三通左传感器右排放阀、调压器、截止阀
   line((mx, y-tank - 1.0), (mx, y-noz))
@@ -93,7 +96,8 @@
   sensor((-0.75, y-tee4))
   lab-l((-0.75, y-tee4 - 0.45), [Pressure\ sensor])
   // 虚线反馈：下传感器→调节阀，旋转 Feedback control 标签
-  line((-0.75, y-tee4 + 0.18), (-0.75, y-regv), (-0.3, y-regv), stroke: (dash: "dashed"), mark: (end: "stealth", stroke: 1pt, fill: black))
+  line((-0.75, y-tee4 + 0.18), (-0.75, y-regv), (-0.3, y-regv),
+    stroke: (dash: "dashed"), mark: (end: "stealth", stroke: 1pt, fill: black))
   content((-1.45, 5.0), [Feedback\ control], angle: 90deg)
   // 末段：限制器、离子推力器阀、喷管；离子/冷气竖直虚线隔线
   restrictor((mx, y-res))

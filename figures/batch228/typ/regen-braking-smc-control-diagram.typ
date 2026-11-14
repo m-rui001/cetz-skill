@@ -58,9 +58,12 @@
   wire(((9.45, 3.95), (10.30, 3.95)), green, w: 2.4pt)
 
   // 框内闭环：状态估计 → 滑模控制 → 扰动观测 → 状态估计
-  arc-through((6.10, 4.70), (6.55, 5.34), (7.00, 5.45), stroke: (paint: rgb("#f4a9c4"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#f4a9c4"), scale: 1.8))
-  arc-through((8.65, 5.55), (9.18, 4.55), (8.90, 3.50), stroke: (paint: rgb("#dcc98f"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#dcc98f"), scale: 1.8))
-  arc-through((7.25, 2.55), (6.58, 2.38), (6.38, 3.40), stroke: (paint: rgb("#93c9e9"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#93c9e9"), scale: 1.8))
+  arc-through((6.10, 4.70), (6.55, 5.34), (7.00, 5.45),
+    stroke: (paint: rgb("#f4a9c4"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#f4a9c4"), scale: 1.8))
+  arc-through((8.65, 5.55), (9.18, 4.55), (8.90, 3.50),
+    stroke: (paint: rgb("#dcc98f"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#dcc98f"), scale: 1.8))
+  arc-through((7.25, 2.55), (6.58, 2.38), (6.38, 3.40),
+    stroke: (paint: rgb("#93c9e9"), thickness: 4.5pt), mark: (end: "stealth", fill: rgb("#93c9e9"), scale: 1.8))
 
   // 功率控制 → 制动执行箭标
   wire(((11.55, 3.95), (11.62, 3.95)), orange, w: 2pt, head: false)

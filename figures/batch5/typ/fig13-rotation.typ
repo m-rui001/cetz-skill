@@ -22,7 +22,8 @@
   // angle arc, arrow toward Z' ray
   let r = 1.45
   let a0 = 71.6deg
-  arc((A.at(0) + r * calc.cos(a0), A.at(1) + r * calc.sin(a0)), radius: r, start: a0, stop: 24.2deg, mark: (end: "stealth", fill: black))
+  arc((A.at(0) + r * calc.cos(a0), A.at(1) + r * calc.sin(a0)), radius: r,
+    start: a0, stop: 24.2deg, mark: (end: "stealth", fill: black))
   content((3.15, 2.15), [$alpha$])
   // rotation direction arrow
   bezier((1.45, .49), (.29, 1.73), (1.75, 1.15), (1.05, 1.85), mark: (end: "stealth", fill: black))

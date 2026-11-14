@@ -103,7 +103,8 @@
     let dx=b.at(0) - a.at(0);let dy=b.at(1) - a.at(1)
     let r=calc.sqrt(dx*dx + dy*dy);let ux=dx/r;let uy=dy/r
     line(P(..a),P(b.at(0) - ux*w,b.at(1) - uy*w),stroke:(paint:c,thickness:t))
-    line(P(..b),P(b.at(0) - ux*w - uy*w*.45,b.at(1) - uy*w + ux*w*.45),P(b.at(0) - ux*w + uy*w*.45,b.at(1) - uy*w - ux*w*.45),close:true,fill:c,stroke:none)
+    line(P(..b),P(b.at(0) - ux*w - uy*w*.45,b.at(1) - uy*w + ux*w*.45),
+      P(b.at(0) - ux*w + uy*w*.45,b.at(1) - uy*w - ux*w*.45),close:true,fill:c,stroke:none)
   }
   let input-circle=(x,y,current:false)=>{
     circle(P(x,y),radius:16*s,fill:white,stroke:1.1pt)
@@ -217,7 +218,8 @@
   dot(247,437);dot(247,497);ring(139,437,[A]);ring(279,437,[$A'$],right:true);port(139,497);port(279,497)
   lab(130,515,[B]);lab(289,515,[$B'$]);lab(174,413,[$C_s$]);lab(209,416,[$L_s$]);lab(270,470,[$L_p$]);lab(210,520,[LLC])
   wire(((336,437),(347,437)));flatcap(367,437,horizontal:true)
-  ind(387,437,n:4,pitch:9,depth:10);wire(((423,437),(459,437)));flatcap(479,437,horizontal:true);wire(((499,437),(508,437)))
+  ind(387,437,n:4,pitch:9,
+    depth:10);wire(((423,437),(459,437)));flatcap(479,437,horizontal:true);wire(((499,437),(508,437)))
   wire(((336,497),(508,497)));wire(((443,437),(443,452)));winding(443,452,37);wire(((443,489),(443,497)))
   dot(443,437);dot(443,497);ring(336,437,[A]);ring(508,437,[$A'$],right:true);port(336,497);port(508,497)
   lab(326,515,[B]);lab(518,515,[$B'$]);lab(367,413,[$C_(s 1)$]);lab(407,416,[$L_s$]);lab(468,470,[$L_p$]);lab(481,413,[$C_(s 2)$]);lab(428,520,[CLLC])

@@ -24,7 +24,8 @@
 
   // 轨道与净轨道曲线（蓝色）
   bezier((-1.6, 1.7), (1.1, -2.7), (-0.6, 0.9), (0.7, -1.2), stroke: (paint: orb, thickness: 1pt))
-  bezier((0.2, -0.2), (-2.6, 1.9), (-0.8, 0.9), (-1.8, 1.6), stroke: (paint: orb, thickness: 1pt), mark: (end: "stealth", fill: orb))
+  bezier((0.2, -0.2), (-2.6, 1.9), (-0.8, 0.9), (-1.8, 1.6),
+    stroke: (paint: orb, thickness: 1pt), mark: (end: "stealth", fill: orb))
   content((-3.1, 2.1), [Net orbit])
   line((1.15, -2.9), (1.05, -2.0), mark: (end: "stealth", fill: orb), stroke: (paint: orb, thickness: 1pt))
   content((1.6, -2.4), [Orbit])

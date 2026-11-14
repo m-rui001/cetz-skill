@@ -66,7 +66,8 @@
   line((9.85, 6.0), (10.15, 7.5), (6.55, 9.35), (6.85, 9.0), close: true, fill: rgb("#e5202a"), stroke: none)
 
   // 增益介质：粉色主体＋底部蓝色镜段，标注 G
-  line((9.85, 6.0), (10.15, 7.5), (10.56, 7.42), (10.26, 5.92), close: true, fill: rgb("#e0679c"), stroke: (paint: rgb("#8c2f57"), thickness: 0.5pt))
+  line((9.85, 6.0), (10.15, 7.5), (10.56, 7.42), (10.26, 5.92), close: true,
+    fill: rgb("#e0679c"), stroke: (paint: rgb("#8c2f57"), thickness: 0.5pt))
   line((9.85, 6.0), (10.15, 6.32), (10.56, 6.24), (10.26, 5.92), close: true, fill: rgb("#4aa8d8"), stroke: none)
   content((10.2, 6.85), text(size: 7pt, fill: white)[G])
 
@@ -75,11 +76,13 @@
   line((9.55, 5.45), (9.85, 5.85), stroke: (paint: rgb("#9fb3c8"), thickness: 4pt))
 
   // 灰色发射平台
-  line((11.15, 5.0), (12.85, 4.4), (13.3, 5.85), (11.6, 6.45), close: true, fill: rgb("#9a9a9a"), stroke: (paint: rgb("#5f6a72"), thickness: 0.6pt))
+  line((11.15, 5.0), (12.85, 4.4), (13.3, 5.85), (11.6, 6.45), close: true,
+    fill: rgb("#9a9a9a"), stroke: (paint: rgb("#5f6a72"), thickness: 0.6pt))
   content((12.2, 5.42), text(size: 7.5pt, fill: rgb("#1b1b1b"))[Launch \ Platform])
 
   // 常规推进器喷管喇叭口
-  line((14.78, 4.78), (14.34, 4.12), (13.69, 4.85), (13.85, 5.09), close: true, fill: rgb("#c8ccd0"), stroke: (paint: rgb("#6b737a"), thickness: 0.6pt))
+  line((14.78, 4.78), (14.34, 4.12), (13.69, 4.85), (13.85, 5.09), close: true,
+    fill: rgb("#c8ccd0"), stroke: (paint: rgb("#6b737a"), thickness: 0.6pt))
 
   // 指向火星的绿色出射箭头
   line((6.25, 9.55), (4.85, 9.9), stroke: (paint: rgb("#35d07f"), thickness: 1.8pt), mark: (end: "stealth"))

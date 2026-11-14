@@ -13,19 +13,24 @@
   let orange = rgb("#e67e22")
   // 通用管线与设备符号。
   let pipe(points, color, dashed: false, arrow: true) = {
-    line(..points, stroke: (paint: color, thickness: 1.2pt, dash: if dashed { "dashed" } else { "solid" }), mark: if arrow { (end: "stealth", fill: color) } else { none })
+    line(..points,
+      stroke: (paint: color, thickness: 1.2pt, dash: if dashed { "dashed" } else { "solid" }),
+      mark: if arrow { (end: "stealth", fill: color) } else { none })
   }
   let exchanger(x, y) = {
     circle((x, y), radius: 0.32, stroke: 1pt, fill: white)
-    line((x, y + 0.32), (x, y + 0.15), (x + 0.15, y + 0.07), (x - 0.15, y - 0.07), (x, y - 0.15), (x, y - 0.32), stroke: 1pt)
+    line((x, y + 0.32), (x, y + 0.15), (x + 0.15, y + 0.07),
+      (x - 0.15, y - 0.07), (x, y - 0.15), (x, y - 0.32), stroke: 1pt)
   }
   let wedge(x, y, flip: false) = {
     let s = if flip { -1 } else { 1 }
-    line((x - 0.35 * s, y + 0.55), (x + 0.35 * s, y + 0.30), (x + 0.35 * s, y - 0.30), (x - 0.35 * s, y - 0.55), close: true, stroke: 1pt, fill: white)
+    line((x - 0.35 * s, y + 0.55), (x + 0.35 * s, y + 0.30), (x + 0.35 * s, y - 0.30),
+      (x - 0.35 * s, y - 0.55), close: true, stroke: 1pt, fill: white)
   }
   let chamber(x, y) = {
     rect((x - 0.55, y - 0.35), (x + 0.55, y + 0.35), stroke: 1pt, fill: white)
-    line((x - 0.37, y - 0.35), (x - 0.37, y + 0.35), (x + 0.37, y - 0.35), (x + 0.37, y + 0.35), (x - 0.37, y - 0.35), stroke: 0.7pt)
+    line((x - 0.37, y - 0.35), (x - 0.37, y + 0.35), (x + 0.37, y - 0.35),
+      (x + 0.37, y + 0.35), (x - 0.37, y - 0.35), stroke: 0.7pt)
   }
   let cell(x, y) = {
     for (w, lo, hi, thickness, color) in (
@@ -39,11 +44,13 @@
     }
   }
   let valve(x, y) = {
-    line((x - 0.22, y + 0.12), (x + 0.22, y - 0.12), (x + 0.22, y + 0.12), (x - 0.22, y - 0.12), close: true, stroke: 0.9pt, fill: white)
+    line((x - 0.22, y + 0.12), (x + 0.22, y - 0.12), (x + 0.22, y + 0.12),
+      (x - 0.22, y - 0.12), close: true, stroke: 0.9pt, fill: white)
     line((x, y + 0.12), (x, y + 0.23), stroke: 0.8pt)
   }
   let propeller(x, y) = {
-    line((x, y - 0.8), (x - 0.06, y - 0.45), (x, y), (x + 0.06, y + 0.45), (x, y + 0.8), (x - 0.06, y + 0.45), (x, y), (x + 0.06, y - 0.45), close: true, stroke: 0.8pt, fill: rgb("#bbbbbb"))
+    line((x, y - 0.8), (x - 0.06, y - 0.45), (x, y), (x + 0.06, y + 0.45), (x, y + 0.8), (x - 0.06, y + 0.45),
+      (x, y), (x + 0.06, y - 0.45), close: true, stroke: 0.8pt, fill: rgb("#bbbbbb"))
   }
   let gearbox(x, y) = {
     rect((x - 0.50, y - 0.31), (x + 0.50, y + 0.31), stroke: 0.8pt, fill: white)

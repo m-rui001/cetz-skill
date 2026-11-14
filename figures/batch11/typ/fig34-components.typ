@@ -34,14 +34,16 @@
   line((ox, 0), (ox + e2.at(0), e2.at(1)), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   line((ox, 0), (ox + A.at(0), A.at(1)), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   line((ox + A.at(0), A.at(1)), (ox + 5.261, .15), stroke: (paint: black, thickness: 0.8pt, dash: "dashed"))
-  line((ox + 5.261, .15), (ox + A.at(0) + .3, -.05), stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
+  line((ox + 5.261, .15), (ox + A.at(0) + .3, -.05),
+    stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
   content((ox - .3, 1.68), [$arrow(e)_1$])
   content((ox + 1.25, -.75), [$arrow(e)_2$])
   content((ox + 3.2, 1.35), [$arrow(A)$])
   content((ox + .8, 2.35), [$(1, 3)$])
   content((ox + 4.35, 1.95), [$(7, 2)$])
   content((ox + 2.6, -.75), [$(4, 0)$])
-  bezier((ox + .15, -.22), (ox + A.at(0) + .3, -.22), (ox + 1.7, -.48), (ox + 3.5, -.48), stroke: (paint: black, thickness: 0.8pt))
+  bezier((ox + .15, -.22), (ox + A.at(0) + .3, -.22), (ox + 1.7, -.48),
+    (ox + 3.5, -.48), stroke: (paint: black, thickness: 0.8pt))
   content((ox + 1.9, -1.2), [$A^2 arrow(e)_2$])
   content((ox + .1, -2.0), [(b)])
 })

@@ -62,28 +62,32 @@
 // 左侧二级节点：文字＋下划线，右端 S 弯汇入一级分支
 #let node-l(y, t, j) = {
   draw.content((xl2 - 0.10, y), tbody(t, fs2), anchor: "east")
-  draw.line((jl2(t, y).at(0), y - off(t, 0.24, 0.17)), (xl2 + 0.28, y - off(t, 0.24, 0.17)), stroke: (paint: ink, thickness: 0.6pt))
+  draw.line((jl2(t, y).at(0), y - off(t, 0.24, 0.17)),
+    (xl2 + 0.28, y - off(t, 0.24, 0.17)), stroke: (paint: ink, thickness: 0.6pt))
   link((xl2 + 0.28, y - off(t, 0.24, 0.17)), j, 0.6pt)
 }
 
 // 右侧二级节点：文字＋下划线，左端 S 弯汇入一级分支
 #let node-r(y, t, j) = {
   draw.content((xr2 + 0.10, y), tbody(t, fs2), anchor: "west")
-  draw.line((xr2 - 0.28, y - off(t, 0.24, 0.17)), (jr2(t, y).at(0), y - off(t, 0.24, 0.17)), stroke: (paint: ink, thickness: 0.6pt))
+  draw.line((xr2 - 0.28, y - off(t, 0.24, 0.17)),
+    (jr2(t, y).at(0), y - off(t, 0.24, 0.17)), stroke: (paint: ink, thickness: 0.6pt))
   link((xr2 - 0.28, y - off(t, 0.24, 0.17)), j, 0.6pt)
 }
 
 // 左侧一级分支：粗下划线，右端粗 S 线接入方框
 #let branch-l(y, t, be) = {
   draw.content((xl1 - 0.12, y), tbody(t, fs1), anchor: "east")
-  draw.line((jl1(t, y).at(0), y - off(t, 0.30, 0.21)), (xl1 + 0.10, y - off(t, 0.30, 0.21)), stroke: (paint: ink, thickness: 1pt))
+  draw.line((jl1(t, y).at(0), y - off(t, 0.30, 0.21)),
+    (xl1 + 0.10, y - off(t, 0.30, 0.21)), stroke: (paint: ink, thickness: 1pt))
   link((xl1 + 0.10, y - off(t, 0.30, 0.21)), be, 1pt)
 }
 
 // 右侧一级分支：粗下划线，左端粗 S 线接入方框
 #let branch-r(y, t, be) = {
   draw.content((xr1 + 0.12, y), tbody(t, fs1), anchor: "west")
-  draw.line((xr1 - 0.10, y - off(t, 0.30, 0.21)), (jr1(t, y).at(0), y - off(t, 0.30, 0.21)), stroke: (paint: ink, thickness: 1pt))
+  draw.line((xr1 - 0.10, y - off(t, 0.30, 0.21)),
+    (jr1(t, y).at(0), y - off(t, 0.30, 0.21)), stroke: (paint: ink, thickness: 1pt))
   link((xr1 - 0.10, y - off(t, 0.30, 0.21)), be, 1pt)
 }
 
@@ -100,8 +104,10 @@
   branch-l(8.20, "Robotic Morphology", (14.20, bcy + 0.95))
   let ja = jl1("Robotic Morphology", 8.20)
   for (y, t, ls) in (
-    (11.55, "Robotics Organizational Structure", ((12.45, "Cellular Robots"), (11.85, "Multi-arm Robots"), (11.25, "Multipedal Robots"), (10.55, "Soft Robots"))),
-    (8.85, "Structural Design of Joints", ((9.75, "Movement Range"), (9.15, "Accuracy"), (8.55, "Reliability"), (7.95, "Operational Flexibility"))),
+    (11.55, "Robotics Organizational Structure",
+      ((12.45, "Cellular Robots"), (11.85, "Multi-arm Robots"), (11.25, "Multipedal Robots"), (10.55, "Soft Robots"))),
+    (8.85, "Structural Design of Joints",
+      ((9.75, "Movement Range"), (9.15, "Accuracy"), (8.55, "Reliability"), (7.95, "Operational Flexibility"))),
     (7.05, "Sensors and Actuators", ()),
     (6.40, "End-effectors", ()),
     (5.75, "Kinematics and Dynamics", ()),
@@ -125,7 +131,8 @@
   branch-r(9.60, tr1, (16.95, 7.45))
   for (y, t, ls) in (
     (11.15, "Ground Interactive Control", ((11.60, "Digital Twin Interaction"), (10.70, "Teleoperation Technology"))),
-    (9.00, ("Mission Planning and", "Management"), ((9.70, "Task Sequence Planning"), (9.10, "Effectiveness Monitoring & Evaluation"), (8.50, "Fault Detection & Handling"))),
+    (9.00, ("Mission Planning and", "Management"),
+      ((9.70, "Task Sequence Planning"), (9.10, "Effectiveness Monitoring & Evaluation"), (8.50, "Fault Detection & Handling"))),
   ) {
     node-r(y, t, jr1(tr1, 9.60))
     for (ly, lt) in ls { leaf-r(ly, lt, jr2(t, y)) }
@@ -135,7 +142,8 @@
   let tr2 = ("Structural Design of", "Assembly Connections")
   branch-r(5.60, tr2, (bx1, 6.25))
   for (y, t, ls) in (
-    (6.95, ("Multi-Interface", "Mechanical Connection"), ((7.75, "Mortise & Tenon Connection"), (7.15, "Screw Connection"), (6.55, "Rivet Connection"), (5.95, "Plug-in Connection"), (5.35, "Bayonet Connection"))),
+    (6.95, ("Multi-Interface", "Mechanical Connection"),
+      ((7.75, "Mortise & Tenon Connection"), (7.15, "Screw Connection"), (6.55, "Rivet Connection"), (5.95, "Plug-in Connection"), (5.35, "Bayonet Connection"))),
     (4.95, "Energy Connection Structure Design", ()),
     (4.35, "Structural Cushioning & Protection", ()),
   ) {

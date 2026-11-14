@@ -55,7 +55,8 @@
 
   // 两个子级
   box(5.40, 13.75, 4.20, 1.00, [*Sub-Level 1 (SL1)*\ Physical Human-Robot\ Contact Models], green, size: 7.0pt, r: 0.10)
-  box(12.60, 13.75, 4.20, 1.00, [*Sub-Level 2 (SL2)*\ Physical Human-Robot\ Contact Measuring], green, size: 7.0pt, r: 0.10)
+  box(12.60, 13.75, 4.20, 1.00,
+    [*Sub-Level 2 (SL2)*\ Physical Human-Robot\ Contact Measuring], green, size: 7.0pt, r: 0.10)
   box(5.40, 12.15, 5.60, 1.50,
     [Number of records identified from:\ SCOPUS Database = 237\ IEEE Xplore Database = 863\ Total = 1,100],
     lgreen, size: 7.4pt)

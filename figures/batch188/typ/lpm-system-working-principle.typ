@@ -23,7 +23,8 @@
     rect((cx - 0.21, 8.26), (cx + 0.21, 8.5), fill: white, stroke: none)
   }
   circle((3.34, 8.38), radius: 0.28, fill: none, stroke: (paint: red, thickness: 1.3pt))
-  for p in ((1.3, 7.25), (1.75, 7.6), (2.2, 7.15), (2.6, 7.75), (3.1, 7.3), (3.5, 7.65), (3.95, 7.2), (4.35, 7.55), (1.5, 7.95), (2.95, 7.9), (4.1, 7.85), (2.4, 7.45)) { gasdot(p) }
+  for p in ((1.3, 7.25), (1.75, 7.6), (2.2, 7.15), (2.6, 7.75), (3.1, 7.3), (3.5, 7.65), (3.95, 7.2),
+    (4.35, 7.55), (1.5, 7.95), (2.95, 7.9), (4.1, 7.85), (2.4, 7.45)) { gasdot(p) }
   content((4.8, 8.32), [Heater Chip], anchor: "west")
   content((4.8, 7.5), [Plenum], anchor: "west")
 
@@ -41,7 +42,8 @@
   rect((0.85, 2.0), (5.35, 3.65), fill: bluefill, stroke: none)
   rect((0.85, 2.0), (5.35, 4.9), fill: none, stroke: ink)
   line((0.85, 3.65), (5.35, 3.65), stroke: ink)
-  for p in ((1.15, 4.05), (1.55, 4.45), (1.95, 4.15), (2.35, 4.6), (2.75, 4.2), (2.2, 4.75), (3.2, 4.55), (4.25, 4.1), (4.65, 4.5), (5.05, 4.2), (4.5, 4.75), (3.55, 4.0)) { gasdot(p) }
+  for p in ((1.15, 4.05), (1.55, 4.45), (1.95, 4.15), (2.35, 4.6), (2.75, 4.2), (2.2, 4.75), (3.2, 4.55),
+    (4.25, 4.1), (4.65, 4.5), (5.05, 4.2), (4.5, 4.75), (3.55, 4.0)) { gasdot(p) }
   content((3.8, 4.3), [Gas], anchor: "center")
   content((5.55, 4.3), [Tank], anchor: "west")
   content((3.1, 3.12), [Propellant], anchor: "center")
@@ -59,7 +61,8 @@
   content((12.4, 6.7), [Space], anchor: "west")
   circle((11.55, 6.6), radius: 0.16, fill: orange, stroke: none)
   line((11.55, 6.6), (12.2, 4.35), stroke: (paint: dashc, thickness: 1pt, dash: "dashed"))
-  line((12.2, 4.35), (10.8, 2.95), stroke: (paint: dashc, thickness: 1pt, dash: "dashed"), mark: (end: "stealth", fill: dashc))
+  line((12.2, 4.35), (10.8, 2.95),
+    stroke: (paint: dashc, thickness: 1pt, dash: "dashed"), mark: (end: "stealth", fill: dashc))
   circle((10.7, 2.7), radius: 0.15, fill: bluedot, stroke: none)
   circle((11.95, 2.25), radius: 0.15, fill: bluedot, stroke: none)
   circle((12.9, 2.7), radius: 0.15, fill: bluedot, stroke: none)

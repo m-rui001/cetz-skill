@@ -135,7 +135,8 @@
     let dx=b.at(0) - a.at(0);let dy=b.at(1) - a.at(1)
     let len=calc.sqrt(dx*dx + dy*dy);let ux=dx/len;let uy=dy/len
     let x=c.at(0);let y=c.at(1)
-    line(P(x + 7*ux,y + 7*uy),P(x - 6*ux - 6*uy,y - 6*uy + 6*ux),P(x - 6*ux + 6*uy,y - 6*uy - 6*ux),close:true,fill:black,stroke:none)
+    line(P(x + 7*ux,y + 7*uy),P(x - 6*ux - 6*uy,y - 6*uy + 6*ux),
+      P(x - 6*ux + 6*uy,y - 6*uy - 6*ux),close:true,fill:black,stroke:none)
     wire(((x + 8*ux - 7*uy,y + 8*uy + 7*ux),(x + 8*ux + 7*uy,y + 8*uy - 7*ux)))
   }
   let vout=(x,y,n)=>lab(x,y,[$V_"out" = #n V_"in"$])

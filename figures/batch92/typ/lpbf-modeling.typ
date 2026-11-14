@@ -200,7 +200,8 @@
 
   // 上排三块尺度面板：循环套用同一个接口，只换 kind 与落位
   let scale-panel(kind, ox, oy) = {
-    if kind == "melt" { scale-melt-line(ox, oy) } else if kind == "hatch" { scale-hatch(ox, oy) } else { scale-part(ox, oy) }
+    if kind == "melt" { scale-melt-line(ox,
+      oy) } else if kind == "hatch" { scale-hatch(ox, oy) } else { scale-part(ox, oy) }
   }
   for (kind, ox, oy) in (("melt", 0.55, 18.45), ("hatch", 9.45, 18.30), ("part", 18.30, 18.15)) {
     scale-panel(kind, ox, oy)

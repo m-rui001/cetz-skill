@@ -71,8 +71,10 @@
   line((3.38, 9.0), (6.6, 9.05), stroke: red + 0.6pt)
   line((3.38, 7.8), (6.6, 7.85), stroke: red + 0.6pt)
   rect((6.6, 7.8), (10.6, 9.05), stroke: red + 0.7pt)
-  line((7.2, 8.95), (8.8, 8.7), (8.8, 8.4), (7.2, 8.65), close: true, fill: rgb("#9aa0a6"), stroke: rgb("#666666") + 0.4pt)
-  line((8.8, 8.7), (10.4, 8.45), (10.4, 8.15), (8.8, 8.4), close: true, fill: rgb("#9aa0a6"), stroke: rgb("#666666") + 0.4pt)
+  line((7.2, 8.95), (8.8, 8.7), (8.8, 8.4), (7.2, 8.65), close: true,
+    fill: rgb("#9aa0a6"), stroke: rgb("#666666") + 0.4pt)
+  line((8.8, 8.7), (10.4, 8.45), (10.4, 8.15), (8.8, 8.4), close: true,
+    fill: rgb("#9aa0a6"), stroke: rgb("#666666") + 0.4pt)
   line((8.8, 7.85), (8.8, 9.0), stroke: (dash: "dashed", thickness: 0.5pt))
   line((9.6, 7.85), (9.6, 8.6), stroke: (dash: "dashed", thickness: 0.5pt))
   dim((7.0, 8.4), (7.0, 8.95))
@@ -99,8 +101,10 @@
   }
 
   rect((3.0, 4.5), (7.3, 6.3), fill: rgb("#f2f5f7"), stroke: rgb("#333333") + 0.8pt)
-  line((3.1, 4.75), (7.2, 5.6), (7.2, 6.15), (3.1, 5.3), close: true, fill: rgb("#dfe5ea"), stroke: rgb("#8899aa") + 0.5pt)
-  line((3.7, 4.95), (6.9, 5.62), (6.9, 6.05), (3.7, 5.38), close: true, fill: rgb("#fdfeff"), stroke: rgb("#99aabb") + 0.5pt)
+  line((3.1, 4.75), (7.2, 5.6), (7.2, 6.15), (3.1, 5.3), close: true,
+    fill: rgb("#dfe5ea"), stroke: rgb("#8899aa") + 0.5pt)
+  line((3.7, 4.95), (6.9, 5.62), (6.9, 6.05), (3.7, 5.38), close: true,
+    fill: rgb("#fdfeff"), stroke: rgb("#99aabb") + 0.5pt)
   line((3.8, 5.15), (6.8, 5.8), stroke: rgb("#a8b545") + 2pt)
   line((3.8, 5.05), (6.8, 5.7), stroke: red + 0.7pt)
   line((3.8, 5.27), (6.8, 5.92), stroke: red + 0.7pt)
@@ -116,7 +120,8 @@
   for i in range(9) {
     let x = 1.0 + i * 0.66
     let y = 1.55 + i * 0.11
-    line((x, y), (x + 0.56, y + 0.09), (x + 0.56, y + 0.62), (x, y + 0.53), close: true, fill: rgb("#9aa0a8"), stroke: rgb("#556677") + 0.5pt)
+    line((x, y), (x + 0.56, y + 0.09), (x + 0.56, y + 0.62), (x, y + 0.53),
+      close: true, fill: rgb("#9aa0a8"), stroke: rgb("#556677") + 0.5pt)
     line((x + 0.6, y + 0.15), (x + 0.6, y + 0.5), stroke: red + 0.7pt)
   }
   tag([Distal End], (0.85, 2.75), none)

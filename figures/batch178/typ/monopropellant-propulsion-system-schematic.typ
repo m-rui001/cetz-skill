@@ -112,7 +112,8 @@
   label((10.95, 0.95), [Catalyst bed])
 
   // 高温燃气排气虚线与标注
-  line((11.15, 2.15), (14.7, 2.15), stroke: (paint: black, thickness: 0.8pt, dash: "dashed"), mark: (end: "stealth", fill: black))
+  line((11.15, 2.15), (14.7, 2.15),
+    stroke: (paint: black, thickness: 0.8pt, dash: "dashed"), mark: (end: "stealth", fill: black))
   label((15.4, 2.35), [Hot Gases])
   label((15.4, 2.0), [Exhaustion])
 })

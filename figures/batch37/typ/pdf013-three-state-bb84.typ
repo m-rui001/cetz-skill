@@ -46,7 +46,8 @@
   label(117,211,[Laser],size:15pt)
   for a in range(0,360,step:45) {
     let t=a*1deg
-    line(P(117 + 6*calc.cos(t),270 + 6*calc.sin(t)),P(117 + 28*calc.cos(t),270 + 28*calc.sin(t)),stroke:(paint:rgb("#b92313"),thickness:3.6pt))
+    line(P(117 + 6*calc.cos(t),270 + 6*calc.sin(t)),
+      P(117 + 28*calc.cos(t),270 + 28*calc.sin(t)),stroke:(paint:rgb("#b92313"),thickness:3.6pt))
   }
   circle(P(117,270),radius:4,fill:rgb("#b92313"),stroke:none)
   for y in (181,270) { rect(P(412,y - 7),P(456,y + 7),fill:rgb("#a0a0a0"),stroke:none) }

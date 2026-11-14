@@ -106,7 +106,8 @@
   // 平板镜：竖向窄矩形（矩形本身就是"板厚"的双线），左侧再加一条棱线
   let mirror(x, y, h, w: 0.26) = {
     rect((x - w / 2, y - h / 2), (x + w / 2, y + h / 2), fill: MIRRORF, stroke: MAIN)
-    line((x - w / 2 + 0.07, y - h / 2 + 0.04), (x - w / 2 + 0.07, y + h / 2 - 0.04), stroke: (paint: white, thickness: 0.5pt))
+    line((x - w / 2 + 0.07, y - h / 2 + 0.04),
+      (x - w / 2 + 0.07, y + h / 2 - 0.04), stroke: (paint: white, thickness: 0.5pt))
   }
 
   // 针孔：两个相对的三角形（上尖朝下、下尖朝上）夹出一条狭缝
@@ -257,7 +258,8 @@
       fill: PFILL.transparentize(62%), stroke: BEAM-EDGE)
     // 光束中心轴（虚线 + 指向镜面的箭头）
     line((bx, YTOP - 0.06), (bx, MY - 0.36), stroke: AXIS-DASH, mark: (end: ">", fill: INK, scale: 0.55))
-    line((bx, MY - 0.30), (bx + dx * ((MY - 0.30 - YSUB) / -dy), YSUB + 0.02), stroke: (paint: INK, thickness: 0.5pt, dash: (2.0pt, 1.6pt)))
+    line((bx, MY - 0.30), (bx + dx * ((MY - 0.30 - YSUB) / -dy), YSUB + 0.02),
+      stroke: (paint: INK, thickness: 0.5pt, dash: (2.0pt, 1.6pt)))
   }
 
   // (c) MIL 器件线稿（源图为照片）：异形金属板 + 安装孔 + 中央掩模夹具
@@ -418,7 +420,8 @@
   lbl((21.84, YSUB - 0.24), [$x$], anchor: "east", size: 7.8pt)
 
   // S：基底到镜心的距离（双箭头尺寸线）
-  line((20.58, YSUB), (20.58, MY), stroke: (paint: INK, thickness: 0.55pt), mark: (start: ">", end: ">", fill: INK, scale: 0.6))
+  line((20.58, YSUB), (20.58, MY), stroke: (paint: INK, thickness: 0.55pt),
+    mark: (start: ">", end: ">", fill: INK, scale: 0.6))
   lbl((20.80, (YSUB + MY) / 2), [$S$], anchor: "west", size: 7.6pt)
 
   // "Mirror" 标签 + 引线指向左侧镜面

@@ -73,7 +73,8 @@
   // 药柱内孔燃气箭头
   for x in (3.3, 5.0, 6.7) {
     for dy in (0.24, -0.24) {
-      bezier((x, 11.5 + dy), (x + 0.75, 11.5 + dy), (x + 0.3, 11.5 + dy + 0.12), (x + 0.52, 11.5 + dy + 0.12), stroke: red-s, mark: (end: "stealth"))
+      bezier((x, 11.5 + dy), (x + 0.75, 11.5 + dy), (x + 0.3, 11.5 + dy + 0.12),
+        (x + 0.52, 11.5 + dy + 0.12), stroke: red-s, mark: (end: "stealth"))
     }
   }
   jets(10.4, (10.75, 11.25, 11.75, 12.25))
@@ -113,7 +114,8 @@
   rect((5.95, 3.45), (10.2, 3.95), radius: 0.2, fill: fuel, stroke: none)
   // 氧化剂喷入内孔
   for dy in (-0.17, -0.06, 0.06, 0.17) {
-    line((6.02, 4.2 + 0.55 * dy), (6.55, 4.2 + 1.5 * dy), stroke: (paint: rgb("#2F7FC1"), thickness: 0.9pt), mark: (end: "stealth"))
+    line((6.02, 4.2 + 0.55 * dy), (6.55, 4.2 + 1.5 * dy),
+      stroke: (paint: rgb("#2F7FC1"), thickness: 0.9pt), mark: (end: "stealth"))
   }
   // 燃气沿内孔流向喷管
   bezier((6.7, 4.34), (10.3, 4.3), (7.9, 4.37), (9.2, 4.33), stroke: red-s, mark: (end: "stealth"))

@@ -65,7 +65,8 @@
       rect((x + s * 0.3, y - 0.9), (x + s * 0.6, y + 0.55), fill: ink, stroke: none) // 助推器
       line((x + s * 0.6, y + 0.55), (x + s * 0.45, y + 0.92), (x + s * 0.3, y + 0.55), close: true, fill: ink, stroke: none)
       line((x + s * 0.3, y + 0.02), (x + s * 0.6, y + 0.02), stroke: cut) // 助推器环带
-      line((x + s * 0.3, y - 0.9), (x + s * 0.45, y - 1.35), (x + s * 0.6, y - 0.9), close: true, fill: ink, stroke: none) // 尾焰
+      line((x + s * 0.3, y - 0.9), (x + s * 0.45, y - 1.35),
+        (x + s * 0.6, y - 0.9), close: true, fill: ink, stroke: none) // 尾焰
     }
     line((x - 0.22, y - 1.2), (x, y - 1.85), (x + 0.22, y - 1.2), close: true, fill: ink, stroke: none) // 主尾焰
     for (dx, r) in ((-1.5, 0.32), (-1.05, 0.44), (1.05, 0.44), (1.5, 0.32)) {
@@ -78,7 +79,8 @@
     let (x, y) = c
     let mr = 1.55 // 月球半径
     circle((x - 0.4, y - 0.3), radius: mr, fill: ink, stroke: none) // 月球
-    for (dx, dy, r) in ((-0.95, 0.4, 0.18), (-0.5, -0.15, 0.13), (-1.05, -0.45, 0.1), (-0.35, 0.85, 0.08), (-0.8, -0.9, 0.09)) {
+    for (dx, dy,
+      r) in ((-0.95, 0.4, 0.18), (-0.5, -0.15, 0.13), (-1.05, -0.45, 0.1), (-0.35, 0.85, 0.08), (-0.8, -0.9, 0.09)) {
       circle((x + dx, y + dy), radius: r, fill: navy, stroke: none) // 陨石坑
     }
     for k in range(7) {
@@ -97,19 +99,25 @@
 
   // 三阶段数据: 标题、逐字条目、场景绘制函数、星点(相对圆心)
   let panels = (
-    (title: "Ground operations", art: ground-art, sparks: ((-1.7, 1.35, 0.1), (-1.1, 1.85, 0.07), (2.0, 0.85, 0.11), (-1.85, -0.55, 0.08), (1.35, 1.8, 0.09)),
+    (title: "Ground operations", art: ground-art,
+      sparks: ((-1.7, 1.35, 0.1), (-1.1, 1.85, 0.07), (2.0, 0.85, 0.11), (-1.85, -0.55, 0.08), (1.35, 1.8, 0.09)),
       items: ("Vibrations", "Mechanical loading", "Hail impact", "Lightning strike", "Fire")),
-    (title: "Flight operations", art: flight-art, sparks: ((-1.7, 1.45, 0.11), (-1.0, 1.9, 0.07), (1.85, 1.1, 0.12), (1.5, -1.2, 0.08), (-1.7, -0.7, 0.09), (2.0, 0.2, 0.07)),
-      items: ("Vibrations", "Mechanical shock", "Thermal fluctuation", "Rain erosion", "Bird strike, hail impact", "Space debris impact", "Lightning strike", "Fire")),
-    (title: "Space operations", art: space-art, sparks: ((-1.8, 1.2, 0.1), (-1.35, 1.72, 0.07), (1.95, 0.55, 0.1), (1.5, -1.6, 0.08), (-1.68, -0.78, 0.09), (0.95, 2.0, 0.07)),
-      items: ("Vibrations", "Mechanical shock", "Thermal fluctuation", "Atomic oxygen", "Space debris impact", "Vacuum conditions", "Space dust", "Fire")),
+    (title: "Flight operations", art: flight-art,
+      sparks: ((-1.7, 1.45, 0.11), (-1.0, 1.9, 0.07), (1.85, 1.1, 0.12), (1.5, -1.2, 0.08), (-1.7, -0.7, 0.09), (2.0, 0.2, 0.07)),
+      items: ("Vibrations", "Mechanical shock", "Thermal fluctuation", "Rain erosion",
+        "Bird strike, hail impact", "Space debris impact", "Lightning strike", "Fire")),
+    (title: "Space operations", art: space-art,
+      sparks: ((-1.8, 1.2, 0.1), (-1.35, 1.72, 0.07), (1.95, 0.55, 0.1), (1.5, -1.6, 0.08), (-1.68, -0.78, 0.09), (0.95, 2.0, 0.07)),
+      items: ("Vibrations", "Mechanical shock", "Thermal fluctuation", "Atomic oxygen",
+        "Space debris impact", "Vacuum conditions", "Space dust", "Fire")),
   )
 
   for (i, p) in panels.enumerate() {
     let top = 20.5 - i * 6.95
     let my = top - 3.3
     // 圆角面板底板
-    content((0, top), box(width: 13.2cm, height: 6.6cm, radius: 0.4cm, fill: paper, stroke: (paint: navy, thickness: 1pt)), anchor: "north-west")
+    content((0, top),
+      box(width: 13.2cm, height: 6.6cm, radius: 0.4cm, fill: paper, stroke: (paint: navy, thickness: 1pt)), anchor: "north-west")
     // 深蓝圆盘底与场景线稿
     circle((3.15, my), radius: 2.6, fill: navy, stroke: none)
     (p.art)((3.15, my))

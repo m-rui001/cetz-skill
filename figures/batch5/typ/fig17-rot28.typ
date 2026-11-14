@@ -24,10 +24,12 @@
   // dashed rotation arcs about Z, arrows at images B', C'
   let r1 = 4.35
   let a1 = -132deg
-  arc((Z.at(0) + r1 * calc.cos(a1), Z.at(1) + r1 * calc.sin(a1)), radius: r1, start: a1, stop: -88.5deg, stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
+  arc((Z.at(0) + r1 * calc.cos(a1), Z.at(1) + r1 * calc.sin(a1)), radius: r1, start: a1,
+    stop: -88.5deg, stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
   let r2 = 2.9
   let a2 = -60.7deg
-  arc((Z.at(0) + r2 * calc.cos(a2), Z.at(1) + r2 * calc.sin(a2)), radius: r2, start: a2, stop: -31deg, stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
+  arc((Z.at(0) + r2 * calc.cos(a2), Z.at(1) + r2 * calc.sin(a2)), radius: r2, start: a2,
+    stop: -31deg, stroke: (dash: "dashed"), mark: (end: "stealth", fill: black))
   for p in (A, Z, C, Cp, B, Bp) {
     circle(p, radius: .06, fill: black)
   }

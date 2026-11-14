@@ -92,7 +92,8 @@
     }
     segs.push((cur, xb))
     for (i, s) in segs.enumerate() {
-      let m = if arrow == "start" and i == 0 { (start: "stealth", fill: color) } else if arrow == "end" and i == segs.len() - 1 {
+      let m = if arrow == "start" and i == 0 { (start: "stealth",
+        fill: color) } else if arrow == "end" and i == segs.len() - 1 {
         (end: "stealth", fill: color)
       } else { none }
       line((s.at(0), y), (s.at(1), y), stroke: (paint: color, thickness: w, dash: dash), mark: m)
@@ -418,7 +419,8 @@
   wire(ROW("pc"), COL("pil_r"), COL("gsum") - 0.24, color: BLUE, arrow: "start")
   wire(ROW("pc"), COL("gsum") + 0.24, COL("sig"), color: BLUE, arrow: "start")
   txt((COL("sig") + 0.06, ROW("pc")), $P_E$, size: 9pt, fill: RED, anchor: "west")
-  line((COL("gsum"), ROW("pc") + 0.42), (COL("gsum"), ROW("pc") + 0.24), stroke: (paint: INK, thickness: 0.7pt), mark: (end: ">", fill: INK, scale: 0.7))
+  line((COL("gsum"), ROW("pc") + 0.42), (COL("gsum"), ROW("pc") + 0.24),
+    stroke: (paint: INK, thickness: 0.7pt), mark: (end: ">", fill: INK, scale: 0.7))
   txt((COL("gsum"), ROW("pc") + 0.60), $P^"ref"$, size: 8.5pt)
   node((COL("ngp"), ROW("pc")), color: GREEN)   // PE 分一路给 fP(s)
 
@@ -428,7 +430,8 @@
   wire(ROW("vc"), COL("pil_r"), COL("gsum") - 0.24, color: BLUE, arrow: "start")
   wire(ROW("vc"), COL("gsum") + 0.24, COL("sig"), color: BLUE, arrow: "start")
   txt((COL("sig") + 0.06, ROW("vc")), $V_d$, size: 9pt, fill: RED, anchor: "west")
-  line((COL("gsum"), ROW("vc") - 0.50), (COL("gsum"), ROW("vc") - 0.24), stroke: (paint: INK, thickness: 0.7pt), mark: (end: ">", fill: INK, scale: 0.7))
+  line((COL("gsum"), ROW("vc") - 0.50), (COL("gsum"), ROW("vc") - 0.24),
+    stroke: (paint: INK, thickness: 0.7pt), mark: (end: ">", fill: INK, scale: 0.7))
   txt((COL("gsum") + 0.18, ROW("vc") - 0.60), $V^"ref"$, size: 8.5pt, anchor: "west")
   node((COL("nvd"), ROW("vc")), color: ORANGE)  // Vd 分一路给 GFM 的电压环
 
